@@ -9,6 +9,15 @@ public class PlayerMenuController : MonoBehaviour
     public GameObject selectedScenario;
     public GameObject selectedPersona;
 
+    public GameObject previousButton;
+    public GameObject nextButton;
+
+    private void Start()
+    {
+        previousButton.SetActive(false);
+        nextButton.SetActive(true);
+    }
+
     public void SelectCard(MenuCard.CardType cardtype, Sprite featuredimg, string description)
     {
         switch (cardtype) {
@@ -25,5 +34,8 @@ public class PlayerMenuController : MonoBehaviour
                 selectedPersona.GetComponent<CurrentSelected>().description.GetComponent<Text>().text = description;
                 break;
         }
+    }
+    public void SelectNextSection() { 
+        
     }
 }

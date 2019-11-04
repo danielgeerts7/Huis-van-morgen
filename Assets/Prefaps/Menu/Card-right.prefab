@@ -242,6 +242,7 @@ MonoBehaviour:
   title: {fileID: 4680411794311906423}
   image: {fileID: 4680411794549615487}
   button: {fileID: 4680411795221537523}
+  cardtype: 0
 --- !u!1 &4680411795221537422
 GameObject:
   m_ObjectHideFlags: 0
