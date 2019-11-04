@@ -9,37 +9,26 @@ public class ConfigController : MonoBehaviour
     public GameObject scenarioConfig;
     public GameObject personaConfig;
 
-    private List<House> houses = new List<House>(8);
-    private List<Scenario> scenarios = new List<Scenario>(8);
-    private List<Persona> personas = new List<Persona>(8);
+    private House currentSelectedHouse;
+    private Scenario currentSelectedScenario;
+    private Persona currentSelectedPersona;
 
     void Start()
     {
-        foreach (House h in houseConfig.GetComponents<House>()) {
-            houses.Add(h);
-        }
-        foreach (Scenario s in scenarioConfig.GetComponents<Scenario>())
-        {
-            scenarios.Add(s);
-        }
-        foreach (Persona p in personaConfig.GetComponents<Persona>())
-        {
-            personas.Add(p);
-        }
     }
 
     public List<House> GetHouses() {
-        return houses;
+        return new List<House>(houseConfig.GetComponents<House>());
     }
 
     public List<Scenario> GetScenarios()
     {
-        return scenarios;
+        return new List<Scenario>(scenarioConfig.GetComponents<Scenario>());
     }
 
     public List<Persona> GetPersonas()
     {
-        return personas;
+        return new List<Persona>(personaConfig.GetComponents<Persona>());
     }
 
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuController : MonoBehaviour
+public class CurvedMenuController : MonoBehaviour
 {
     // Panel
     public GameObject northSpawnpoint;
@@ -45,6 +45,7 @@ public class MenuController : MonoBehaviour
         int count = 0;
 
         foreach (Scenario s in config.GetScenarios()) {
+
             if (count < 7)
             {
                 GameObject card;
@@ -56,11 +57,14 @@ public class MenuController : MonoBehaviour
                 {
                     card = GameObject.Instantiate(rightCardPrefab, CardSpawnpoints[count].transform);
                 }
-                count++;
-                card.GetComponent<MenuCard>().title.text = s.title;
-                card.GetComponent<MenuCard>().image.sprite = s.image;
+                MenuCard cardcomponent = card.GetComponent<MenuCard>();
+                cardcomponent.title.text = s.title;
+                cardcomponent.image.sprite = s.image;
+                cardcomponent.cardtype = MenuCard.CardType.SCENARIO;
 
-                Debug.Log("Cards title: " + s.title);
+                Debug.LogWarning("Loaded card title: " + s.title);
+
+                count++;
             }
         }
     }
