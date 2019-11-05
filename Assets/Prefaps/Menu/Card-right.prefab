@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 200, y: 30}
+  m_SizeDelta: {x: 275, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4680411794311906422
 CanvasRenderer:
@@ -243,6 +243,7 @@ MonoBehaviour:
   image: {fileID: 4680411794549615487}
   button: {fileID: 4680411795221537523}
   cardtype: 0
+  playerMenuController: {fileID: 0}
 --- !u!1 &4680411795221537422
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +408,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4680411795654092096
 CanvasRenderer:

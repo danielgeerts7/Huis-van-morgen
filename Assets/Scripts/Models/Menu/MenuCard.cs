@@ -13,20 +13,17 @@ public class MenuCard : MonoBehaviour
     public enum CardType { HOUSE, SCENARIO, PERSONA };
     public CardType cardtype;
 
-    // Start is called before the first frame update
-    void Start()
+    public PlayerMenuController playerMenuController;
+
+
+    private void Start()
     {
-        
+        button.GetComponentInChildren<Text>().text = "Selecteer " + title.text;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void SelectCard()
     {
-        GameObject plyr = GameObject.FindGameObjectWithTag("Player");
-        plyr.GetComponent<PlayerMenuController>().SelectCard(cardtype, image.sprite, title.text);
+        playerMenuController = GameObject.FindObjectOfType<PlayerMenuController>();
+        playerMenuController.SelectCard(cardtype, image.sprite, title.text);
     }
 }

@@ -239,6 +239,7 @@ MonoBehaviour:
     op bezoek.   Door een auto-ongeluk tien jaar geleden heeft ze veel last van rugklachten.
     Hierdoor kan ze moeilijk bewegen, wat haar beperkt in haar dagelijkse bezigheden.
     Voor lange afstanden heeft ze een rollator, maar binnenshuis kan ze nog zelf rondlopen. '
+  mugshot: {fileID: 21300000, guid: 4a91d88387abc644eac4e08c43717cfc, type: 3}
   sex: 1
 --- !u!114 &44434691
 MonoBehaviour:
@@ -259,6 +260,7 @@ MonoBehaviour:
     na het overlijden van zijn vrouw. Zijn twee kinderen wonen in Amsterdam. Zij kunnen
     dus niet altijd langskomen, maar komen vaak op visite.   Zijn zicht is sinds de
     laatste jaren flink achteruit gegaan. '
+  mugshot: {fileID: 21300000, guid: 4a91d88387abc644eac4e08c43717cfc, type: 3}
   sex: 0
 --- !u!114 &44434692
 MonoBehaviour:
@@ -280,6 +282,7 @@ MonoBehaviour:
     kolenmijnen in het zuiden van het land gewerkt. Daarna heeft hij veel in fabrieken
     gewerkt.   Door zijn werk in de mijnbouw en de fabrieken heeft Johan gehoorbeschadiging
     opgelopen. Hierdoor heeft hij nu moeite om dingen duidelijk te horen. '
+  mugshot: {fileID: 21300000, guid: 4a91d88387abc644eac4e08c43717cfc, type: 3}
   sex: 0
 --- !u!1 &92883554
 GameObject:
@@ -903,36 +906,6 @@ PrefabInstance:
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5997488407897177818, guid: ce816f2e6abb0504092c23ed9b970dfd,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5997488407897177818, guid: ce816f2e6abb0504092c23ed9b970dfd,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6729540542592798753, guid: ce816f2e6abb0504092c23ed9b970dfd,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6729540542592798753, guid: ce816f2e6abb0504092c23ed9b970dfd,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2764355644861886984, guid: ce816f2e6abb0504092c23ed9b970dfd,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2764355644861886984, guid: ce816f2e6abb0504092c23ed9b970dfd,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
@@ -1877,7 +1850,7 @@ MonoBehaviour:
     type: 3}
   rightCardPrefab: {fileID: 4680411794879276434, guid: 49743701d33686645ba2021c5c900c99,
     type: 3}
-  ConfigController: {fileID: 1329999114}
+  configController: {fileID: 0}
 --- !u!1 &1480588270
 GameObject:
   m_ObjectHideFlags: 0

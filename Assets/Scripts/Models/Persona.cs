@@ -9,7 +9,12 @@ public class Persona : MonoBehaviour
     public string lastName;
     public string age;
     public string bio;
+    public Sprite mugshot;
     public enum Sex { Man, Woman };
     public Sex sex;
+
+    public string getFullName() {
+        return firstName + " " + lastName;
+    }
 
 }
