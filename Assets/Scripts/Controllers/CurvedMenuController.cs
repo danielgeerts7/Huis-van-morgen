@@ -76,9 +76,7 @@ public class CurvedMenuController : MonoBehaviour
                     card = GameObject.Instantiate(rightCardPrefab, CardSpawnpoints[count].transform);
                 }
                 cardCopies.Add(card);
-                MenuCard cardcomponent = card.GetComponent<MenuCard>();
-                cardcomponent.title.text = h.houseName;
-                cardcomponent.cardtype = MenuCard.CardType.HOUSE;
+                card.GetComponent<MenuCard>().FillMenuCard(MenuCard.CardType.HOUSE, h.houseName, h.featuredImage);
                 count++;
             }
         }
@@ -104,10 +102,7 @@ public class CurvedMenuController : MonoBehaviour
                     card = GameObject.Instantiate(rightCardPrefab, CardSpawnpoints[count].transform);
                 }
                 cardCopies.Add(card);
-                MenuCard cardcomponent = card.GetComponent<MenuCard>();
-                cardcomponent.title.text = s.title;
-                cardcomponent.image.sprite = s.image;
-                cardcomponent.cardtype = MenuCard.CardType.SCENARIO;
+                card.GetComponent<MenuCard>().FillMenuCard(MenuCard.CardType.SCENARIO, s.title, s.featuredImage);
                 count++;
             }
         }
@@ -134,10 +129,7 @@ public class CurvedMenuController : MonoBehaviour
                     card = GameObject.Instantiate(rightCardPrefab, CardSpawnpoints[count].transform);
                 }
                 cardCopies.Add(card);
-                MenuCard cardcomponent = card.GetComponent<MenuCard>();
-                cardcomponent.title.text = p.getFullName();
-                cardcomponent.image.sprite = p.mugshot;
-                cardcomponent.cardtype = MenuCard.CardType.PERSONA;
+                card.GetComponent<MenuCard>().FillMenuCard(MenuCard.CardType.PERSONA, p.getFullName(), p.featuredImage);
                 count++;
             }
         }

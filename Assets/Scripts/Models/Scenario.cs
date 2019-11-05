@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Scenario : MonoBehaviour
 {
-
     public string title;
-    public Sprite image;
+    public Sprite featuredImage;
     public List<int> steps;
-
 }

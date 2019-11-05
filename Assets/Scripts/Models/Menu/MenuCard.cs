@@ -26,4 +26,11 @@ public class MenuCard : MonoBehaviour
         playerMenuController = GameObject.FindObjectOfType<PlayerMenuController>();
         playerMenuController.SelectCard(cardtype, image.sprite, title.text);
     }
+
+    public void FillMenuCard(CardType type, string text, Sprite sprite)
+    {
+        this.cardtype = type;
+        this.title.text = text;
+        this.image.sprite = sprite;
+    }
 }

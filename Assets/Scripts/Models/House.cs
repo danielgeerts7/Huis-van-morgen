@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
-
     public string houseName;
-    public GameObject housePrefab;
-
+    public Sprite featuredImage;
 }
