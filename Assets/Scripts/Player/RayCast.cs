@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class RayCast : MonoBehaviour
 {
     public float rayLength;
-
+    public Image image;
     private RaycastHit vision;
     private Interactable currentSelection;
 
@@ -20,8 +20,12 @@ public class RayCast : MonoBehaviour
         {
             if (vision.collider.tag.Equals("Interactable"))
             {
+
                 // Check if Interactable
                 bool succes = vision.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
+
+                //set 
+                image.color = Color.green;
                 //Debug.Log("Succes!");
                 if (succes)
                 {
@@ -42,6 +46,7 @@ public class RayCast : MonoBehaviour
                 {
                     Debug.LogError(vision.collider.name + " has an Interactable tag, but does not contain an Interactable component");
                     currentSelection = null;
+                    image.color = Color.red;
                 }
             }
             else
@@ -50,6 +55,7 @@ public class RayCast : MonoBehaviour
                 {
                     currentSelection.Deselect();
                     currentSelection = null;
+                    image.color = Color.red;
                 }
             }
         }
@@ -57,6 +63,7 @@ public class RayCast : MonoBehaviour
         {
             currentSelection.Deselect();
             currentSelection = null;
+            image.color = Color.red;
         }
 
         if (currentSelection && Input.GetKeyDown(KeyCode.E)) {
