@@ -46,7 +46,7 @@ public class PlayerMenuController : MonoBehaviour
 
     public void StartSimulation()
     {
-        SceneManager.LoadScene("Lights");
+        SceneManager.LoadScene("DemoScene");
     }
 
     public void ResetSelectionCache() {

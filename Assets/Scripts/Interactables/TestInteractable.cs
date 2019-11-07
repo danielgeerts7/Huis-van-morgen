@@ -17,7 +17,7 @@ public class TestInteractable : Interactable
         startColor = renderer.material.color;
         Debug.Log(startColor);
     }
-    public override void Activate()
+    public override void OnActivate()
     {
         if (active)
         {

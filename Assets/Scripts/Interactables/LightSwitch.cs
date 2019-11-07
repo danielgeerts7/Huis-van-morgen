@@ -23,7 +23,7 @@ public class LightSwitch : Interactable
         //throw new System.NotImplementedException();
     }
 
-    public override void Activate()
+    public override void OnActivate()
     {
         lightcontroller.Switch();
     }

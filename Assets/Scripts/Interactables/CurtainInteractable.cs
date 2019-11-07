@@ -14,10 +14,16 @@ public class CurtainInteractable : Interactable
 
     void Start()
     {
+        if (active)
+        {
+            leftCurtain.GetComponent<Animator>().Play("Open Curtain");
+            rightCurtain.GetComponent<Animator>().Play("Open Curtain");
+        }
+
         startColor = leftCurtain.GetComponent<MeshRenderer>().material.color;
         Debug.Log(startColor);
     }
-    public override void Activate()
+    public override void OnActivate()
     {
         if (active)
         {
@@ -51,7 +57,7 @@ public class CurtainInteractable : Interactable
 
     private void SetColor(Color color)
     {
-        leftCurtain.GetComponent<MeshRenderer>().material.color = color;
-        rightCurtain.GetComponent<MeshRenderer>().material.color = color;
+        //leftCurtain.GetComponent<MeshRenderer>().material.color = color;
+        //rightCurtain.GetComponent<MeshRenderer>().material.color = color;
     }
 }

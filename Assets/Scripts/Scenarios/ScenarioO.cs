@@ -54,5 +54,8 @@ public class ScenarioO : MonoBehaviour
         }
     }
 
-
+    public string GetStepText(int index)
+    {
+        return StepsList[index].stepDescription;
+    }
 }

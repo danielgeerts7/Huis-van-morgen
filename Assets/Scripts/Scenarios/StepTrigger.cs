@@ -28,7 +28,7 @@ public class StepTrigger : MonoBehaviour
                 isActivated = true;
                 renderer.material.color = Color.yellow;
             }
-        } 
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,15 +42,18 @@ public class StepTrigger : MonoBehaviour
 
     private void SetStep()
     {
-        step = stepObject.GetComponent<Step>();
-        step.GetComponentInParent<Interactable>();
+        if (stepObject != null)
+        {
+            step = stepObject.GetComponent<Step>();
+            step.GetComponentInParent<Interactable>();
+        }
 
         Debug.Log(step);
         if (step == null)
         {
-            Debug.LogError($"The following step does not contain a Step Component: {stepObject.name}");
+            Debug.LogWarning($"The following step does not contain a Step Component: {stepObject.name}");
         }
     }
 
-    
+
 }
