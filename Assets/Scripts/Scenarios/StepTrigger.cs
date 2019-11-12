@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using cakeslice;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,16 +7,15 @@ public class StepTrigger : MonoBehaviour
 {
     public GameObject stepObject;
     private Step step;
-    private Renderer renderer;
     private bool isActivated;
+    public bool highlightActive;
 
     // Start is called before the first frame update
     void Start()
     {
         SetStep();
         isActivated = false;
-        renderer = GetComponent<Renderer>();
-        renderer.material.color = Color.red;
+        SetHighlight(false);
     }
 
     // Update is called once per frame
@@ -25,8 +25,8 @@ public class StepTrigger : MonoBehaviour
         {
             if (step.IsRunning())
             {
+                SetHighlight(true);
                 isActivated = true;
-                renderer.material.color = Color.yellow;
             }
         }
     }
@@ -36,7 +36,7 @@ public class StepTrigger : MonoBehaviour
         step.Activate();
         if (step.IsComplete())
         {
-            renderer.material.color = Color.green;
+            SetHighlight(false);
         }
     }
 
@@ -55,5 +55,14 @@ public class StepTrigger : MonoBehaviour
         }
     }
 
-
+    private void SetHighlight(bool state)
+    {
+        if (highlightActive)
+        {
+            GetComponentInParent<Outline>().enabled = state;
+        } else
+        {
+            GetComponentInParent<Outline>().enabled = false;
+        }
+    }
 }

@@ -11,6 +11,7 @@ public class ScenarioController : MonoBehaviour
     private bool running = false;
     public GameObject stepText;
     private float startTime;
+    public float introTime = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,17 +24,15 @@ public class ScenarioController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!running && startTime < Time.time - 5f)
+        if (!running && startTime < Time.time - introTime)
         {
             Debug.Log($"StartTime: {startTime}");
             running = true;
             NextStep();
         }
 
-
         if (running)
         {
-           
             // Check if step is completed
             if (scenario.StepCompleted(currentStep))
             {

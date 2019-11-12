@@ -10,13 +10,6 @@ public class TestInteractable : Interactable
     public Color highlightColor;
     public Color activeColor;
 
-    public void Start()
-    {
-        GetComponentInParent<Outline>().enabled = false;
-        Renderer renderer = GetComponentInParent<Renderer>();
-        startColor = renderer.material.color;
-        Debug.Log(startColor);
-    }
     public override void OnActivate()
     {
         if (active)
@@ -33,16 +26,16 @@ public class TestInteractable : Interactable
         }
     }
 
-    public override void Deselect()
-    {
-        //if (!active) SetColor(startColor);
-        GetComponentInParent<Outline>().enabled = false;
-    }
-
-    public override void Select()
+    public override void OnSelect()
     {
         //if (!active) SetColor(highlightColor);
         GetComponentInParent<Outline>().enabled = true;
+    }
+
+    public override void OnDeselect()
+    {
+        //if (!active) SetColor(startColor);
+        GetComponentInParent<Outline>().enabled = false;
     }
 
     private void SetColor(Color color)
@@ -50,8 +43,15 @@ public class TestInteractable : Interactable
         Renderer renderer = GetComponentInParent<Renderer>();
         renderer.material.color = color;
     }
+    public override void OnStart()
+    {
+        GetComponentInParent<Outline>().enabled = false;
+        Renderer renderer = GetComponentInParent<Renderer>();
+        startColor = renderer.material.color;
+        Debug.Log(startColor);
+    }
 
-    public void Update()
+    public override void OnUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {

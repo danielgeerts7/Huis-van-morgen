@@ -8,6 +8,8 @@ public class RayCast : MonoBehaviour
     public Image image;
     private RaycastHit vision;
     private Interactable currentSelection;
+    public Color crosshairDefaultColor = Color.white;
+    public Color crosshairSelectColor = Color.green;
 
     // Update is called once per frame
     void Update()
@@ -25,7 +27,7 @@ public class RayCast : MonoBehaviour
                 bool succes = vision.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
 
                 //set 
-                image.color = Color.green;
+                image.color = crosshairSelectColor;
                 //Debug.Log("Succes!");
                 if (succes)
                 {
@@ -46,7 +48,7 @@ public class RayCast : MonoBehaviour
                 {
                     Debug.LogError(vision.collider.name + " has an Interactable tag, but does not contain an Interactable component");
                     currentSelection = null;
-                    image.color = Color.red;
+                    image.color = crosshairDefaultColor;
                 }
             }
             else
@@ -55,7 +57,7 @@ public class RayCast : MonoBehaviour
                 {
                     currentSelection.Deselect();
                     currentSelection = null;
-                    image.color = Color.red;
+                    image.color = crosshairDefaultColor;
                 }
             }
         }
@@ -63,7 +65,7 @@ public class RayCast : MonoBehaviour
         {
             currentSelection.Deselect();
             currentSelection = null;
-            image.color = Color.red;
+            image.color = crosshairDefaultColor;
         }
 
         if (currentSelection && Input.GetKeyDown(KeyCode.E)) {

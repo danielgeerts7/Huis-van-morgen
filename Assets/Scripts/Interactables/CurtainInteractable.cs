@@ -12,17 +12,7 @@ public class CurtainInteractable : Interactable
     public GameObject leftCurtain;
     public GameObject rightCurtain;
 
-    void Start()
-    {
-        if (active)
-        {
-            leftCurtain.GetComponent<Animator>().Play("Open Curtain");
-            rightCurtain.GetComponent<Animator>().Play("Open Curtain");
-        }
 
-        startColor = leftCurtain.GetComponent<MeshRenderer>().material.color;
-        Debug.Log(startColor);
-    }
     public override void OnActivate()
     {
         if (active)
@@ -45,12 +35,12 @@ public class CurtainInteractable : Interactable
         }
     }
 
-    public override void Deselect()
+    public override void OnDeselect()
     {
         if (!active) SetColor(startColor);
     }
 
-    public override void Select()
+    public override void OnSelect()
     {
         if (!active) SetColor(highlightColor);
     }
@@ -59,5 +49,22 @@ public class CurtainInteractable : Interactable
     {
         //leftCurtain.GetComponent<MeshRenderer>().material.color = color;
         //rightCurtain.GetComponent<MeshRenderer>().material.color = color;
+    }
+
+    public override void OnUpdate()
+    {
+        
+    }
+
+    public override void OnStart()
+    {
+        if (active)
+        {
+            leftCurtain.GetComponent<Animator>().Play("Open Curtain");
+            rightCurtain.GetComponent<Animator>().Play("Open Curtain");
+        }
+
+        startColor = leftCurtain.GetComponent<MeshRenderer>().material.color;
+        Debug.Log(startColor);
     }
 }

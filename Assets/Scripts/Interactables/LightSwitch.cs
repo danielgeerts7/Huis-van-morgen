@@ -8,17 +8,22 @@ public class LightSwitch : Interactable
     private LightController lightcontroller;
 
     // Start is called before the first frame update
-    public void Start()
+    public override void OnStart()
     {
         lightcontroller = lightControllerObject.GetComponent<LightController>();
     }
 
-    public override void Select()
+    public override void OnUpdate()
+    {
+        // Gets called on update
+    }
+
+    public override void OnSelect()
     {
         //throw new System.NotImplementedException();
     }
 
-    public override void Deselect()
+    public override void OnDeselect()
     {
         //throw new System.NotImplementedException();
     }
@@ -28,7 +33,5 @@ public class LightSwitch : Interactable
         lightcontroller.Switch();
     }
 
-
-
-
+    
 }
