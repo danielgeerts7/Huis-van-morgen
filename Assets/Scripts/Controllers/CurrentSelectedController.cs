@@ -47,7 +47,8 @@ public class CurrentSelectedController : MonoBehaviour
 
     public void StartSimulation()
     {
-        SceneManager.LoadScene("DemoScene");
+        string loadHouse = GameObject.FindObjectOfType<ConfigController>().GetSelectedHouse().houseName;
+        SceneManager.LoadScene(loadHouse);
     }
 
     public void ResetSelectionCache() {
