@@ -2,47 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/** 
+ * Generates curved VR menu
+ * Spawns the vr cards on right position
+ *
+ */
 public class CurvedMenuController : MonoBehaviour
 {
-    // Panel
-    public GameObject northSpawnpoint;
-    public GameObject southSpawnpoint;
-    public GameObject eastSpawnpoint;
-    public GameObject westSpawnpoint;
-
-    public GameObject panelPrefab;
-
     // Cards
-    public GameObject leftCardPrefab;
-    public GameObject rightCardPrefab;
+    public GameObject houseCardPrefab;
+    public GameObject scenarioCardPrefab;
+    public GameObject personaCardPrefab;
+
+
+    public List<Transform> CardSpawnpoints;
+
     private List<GameObject> cardCopies = new List<GameObject>();
-    List<Transform> CardSpawnpoints = new List<Transform>();
 
     // Config controller
-    public ConfigController configController;
+    private ConfigController configController;
 
     // Start is called before the first frame update
     void Start()
     {
         configController = GameObject.FindObjectOfType<ConfigController>();
-
-        List<GameObject> panels = new List<GameObject> ();
-        GameObject north = GameObject.Instantiate(panelPrefab, northSpawnpoint.transform);
-        GameObject east = GameObject.Instantiate(panelPrefab, eastSpawnpoint.transform);
-        GameObject south = GameObject.Instantiate(panelPrefab, southSpawnpoint.transform);
-        GameObject west = GameObject.Instantiate(panelPrefab, westSpawnpoint.transform);
-
-        panels.Add(north);
-        panels.Add(east);
-        panels.Add(south);
-        panels.Add(west);
-
-        foreach (GameObject obj in panels) {
-            obj.SetActive(true);
-            CardSpawnpoints.Add(obj.GetComponent<MenuPanel>().leftCard);
-            CardSpawnpoints.Add(obj.GetComponent<MenuPanel>().rightCard);
-        }
-
         LoadHouseView();
     }
 
@@ -53,30 +37,17 @@ public class CurvedMenuController : MonoBehaviour
         cardCopies.Clear();
     }
 
-    public void LoadHouseView()
-    {
+    public void LoadHouseView() {
         ClearView();
-
         int count = 0;
-
-        foreach (House h in configController.GetHouses())
+        foreach (House house in configController.GetHouses())
         {
-
             if (count < 7)
             {
-                GameObject card;
-
+                GameObject card = GameObject.Instantiate(houseCardPrefab, CardSpawnpoints[count].transform);
                 //GameObject house = GameObject.Instantiate(h.housePrefab, CardSpawnpoints[count].transform);
-                if (count % 2 == 0)
-                {
-                    card = GameObject.Instantiate(leftCardPrefab, CardSpawnpoints[count].transform);
-                }
-                else
-                {
-                    card = GameObject.Instantiate(rightCardPrefab, CardSpawnpoints[count].transform);
-                }
                 cardCopies.Add(card);
-                card.GetComponent<MenuCard>().FillMenuCard(MenuCard.CardType.HOUSE, h.houseName, h.featuredImage);
+                card.GetComponent<HouseCard>().FillHouseCard(house);
                 count++;
             }
         }
@@ -84,52 +55,25 @@ public class CurvedMenuController : MonoBehaviour
 
     public void LoadScenarioView() {
         ClearView();
-
         int count = 0;
-
-        foreach (Scenario s in configController.GetScenarios())
-        {
-
-            if (count < 7)
-            {
-                GameObject card;
-                if (count % 2 == 0)
-                {
-                    card = GameObject.Instantiate(leftCardPrefab, CardSpawnpoints[count].transform);
-                }
-                else
-                {
-                    card = GameObject.Instantiate(rightCardPrefab, CardSpawnpoints[count].transform);
-                }
+        foreach (Scenario scenario in configController.GetScenarios()) {
+            if (count < 7) {
+                GameObject card = GameObject.Instantiate(scenarioCardPrefab, CardSpawnpoints[count].transform);
                 cardCopies.Add(card);
-                card.GetComponent<MenuCard>().FillMenuCard(MenuCard.CardType.SCENARIO, s.title, s.featuredImage);
+                card.GetComponent<ScenarioCard>().FillScenarioCard(scenario);
                 count++;
             }
         }
     }
 
-    public void LoadPersonaView()
-    {
+    public void LoadPersonaView() {
         ClearView();
-
         int count = 0;
-
-        foreach (Persona p in configController.GetPersonas())
-        {
-
-            if (count < 7)
-            {
-                GameObject card;
-                if (count % 2 == 0)
-                {
-                    card = GameObject.Instantiate(leftCardPrefab, CardSpawnpoints[count].transform);
-                }
-                else
-                {
-                    card = GameObject.Instantiate(rightCardPrefab, CardSpawnpoints[count].transform);
-                }
+        foreach (Persona persona in configController.GetPersonas()) {
+            if (count < 7) {
+                GameObject card = GameObject.Instantiate(personaCardPrefab, CardSpawnpoints[count].transform);
                 cardCopies.Add(card);
-                card.GetComponent<MenuCard>().FillMenuCard(MenuCard.CardType.PERSONA, p.getFullName(), p.featuredImage);
+                card.GetComponent<PersonaCard>().FillPersonaCard(persona);
                 count++;
             }
         }

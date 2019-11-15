@@ -7,7 +7,8 @@ public class Persona : MonoBehaviour
     public string firstName;
     public string lastName;
     public string age;
-    public string bio;
+    public string biography;
+    public string[] limitations;
     public Sprite featuredImage;
     public enum Sex { Man, Woman };
     public Sex sex;
