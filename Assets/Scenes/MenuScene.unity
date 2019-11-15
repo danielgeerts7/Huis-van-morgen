@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Scenario 1
-  featuredImage: {fileID: 21300000, guid: e839e6693c344ad40a5952853a891866, type: 3}
+  featuredImage: {fileID: 21300000, guid: adf19f966e0379040bb823cbe5375f3f, type: 3}
   steps: 010000000200000003000000040000000500000006000000
 --- !u!114 &1075925662
 MonoBehaviour:
@@ -1467,7 +1467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Scenario 3
-  featuredImage: {fileID: 21300000, guid: e839e6693c344ad40a5952853a891866, type: 3}
+  featuredImage: {fileID: 21300000, guid: adf19f966e0379040bb823cbe5375f3f, type: 3}
   steps: 010000000200000003000000040000000500000006000000
 --- !u!114 &1075925663
 MonoBehaviour:
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Scenario 2
-  featuredImage: {fileID: 21300000, guid: e839e6693c344ad40a5952853a891866, type: 3}
+  featuredImage: {fileID: 21300000, guid: adf19f966e0379040bb823cbe5375f3f, type: 3}
   steps: 010000000200000003000000040000000500000006000000
 --- !u!224 &1158180674 stripped
 RectTransform:
