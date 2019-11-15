@@ -38,7 +38,7 @@ public class PersonaCard : SuperCard
         string limitations = "";
         foreach (string limit in persona.limitations)
         {
-            limitations += limit + "<br>";
+            limitations += limit + "\n";
         }
         this.personaLimitation.text = limitations;
     }
