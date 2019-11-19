@@ -6,6 +6,8 @@ public class RayCast : MonoBehaviour
 {
     public float rayLength;
     public Image image;
+    public GameObject mobile;
+    private bool mobileActive = false;
     private RaycastHit vision;
     private Interactable currentSelection;
     public Color crosshairDefaultColor = Color.white;
@@ -16,6 +18,19 @@ public class RayCast : MonoBehaviour
     {
         Vector3 origin = this.transform.position;
         Vector3 direction = this.transform.forward * rayLength;
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (mobileActive)
+            {
+                mobile.SetActive(true);
+                mobileActive = !mobileActive;
+            }
+            else{
+                mobile.SetActive(false);
+                mobileActive = !mobileActive;
+                }
+        }
 
         Debug.DrawRay(origin, direction);
         if (Physics.Raycast(origin, direction, out vision, rayLength))

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     PlayerInput characterInput;
     Rigidbody playerBody;
+ 
 
     public Transform groundCheck;
 
