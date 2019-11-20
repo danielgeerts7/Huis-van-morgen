@@ -2,30 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Step : MonoBehaviour
+[System.Serializable]
+public class Step
 {
     public string stepName;
     public string stepDescription;
+    public StepType stepType;
+    public List<GameObject> gameObjects;
+    private List<StepComponent> stepComponents;
+
     private bool isRunning;
     private bool isComplete;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        
-    }
+        foreach (GameObject gameObject in gameObjects)
+        {
+            StepComponent stepComponent;
 
-    // Update is called once per frame
-    void Update()
-    {
+            switch (stepType)
+            {
+                case StepType.ACTIVATE:
+                    stepComponent = gameObject.AddComponent<ActivateStep>();
+                    break;
+                case StepType.CONDITIONAL:
+                    stepComponent = gameObject.AddComponent<ConditionalStep>();
+                    break;
+                default:
+                    stepComponent = null;
+                    break;
+            }
 
+            if (stepComponent)
+                stepComponent.addStep(this);
+        }
     }
 
     public void Run()
     {
         if (isComplete)
         {
-            Debug.LogError($"Attempting to run step \"{stepName}\" while it's already completed");
+            Debug.LogWarning($"Attempting to run step \"{stepName}\" while it's already completed");
         }
 
         isRunning = true;
@@ -33,10 +51,32 @@ public class Step : MonoBehaviour
 
     public void Activate()
     {
-        if (isRunning && !isComplete)
+        switch (stepType)
         {
-            isRunning = false;
-            isComplete = true;
+            case StepType.ACTIVATE:
+                if (isRunning && !isComplete)
+                {
+                    isRunning = false;
+                    isComplete = true;
+                }
+                break;
+            case StepType.CONDITIONAL:
+                bool completed = true;
+                foreach (StepComponent component in stepComponents)
+                {
+                    if (!component.IsComplete())
+                        completed = false;
+                }
+
+                if (completed)
+                {
+                    isRunning = false;
+                    isComplete = true;
+                }
+                break;
+            default:
+                Debug.LogError($"Step type of {this.stepName} not set");
+                break;
         }
     }
 
@@ -49,4 +89,9 @@ public class Step : MonoBehaviour
     {
         return isRunning;
     }
+}
+
+public enum StepType
+{
+    ACTIVATE, CONDITIONAL
 }

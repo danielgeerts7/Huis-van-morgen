@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class StepTrigger : MonoBehaviour
 {
-    public GameObject stepObject;
-    private Step step;
+    public StepComponent step;
     private bool isActivated;
     public bool highlightActive;
 
     // Start is called before the first frame update
     void Start()
     {
-        SetStep();
         isActivated = false;
         SetHighlight(false);
     }
@@ -23,7 +21,10 @@ public class StepTrigger : MonoBehaviour
     {
         if (!isActivated)
         {
-            if (step.IsRunning())
+            if (!step)
+             step = GetComponent<StepComponent>();
+
+            if (step && step.IsRunning())
             {
                 SetHighlight(true);
                 isActivated = true;
@@ -37,21 +38,6 @@ public class StepTrigger : MonoBehaviour
         if (step.IsComplete())
         {
             SetHighlight(false);
-        }
-    }
-
-    private void SetStep()
-    {
-        if (stepObject != null)
-        {
-            step = stepObject.GetComponent<Step>();
-            step.GetComponentInParent<Interactable>();
-        }
-
-        Debug.Log(step);
-        if (step == null)
-        {
-            Debug.LogWarning($"The following step does not contain a Step Component: {stepObject.name}");
         }
     }
 

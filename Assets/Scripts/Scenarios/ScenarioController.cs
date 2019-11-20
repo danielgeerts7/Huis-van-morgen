@@ -1,36 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScenarioController : MonoBehaviour
 {
-    public GameObject scenarioObject;
-    private ScenarioO scenario;
+    public float introTime = 5f; // TODO: delete
+    public ScenarioO scenario;
     private int currentStep = 0;
+    private bool started = false;
     private bool running = false;
     public GameObject stepText;
-    private float startTime;
-    public float introTime = 5f;
+    public GameObject infoText;
+    public GameObject infoButton;
+    private bool finished;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        SetScenario();
+        scenario.Start();
         DoIntro();
-        startTime = Time.time;
+    }
+
+    public void Activate()
+    {
+        if (!finished)
+        {
+            running = true;
+            NextStep();
+        } else
+        {
+            SceneManager.LoadScene("MenuScene");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!running && startTime < Time.time - introTime)
-        {
-            Debug.Log($"StartTime: {startTime}");
-            running = true;
-            NextStep();
-        }
-
         if (running)
         {
             // Check if step is completed
@@ -44,23 +52,35 @@ public class ScenarioController : MonoBehaviour
     }
     private void DoIntro()
     {
-        DisplayText(scenario.GetIntro());
+        DisplayName(scenario.GetIntro());
+        infoText.SetActive(true);
+        infoButton.SetActive(true);
+        DisplayInfo(scenario.GetIntroDescription());
         Debug.Log(scenario.GetIntro());
     }
 
     private void DoOutro()
     {
-        DisplayText(scenario.GetOutro());
+        finished = true;
+        infoText.SetActive(true);
+        infoButton.GetComponentInChildren<Text>().text = "Terug naar menu";
+        infoButton.SetActive(true);
+        float endTime = Time.time;
+        DisplayName($"{scenario.GetOutro()} time: {endTime} seconds");
+        DisplayInfo(scenario.GetOutroDescription());
         Debug.Log(scenario.GetOutro());
 
     }
 
     public void NextStep()
     {
+        infoText.SetActive(false);
+        infoButton.SetActive(false);
+
         if (currentStep < scenario.GetLength())
         {
             Debug.Log($"Starting step {currentStep + 1}");
-            DisplayText(scenario.GetStepText(currentStep));
+            DisplayName(scenario.GetStepText(currentStep));
             scenario.RunStep(currentStep);
         }
         else
@@ -70,13 +90,13 @@ public class ScenarioController : MonoBehaviour
         }
     }
 
-    private void SetScenario()
+    private void DisplayName(string text)
     {
-        scenario = scenarioObject.GetComponent<ScenarioO>();
+        stepText.GetComponentInChildren<Text>().text = text;
     }
 
-    private void DisplayText(string text)
+    private void DisplayInfo(string info)
     {
-        stepText.GetComponent<Text>().text = text;
+        infoText.GetComponentInChildren<Text>().text = info;
     }
 }

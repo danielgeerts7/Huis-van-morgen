@@ -6,10 +6,9 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
     //Step variables
-    public GameObject stepObject;
     public bool highlightOnStep;
     public bool highlightOnSelect;
-    private Step step;
+    private StepComponent step;
     private bool hasStep;
 
     // Highlight, outline variables
@@ -28,10 +27,17 @@ public abstract class Interactable : MonoBehaviour
         InitStep();
         InitOutline();
         OnStart();
+
+        Debug.Log(JsonUtility.ToJson(outline));
     }
 
     public void Update()
     {
+        if (!hasStep)
+        {
+            InitStep();
+        }
+
         if (hasStep && !stepActivated)
         {
             if (step.IsRunning())
@@ -94,16 +100,11 @@ public abstract class Interactable : MonoBehaviour
         // If there is a step object, get the step component from it.
         hasStep = false;
 
-        if (stepObject != null)
+        step = GetComponent<StepComponent>();
+        if (step != null)
         {
-            step = stepObject.GetComponent<Step>();
-            if (step)
-            {
-                hasStep = true;
-            }
+            hasStep = true;
         }
-
-        stepActivated = false;
     }
 
     private void InitOutline()
@@ -128,6 +129,6 @@ public abstract class Interactable : MonoBehaviour
         {
             outline.color = 0;
             outline.enabled = true;
-        } 
+        }
     }
 }

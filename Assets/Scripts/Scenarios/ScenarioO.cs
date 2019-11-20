@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScenarioO : MonoBehaviour
+[System.Serializable]
+public class ScenarioO
 {
-    public string introText;
-    public string outroText;
-    public List<GameObject> StepObjectsList;
-    private List<Step> StepsList;
+    [SerializeField] private string introText;
+    [SerializeField] private string introDescription;
+    [SerializeField] private string outroText;
+    [SerializeField] private string outroDescription;
+    public List<Step> StepsList;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        SetStepsList();
+        foreach (Step step in StepsList)
+            step.Start();
     }
 
     // Update is called once per frame
@@ -25,9 +28,19 @@ public class ScenarioO : MonoBehaviour
         return introText;
     }
 
+    public string GetIntroDescription()
+    {
+        return introDescription;
+    }
+
     public string GetOutro()
     {
         return outroText;
+    }
+    
+    public string GetOutroDescription()
+    {
+        return outroDescription;
     }
 
     public int GetLength()
@@ -43,15 +56,6 @@ public class ScenarioO : MonoBehaviour
     public bool StepCompleted(int index)
     {
         return StepsList[index].IsComplete();
-    }
-
-    private void SetStepsList()
-    {
-        StepsList = new List<Step>();
-        for (int i = 0; i < StepObjectsList.Count; i++)
-        {
-            StepsList.Add(StepObjectsList[i].GetComponent<Step>());
-        }
     }
 
     public string GetStepText(int index)
