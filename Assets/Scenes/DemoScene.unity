@@ -701,6 +701,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 211119371}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &289186143
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 846
+  m_Height: 423
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 1
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &298997549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5364219641836535420, guid: 84a6e2d4dc3d3f64baa361c120f05d17,
@@ -741,8 +776,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 1956952694}
   outlineCamera: {fileID: 1134357230}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 1705018893}
-  extraRenderTexture: {fileID: 1355553317}
+  renderTexture: {fileID: 289186143}
+  extraRenderTexture: {fileID: 1699297145}
 --- !u!1 &301562083
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,10 +812,10 @@ RectTransform:
   m_Father: {fileID: 210716565}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 168}
-  m_SizeDelta: {x: -346, y: -376.9}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -43.5}
+  m_SizeDelta: {x: 500, y: 46.100006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301562085
 MonoBehaviour:
@@ -1943,7 +1978,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 1705018893}
+  m_TargetTexture: {fileID: 289186143}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -2138,41 +2173,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84a6e2d4dc3d3f64baa361c120f05d17, type: 3}
---- !u!84 &1355553317
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 846
-  m_Height: 423
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 1
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!108 &1381823068 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 1237960094931570821, guid: 4184356916c00aa4390070b2ae89af58,
@@ -2521,10 +2521,10 @@ RectTransform:
   m_Father: {fileID: 210716565}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00010872, y: -174}
-  m_SizeDelta: {x: 247.6, y: 60.3}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0.00010872, y: 38}
+  m_SizeDelta: {x: 247.6, y: 60.300003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580209850
 MonoBehaviour:
@@ -2754,7 +2754,7 @@ Transform:
   m_Father: {fileID: 1995621144}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1705018893
+--- !u!84 &1699297145
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3336,7 +3336,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.00018310547, y: -32}
-  m_SizeDelta: {x: -100.8, y: -123.8}
+  m_SizeDelta: {x: -100.79999, y: -123.79999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067357137
 MonoBehaviour:
