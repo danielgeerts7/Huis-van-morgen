@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DomoticaPanel : MonoBehaviour
+public class MobileController : MonoBehaviour
 {
-    public GameObject lightController;
-    public GameObject curtainInteractable;
-
-    public GameObject lightButton;
-    public GameObject curtainButton;
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +15,4 @@ public class DomoticaPanel : MonoBehaviour
     {
         
     }
-
-    private void changeLight()
-    { 
-    }
-
-
 }

@@ -4,21 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-    PlayerInput characterInput;
-    Rigidbody playerBody;
  
 
-    public Transform groundCheck;
 
     public float speed;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        characterInput = GetComponent<PlayerInput>();
-        playerBody = GetComponent<Rigidbody>();
-    }
 
     // Update is called once per frame
     void Update()
