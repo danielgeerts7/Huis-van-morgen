@@ -28,13 +28,11 @@ public class TestInteractable : Interactable
 
     public override void OnSelect()
     {
-        //if (!active) SetColor(highlightColor);
         GetComponentInParent<Outline>().enabled = true;
     }
 
     public override void OnDeselect()
     {
-        //if (!active) SetColor(startColor);
         GetComponentInParent<Outline>().enabled = false;
     }
 

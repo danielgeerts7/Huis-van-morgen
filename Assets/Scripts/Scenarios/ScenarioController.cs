@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ScenarioController : MonoBehaviour
 {
-    public float introTime = 5f; // TODO: delete
+    public bool active;
     public ScenarioO scenario;
     private int currentStep = 0;
     private bool started = false;
@@ -20,19 +20,26 @@ public class ScenarioController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scenario.Start();
-        DoIntro();
+        if (active)
+        {
+            scenario.Start();
+            DoIntro();
+        }
     }
 
     public void Activate()
     {
-        if (!finished)
+        if (active)
         {
-            running = true;
-            NextStep();
-        } else
-        {
-            SceneManager.LoadScene("MenuScene");
+            if (!finished)
+            {
+                running = true;
+                NextStep();
+            }
+            else
+            {
+                SceneManager.LoadScene("MenuScene");
+            }
         }
     }
 
@@ -49,6 +56,7 @@ public class ScenarioController : MonoBehaviour
                 NextStep();
             }
         }
+
     }
     private void DoIntro()
     {
@@ -92,11 +100,14 @@ public class ScenarioController : MonoBehaviour
 
     private void DisplayName(string text)
     {
+        stepText.SetActive(true);
         stepText.GetComponentInChildren<Text>().text = text;
     }
 
     private void DisplayInfo(string info)
     {
+        infoText.SetActive(true);
+        infoButton.SetActive(true);
         infoText.GetComponentInChildren<Text>().text = info;
     }
 }
