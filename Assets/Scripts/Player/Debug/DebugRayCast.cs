@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class RayCast : MonoBehaviour
+public class DebugRayCast : MonoBehaviour
 {
     public float rayLength;
     public Image image;

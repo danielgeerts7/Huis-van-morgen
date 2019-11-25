@@ -14,7 +14,7 @@ public class OculusGoController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        OVRManager.display.displayFrequency = 72.0f;
     }
 
     // Update is called once per frame

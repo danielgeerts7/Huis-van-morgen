@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCamera : MonoBehaviour
+public class DebugPlayerCamera : MonoBehaviour
 {
 
     Vector2 mouseLook;
