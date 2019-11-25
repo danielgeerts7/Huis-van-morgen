@@ -74,7 +74,7 @@ public class ScenarioController : MonoBehaviour
         infoButton.GetComponentInChildren<Text>().text = "Terug naar menu";
         infoButton.SetActive(true);
         float endTime = Time.time;
-        DisplayName($"{scenario.GetOutro()} time: {endTime} seconds");
+        DisplayName(scenario.GetOutro());
         DisplayInfo(scenario.GetOutroDescription());
         Debug.Log(scenario.GetOutro());
 
