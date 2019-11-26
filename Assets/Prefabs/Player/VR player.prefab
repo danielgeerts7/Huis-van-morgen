@@ -3802,6 +3802,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayLength: 10000
+  rayShowLength: 10
+  lineMaterial: {fileID: 2100000, guid: 01a7c7a10be11e8499f20aeb852c1a93, type: 2}
 --- !u!1 &5901518718628080360
 GameObject:
   m_ObjectHideFlags: 0

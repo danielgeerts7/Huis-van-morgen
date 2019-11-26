@@ -283,12 +283,11 @@ MonoBehaviour:
   firstName: Johan
   lastName: van Doorn
   age: 70
-  biography: ' Johan is een 70-jarige man uit Limburg. De afgelopen 20 jaar woont
-    hij in Groningen, samen met zijn vrouw Tineke. In zijn jonge jaren heeft Johan
-    in de kolenmijnen in het zuiden van het land gewerkt. Daarna heeft hij veel in
-    fabrieken gewerkt.   Door zijn werk in de mijnbouw en de fabrieken heeft Johan
-    gehoorbeschadiging opgelopen. Hierdoor heeft hij nu moeite om dingen duidelijk
-    te horen. '
+  biography: 'Johan is een 70-jarige man uit Limburg. De afgelopen 20 jaar woont hij
+    in Groningen, samen met zijn vrouw Tineke. In zijn jonge jaren heeft Johan in
+    de kolenmijnen in het zuiden van het land gewerkt. Daarna heeft hij veel in fabrieken
+    gewerkt.   Door zijn werk in de mijnbouw en de fabrieken heeft Johan gehoorbeschadiging
+    opgelopen. Hierdoor heeft hij nu moeite om dingen duidelijk te horen. '
   limitations:
   - Slechthorend
   featuredImage: {fileID: 21300000, guid: c78d369807d13294aa60a37e1092dc6e, type: 3}
@@ -1194,9 +1193,13 @@ GameObject:
   m_Component:
   - component: {fileID: 875912067}
   - component: {fileID: 875912068}
-  - component: {fileID: 875912069}
   - component: {fileID: 875912070}
+  - component: {fileID: 875912069}
+  - component: {fileID: 875912074}
+  - component: {fileID: 875912073}
+  - component: {fileID: 875912072}
   - component: {fileID: 875912071}
+  - component: {fileID: 875912075}
   m_Layer: 0
   m_Name: HouseConfig
   m_TagString: Untagged
@@ -1244,8 +1247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930496cf8fe0f3e408af03179d98a53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  houseName: Bejaardenwoning
-  featuredImage: {fileID: 21300000, guid: b6a757f6793cb0148a905bea74154284, type: 3}
+  houseName: UI
+  featuredImage: {fileID: 21300000, guid: 7fec51e8a9417e3418e46a3e3403a9fb, type: 3}
 --- !u!114 &875912070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930496cf8fe0f3e408af03179d98a53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  houseName: Eengezinswoning
+  houseName: Room
   featuredImage: {fileID: 21300000, guid: b6a757f6793cb0148a905bea74154284, type: 3}
 --- !u!114 &875912071
 MonoBehaviour:
@@ -1272,8 +1275,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930496cf8fe0f3e408af03179d98a53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  houseName: Daniel
-  featuredImage: {fileID: 21300000, guid: f241ab6632e1cb04698e1686dcdb8981, type: 3}
+  houseName: GearVrControllerTest
+  featuredImage: {fileID: 21300000, guid: 7fec51e8a9417e3418e46a3e3403a9fb, type: 3}
+--- !u!114 &875912072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875912066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930496cf8fe0f3e408af03179d98a53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houseName: ControllerModels
+  featuredImage: {fileID: 21300000, guid: 7fec51e8a9417e3418e46a3e3403a9fb, type: 3}
+--- !u!114 &875912073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875912066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930496cf8fe0f3e408af03179d98a53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houseName: Cubes
+  featuredImage: {fileID: 21300000, guid: 7fec51e8a9417e3418e46a3e3403a9fb, type: 3}
+--- !u!114 &875912074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875912066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930496cf8fe0f3e408af03179d98a53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houseName: Trivial
+  featuredImage: {fileID: 21300000, guid: 7fec51e8a9417e3418e46a3e3403a9fb, type: 3}
+--- !u!114 &875912075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875912066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930496cf8fe0f3e408af03179d98a53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houseName: MRC
+  featuredImage: {fileID: 21300000, guid: 7fec51e8a9417e3418e46a3e3403a9fb, type: 3}
 --- !u!224 &1021759482 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4274261632626248919, guid: aa922abde41574344a5bee00f92ed65d,
@@ -1476,9 +1535,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1075925659}
   - component: {fileID: 1075925660}
-  - component: {fileID: 1075925661}
-  - component: {fileID: 1075925663}
-  - component: {fileID: 1075925662}
   m_Layer: 0
   m_Name: ScenarioConfig
   m_TagString: Untagged
@@ -1515,51 +1571,6 @@ MonoBehaviour:
   title: Scenario 0
   featuredImage: {fileID: 21300000, guid: 874b343cf51efe745b644be33893b09a, type: 3}
   steps: 
---- !u!114 &1075925661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075925658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43457c48bc2c07d469f1ee721dd26213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Scenario 1
-  featuredImage: {fileID: 21300000, guid: adf19f966e0379040bb823cbe5375f3f, type: 3}
-  steps: 010000000200000003000000040000000500000006000000
---- !u!114 &1075925662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075925658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43457c48bc2c07d469f1ee721dd26213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Scenario 3
-  featuredImage: {fileID: 21300000, guid: adf19f966e0379040bb823cbe5375f3f, type: 3}
-  steps: 010000000200000003000000040000000500000006000000
---- !u!114 &1075925663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075925658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43457c48bc2c07d469f1ee721dd26213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Scenario 2
-  featuredImage: {fileID: 21300000, guid: adf19f966e0379040bb823cbe5375f3f, type: 3}
-  steps: 010000000200000003000000040000000500000006000000
 --- !u!224 &1158180674 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4274261632865714353, guid: aa922abde41574344a5bee00f92ed65d,
@@ -1731,6 +1742,10 @@ PrefabInstance:
       propertyPath: lineMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 01a7c7a10be11e8499f20aeb852c1a93, type: 2}
+    - target: {fileID: 562276382, guid: ee562407b0f2b824f92f0ff84a43e192, type: 3}
+      propertyPath: rayShowLength
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee562407b0f2b824f92f0ff84a43e192, type: 3}
 --- !u!4 &1305791056 stripped
