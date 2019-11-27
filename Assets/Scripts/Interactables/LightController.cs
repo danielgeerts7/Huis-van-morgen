@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightController : MonoBehaviour
+public class LightController : DomoticaController
 {
     public List<GameObject> lights;
     // Start is called before the first frame update
