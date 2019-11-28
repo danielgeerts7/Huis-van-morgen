@@ -17,61 +17,101 @@ public class DomoticaController : MonoBehaviour
         domotica.Add("Gordijnen");
     }
 
-    public void TurnOnLightOnRoom(string nameLightController)
+
+    public void SwitchLightOnRoom(LightController liController)
     {
-        Debug.Log(nameLightController);
         foreach (LightController lightController in lightControllers)
         {
-            if(lightController.name == nameLightController)
+            if (lightController == liController)
             {
+                if (!CheckIfLightsOn(lightController))
+                {
+                    lightController.TurnOn();
+                }
+                else
+                {
+                    lightController.TurnOff();
+                }
+            }
+        }
+    }
+    public void SwitchCurtainOnRoom(CurtainController curController)
+    {
+        foreach (CurtainController curtainController in curtainControllers)
+        {
+            if (curtainController == curController)
+            {
+                if (!CheckIfCurtainIsOpen(curtainController))
+                {
+                    curtainController.OpenCurtain();
+                }
+                else
+                {
+                    curtainController.CloseCurtain();
+                }
+            }
+        }
+    }
+
+    public void TurnLightOnRoom(LightController liController)
+    {
+
+        foreach (LightController lightController in lightControllers)
+        {
+            if (lightController == liController)
+            {
+                
                 lightController.TurnOn();
             }
         }
     }
 
-    public void TurnOffLightOnRoom(string nameLightController)
+    public void TurnLightOffRoom(CurtainController curController)
     {
         foreach (LightController lightController in lightControllers)
         {
-            if (lightController.name == nameLightController)
+            if (lightController == curController)
             {
                 lightController.TurnOff();
             }
         }
     }
 
-    public void OpenCurtainOnRoom(string nameCurtainController)
+
+    public void OpenCurtainOnRoom(CurtainController curController)
     {
         foreach (CurtainController curtainController in curtainControllers)
         {
-            if (curtainController.name == nameCurtainController)
+            if (curtainController == curController)
                 curtainController.OpenCurtain();
         }
     }
 
-    public void CloseCurtainOnRoom(string nameCurtainController)
+    public void CloseCurtainOnRoom(CurtainController curController)
     {
         foreach (CurtainController curtainController in curtainControllers)
         {
-            if (curtainController.name == nameCurtainController)
+            if (curtainController == curController)
                 curtainController.CloseCurtain();
         }
     }
 
     public bool CheckIfLightsOn(LightController lightController) 
     {
-        float totalLights = 0.0f;
-        float totalEnabled = 0.0f;
+        float totalLights = 0;
+        float totalEnabled = 0;
         foreach (GameObject light in lightController.lights)
         {
-            totalLights += 1.0f;
-            if (GetComponentInChildren<Light>().enabled == true)
+            totalLights += 1;
+            if (light.GetComponentInChildren<Light>().enabled)
             {
+                Debug.Log("halo2");
                 totalEnabled += 1.0f;
             }
 
         }
-        if (totalEnabled >= Mathf.Ceil(totalLights / 2.0f))
+        Debug.Log(totalLights);
+        if (totalEnabled >= Mathf.Ceil(totalLights / 2))
         {
             return true;
         }

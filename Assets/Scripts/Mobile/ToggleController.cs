@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ToggleController : MonoBehaviour 
 {
-	public  bool isOn;
+	public  bool isOn = false;
 
 	public Color onColorBg;
 	public Color offColorBg;
@@ -40,12 +40,12 @@ public class ToggleController : MonoBehaviour
 		float toggleSizeX = toggle.sizeDelta.x;
 		onPosX = (toggleSizeX / 2) - (handleSize/2) - handleOffset;
 		offPosX = onPosX * -1;
-
-	}
+    }
 
 
 	void Start()
 	{
+
 		if(isOn)
 		{
 			toggleBgImage.color = onColorBg;
@@ -60,6 +60,7 @@ public class ToggleController : MonoBehaviour
 			onIcon.gameObject.SetActive(false);
 			offIcon.gameObject.SetActive(true);
 		}
+        Switching();
 	}
 		
 	void Update()
@@ -75,7 +76,22 @@ public class ToggleController : MonoBehaviour
 		Debug.Log(isOn);
 	}
 
-	public void Switching()
+	public void SwitchButtonToOn()
+    {
+        if (!isOn)
+        {
+            Switching();
+        }
+    }
+    public void SwitchButtonToOff()
+    {
+        if (isOn)
+        {
+            Switching();
+        }
+    }
+
+    public void Switching()
 	{
 		switching = true;
 	}
@@ -86,8 +102,8 @@ public class ToggleController : MonoBehaviour
 	{
 		if(!onIcon.active || !offIcon.active)
 		{
-			onIcon.SetActive(true);
-			offIcon.SetActive(true);
+			onIcon.SetActive(false);
+			offIcon.SetActive(false);
 		}
 		
 		if(toggleStatus)

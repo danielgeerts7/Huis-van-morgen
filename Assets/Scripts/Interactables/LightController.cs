@@ -26,9 +26,6 @@ public class LightController : DomoticaController
 
     public void Switch()
     {
-        for (int i = 0; i < lights.Count; i++)
-        {
-            lights[i].GetComponentInChildren<Light>().enabled = !lights[i].GetComponentInChildren<Light>().enabled;
-        }
+        base.SwitchLightOnRoom(this);
     }
 }
