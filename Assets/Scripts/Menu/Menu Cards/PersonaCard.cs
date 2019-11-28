@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PersonaCard : SuperCard
 {
-    private Persona persona;
+    private PersonaInfo persona;
 
     public Text personaName;
     public Text personaBiography;
@@ -26,7 +26,7 @@ public class PersonaCard : SuperCard
         GameObject.FindObjectOfType<ConfigController>().SetSelectedPersona(persona);
     }
 
-    public void FillPersonaCard(Persona persona)
+    public void FillPersonaCard(PersonaInfo persona)
     {
         this.persona = persona;
 

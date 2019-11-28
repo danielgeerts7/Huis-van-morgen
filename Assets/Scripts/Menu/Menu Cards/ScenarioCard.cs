@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ScenarioCard : SuperCard
 {
-    private Scenario scenario;
+    private ScenarioInfo scenario;
 
     public Text title;
     public Image featuredImg;
@@ -23,7 +23,7 @@ public class ScenarioCard : SuperCard
         GameObject.FindObjectOfType<ConfigController>().SetSelectedScenario(scenario);
     }
 
-    public void FillScenarioCard(Scenario scenario)
+    public void FillScenarioCard(ScenarioInfo scenario)
     {
         this.scenario = scenario;
 

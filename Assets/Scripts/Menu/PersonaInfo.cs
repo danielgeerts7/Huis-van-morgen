@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Persona : MonoBehaviour
+public class PersonaInfo : MonoBehaviour
 {
     public string firstName;
     public string lastName;

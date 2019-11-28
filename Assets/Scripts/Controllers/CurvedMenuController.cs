@@ -40,7 +40,7 @@ public class CurvedMenuController : MonoBehaviour
     public void LoadHouseView() {
         ClearView();
         int count = 0;
-        foreach (House house in configController.GetHouses())
+        foreach (HouseInfo house in configController.GetHouses())
         {
             if (count < 7)
             {
@@ -60,7 +60,7 @@ public class CurvedMenuController : MonoBehaviour
     public void LoadScenarioView() {
         ClearView();
         int count = 0;
-        foreach (Scenario scenario in configController.GetScenarios()) {
+        foreach (ScenarioInfo scenario in configController.GetScenarios()) {
             if (count < 7) {
                 GameObject card = GameObject.Instantiate(scenarioCardPrefab, CardSpawnpoints[count].transform);
                 cardCopies.Add(card);
@@ -73,7 +73,7 @@ public class CurvedMenuController : MonoBehaviour
     public void LoadPersonaView() {
         ClearView();
         int count = 0;
-        foreach (Persona persona in configController.GetPersonas()) {
+        foreach (PersonaInfo persona in configController.GetPersonas()) {
             if (count < 7) {
                 GameObject card = GameObject.Instantiate(personaCardPrefab, CardSpawnpoints[count].transform);
                 cardCopies.Add(card);

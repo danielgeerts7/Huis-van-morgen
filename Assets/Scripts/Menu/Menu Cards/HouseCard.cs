@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HouseCard : SuperCard
 {
-    private House house;
+    private HouseInfo house;
 
     public Text title;
     public Image featuredImg;
@@ -23,7 +23,7 @@ public class HouseCard : SuperCard
         GameObject.FindObjectOfType<ConfigController>().SetSelectedHouse(house);
     }
 
-    public void FillHouseCard(House house)
+    public void FillHouseCard(HouseInfo house)
     {
         this.house = house;
 
