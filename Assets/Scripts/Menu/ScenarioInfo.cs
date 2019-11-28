@@ -1,9 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScenarioInfo : MonoBehaviour
+[Serializable]
+public struct ScenarioInfo
 {
+    public int ID;
     public string title;
-    public Sprite featuredImage;
+    public string imagePath;
+    public int[] houseIDs;
 }

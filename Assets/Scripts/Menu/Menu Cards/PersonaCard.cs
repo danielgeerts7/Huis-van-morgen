@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,7 +23,7 @@ public class PersonaCard : SuperCard
     public override void SelectCard()
     {
         CurrentSelectedController currentSelectedController = GameObject.FindObjectOfType<CurrentSelectedController>();
-        currentSelectedController.SelectCard(ConfigController.CardType.PERSONA, persona.featuredImage, persona.getFullName());
+        currentSelectedController.SelectCard(ConfigController.CardType.PERSONA, (Sprite)AssetDatabase.LoadAssetAtPath(persona.mugshotPath, typeof(Sprite)), persona.getFullName());
         GameObject.FindObjectOfType<ConfigController>().SetSelectedPersona(persona);
     }
 
@@ -31,15 +32,15 @@ public class PersonaCard : SuperCard
         this.persona = persona;
 
         this.personaName.text = persona.getFullName();
-        this.personaBiography.text = persona.biography;
-        this.personaAge.text = persona.age;
-        this.personaImage.sprite = persona.featuredImage;
+        //this.personaBiography.text = persona.biography;
+        this.personaAge.text = persona.age.ToString();
+        this.personaImage.sprite = (Sprite)AssetDatabase.LoadAssetAtPath(persona.mugshotPath, typeof(Sprite));
 
         string limitations = "";
-        foreach (string limit in persona.limitations)
+        /*foreach (string limit in persona.limitations)
         {
             limitations += limit + "\n";
-        }
+        }*/
         this.personaLimitation.text = limitations;
     }
 }

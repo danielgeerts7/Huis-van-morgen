@@ -1,0 +1,94 @@
+{
+  "houses": [
+    {
+      "ID": 0,
+      "houseName": "Demo scene",
+      "scene": "DemoScene",
+      "imagePath": "Assets/Sprites/House/Testomgeving.png"
+    },
+    {
+      "ID": 1,
+      "houseName": "Daniels scene",
+      "scene": "Daniel",
+      "imagePath": "Assets/Sprites/House/Daniel"
+    },
+    {
+      "ID": 2,
+      "houseName": "Vakantiewoning",
+      "scene": "Bejaardenwoning",
+      "imagePath": "Assets/Sprites/House/vakantiewoning.jpg"
+    },
+    {
+      "ID": 3,
+      "houseName": "Eengezinswoning",
+      "scene": "Eengezinswoning",
+      "imagePath": "Assets/Sprites/House/eengezinswoning.jpg"
+    }
+  ],
+  "scenarios": [
+    {
+      "ID": 0,
+      "title": "Vrijrondlopen",
+      "imagePath": "Assets/Sprites/Scenario/vrijrondlopen.jpg",
+      "houseIDs": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "ID": 1,
+      "title": "De gevaarlijke trap",
+      "imagePath": "Assets/Sprites/Scenario/gevaarlijke_trap",
+      "houseIDs": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "ID": 2,
+      "title": "Het gezond licht",
+      "imagePath": "Assets/Sprites/Scenario/gezond_licht",
+      "houseIDs": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "ID": 3,
+      "title": "Nachtbezoek",
+      "imagePath": "Assets/Sprites/Scenario/nachtbezoek",
+      "houseIDs": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "personas": [{
+      "BSN": 0,
+      "firstName": "Gerrit",
+      "lastName": "Appelboer",
+      "age": 72,
+	  "mugshotPath" : "Assets/Sprites/Persona/gerrit.jpg"
+    },
+    {
+      "BSN": 1,
+      "firstName": "Karin",
+	  "lastName": "Veenstra",
+      "age": 65,
+	  "mugshotPath" : "Assets/Sprites/Persona/karin.jpg"
+    },{
+      "BSN": 2,
+      "firstName": "Johan",
+	  "lastName": "van Doorn",
+      "age": 70,
+	  "mugshotPath" : "Assets/Sprites/Persona/johan.jpg"
+    }
+  ]
+}

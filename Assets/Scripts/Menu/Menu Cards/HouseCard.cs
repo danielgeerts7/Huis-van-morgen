@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,7 +20,7 @@ public class HouseCard : SuperCard
     public override void SelectCard()
     {
         CurrentSelectedController currentSelectedController = GameObject.FindObjectOfType<CurrentSelectedController>();
-        currentSelectedController.SelectCard(ConfigController.CardType.HOUSE, house.featuredImage, house.houseName);
+        currentSelectedController.SelectCard(ConfigController.CardType.HOUSE, (Sprite)AssetDatabase.LoadAssetAtPath(house.imagePath, typeof(Sprite)), house.houseName);
         GameObject.FindObjectOfType<ConfigController>().SetSelectedHouse(house);
     }
 
@@ -28,6 +29,6 @@ public class HouseCard : SuperCard
         this.house = house;
 
         this.title.text = house.houseName;
-        this.featuredImg.sprite = house.featuredImage;
+        this.featuredImg.sprite = (Sprite)AssetDatabase.LoadAssetAtPath(house.imagePath, typeof(Sprite));
     }
 }

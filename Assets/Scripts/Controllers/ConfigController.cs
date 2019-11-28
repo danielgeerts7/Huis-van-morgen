@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using OVRSimpleJSON;
 
 public class ConfigController : MonoBehaviour
 {
     // Get configs of House, Scenario, Persona
-    public GameObject houseConfig;
-    public GameObject scenarioConfig;
-    public GameObject personaConfig;
+    private JSONNode info;
+
+    public HouseInfo[] houses;
+    public ScenarioInfo[] scenarios;
+    public PersonaInfo[] personas;
 
     private static ConfigController instance;
 
@@ -17,24 +21,40 @@ public class ConfigController : MonoBehaviour
 
     public enum CardType { HOUSE, SCENARIO, PERSONA };
 
+    private void Start()
+    {
+        string path = "Assets/Resources/HuisvanMorgen_info.json";
+
+        //Read the text from directly from the test.txt file
+        StreamReader reader = new StreamReader(path);
+        string json = reader.ReadToEnd();
+        info = JSON.Parse(json);
+
+        houses = JsonHelper.getJsonArray<HouseInfo>(info["houses"].ToString());
+        scenarios = JsonHelper.getJsonArray<ScenarioInfo>(info["scenarios"].ToString());
+        personas = JsonHelper.getJsonArray<PersonaInfo>(info["personas"].ToString());
+
+        reader.Close();
+}
+
     public List<HouseInfo> GetHouses() {
-        return new List<HouseInfo>(houseConfig.GetComponents<HouseInfo>());
+       return new List<HouseInfo>(houses);
     }
 
     public List<ScenarioInfo> GetScenarios()
     {
-        return new List<ScenarioInfo>(scenarioConfig.GetComponents<ScenarioInfo>());
+        return new List<ScenarioInfo>(scenarios);
     }
 
     public List<PersonaInfo> GetPersonas()
     {
-        return new List<PersonaInfo>(personaConfig.GetComponents<PersonaInfo>());
+        return new List<PersonaInfo>(personas);
     }
 
     /*
      * Make this class a singleton
-     * Dont destroy the first loaded object of this type
-     * Do destroy the rest
+     * Dont Destroy the first loaded object of this type
+     * then, Do Destroy the rest
      */
     void Awake()
     {
