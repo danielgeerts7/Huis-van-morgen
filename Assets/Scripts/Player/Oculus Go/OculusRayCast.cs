@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class OculusControllerRayCast : MonoBehaviour
+public class OculusRayCast : MonoBehaviour
 {
-    public float rayLength = 2000;
-    public float rayShowLength = 10;
+    public float raycastLength = 2000;
+    public float lightsaberLength = 5;
+
+    public GameObject pointer;
 
     // Raycast
-    private RaycastHit vision;
+    private RaycastHit hit;
 
     // Interactable
     private Interactable currentSelection;
@@ -20,21 +23,26 @@ public class OculusControllerRayCast : MonoBehaviour
 
     // Line
     public Material lineMaterial;
+    private Color standardLineColor;
     private GameObject myLine;
-    LineRenderer lr;
+    private LineRenderer lr;
 
     private void Start()
     {
-        myLine = new GameObject();
-        myLine.gameObject.transform.parent = DeterminHeadset().transform;
+        myLine = new GameObject("Oculus laser pointer");
         myLine.AddComponent<LineRenderer>();
 
         lr = myLine.GetComponent<LineRenderer>();
+        lr.receiveShadows = false;
+        lr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        lr.useWorldSpace = false;
         lr.material = lineMaterial;
-        lr.startWidth = 0.015f;
-        lr.endWidth = 0.001f;
+        lr.startWidth = 0.008f;
+        lr.endWidth = 0.0f;
 
-        lineMaterial.color = Color.white;
+        standardLineColor = Color.white;
+//        standardLineColor.a = 0.5f;
+        lineMaterial.color = standardLineColor;
     }
 
     // Update is called once per frame
@@ -43,36 +51,51 @@ public class OculusControllerRayCast : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Back))
         {
             SceneManager.LoadScene("MenuScene");
-            return;
-        }
-
-        Vector3 origin = this.transform.position;
-        Vector3 direction = this.transform.forward * rayLength;
-
-        Vector3 linedirection = this.transform.forward * rayShowLength;
-        //Debug.DrawRay(origin, direction);
-
-        //myLine.transform.position = origin;
-        if (lr != null)
-        {
-            lr.SetPosition(0, origin);
-            lr.SetPosition(1, direction);
         }
 
         gazeAtButton = false;
         gazeAtInteractable = false;
 
-        if (Physics.Raycast(origin, direction, out vision, rayLength))
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit raycastHit;
+        Vector3 endPosition = transform.position + (transform.forward * lightsaberLength);
+        if (Physics.Raycast(ray, out raycastHit, lightsaberLength))
         {
-            if (vision.collider != null)
+            endPosition = raycastHit.point;
+        }
+
+        lr.SetPosition(0, transform.position);
+        lr.SetPosition(1, endPosition);
+
+        pointer.SetActive(false);
+
+        Vector3 origin = transform.position;
+        Vector3 direction = transform.forward * raycastLength;
+        if (Physics.Raycast(origin, direction, out hit, raycastLength))
+        {
+            direction = hit.point;
+
+            float distance = Vector3.Distance(origin, direction);
+            pointer.transform.localScale = new Vector3(distance / 75, distance / 75, pointer.transform.localScale.z);
+            Vector3 targetPoint = new Vector3(hit.transform.position.x, transform.position.y, hit.transform.position.z) - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(-targetPoint, Vector3.up);
+            pointer.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+
+
+            if ((hit.transform && hit.transform.GetComponent<Button>()) ||
+                (hit.collider && hit.collider.tag.Equals("Interactable")))
             {
+                pointer.SetActive(true);
+                pointer.transform.position = hit.point;
+            //if (hit.collider.tag.Equals("Interactable") || hit.transform.GetComponent<Button>() != null) {
+                pointer.GetComponent<SpriteRenderer>().color = Color.green;
                 lineMaterial.color = Color.green;
             }
 
-            if (vision.collider.tag.Equals("Interactable"))
+            if (hit.collider.tag.Equals("Interactable"))
             {
                 // Check if isInteractable
-                bool succes = vision.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
+                bool succes = hit.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
                 if (succes)
                 {
                     gazeAtInteractable = true;
@@ -92,10 +115,10 @@ public class OculusControllerRayCast : MonoBehaviour
                     }
                 }
             }
-            else if (vision.transform.GetComponent<Button>() != null)
+            else if (hit.transform.GetComponent<Button>() != null)
             {
                 // Check if isButton
-                bool succes = vision.collider.gameObject.TryGetComponent<Button>(out Button lookAtButton);
+                bool succes = hit.collider.gameObject.TryGetComponent<Button>(out Button lookAtButton);
                 if (succes)
                 {
                     gazeAtButton = true;
@@ -120,13 +143,15 @@ public class OculusControllerRayCast : MonoBehaviour
         if (!gazeAtInteractable && currentSelection)
         {
             currentSelection.Deselect();
-            lineMaterial.color = Color.white;
+            pointer.GetComponent<SpriteRenderer>().color = Color.white;
+            lineMaterial.color = standardLineColor;
         }
 
         if (!gazeAtButton && currentBtn)
         {
             ButtonDeselect();
-            lineMaterial.color = Color.white;
+            pointer.GetComponent<SpriteRenderer>().color = Color.white;
+            lineMaterial.color = standardLineColor;
         }
     }
 
@@ -159,11 +184,13 @@ public class OculusControllerRayCast : MonoBehaviour
         OVRControllerHelper VRhelper = this.gameObject.GetComponent<OVRControllerHelper>();
 
         // Oculus Go Controller
-        if (VRhelper.m_modelOculusGoController.activeSelf) {
+        if (VRhelper.m_modelOculusGoController.activeSelf)
+        {
             return VRhelper.m_modelOculusGoController;
         }
         // Oculus GearVR Controller
-        if (VRhelper.m_modelGearVrController.activeSelf) {
+        if (VRhelper.m_modelGearVrController.activeSelf)
+        {
             return VRhelper.m_modelGearVrController;
         }
         // Oculus Quest/Rift LEFT Controller

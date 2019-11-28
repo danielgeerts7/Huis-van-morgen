@@ -157,6 +157,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5364219641836535420, guid: 84a6e2d4dc3d3f64baa361c120f05d17,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 5364219642128961666, guid: 84a6e2d4dc3d3f64baa361c120f05d17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -226,11 +231,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5364219641836535420, guid: 84a6e2d4dc3d3f64baa361c120f05d17,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerCamera
       objectReference: {fileID: 0}
     - target: {fileID: 446084381, guid: 84a6e2d4dc3d3f64baa361c120f05d17, type: 3}
       propertyPath: m_RenderMode
