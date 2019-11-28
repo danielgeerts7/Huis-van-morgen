@@ -6,7 +6,7 @@ public class DebugPlayerCamera : MonoBehaviour
 {
 
     Vector2 mouseLook;
-    public float sensitivity;
+    public float sensitivity = 2;
     GameObject player;
     // Start is called before the first frame update
     void Start()

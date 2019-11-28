@@ -6,108 +6,105 @@ using UnityEngine.UI;
 
 public class ScenarioController : MonoBehaviour
 {
-    public bool active;
-    public ScenarioO scenario;
-    private int currentStep = 0;
-    private bool started = false;
-    private bool running = false;
-    public GameObject stepText;
-    public GameObject infoText;
-    public GameObject infoButton;
-    private bool finished;
+    // Debug
+    [HideInInspector] public bool scenarioIsActive = true;
+    [HideInInspector] public bool debugMode;
+    [HideInInspector] public int activeScenarioIndex = 0;
 
+    //UI
+    public UIHandler UI;
+
+    // Scenarios
+    public List<Scenario> scenarios;
+    private Scenario scenario;
+
+    private State state;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (active)
-        {
-            scenario.Start();
-            DoIntro();
-        }
-    }
+        state = State.WAITING;
 
-    public void Activate()
-    {
-        if (active)
+        // If Debug Mode is enabled, handle it
+        if (debugMode)
         {
-            if (!finished)
+            if (scenarioIsActive && activeScenarioIndex >= 0 && activeScenarioIndex < scenarios.Count)
             {
-                running = true;
-                NextStep();
+                scenario = scenarios[activeScenarioIndex];
+                state = State.STARTED;
+                UI.DisplayIntro(scenario.introText, scenario.introDescription);             
+                return;
             }
             else
             {
-                SceneManager.LoadScene("MenuScene");
+                return;
             }
         }
+
+        // If debug mode is not enabled:
+        // Find scenario with ID from menu
+        bool scenarioFound = false;
+
+        ConfigController configController = FindObjectOfType<ConfigController>();
+        if (configController != null)
+        {
+            int scenarioID = configController.GetSelectedScenario().ID;
+
+            foreach (Scenario scenario in scenarios)
+            {
+                if (scenario.scenarioID == scenarioID)
+                {
+                    activeScenarioIndex = scenarios.IndexOf(scenario);
+                    scenarioFound = true;
+                    break;
+                }
+            }
+        }
+
+        // If no scenario is found, stop Scenario Controller
+        if (!scenarioFound)
+            return;
+
+        scenario = scenarios[activeScenarioIndex];
+        UI.DisplayIntro(scenario.introText, scenario.introDescription);
+        state = State.STARTED;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (running)
+        if (state == State.RUNNING)
         {
-            // Check if step is completed
-            if (scenario.StepCompleted(currentStep))
+            Debug.Log("Running");
+            if (scenario.StepCompleted())
             {
-                Debug.Log($"Step {currentStep + 1} completed.");
-                currentStep++;
-                NextStep();
+                if (scenario.HasNextStep())
+                {
+                    scenario.NextStep();
+                    UI.DisplayStep(scenario.GetStepDescription());
+                }
+                else
+                {
+                    UI.DisplayOutro(scenario.outroText, scenario.outroDescription);
+                    state = State.COMPLETED;
+                }
             }
         }
-
-    }
-    private void DoIntro()
-    {
-        DisplayName(scenario.GetIntro());
-        infoText.SetActive(true);
-        infoButton.SetActive(true);
-        DisplayInfo(scenario.GetIntroDescription());
-        Debug.Log(scenario.GetIntro());
     }
 
-    private void DoOutro()
+    public void ActivateScenario()
     {
-        finished = true;
-        infoText.SetActive(true);
-        infoButton.GetComponentInChildren<Text>().text = "Terug naar menu";
-        infoButton.SetActive(true);
-        float endTime = Time.time;
-        DisplayName(scenario.GetOutro());
-        DisplayInfo(scenario.GetOutroDescription());
-        Debug.Log(scenario.GetOutro());
-
-    }
-
-    public void NextStep()
-    {
-        infoText.SetActive(false);
-        infoButton.SetActive(false);
-
-        if (currentStep < scenario.GetLength())
+        if (state == State.STARTED)
         {
-            Debug.Log($"Starting step {currentStep + 1}");
-            DisplayName(scenario.GetStepText(currentStep));
-            scenario.RunStep(currentStep);
+            scenario = scenarios[activeScenarioIndex];
+            scenario.Run();
+            state = State.RUNNING;
+
+            UI.DisplayStep(scenario.GetStepDescription());
         }
-        else
+        else if (state == State.COMPLETED)
         {
-            running = false;
-            DoOutro();
+            SceneManager.LoadScene("MenuScene");
         }
-    }
-
-    private void DisplayName(string text)
-    {
-        stepText.SetActive(true);
-        stepText.GetComponentInChildren<Text>().text = text;
-    }
-
-    private void DisplayInfo(string info)
-    {
-        infoText.SetActive(true);
-        infoButton.SetActive(true);
-        infoText.GetComponentInChildren<Text>().text = info;
     }
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConditionalStep : Step
+public class TimedStep : Step
 {
     public override void OnActivate()
     {
-        Update();
+        //throw new System.NotImplementedException();
     }
 
     // Start is called before the first frame update
@@ -18,8 +18,9 @@ public class ConditionalStep : Step
     // Update is called once per frame
     void Update()
     {
-        stepDescription = $"{Time.time}";
-        if (Time.time > 10)
+        if (Time.time > 8)
+        {
             state = State.COMPLETED;
+        }
     }
 }

@@ -2,96 +2,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Step
+public abstract class Step : MonoBehaviour
 {
-    public string stepName;
     public string stepDescription;
-    public StepType stepType;
+    public State state;
     public List<GameObject> gameObjects;
-    private List<StepComponent> stepComponents;
-
-    private bool isRunning;
-    private bool isComplete;
 
     // Start is called before the first frame update
-    public void Start()
+    void Start()
     {
-        foreach (GameObject gameObject in gameObjects)
-        {
-            StepComponent stepComponent;
+        AddToGameObjects();
+        state = State.WAITING;
+    }
 
-            switch (stepType)
-            {
-                case StepType.ACTIVATE:
-                    stepComponent = gameObject.AddComponent<ActivateStep>();
-                    break;
-                case StepType.CONDITIONAL:
-                    stepComponent = gameObject.AddComponent<ConditionalStep>();
-                    break;
-                default:
-                    stepComponent = null;
-                    break;
-            }
-
-            if (stepComponent)
-                stepComponent.addStep(this);
-        }
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     public void Run()
     {
-        if (isComplete)
-        {
-            Debug.LogWarning($"Attempting to run step \"{stepName}\" while it's already completed");
-        }
-
-        isRunning = true;
+        state = State.RUNNING;
     }
+
+    private void AddToGameObjects()
+    {
+        foreach (GameObject go in gameObjects)
+        {
+            Debug.Log("Adding stephandler");
+            // Get StepHandler, add if GameObject has none
+            StepHandler stepHandler = go.GetComponent<StepHandler>();
+
+            if (stepHandler == null)
+                stepHandler = go.AddComponent<StepHandler>();
+
+            stepHandler.AddStep(GetComponent<Step>());
+        }
+    }
+
+    public abstract void OnActivate();
 
     public void Activate()
     {
-        switch (stepType)
-        {
-            case StepType.ACTIVATE:
-                if (isRunning && !isComplete)
-                {
-                    isRunning = false;
-                    isComplete = true;
-                }
-                break;
-            case StepType.CONDITIONAL:
-                bool completed = true;
-                foreach (StepComponent component in stepComponents)
-                {
-                    if (!component.IsComplete())
-                        completed = false;
-                }
-
-                if (completed)
-                {
-                    isRunning = false;
-                    isComplete = true;
-                }
-                break;
-            default:
-                Debug.LogError($"Step type of {this.stepName} not set");
-                break;
-        }
+        OnActivate();
     }
 
-    public bool IsComplete()
+    public State getState()
     {
-        return isComplete;
+        return state;
     }
 
-    public bool IsRunning()
+    public string GetStepDescription()
     {
-        return isRunning;
+        return stepDescription;
     }
-}
-
-public enum StepType
-{
-    ACTIVATE, CONDITIONAL
 }
