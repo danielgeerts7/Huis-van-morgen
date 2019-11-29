@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /** 
  * Generates curved VR menu
@@ -40,21 +42,29 @@ public class CurvedMenuController : MonoBehaviour
     public void LoadHouseView() {
         ClearView();
         int count = 0;
+        Debug.Log("====START====");
+
         foreach (HouseInfo house in configController.GetHouses())
         {
             if (count < 7)
             {
                 GameObject card = GameObject.Instantiate(houseCardPrefab, CardSpawnpoints[count].transform);
-                //GameObject house = GameObject.Instantiate(h.housePrefab, CardSpawnpoints[count].transform);
+                //GameObject houseObj = GameObject.Instantiate(house.prefabPath, CardSpawnpoints[count].transform);
                 cardCopies.Add(card);
                 card.GetComponent<HouseCard>().FillHouseCard(house);
 
-                foreach (Scene s in SceneManager.GetAllScenes()) { 
-                    // TODO: check scene names with house names, if not found then disabled
+                bool hasScene = true;
+                for (int i = 0; i < EditorBuildSettings.scenes.Length; i++) {
+                    //if (EditorBuildSettings.get.scenes[i].ToString().Equals(house.scene)) {
+                        hasScene = true;
+                    //}
                 }
+                card.SetActive(hasScene);
                 count++;
             }
         }
+        Debug.Log("====END====");
+
     }
 
     public void LoadScenarioView() {

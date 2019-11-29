@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3320325110427299807}
   - component: {fileID: 3320325110427299792}
   m_Layer: 0
-  m_Name: currentSelectedCanvas
+  m_Name: Selected Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3320325110427299793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 314fae9a6a577be4ba333e134faf7bf6, type: 3}
+  m_Script: {fileID: 11500000, guid: e2e655f407cff4143a9b80711de9d369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   selectedHouseView: {fileID: 3320325111824904172}

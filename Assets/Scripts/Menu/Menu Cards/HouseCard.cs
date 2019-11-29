@@ -19,7 +19,7 @@ public class HouseCard : SuperCard
 
     public override void SelectCard()
     {
-        CurrentSelectedController currentSelectedController = GameObject.FindObjectOfType<CurrentSelectedController>();
+        SelectionBarController currentSelectedController = GameObject.FindObjectOfType<SelectionBarController>();
         currentSelectedController.SelectCard(ConfigController.CardType.HOUSE, (Sprite)AssetDatabase.LoadAssetAtPath(house.imagePath, typeof(Sprite)), house.houseName);
         GameObject.FindObjectOfType<ConfigController>().SetSelectedHouse(house);
     }

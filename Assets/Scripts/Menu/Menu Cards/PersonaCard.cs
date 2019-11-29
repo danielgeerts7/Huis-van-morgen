@@ -22,7 +22,7 @@ public class PersonaCard : SuperCard
 
     public override void SelectCard()
     {
-        CurrentSelectedController currentSelectedController = GameObject.FindObjectOfType<CurrentSelectedController>();
+        SelectionBarController currentSelectedController = GameObject.FindObjectOfType<SelectionBarController>();
         currentSelectedController.SelectCard(ConfigController.CardType.PERSONA, (Sprite)AssetDatabase.LoadAssetAtPath(persona.mugshotPath, typeof(Sprite)), persona.getFullName());
         GameObject.FindObjectOfType<ConfigController>().SetSelectedPersona(persona);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CurrentSelectedController : MonoBehaviour
+public class SelectionBarController : MonoBehaviour
 {
     public GameObject selectedHouseView;
     public GameObject selectedScenarioView;
@@ -47,8 +47,8 @@ public class CurrentSelectedController : MonoBehaviour
 
     public void StartSimulation()
     {
-        string loadHouse = GameObject.FindObjectOfType<ConfigController>().GetSelectedHouse().houseName;
-        SceneManager.LoadScene(loadHouse);
+        string houseSceneName = GameObject.FindObjectOfType<ConfigController>().GetSelectedHouse().scene;
+        SceneManager.LoadScene(houseSceneName);
     }
 
     public void ResetSelectionCache() {
