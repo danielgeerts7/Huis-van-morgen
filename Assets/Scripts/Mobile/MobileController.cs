@@ -39,7 +39,6 @@ public class MobileController : MonoBehaviour
             panelList.Add(child.gameObject);
         }
 
-
         buttonListMainMenu = new List<GameObject>();
         buttonListLightsMenu = new List<GameObject>();
         buttonListCurtainsMenu = new List<GameObject>();
@@ -51,7 +50,7 @@ public class MobileController : MonoBehaviour
         createButtons(typeof(LightController));
     }
 
-    void update()
+    void Update()
     {
         if (MobileIsActive)
         {
@@ -211,7 +210,6 @@ public class MobileController : MonoBehaviour
         if (s == "Lampen")
         {
             OpenPanel(lightMenuPanel);
-            Debug.Log("yoyoyo");
         }
         if (s == "Gordijnen")
         {

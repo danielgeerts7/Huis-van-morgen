@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ToggleController : MonoBehaviour 
 {
-	public  bool isOn = false;
+	public  bool isOn;
 
 	public Color onColorBg;
 	public Color offColorBg;
@@ -61,6 +61,7 @@ public class ToggleController : MonoBehaviour
 			offIcon.gameObject.SetActive(true);
 		}
         Switching();
+
 	}
 		
 	void Update()
@@ -100,13 +101,18 @@ public class ToggleController : MonoBehaviour
 
 	public void Toggle(bool toggleStatus)
 	{
-		if(!onIcon.active || !offIcon.active)
-		{
-			onIcon.SetActive(false);
-			offIcon.SetActive(false);
-		}
-		
-		if(toggleStatus)
+        if (onIcon.active)
+        {
+            onIcon.SetActive(false);
+            offIcon.SetActive(true);
+        }
+        else if(offIcon.active)
+        {
+            onIcon.SetActive(true);
+            offIcon.SetActive(false);
+        }
+
+        if (toggleStatus)
 		{
 			toggleBgImage.color = SmoothColor(onColorBg, offColorBg);
 			Transparency (onIcon, 1f, 0f);
