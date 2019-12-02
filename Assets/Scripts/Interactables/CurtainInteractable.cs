@@ -53,4 +53,9 @@ public class CurtainInteractable : Interactable
             isOpen = false;
         }
     }
+
+    public override bool isActive()
+    {
+        return isOpen;
+    }
 }

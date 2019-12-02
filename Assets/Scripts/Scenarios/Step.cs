@@ -4,45 +4,40 @@ using UnityEngine;
 
 public abstract class Step : MonoBehaviour
 {
-    public string stepDescription;
-    public State state;
-    public List<GameObject> gameObjects;
+    public string stepName;
+    protected State state;
+
+    public  KeyCode skipKey = KeyCode.P;
+
+    public abstract void OnStart();
+    public abstract void OnUpdate();
+    public abstract void OnActivate();
+    public abstract void OnRun();
 
     // Start is called before the first frame update
     void Start()
     {
-        AddToGameObjects();
         state = State.WAITING;
+        OnStart();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (!(state == State.RUNNING))
+            return;
+
+        ScenarioController scenarioController = FindObjectOfType<ScenarioController>();
+        if (scenarioController.debugMode && Input.GetKeyDown(skipKey))
+            state = State.COMPLETED;
+
+        OnUpdate();
     }
 
     public void Run()
     {
         state = State.RUNNING;
+        OnRun();
     }
-
-    private void AddToGameObjects()
-    {
-        foreach (GameObject go in gameObjects)
-        {
-            Debug.Log("Adding stephandler");
-            // Get StepHandler, add if GameObject has none
-            StepHandler stepHandler = go.GetComponent<StepHandler>();
-
-            if (stepHandler == null)
-                stepHandler = go.AddComponent<StepHandler>();
-
-            stepHandler.AddStep(GetComponent<Step>());
-        }
-    }
-
-    public abstract void OnActivate();
-
     public void Activate()
     {
         OnActivate();
@@ -53,8 +48,12 @@ public abstract class Step : MonoBehaviour
         return state;
     }
 
-    public string GetStepDescription()
+    public string GetStepName()
     {
-        return stepDescription;
+        return stepName;
     }
+
+    
+
+
 }

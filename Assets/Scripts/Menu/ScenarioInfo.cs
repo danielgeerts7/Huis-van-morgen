@@ -6,4 +6,5 @@ public class ScenarioInfo : MonoBehaviour
 {
     public string title;
     public Sprite featuredImage;
+    public int ID;
 }

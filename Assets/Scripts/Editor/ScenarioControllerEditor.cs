@@ -10,12 +10,12 @@ public class ScenarioControllerEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        ScenarioController scenarioController = (ScenarioController)target;
+        ScenarioController sc = (ScenarioController)target;
         DrawDefaultInspector();
 
-        scenarioController.debugMode = EditorGUILayout.BeginToggleGroup("Debug Mode", scenarioController.debugMode);
-        scenarioController.scenarioIsActive = EditorGUILayout.Toggle("Scenario is Active", scenarioController.scenarioIsActive);
-        scenarioController.activeScenarioIndex = EditorGUILayout.IntField("Scenario Index", scenarioController.activeScenarioIndex);
+        sc.debugMode = EditorGUILayout.BeginToggleGroup("Debug Mode", sc.debugMode);
+        sc.scenarioIsActive = EditorGUILayout.Toggle("Scenario is Active", sc.scenarioIsActive);
+        sc.activeScenarioIndex = EditorGUILayout.IntField("Scenario Index", sc.activeScenarioIndex);
         EditorGUILayout.EndToggleGroup();
     }
 }

@@ -6,6 +6,12 @@ public class DoorInteractable : Interactable
 {
     public bool isOpen = false;
     private Animator _animator;
+
+    public override bool isActive()
+    {
+        return isOpen;
+    }
+
     public override void OnActivate()
     {
         if (!isOpen)

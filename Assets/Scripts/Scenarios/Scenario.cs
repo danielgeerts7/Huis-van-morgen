@@ -18,17 +18,9 @@ public class Scenario : MonoBehaviour
     private int activeStepIndex;
     private Step step;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         state = State.WAITING;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void Run()
@@ -44,7 +36,7 @@ public class Scenario : MonoBehaviour
 
     public string GetStepDescription()
     {
-        return steps[activeStepIndex].GetStepDescription();
+        return steps[activeStepIndex].GetStepName();
     }
 
     public bool StepCompleted()

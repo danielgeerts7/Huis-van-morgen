@@ -4,18 +4,39 @@ using UnityEngine;
 
 public class ActivateStep : Step
 {
-    public KeyCode activateKey = KeyCode.P;
+    
+    public List<GameObject> activators;
 
     public override void OnActivate()
     {
         state = State.COMPLETED;
     }
 
-    public void Update()
+    public override void OnRun()
     {
-        if (Input.GetKeyDown(activateKey))
+
+    }
+
+    public override void OnStart()
+    {
+        AddToGameObjects();
+    }
+
+    public override void OnUpdate()
+    {
+
+    }
+
+    private void AddToGameObjects()
+    {
+        foreach (GameObject go in activators)
         {
-            state = State.COMPLETED;
+            StepHandler stepHandler = go.GetComponent<StepHandler>();
+
+            if (stepHandler == null)
+                stepHandler = go.AddComponent<StepHandler>();
+
+            stepHandler.AddStep(GetComponent<Step>());
         }
     }
 }

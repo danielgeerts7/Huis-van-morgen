@@ -163,10 +163,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDescription: Press E
-  state: 0
-  gameObjects: []
-  activateKey: 112
+  stepName: Press P
+  skipKey: 112
+  activators: []
+--- !u!1 &61848036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2434086766134232909, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+    type: 3}
+  m_PrefabInstance: {fileID: 461932884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &97397124
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,10 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDescription: Press D
-  state: 0
-  gameObjects: []
-  activateKey: 100
+  stepName: 
+  skipKey: 112
+  activators: []
 --- !u!1001 &126376227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,6 +225,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 213591514}
     m_Modifications:
+    - target: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
+        type: 3}
+      propertyPath: m_Name
+      value: Curtains (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -276,11 +285,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
-        type: 3}
-      propertyPath: m_Name
-      value: Curtains (4)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dee8fd1f0eb7574590b45afba5b22cc, type: 3}
 --- !u!1 &145786526
@@ -326,10 +330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDescription: Press A
-  state: 0
-  gameObjects: []
-  activateKey: 97
+  stepName: 
+  skipKey: 112
+  activators: []
 --- !u!1001 &208527845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,12 +820,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 299890950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58efb5baddb91904cae677465030db6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 01da07c5ca65869478ba460ca442596c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDescription: Wachtlkskjdflkjs
-  state: 0
-  gameObjects: []
+  stepName: Close the door and curtains
+  skipKey: 112
+  conditions:
+  - gameObject: {fileID: 1138494982}
+    type: 1
+  - gameObject: {fileID: 1344139748}
+    type: 1
+  - gameObject: {fileID: 61848036}
+    type: 1
 --- !u!4 &299890952
 Transform:
   m_ObjectHideFlags: 0
@@ -1165,12 +1174,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &432233093 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4720497215384081955, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
-    type: 3}
-  m_PrefabInstance: {fileID: 461932884}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &461932884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1353,9 +1356,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioID: 3
-  introText: sdf
-  introDescription: sadf
-  outroText: adf
+  introText: Conditional Step
+  introDescription: sadfasdfasdfasdfasdfasdfasfasfasdfasdfasfdasdf
+  outroText: saslkjdfajksdfalksdjflkasjdflkasjfdlkasjdlfkjaslkdjflkasdfjasdf
   outroDescription: asdfasdf
   steps:
   - {fileID: 1669654419}
@@ -1793,10 +1796,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDescription: Press W
-  state: 0
-  gameObjects: []
-  activateKey: 112
+  stepName: Press P
+  skipKey: 112
+  activators: []
 --- !u!1 &766283434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,10 +1888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDescription: Press S
-  state: 0
-  gameObjects: []
-  activateKey: 115
+  stepName: 
+  skipKey: 112
+  activators: []
 --- !u!1 &818707743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,10 +2307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5a779529cafed42a72e343c10c63a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
-  highlightColor: {r: 0, g: 0, b: 0, a: 0}
-  activeColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &990878552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2637,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108421085}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1138494982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2483211925693070969, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+    type: 3}
+  m_PrefabInstance: {fileID: 461932884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1143691085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,10 +2753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5a779529cafed42a72e343c10c63a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 1
-  highlightOnSelect: 1
-  highlightColor: {r: 0, g: 0, b: 0, a: 0}
-  activeColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1340893359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2783,6 +2782,12 @@ MonoBehaviour:
   eraseRenderer: 0
   originalLayer: 0
   originalMaterials: []
+--- !u!1 &1344139748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2483211925340362655, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+    type: 3}
+  m_PrefabInstance: {fileID: 461932884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &1381823068 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 1237960094931570821, guid: 4184356916c00aa4390070b2ae89af58,
@@ -3199,7 +3204,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 366386052}
-        m_MethodName: ActivateScenario
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3445,11 +3450,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDescription: Press Q
-  state: 0
-  gameObjects:
-  - {fileID: 2098975696}
-  activateKey: 112
+  stepName: Open the door
+  skipKey: 112
+  activators:
+  - {fileID: 61848036}
 --- !u!1 &1734440749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,88 +4317,3 @@ MonoBehaviour:
   eraseRenderer: 0
   originalLayer: 0
   originalMaterials: []
---- !u!1 &2098975696 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2056618866012952370, guid: ba4149ff6f446d743983378999e63c0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 208527845}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2123784233
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 432233093}
-    m_Modifications:
-    - target: {fileID: 3821108334638949514, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_Name
-      value: DoorV1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7791467290186450049, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: highlightOnStep
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7791467290186450049, guid: dc9a76360a1d6d7428de514d4312a595,
-        type: 3}
-      propertyPath: highlightOnSelect
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dc9a76360a1d6d7428de514d4312a595, type: 3}

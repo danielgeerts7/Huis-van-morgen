@@ -4,22 +4,39 @@ using UnityEngine;
 
 public class ConditionalStep : Step
 {
+    public List<Condition> conditions;
+
     public override void OnActivate()
     {
-        Update();
+
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public override void OnRun()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnStart()
     {
-        stepDescription = $"{Time.time}";
-        if (Time.time > 10)
+
+    }
+
+    public override void OnUpdate()
+    {
+        if (!(state == State.RUNNING))
+            return;
+
+        bool solved = true;
+        foreach (Condition condition in conditions)
+        {
+            if (!condition.isSolved())
+            {
+                solved = false;
+                break;
+            }
+        }
+
+        if (solved)
             state = State.COMPLETED;
     }
 }

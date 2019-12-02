@@ -8,35 +8,26 @@ public abstract class Interactable : MonoBehaviour
     //Step variables
     public bool highlightOnStep;
     public bool highlightOnSelect;
-    private bool hasStep;
 
     // Highlight, outline variables
     private bool hasOutline;
     private Outline outline;
-    //private bool stepActivated;
 
     public abstract void OnActivate();
     public abstract void OnSelect();
     public abstract void OnDeselect();
     public abstract void OnStart();
     public abstract void OnUpdate();
+    public abstract bool isActive();
 
     public void Start()
     {
-        //InitStep();
         InitOutline();
         OnStart();
-
-        Debug.Log(JsonUtility.ToJson(outline));
     }
 
     public void Update()
     {
-        if (!hasStep)
-        {
-            InitStep();
-        }
-
         //if (hasStep && !stepActivated)
         //{
         //    if (step.IsRunning())
@@ -60,10 +51,9 @@ public abstract class Interactable : MonoBehaviour
     {
         StepHandler stepHandler = GetComponent<StepHandler>();
         if (stepHandler != null)
-        {
             stepHandler.Activate();
-        }
-        
+
+
         //if (hasStep)
         //{
         //    step.Activate();
@@ -94,9 +84,8 @@ public abstract class Interactable : MonoBehaviour
     public void Deselect()
     {
         if (hasOutline && highlightOnSelect)
-        {
             SetOutline(false);
-        }
+
         OnDeselect();
     }
 
