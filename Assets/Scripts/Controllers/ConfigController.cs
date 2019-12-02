@@ -9,27 +9,26 @@ public class ConfigController : MonoBehaviour
     public GameObject scenarioConfig;
     public GameObject personaConfig;
 
-    public static ConfigController instance;
+    private static ConfigController instance;
 
-    private House currHouse;
-    private Scenario currScenario;
-    private Persona currPersona;
-
+    private HouseInfo currHouse;
+    private ScenarioInfo currScenario;
+    private PersonaInfo currPersona;
 
     public enum CardType { HOUSE, SCENARIO, PERSONA };
 
-    public List<House> GetHouses() {
-        return new List<House>(houseConfig.GetComponents<House>());
+    public List<HouseInfo> GetHouses() {
+        return new List<HouseInfo>(houseConfig.GetComponents<HouseInfo>());
     }
 
-    public List<Scenario> GetScenarios()
+    public List<ScenarioInfo> GetScenarios()
     {
-        return new List<Scenario>(scenarioConfig.GetComponents<Scenario>());
+        return new List<ScenarioInfo>(scenarioConfig.GetComponents<ScenarioInfo>());
     }
 
-    public List<Persona> GetPersonas()
+    public List<PersonaInfo> GetPersonas()
     {
-        return new List<Persona>(personaConfig.GetComponents<Persona>());
+        return new List<PersonaInfo>(personaConfig.GetComponents<PersonaInfo>());
     }
 
     /*
@@ -56,17 +55,17 @@ public class ConfigController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SetSelectedHouse(House house)
+    public void SetSelectedHouse(HouseInfo house)
     {
         this.currHouse = house;
     }
 
-    public void SetSelectedScenario(Scenario scenario)
+    public void SetSelectedScenario(ScenarioInfo scenario)
     {
         this.currScenario = scenario;
     }
 
-    public void SetSelectedPersona(Persona persona)
+    public void SetSelectedPersona(PersonaInfo persona)
     {
         this.currPersona = persona;
     }
@@ -74,7 +73,7 @@ public class ConfigController : MonoBehaviour
     /*
      * Return current selected House
      */
-    public House GetSelectedHouse()
+    public HouseInfo GetSelectedHouse()
     {
         return this.currHouse;
     }
@@ -82,7 +81,7 @@ public class ConfigController : MonoBehaviour
     /*
      * Return current selected Scenario
      */
-    public Scenario GetSelectedScenario()
+    public ScenarioInfo GetSelectedScenario()
     {
         return this.currScenario;
     }
@@ -90,7 +89,7 @@ public class ConfigController : MonoBehaviour
     /*
      * Return current selected Persona
      */
-    public Persona GetSelectedPersona()
+    public PersonaInfo GetSelectedPersona()
     {
         return this.currPersona;
     }

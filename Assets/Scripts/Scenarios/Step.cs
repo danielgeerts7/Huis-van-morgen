@@ -2,51 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Step : MonoBehaviour
+public abstract class Step : MonoBehaviour
 {
     public string stepName;
-    public string stepDescription;
-    private bool isRunning;
-    private bool isComplete;
+    protected State state;
+
+    public  KeyCode skipKey = KeyCode.P;
+
+    public abstract void OnStart();
+    public abstract void OnUpdate();
+    public abstract void OnActivate();
+    public abstract void OnRun();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        state = State.WAITING;
+        OnStart();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (!(state == State.RUNNING))
+            return;
 
+        ScenarioController scenarioController = FindObjectOfType<ScenarioController>();
+        if (scenarioController.debugMode && Input.GetKeyDown(skipKey))
+            state = State.COMPLETED;
+
+        OnUpdate();
     }
 
     public void Run()
     {
-        if (isComplete)
-        {
-            Debug.LogError($"Attempting to run step \"{stepName}\" while it's already completed");
-        }
-
-        isRunning = true;
+        state = State.RUNNING;
+        OnRun();
     }
-
     public void Activate()
     {
-        if (isRunning && !isComplete)
-        {
-            isRunning = false;
-            isComplete = true;
-        }
+        OnActivate();
     }
 
-    public bool IsComplete()
+    public State getState()
     {
-        return isComplete;
+        return state;
     }
 
-    public bool IsRunning()
+    public string GetStepName()
     {
-        return isRunning;
+        return stepName;
     }
+
+    
+
+
 }

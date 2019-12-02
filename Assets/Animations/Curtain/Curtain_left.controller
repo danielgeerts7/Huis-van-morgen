@@ -17,7 +17,7 @@ AnimatorStateMachine:
     m_Position: {x: 250, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3370956077425916346}
-    m_Position: {x: 582.7835, y: 208.5567, z: 0}
+    m_Position: {x: 570, y: 160, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions:
@@ -143,7 +143,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Open Curtain
+  m_Name: Close Curtain
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -192,7 +192,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Close Curtain
+  m_Name: Open Curtain
   m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:

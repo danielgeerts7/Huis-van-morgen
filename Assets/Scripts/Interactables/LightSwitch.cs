@@ -33,5 +33,8 @@ public class LightSwitch : Interactable
         lightcontroller.Switch();
     }
 
-    
+    public override bool isActive()
+    {
+        return false;
+    }
 }
