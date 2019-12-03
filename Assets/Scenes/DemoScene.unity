@@ -2692,6 +2692,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobilePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4529520060111158417, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4529520060450640079, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
         type: 3}
       propertyPath: m_LocalPosition.x

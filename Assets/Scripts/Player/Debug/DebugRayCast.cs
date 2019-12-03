@@ -16,6 +16,7 @@ public class DebugRayCast : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
         Vector3 origin = this.transform.position;
         Vector3 direction = this.transform.forward * rayLength;
@@ -24,8 +25,6 @@ public class DebugRayCast : MonoBehaviour
         {
 
             if (mobileActive)
-
-
             {
                 mobileActive = !mobileActive;
                 mobile.SetActive(false);
