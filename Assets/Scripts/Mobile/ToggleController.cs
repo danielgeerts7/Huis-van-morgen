@@ -16,6 +16,7 @@ public class ToggleController : MonoBehaviour
 	public GameObject handle;
 	private RectTransform handleTransform;
 
+
 	private float handleSize;
 	private float onPosX;
 	private float offPosX;
@@ -74,7 +75,6 @@ public class ToggleController : MonoBehaviour
 
 	public void DoYourStaff()
 	{
-		Debug.Log(isOn);
 	}
 
 	public void SwitchButtonToOn()

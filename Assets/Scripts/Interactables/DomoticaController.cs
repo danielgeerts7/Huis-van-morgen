@@ -5,8 +5,8 @@ using UnityEngine;
 public class DomoticaController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public LightController[] lightControllers;
-    public CurtainController[] curtainControllers;
+    private LightController[] lightControllers;
+    private CurtainController[] curtainControllers;
     private List<string> domotica;
     void Awake()    
     {
@@ -105,12 +105,10 @@ public class DomoticaController : MonoBehaviour
             totalLights += 1;
             if (light.GetComponentInChildren<Light>().enabled)
             {
-                Debug.Log("halo2");
                 totalEnabled += 1.0f;
             }
 
         }
-        Debug.Log(totalLights);
         if (totalEnabled >= Mathf.Ceil(totalLights / 2))
         {
             return true;

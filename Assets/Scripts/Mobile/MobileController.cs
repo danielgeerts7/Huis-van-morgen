@@ -17,6 +17,8 @@ public class MobileController : MonoBehaviour
     public GameObject toggleButtonPrefab;
 
     LightController[] lightControllers;
+
+
     CurtainController[] curtainControllers;
 
 
@@ -54,6 +56,7 @@ public class MobileController : MonoBehaviour
     {
         if (MobileIsActive)
         {
+            Debug.Log("hier gaat t fout");
             SetLightButonsToRightState();
             SetCurtainsButonsToRightState();
         }
@@ -61,7 +64,7 @@ public class MobileController : MonoBehaviour
     private void createButtons(System.Type type)
     {
 
-        float x = 42.64f;
+        float x = 47.65f;
         float a = 30.64f;
         if (type == typeof(string))
         {
@@ -72,7 +75,7 @@ public class MobileController : MonoBehaviour
                 int z = i;
                 GameObject butn = Instantiate(buttonPrefab) as GameObject;
                 butn.transform.SetParent(mainMenuPanel.transform, false);
-                butn.transform.localPosition = new Vector3(0, (x -= (a * i)), 0);
+                butn.transform.localPosition = new Vector3(0, (x - (a * z)), 0);
                 butn.GetComponentInChildren<Text>().text = tempDomotica[i];
                 butn.GetComponent<Button>().onClick.AddListener(() => SwitchPanel(tempDomotica[z]));
                 buttonListMainMenu.Add(butn);
@@ -84,12 +87,15 @@ public class MobileController : MonoBehaviour
         {
             lightControllers = new LightController[domoticaController.GetComponent<DomoticaController>().GetListLights().Length];
             lightControllers = domoticaController.GetComponent<DomoticaController>().GetListLights();
+
             for (int i = 0; i < lightControllers.Length; i++)
             {
+
                 int z = i;
                 GameObject butn = Instantiate(toggleButtonPrefab) as GameObject;
                 butn.transform.SetParent(lightMenuPanel.transform, false);
-                butn.transform.localPosition = new Vector3(0, (x -= (a * i)), 0);
+                butn.transform.localPosition = new Vector3(0, (x - (a * i)), 0);
+                Debug.Log(butn.transform.localPosition);
                 butn.transform.parent = lightMenuPanel.transform;
                 butn.GetComponentInChildren<Text>().text = lightControllers[i].name;
 
@@ -115,7 +121,7 @@ public class MobileController : MonoBehaviour
                 int z = i;
                 GameObject butn = Instantiate(toggleButtonPrefab) as GameObject;
                 butn.transform.SetParent(curtainMenuPanel.transform, false);
-                butn.transform.localPosition = new Vector3(0, (x -= (a * i)), 0);
+                butn.transform.localPosition = new Vector3(0, (x - (a * i)), 0);
                 butn.GetComponentInChildren<Text>().text = curtainControllers[i].name;
                 if (butn != null)
                 {

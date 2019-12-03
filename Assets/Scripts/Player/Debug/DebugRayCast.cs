@@ -13,6 +13,7 @@ public class DebugRayCast : MonoBehaviour
     public Color crosshairDefaultColor = Color.white;
     public Color crosshairSelectColor = Color.green;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -21,15 +22,18 @@ public class DebugRayCast : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
+
             if (mobileActive)
+
+
             {
-                mobile.SetActive(true);
                 mobileActive = !mobileActive;
+                mobile.SetActive(false);
             }
             else{
-                mobile.SetActive(false);
                 mobileActive = !mobileActive;
-                }
+                mobile.SetActive(true);
+            }
         }
 
         Debug.DrawRay(origin, direction);

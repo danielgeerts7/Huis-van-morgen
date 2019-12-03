@@ -35,7 +35,7 @@ public class CurtainInteractable : Interactable
         }
     }
 
-    void CurtainOpen() {
+    public void CurtainOpen() {
         if (!isOpen)
         {
             leftCurtain.GetComponent<Animator>().Play("Open Curtain");
@@ -44,7 +44,7 @@ public class CurtainInteractable : Interactable
         }
     }
 
-    void CurtainClose()
+    public void CurtainClose()
     {
         if (isOpen)
         {
