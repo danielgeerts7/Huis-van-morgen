@@ -50,12 +50,22 @@ public class CurvedMenuController : MonoBehaviour
                 cardCopies.Add(card);
                 card.GetComponent<HouseCard>().FillHouseCard(house);
 
-                // todo: disabled buttons that doesnt meet to a scene
-                /*if (SceneManager.GetSceneByName(house.scene).IsValid() == false) {
-                    card.SetActive(false);
-                    card.GetComponentInChildren<Button>().interactable = false;
-                }*/
+                bool showCard = false;
+                foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
+                {
+                    if (S.enabled)
+                    {
+                        string name = S.path.Substring(S.path.LastIndexOf('/') + 1);
+                        name = name.Substring(0, name.Length - 6);
+                        if (name.Equals(house.scene)) {
+                            showCard = true;
+                        }
+                    }
+                }
                 count++;
+
+                card.GetComponentInChildren<Button>().interactable = showCard;
+
             }
         }
     }

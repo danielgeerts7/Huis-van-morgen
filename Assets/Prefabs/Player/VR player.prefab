@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 637663816}
   - component: {fileID: 637663815}
   - component: {fileID: 637663814}
+  - component: {fileID: 562276381}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -102,7 +103,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637663812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1192400146}
@@ -111,7 +112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -38.6}
+  m_AnchoredPosition: {x: 0, y: -75.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &637663816
@@ -204,6 +205,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &562276381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637663812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160, y: 30, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &867098290
 GameObject:
   m_ObjectHideFlags: 0
@@ -4113,7 +4127,7 @@ MonoBehaviour:
   prefabNonSelectPointer: {fileID: 4750740672716238348, guid: 176fbfb1c6242ae4fabd755ee2f0476f,
     type: 3}
   lineMaterial: {fileID: 2100000, guid: 01a7c7a10be11e8499f20aeb852c1a93, type: 2}
-  selectionColor: {r: 0, g: 0, b: 0, a: 0}
+  selectionColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &5901518718628080360
 GameObject:
   m_ObjectHideFlags: 0

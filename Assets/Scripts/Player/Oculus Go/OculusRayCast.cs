@@ -26,7 +26,7 @@ public class OculusRayCast : MonoBehaviour
 
     // Line
     public Material lineMaterial;
-    public Color selectionColor;
+    public Color selectionColor = Color.green;
     private Color standardColor;
     private GameObject myLine;
     private LineRenderer lr;
@@ -111,6 +111,7 @@ public class OculusRayCast : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(-targetPoint, Vector3.up);
             crosshair.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
 
+            // Crosshair color
             lr.startColor = lineMaterial.color = crosshair.GetComponent<SpriteRenderer>().color = selectionColor;
 
             if (hit.collider.tag.Equals("Interactable"))
@@ -147,7 +148,9 @@ public class OculusRayCast : MonoBehaviour
                     if (currentBtn == null)
                     {
                         currentBtn = lookAtButton;
-                        currentBtn.transform.GetComponent<Image>().color = Color.red;
+                        Color newCol = currentBtn.transform.GetComponent<Image>().color;
+                        newCol.a = 0.5f;
+                        currentBtn.transform.GetComponent<Image>().color = newCol;
                     }
                     else if (currentBtn && OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
                     {
