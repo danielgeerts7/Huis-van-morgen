@@ -20,7 +20,7 @@ public class ScenarioCard : SuperCard
     public override void SelectCard()
     {
         SelectionBarController currentSelectedController = GameObject.FindObjectOfType<SelectionBarController>();
-        currentSelectedController.SelectCard(ConfigController.CardType.SCENARIO, (Sprite)AssetDatabase.LoadAssetAtPath(scenario.imagePath, typeof(Sprite)), scenario.title);
+        currentSelectedController.SelectCard(ConfigController.CardType.SCENARIO, Resources.Load<Sprite>(scenario.imagePath), scenario.title);
         GameObject.FindObjectOfType<ConfigController>().SetSelectedScenario(scenario);
     }
 
@@ -29,6 +29,7 @@ public class ScenarioCard : SuperCard
         this.scenario = scenario;
 
         this.title.text = scenario.title;
-        this.featuredImg.sprite = (Sprite)AssetDatabase.LoadAssetAtPath(scenario.imagePath, typeof(Sprite));
+        this.featuredImg.sprite = Resources.Load<Sprite>(scenario.imagePath);
+        this.featuredImg.color = Color.white;
     }
 }

@@ -15,6 +15,9 @@ public class SelectionBarController : MonoBehaviour
 
     private CurvedMenuController curvedController;
 
+    public GameObject loadingscreen;
+    public Image LoadingBar;
+
     private ConfigController.CardType currentTypeToSelect = ConfigController.CardType.HOUSE;
 
     private void Start()
@@ -23,6 +26,8 @@ public class SelectionBarController : MonoBehaviour
 
         startSimulation_btn.SetActive(false);
         resetSelectionView_Btn.SetActive(false);
+
+        loadingscreen.SetActive(false);
     }
 
     public void SelectCard(ConfigController.CardType cardtype, Sprite featuredimg, string description)
@@ -37,18 +42,29 @@ public class SelectionBarController : MonoBehaviour
                 break;
             case (ConfigController.CardType.PERSONA):
                 tempSelected = selectedPersonaView;
-                startSimulation_btn.SetActive(true);
+                StartCoroutine(StartSimulation());
                 break;
         }
-        tempSelected.GetComponent<CurrentSelected>().FillCurrentSelected(featuredimg, description);
+        tempSelected.GetComponent<CurrentSelected>().FillCurrentSelected(featuredimg, description, Color.white);
 
         GoToNextSection();
     }
 
-    public void StartSimulation()
+    public IEnumerator StartSimulation()
     {
+        loadingscreen.SetActive(true);
         string houseSceneName = GameObject.FindObjectOfType<ConfigController>().GetSelectedHouse().scene;
-        SceneManager.LoadScene(houseSceneName);
+        AsyncOperation async = SceneManager.LoadSceneAsync(houseSceneName);
+
+        // todo: add loading bar and text with amount of percentes loaded
+        while (!async.isDone)
+        {
+            LoadingBar.fillAmount = async.progress;
+
+            yield return null;
+        }
+
+        loadingscreen.SetActive(false);
     }
 
     public void ResetSelectionCache() {

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class OculusGoController : MonoBehaviour
 {
-    [SerializeField] private Text debugText;
     [SerializeField] private int moveSpeed = 2;
 
     private float deltaTime;
@@ -34,31 +33,5 @@ public class OculusGoController : MonoBehaviour
             player.transform.Translate(-Vector3.right * moveSpeed * axis.x * Time.deltaTime);
 
         }
-
-        fillText();
-    }
-
-    void fillText() {
-        debugText.text = "";
-
-        // Touched touchpad
-        debugText.text += "if Touch me: " + OVRInput.Get(OVRInput.Touch.PrimaryTouchpad);
-
-        debugText.text += "\n";
-
-        // X, Y where you touch trackpad on controller
-        debugText.text += "Where you touche me: " + OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad, OVRInput.Controller.RTrackedRemote);
-
-        debugText.text += "\n";
-
-        // Clicked touchpad
-        debugText.text += "Clicked: " + OVRInput.Get(OVRInput.Button.PrimaryTouchpad);
-
-        debugText.text += "\n";
-
-        // FPS counter
-        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-        float fps = 1.0f / deltaTime;
-        debugText.text += "FPS: " + Mathf.Ceil(fps).ToString();
     }
 }

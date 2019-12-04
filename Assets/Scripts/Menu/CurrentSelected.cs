@@ -17,9 +17,10 @@ public class CurrentSelected : MonoBehaviour
         oldText = description.GetComponent<Text>().text;
     }
 
-    public void FillCurrentSelected(Sprite newImage, string newText)
+    public void FillCurrentSelected(Sprite newImage, string newText, Color color)
     {
         image.GetComponent<Image>().sprite = newImage;
+        image.GetComponent<Image>().color = color;
         description.GetComponent<Text>().text = newText;
 
     }

@@ -4,32 +4,32 @@
       "ID": 0,
       "houseName": "Demo scene",
       "scene": "DemoScene",
-      "imagePath": "Assets/Sprites/House/Testomgeving.png"
+      "imagePath": "House/Testomgeving"
     },
     {
       "ID": 1,
       "houseName": "Daniels scene",
       "scene": "Daniel",
-      "imagePath": "Assets/Sprites/House/Daniel"
+      "imagePath": "House/Daniel"
     },
     {
       "ID": 2,
       "houseName": "Vakantiewoning",
       "scene": "Bejaardenwoning",
-      "imagePath": "Assets/Sprites/House/vakantiewoning.jpg"
+      "imagePath": "House/vakantiewoning"
     },
     {
       "ID": 3,
       "houseName": "Eengezinswoning",
       "scene": "Eengezinswoning",
-      "imagePath": "Assets/Sprites/House/eengezinswoning.jpg"
+      "imagePath": "House/eengezinswoning"
     }
   ],
   "scenarios": [
     {
       "ID": 0,
       "title": "Vrijrondlopen",
-      "imagePath": "Assets/Sprites/Scenario/vrijrondlopen.jpg",
+      "imagePath": "Scenario/vrijrondlopen",
       "houseIDs": [
         0,
         1,
@@ -40,7 +40,7 @@
     {
       "ID": 1,
       "title": "De gevaarlijke trap",
-      "imagePath": "Assets/Sprites/Scenario/gevaarlijke_trap",
+      "imagePath": "Scenario/gevaarlijke_trap",
       "houseIDs": [
         0,
         1,
@@ -50,7 +50,7 @@
     {
       "ID": 2,
       "title": "Het gezond licht",
-      "imagePath": "Assets/Sprites/Scenario/gezond_licht",
+      "imagePath": "Scenario/gezond_licht",
       "houseIDs": [
         0,
         1,
@@ -61,7 +61,7 @@
     {
       "ID": 3,
       "title": "Nachtbezoek",
-      "imagePath": "Assets/Sprites/Scenario/nachtbezoek",
+      "imagePath": "Scenario/nachtbezoek",
       "houseIDs": [
         0,
         1,
@@ -75,20 +75,45 @@
       "firstName": "Gerrit",
       "lastName": "Appelboer",
       "age": 72,
-	  "mugshotPath" : "Assets/Sprites/Persona/gerrit.jpg"
+	  "mugshotPath" : "Persona/gerrit",
+	  "biography": "
+		Gerrit is een 72-jarige man uit Groningen. Sinds drie jaar woont hij alleen, na het overlijden van zijn vrouw. Zijn twee kinderen wonen in Amsterdam. Zij kunnen dus niet altijd langskomen, maar komen vaak op visite. 
+
+		Zijn zicht is sinds de laatste jaren flink achteruit gegaan.
+		",
+	  "limitations": [
+		"Slechtziend"
+	  ]
     },
     {
       "BSN": 1,
       "firstName": "Karin",
 	  "lastName": "Veenstra",
       "age": 65,
-	  "mugshotPath" : "Assets/Sprites/Persona/karin.jpg"
+	  "mugshotPath" : "Persona/karin",
+	  "biography": "
+		Karin is een 65-jarige vrouw. Ze is al 40 jaar gelukkig getrouwd met Pieter. Samenwonen zij in Groningen. Ze hebben een zoon die in Haren woont, hij komt regelmatig op bezoek. 
+
+		Door een auto-ongeluk tien jaar geleden heeft ze veel last van rugklachten. Hierdoor kan ze moeilijk bewegen, wat haar beperkt in haar dagelijkse bezigheden. Voor lange afstanden heeft ze een rollator, maar binnenshuis kan ze nog zelf rondlopen.
+		",
+	  "limitations": [
+		"Rugklachten",
+		"Slecht ter been"
+	  ]
     },{
       "BSN": 2,
       "firstName": "Johan",
 	  "lastName": "van Doorn",
       "age": 70,
-	  "mugshotPath" : "Assets/Sprites/Persona/johan.jpg"
+	  "mugshotPath" : "Persona/johan",
+	  "biography": "
+		Johan is een 70-jarige man uit Limburg. De afgelopen 20 jaar woont hij in Groningen, samen met zijn vrouw Tineke. In zijn jonge jaren heeft Johan in de kolenmijnen in het zuiden van het land gewerkt. Daarna heeft hij veel in fabrieken gewerkt. 
+
+		Door zijn werk in de mijnbouw en de fabrieken heeft Johan gehoorbeschadiging opgelopen. Hierdoor heeft hij nu moeite om dingen duidelijk te horen.
+		",
+	  "limitations": [
+		"Slechthorend"
+	  ]
     }
   ]
 }

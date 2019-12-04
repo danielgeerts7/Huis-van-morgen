@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 5374260071326990528}
   - component: {fileID: 5374260071326990529}
   - component: {fileID: 7857376755502269652}
+  - component: {fileID: 3328424951071858606}
   m_Layer: 0
   m_Name: HouseCard
   m_TagString: Untagged
@@ -235,6 +236,19 @@ MonoBehaviour:
   button: {fileID: 5374260071041386678}
   title: {fileID: 5374260071678685030}
   featuredImg: {fileID: 5374260073002230126}
+--- !u!65 &3328424951071858606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374260071326990532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 300, y: 400, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5374260071678685033
 GameObject:
   m_ObjectHideFlags: 0

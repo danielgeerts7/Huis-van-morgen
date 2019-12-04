@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -42,7 +40,6 @@ public class CurvedMenuController : MonoBehaviour
     public void LoadHouseView() {
         ClearView();
         int count = 0;
-        Debug.Log("====START====");
 
         foreach (HouseInfo house in configController.GetHouses())
         {
@@ -53,18 +50,14 @@ public class CurvedMenuController : MonoBehaviour
                 cardCopies.Add(card);
                 card.GetComponent<HouseCard>().FillHouseCard(house);
 
-                bool hasScene = true;
-                for (int i = 0; i < EditorBuildSettings.scenes.Length; i++) {
-                    //if (EditorBuildSettings.get.scenes[i].ToString().Equals(house.scene)) {
-                        hasScene = true;
-                    //}
-                }
-                card.SetActive(hasScene);
+                // todo: disabled buttons that doesnt meet to a scene
+                /*if (SceneManager.GetSceneByName(house.scene).IsValid() == false) {
+                    card.SetActive(false);
+                    card.GetComponentInChildren<Button>().interactable = false;
+                }*/
                 count++;
             }
         }
-        Debug.Log("====END====");
-
     }
 
     public void LoadScenarioView() {

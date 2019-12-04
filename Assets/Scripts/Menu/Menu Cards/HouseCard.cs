@@ -20,7 +20,7 @@ public class HouseCard : SuperCard
     public override void SelectCard()
     {
         SelectionBarController currentSelectedController = GameObject.FindObjectOfType<SelectionBarController>();
-        currentSelectedController.SelectCard(ConfigController.CardType.HOUSE, (Sprite)AssetDatabase.LoadAssetAtPath(house.imagePath, typeof(Sprite)), house.houseName);
+        currentSelectedController.SelectCard(ConfigController.CardType.HOUSE, Resources.Load<Sprite>(house.imagePath), house.houseName);
         GameObject.FindObjectOfType<ConfigController>().SetSelectedHouse(house);
     }
 
@@ -29,6 +29,7 @@ public class HouseCard : SuperCard
         this.house = house;
 
         this.title.text = house.houseName;
-        this.featuredImg.sprite = (Sprite)AssetDatabase.LoadAssetAtPath(house.imagePath, typeof(Sprite));
+        this.featuredImg.sprite = Resources.Load<Sprite>(house.imagePath);
+        this.featuredImg.color = Color.white;
     }
 }

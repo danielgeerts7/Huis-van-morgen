@@ -12,8 +12,8 @@ public struct PersonaInfo
     public int age;
     public string mugshotPath;
 
-    /*public string biography;
-    public string[] limitations;*/
+    public string biography;
+    public string[] limitations;
 
     public string getFullName() {
         return firstName + " " + lastName;
