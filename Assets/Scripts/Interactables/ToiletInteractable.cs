@@ -11,7 +11,12 @@ public class ToiletInteractable : Interactable
 
     public override void OnActivate()
     {
-        throw new System.NotImplementedException();
+
+
+        if (GetComponent<StepHandler>())
+        {
+
+        }
     }
 
     public override void OnDeselect()
