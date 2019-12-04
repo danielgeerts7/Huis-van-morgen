@@ -24,6 +24,7 @@ public class DomoticaController : MonoBehaviour
         {
             if (lightController == liController)
             {
+                Debug.Log("heya");
                 if (!CheckIfLightsOn(lightController))
                 {
                     lightController.TurnOn();
@@ -60,7 +61,6 @@ public class DomoticaController : MonoBehaviour
         {
             if (lightController == liController)
             {
-                
                 lightController.TurnOn();
             }
         }

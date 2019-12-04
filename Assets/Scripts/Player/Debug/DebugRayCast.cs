@@ -7,11 +7,14 @@ public class DebugRayCast : MonoBehaviour
     public float rayLength;
     public Image image;
     public GameObject mobile;
+
     private bool mobileActive = false;
+
     private RaycastHit vision;
     private Interactable currentSelection;
     public Color crosshairDefaultColor = Color.white;
     public Color crosshairSelectColor = Color.green;
+
 
 
     // Update is called once per frame

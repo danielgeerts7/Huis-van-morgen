@@ -13,6 +13,7 @@ public class LightSwitch : Interactable
         lightcontroller = lightControllerObject.GetComponent<LightController>();
     }
 
+
     public override void OnUpdate()
     {
         // Gets called on update
