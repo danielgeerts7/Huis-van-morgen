@@ -22,24 +22,23 @@ public class ScenarioController : MonoBehaviour
     {
         state = State.WAITING;
 
-        // If Debug Mode is enabled, handle it
-        if (debugMode)
-        {
-            if (!scenarioIsActive)
-                return;
-
-            if (!(activeScenarioIndex >= 0 && activeScenarioIndex < scenarios.Count))
-                return;
-
-            StartScenario();
-            return;
-        }
-
         // Check for scenario in ConfigController
         ConfigController configController = FindObjectOfType<ConfigController>();
 
         if (configController == null)
+        {
+            if (debugMode)
+            {
+                if (!scenarioIsActive)
+                    return;
+
+                if (!(activeScenarioIndex >= 0 && activeScenarioIndex < scenarios.Count))
+                    return;
+
+                StartScenario();
+            }
             return;
+        }
 
         int activeScenarioID = configController.GetSelectedScenario().ID;
 
