@@ -46,25 +46,13 @@ public class CurvedMenuController : MonoBehaviour
             if (count < 7)
             {
                 GameObject card = GameObject.Instantiate(houseCardPrefab, CardSpawnpoints[count].transform);
-                //GameObject houseObj = GameObject.Instantiate(house.prefabPath, CardSpawnpoints[count].transform);
                 cardCopies.Add(card);
                 card.GetComponent<HouseCard>().FillHouseCard(house);
 
-                bool showCard = false;
-                foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
-                {
-                    if (S.enabled)
-                    {
-                        string name = S.path.Substring(S.path.LastIndexOf('/') + 1);
-                        name = name.Substring(0, name.Length - 6);
-                        if (name.Equals(house.scene)) {
-                            showCard = true;
-                        }
-                    }
-                }
                 count++;
-
-                card.GetComponentInChildren<Button>().interactable = showCard;
+                bool activeButton = true;
+                // todo: check if scene exists in Build Settings, if so set button on active, else it will be disabled
+                card.GetComponentInChildren<Button>().interactable = activeButton;
 
             }
         }

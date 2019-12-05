@@ -14,14 +14,14 @@
     },
     {
       "ID": 2,
-      "houseName": "Vakantiewoning",
-      "scene": "Bejaardenwoning",
+      "houseName": "Vakantiewoning (Unity asset)",
+      "scene": "Vakanatiehuis",
       "imagePath": "House/vakantiewoning"
     },
     {
       "ID": 3,
-      "houseName": "Eengezinswoning",
-      "scene": "Eengezinswoning",
+      "houseName": "Eengezinswoning (BAM)",
+      "scene": "BamHouse",
       "imagePath": "House/eengezinswoning"
     }
   ],
