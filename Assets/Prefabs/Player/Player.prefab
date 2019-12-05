@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayLength: 5
   image: {fileID: 1815370549}
+  mobile: {fileID: 0}
   crosshairDefaultColor: {r: 1, g: 1, b: 1, a: 1}
   crosshairSelectColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &9155187517310812744
@@ -283,10 +284,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5364219641836535420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b96e07713beec49489026ad0f3b60ba8, type: 3}
+  m_Script: {fileID: 11500000, guid: 95995fa02691bee4ca6a97e3cf0f26b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 4
+  sensitivity: 3
 --- !u!1 &5364219642128961668
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,8 +301,7 @@ GameObject:
   - component: {fileID: 5364219642128961664}
   - component: {fileID: 5364219642128961665}
   - component: {fileID: 5364219642128961670}
-  - component: {fileID: 9155187516453143083}
-  - component: {fileID: 9155187516453143084}
+  - component: {fileID: 2465229644432518989}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -400,7 +400,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &9155187516453143083
+--- !u!114 &2465229644432518989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -409,20 +409,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5364219642128961668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbc426451e622d74198cc488c4e42a57, type: 3}
+  m_Script: {fileID: 11500000, guid: 694d071b24a1862409d88737854eaf1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
---- !u!114 &9155187516453143084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5364219642128961668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75770f345e708594886c22f46a3cba69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateKey: 0
+  speed: 4
