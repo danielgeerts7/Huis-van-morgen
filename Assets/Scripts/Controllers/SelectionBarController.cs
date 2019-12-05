@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CurrentSelectedController : MonoBehaviour
+public class SelectionBarController : MonoBehaviour
 {
     public GameObject selectedHouseView;
     public GameObject selectedScenarioView;
@@ -15,6 +15,9 @@ public class CurrentSelectedController : MonoBehaviour
 
     private CurvedMenuController curvedController;
 
+    public GameObject loadingscreen;
+    public Image LoadingBar;
+
     private ConfigController.CardType currentTypeToSelect = ConfigController.CardType.HOUSE;
 
     private void Start()
@@ -23,9 +26,11 @@ public class CurrentSelectedController : MonoBehaviour
 
         startSimulation_btn.SetActive(false);
         resetSelectionView_Btn.SetActive(false);
+
+        loadingscreen.SetActive(false);
     }
 
-    public void SelectCard(ConfigController.CardType cardtype, Sprite featuredimg, string description)
+    public void SetCardIntoBar(ConfigController.CardType cardtype, Sprite featuredimg, string description)
     {
         GameObject tempSelected = null;
         switch (cardtype) {
@@ -37,18 +42,29 @@ public class CurrentSelectedController : MonoBehaviour
                 break;
             case (ConfigController.CardType.PERSONA):
                 tempSelected = selectedPersonaView;
-                startSimulation_btn.SetActive(true);
+                StartCoroutine(StartSimulation());
                 break;
         }
-        tempSelected.GetComponent<CurrentSelected>().FillCurrentSelected(featuredimg, description);
+        tempSelected.GetComponent<CurrentSelected>().FillCurrentSelected(featuredimg, description, Color.white);
 
         GoToNextSection();
     }
 
-    public void StartSimulation()
+    public IEnumerator StartSimulation()
     {
-        string loadHouse = GameObject.FindObjectOfType<ConfigController>().GetSelectedHouse().houseName;
-        SceneManager.LoadScene(loadHouse);
+        loadingscreen.SetActive(true);
+        string houseSceneName = GameObject.FindObjectOfType<ConfigController>().GetSelectedHouse().scene;
+        AsyncOperation async = SceneManager.LoadSceneAsync(houseSceneName);
+
+        // todo: add loading bar and text with amount of percentes loaded
+        while (!async.isDone)
+        {
+            LoadingBar.fillAmount = async.progress;
+
+            yield return null;
+        }
+
+        loadingscreen.SetActive(false);
     }
 
     public void ResetSelectionCache() {

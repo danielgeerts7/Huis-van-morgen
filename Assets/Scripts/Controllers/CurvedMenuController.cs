@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /** 
  * Generates curved VR menu
@@ -40,19 +40,32 @@ public class CurvedMenuController : MonoBehaviour
     public void LoadHouseView() {
         ClearView();
         int count = 0;
+
         foreach (HouseInfo house in configController.GetHouses())
         {
             if (count < 7)
             {
                 GameObject card = GameObject.Instantiate(houseCardPrefab, CardSpawnpoints[count].transform);
-                //GameObject house = GameObject.Instantiate(h.housePrefab, CardSpawnpoints[count].transform);
+                //GameObject houseObj = GameObject.Instantiate(house.prefabPath, CardSpawnpoints[count].transform);
                 cardCopies.Add(card);
                 card.GetComponent<HouseCard>().FillHouseCard(house);
 
-                foreach (Scene s in SceneManager.GetAllScenes()) { 
-                    // TODO: check scene names with house names, if not found then disabled
+                bool showCard = false;
+                foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
+                {
+                    if (S.enabled)
+                    {
+                        string name = S.path.Substring(S.path.LastIndexOf('/') + 1);
+                        name = name.Substring(0, name.Length - 6);
+                        if (name.Equals(house.scene)) {
+                            showCard = true;
+                        }
+                    }
                 }
                 count++;
+
+                card.GetComponentInChildren<Button>().interactable = showCard;
+
             }
         }
     }
@@ -62,10 +75,21 @@ public class CurvedMenuController : MonoBehaviour
         int count = 0;
         foreach (ScenarioInfo scenario in configController.GetScenarios()) {
             if (count < 7) {
-                GameObject card = GameObject.Instantiate(scenarioCardPrefab, CardSpawnpoints[count].transform);
-                cardCopies.Add(card);
-                card.GetComponent<ScenarioCard>().FillScenarioCard(scenario);
-                count++;
+                bool isAvailable = false;
+                HouseInfo house = configController.GetSelectedHouse();
+                foreach (int i in scenario.houseIDs)
+                {
+                    if (i == house.ID)
+                    {
+                        isAvailable = true;
+                    }
+                }
+                if (isAvailable) {
+                    GameObject card = GameObject.Instantiate(scenarioCardPrefab, CardSpawnpoints[count].transform);
+                    cardCopies.Add(card);
+                    card.GetComponent<ScenarioCard>().FillScenarioCard(scenario);
+                    count++;
+                }
             }
         }
     }

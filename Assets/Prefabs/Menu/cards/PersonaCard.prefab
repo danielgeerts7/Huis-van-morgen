@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 3766724816406752465}
   - component: {fileID: 3766724816406752464}
   - component: {fileID: 2489961567793265257}
+  - component: {fileID: 8119815819701503081}
   m_Layer: 0
   m_Name: PersonaCard
   m_TagString: Untagged
@@ -700,6 +701,19 @@ MonoBehaviour:
   personaAge: {fileID: 1108693057808080469}
   personaLimitation: {fileID: 3070557679996520946}
   personaImage: {fileID: 3766724814908984703}
+--- !u!65 &8119815819701503081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766724816406752469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 400, y: 450, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4047601024447323255
 GameObject:
   m_ObjectHideFlags: 0

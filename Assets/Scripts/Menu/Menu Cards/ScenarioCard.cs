@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,9 +19,10 @@ public class ScenarioCard : SuperCard
 
     public override void SelectCard()
     {
-        CurrentSelectedController currentSelectedController = GameObject.FindObjectOfType<CurrentSelectedController>();
-        currentSelectedController.SelectCard(ConfigController.CardType.SCENARIO, scenario.featuredImage, scenario.title);
         GameObject.FindObjectOfType<ConfigController>().SetSelectedScenario(scenario);
+
+        SelectionBarController selectionBar = GameObject.FindObjectOfType<SelectionBarController>();
+        selectionBar.SetCardIntoBar(ConfigController.CardType.SCENARIO, Resources.Load<Sprite>(scenario.imagePath), scenario.title);
     }
 
     public void FillScenarioCard(ScenarioInfo scenario)
@@ -28,6 +30,7 @@ public class ScenarioCard : SuperCard
         this.scenario = scenario;
 
         this.title.text = scenario.title;
-        this.featuredImg.sprite = scenario.featuredImage;
+        this.featuredImg.sprite = Resources.Load<Sprite>(scenario.imagePath);
+        this.featuredImg.color = Color.white;
     }
 }

@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using OVRSimpleJSON;
+using UnityEngine.UI;
 
 public class ConfigController : MonoBehaviour
 {
     // Get configs of House, Scenario, Persona
-    public GameObject houseConfig;
-    public GameObject scenarioConfig;
-    public GameObject personaConfig;
+    private JSONNode info;
+
+    public HouseInfo[] houses;
+    public ScenarioInfo[] scenarios;
+    public PersonaInfo[] personas;
 
     private static ConfigController instance;
 
@@ -17,25 +22,11 @@ public class ConfigController : MonoBehaviour
 
     public enum CardType { HOUSE, SCENARIO, PERSONA };
 
-    public List<HouseInfo> GetHouses() {
-        return new List<HouseInfo>(houseConfig.GetComponents<HouseInfo>());
-    }
-
-    public List<ScenarioInfo> GetScenarios()
-    {
-        return new List<ScenarioInfo>(scenarioConfig.GetComponents<ScenarioInfo>());
-    }
-
-    public List<PersonaInfo> GetPersonas()
-    {
-        return new List<PersonaInfo>(personaConfig.GetComponents<PersonaInfo>());
-    }
-
     /*
-     * Make this class a singleton
-     * Dont destroy the first loaded object of this type
-     * Do destroy the rest
-     */
+ * Make this class a singleton
+ * Dont Destroy the first loaded object of this type
+ * then, Do Destroy the rest
+ */
     void Awake()
     {
         // If the instance reference has not been set, yet, 
@@ -53,6 +44,37 @@ public class ConfigController : MonoBehaviour
 
         // Do not destroy this object, when we load a new scene.
         DontDestroyOnLoad(gameObject);
+
+        //Read the text from the HuisvanMorgen_info.json file
+        TextAsset textfromfile = Resources.Load<TextAsset>("HuisvanMorgen_info");
+        if (textfromfile != null)
+        {
+            using (StreamReader sr = new StreamReader(new MemoryStream(textfromfile.bytes)))
+            {
+                string json = sr.ReadToEnd();
+                info = JSON.Parse(json);
+
+                houses = JsonHelper.getJsonArray<HouseInfo>(info["houses"].ToString());
+                scenarios = JsonHelper.getJsonArray<ScenarioInfo>(info["scenarios"].ToString());
+                personas = JsonHelper.getJsonArray<PersonaInfo>(info["personas"].ToString());
+
+                sr.Close();
+            }
+        }
+    }
+
+    public List<HouseInfo> GetHouses() {
+       return new List<HouseInfo>(houses);
+    }
+
+    public List<ScenarioInfo> GetScenarios()
+    {
+        return new List<ScenarioInfo>(scenarios);
+    }
+
+    public List<PersonaInfo> GetPersonas()
+    {
+        return new List<PersonaInfo>(personas);
     }
 
     public void SetSelectedHouse(HouseInfo house)
