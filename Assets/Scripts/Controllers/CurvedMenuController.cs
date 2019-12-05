@@ -75,10 +75,21 @@ public class CurvedMenuController : MonoBehaviour
         int count = 0;
         foreach (ScenarioInfo scenario in configController.GetScenarios()) {
             if (count < 7) {
-                GameObject card = GameObject.Instantiate(scenarioCardPrefab, CardSpawnpoints[count].transform);
-                cardCopies.Add(card);
-                card.GetComponent<ScenarioCard>().FillScenarioCard(scenario);
-                count++;
+                bool isAvailable = false;
+                HouseInfo house = configController.GetSelectedHouse();
+                foreach (int i in scenario.houseIDs)
+                {
+                    if (i == house.ID)
+                    {
+                        isAvailable = true;
+                    }
+                }
+                if (isAvailable) {
+                    GameObject card = GameObject.Instantiate(scenarioCardPrefab, CardSpawnpoints[count].transform);
+                    cardCopies.Add(card);
+                    card.GetComponent<ScenarioCard>().FillScenarioCard(scenario);
+                    count++;
+                }
             }
         }
     }

@@ -19,9 +19,10 @@ public class HouseCard : SuperCard
 
     public override void SelectCard()
     {
-        SelectionBarController currentSelectedController = GameObject.FindObjectOfType<SelectionBarController>();
-        currentSelectedController.SelectCard(ConfigController.CardType.HOUSE, Resources.Load<Sprite>(house.imagePath), house.houseName);
         GameObject.FindObjectOfType<ConfigController>().SetSelectedHouse(house);
+
+        SelectionBarController selectionBar = GameObject.FindObjectOfType<SelectionBarController>();
+        selectionBar.SetCardIntoBar(ConfigController.CardType.HOUSE, Resources.Load<Sprite>(house.imagePath), house.houseName);
     }
 
     public void FillHouseCard(HouseInfo house)

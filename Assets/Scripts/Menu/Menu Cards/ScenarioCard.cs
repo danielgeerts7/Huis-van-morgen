@@ -19,9 +19,10 @@ public class ScenarioCard : SuperCard
 
     public override void SelectCard()
     {
-        SelectionBarController currentSelectedController = GameObject.FindObjectOfType<SelectionBarController>();
-        currentSelectedController.SelectCard(ConfigController.CardType.SCENARIO, Resources.Load<Sprite>(scenario.imagePath), scenario.title);
         GameObject.FindObjectOfType<ConfigController>().SetSelectedScenario(scenario);
+
+        SelectionBarController selectionBar = GameObject.FindObjectOfType<SelectionBarController>();
+        selectionBar.SetCardIntoBar(ConfigController.CardType.SCENARIO, Resources.Load<Sprite>(scenario.imagePath), scenario.title);
     }
 
     public void FillScenarioCard(ScenarioInfo scenario)

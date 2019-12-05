@@ -30,7 +30,7 @@ public class SelectionBarController : MonoBehaviour
         loadingscreen.SetActive(false);
     }
 
-    public void SelectCard(ConfigController.CardType cardtype, Sprite featuredimg, string description)
+    public void SetCardIntoBar(ConfigController.CardType cardtype, Sprite featuredimg, string description)
     {
         GameObject tempSelected = null;
         switch (cardtype) {
