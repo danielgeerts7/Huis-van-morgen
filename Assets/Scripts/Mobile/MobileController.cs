@@ -28,11 +28,11 @@ public class MobileController : MonoBehaviour
     public GameObject curtainMenuPanel;
     public GameObject messagePanel;
 
-
+    
     void Start()
     {
         panelList = new List<GameObject>();
-
+      
         foreach (Transform child in this.transform)
         {
             panelList.Add(child.gameObject);
@@ -47,7 +47,7 @@ public class MobileController : MonoBehaviour
         createButtons(typeof(string));
         createButtons(typeof(CurtainController));
         createButtons(typeof(LightController));
-
+        this.gameObject.SetActive(false);
     }
 
 
@@ -238,6 +238,14 @@ public class MobileController : MonoBehaviour
 
     public void SetMessage(string s)
     {
+        if (panelList == null)
+        {
+            foreach (Transform child in this.transform)
+            {
+                panelList.Add(child.gameObject);
+
+            }
+        }
         messagePanel.GetComponentInChildren<Text>().text = s;
         OpenPanel(messagePanel);
 

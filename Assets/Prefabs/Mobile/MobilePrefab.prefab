@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 9082455623733881033}
   - component: {fileID: 7985338252432761772}
   - component: {fileID: 4562846706918077860}
+  - component: {fileID: 4208542397745362170}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -400,6 +401,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &4208542397745362170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638160326531926911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 23, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2039559344230712972
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4529520059993872039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1019,7 +1033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4529520060542843203
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1089,6 +1103,7 @@ GameObject:
   - component: {fileID: 4529520060906687401}
   - component: {fileID: 4529520060906687402}
   - component: {fileID: 4529520060906687403}
+  - component: {fileID: 1015877947121172277}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1205,6 +1220,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &1015877947121172277
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4529520060906687405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 23, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4529520061364789027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1320,7 @@ GameObject:
   - component: {fileID: 6141763290384497613}
   - component: {fileID: 7275882045967628316}
   - component: {fileID: 7156847131977620920}
+  - component: {fileID: 4459377976197915787}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1408,6 +1437,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &4459377976197915787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6123677783969734083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 23, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6696162757117444485
 GameObject:
   m_ObjectHideFlags: 0
