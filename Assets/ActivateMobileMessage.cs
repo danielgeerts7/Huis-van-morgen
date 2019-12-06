@@ -8,6 +8,8 @@ public class ActivateMobileMessage : MonoBehaviour
     public GameObject mobile;
     private BoxCollider collider;
     public GameObject player;
+
+    public string text;
     void Start()
     {
         collider = gameObject.GetComponent<BoxCollider>();
@@ -26,7 +28,7 @@ public class ActivateMobileMessage : MonoBehaviour
         if (other.tag.Equals("Player"))
         {
             mobile.transform.GetChild(0).gameObject.SetActive(true);
-            mobile.GetComponentInChildren<MobileController>().SetMessage("Hey lul je hebt de gordijnen dicht en lampen aan");
+            mobile.GetComponentInChildren<MobileController>().SetMessage(text);
         }
     }
 
