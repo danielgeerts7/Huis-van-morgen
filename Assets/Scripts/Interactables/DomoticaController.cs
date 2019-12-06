@@ -5,48 +5,154 @@ using UnityEngine;
 public class DomoticaController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public LightController[] lightControllers;
-    public CurtainInteractable[] curtainInteractables;
+    private LightController[] lightControllers;
+    private CurtainController[] curtainControllers;
+    private List<string> domotica;
+
     
-    void Start()
+    void Awake()    
     {
+        domotica = new List<string>();
         lightControllers = GameObject.FindObjectsOfType<LightController>();
-        curtainInteractables = GameObject.FindObjectsOfType<CurtainInteractable>();
+        curtainControllers = GameObject.FindObjectsOfType<CurtainController>();
+        domotica.Add("Lampen");
+        domotica.Add("Gordijnen");
     }
 
-
-    public void TurnOnLightOnRoom(string nameLightController)
+    public void SwitchLightOnRoom(LightController liController)
     {
         foreach (LightController lightController in lightControllers)
         {
-            if(lightController.name == nameLightController)
+            if (lightController == liController)
+            {
+                if (!CheckIfLightsOn(lightController))
+                {
+                    lightController.TurnOn();
+                }
+                else
+                {
+                    lightController.TurnOff();
+                }
+            }
+        }
+
+    }
+    public void SwitchCurtainOnRoom(CurtainController curController)
+    {
+        foreach (CurtainController curtainController in curtainControllers)
+        {
+            if (curtainController == curController)
+            {
+                if (!CheckIfCurtainIsOpen(curtainController))
+                {
+                    curtainController.OpenCurtain();
+                }
+                else
+                {
+                    curtainController.CloseCurtain();
+                }
+            }
+        }
+    }
+
+    public void TurnLightOnRoom(LightController liController)
+    {
+
+        foreach (LightController lightController in lightControllers)
+        {
+            if (lightController == liController)
             {
                 lightController.TurnOn();
             }
         }
+
     }
-    public void TurnOffLightOnRoom(string nameLightController)
+
+    public void TurnLightOffRoom(CurtainController curController)
     {
         foreach (LightController lightController in lightControllers)
         {
-            if (lightController.name == nameLightController)
+            if (lightController == curController)
             {
                 lightController.TurnOff();
             }
         }
     }
 
-    public void OpenCloseCurtain()
+
+    public void OpenCurtainOnRoom(CurtainController curController)
     {
-        foreach (CurtainInteractable curtain in curtainInteractables)
+        foreach (CurtainController curtainController in curtainControllers)
         {
-            curtain.OnActivate();
+            if (curtainController == curController)
+                curtainController.OpenCurtain();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CloseCurtainOnRoom(CurtainController curController)
     {
-        
+        foreach (CurtainController curtainController in curtainControllers)
+        {
+            if (curtainController == curController)
+                curtainController.CloseCurtain();
+        }
+    }
+
+    public bool CheckIfLightsOn(LightController lightController) 
+    {
+        float totalLights = 0;
+        float totalEnabled = 0;
+        foreach (GameObject light in lightController.lights)
+        {
+            totalLights += 1;
+            if (light.GetComponentInChildren<Light>().enabled)
+            {
+                totalEnabled += 1.0f;
+            }
+
+        }
+        if (totalEnabled >= Mathf.Ceil(totalLights / 2))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool CheckIfCurtainIsOpen(CurtainController curtainController)
+    {
+        float totalCurtains = 0.0f;
+        float totalEnabled = 0.0f;
+        foreach (GameObject curtain in curtainController.curtains)
+        {
+            totalCurtains += 1.0f;
+            if (curtain.GetComponent<CurtainInteractable>().isOpen == true)
+            {
+                totalEnabled += 1.0f;
+            }
+        }
+        if (totalEnabled >= Mathf.Ceil(totalCurtains / 2.0f))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    public List<string> GetListDomotica()
+    {
+        return domotica;
+    }
+    public LightController[] GetListLights()
+    {
+        return lightControllers;
+    }
+    public CurtainController[] GetListCurtains()
+    {
+        return curtainControllers;
     }
 }

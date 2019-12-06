@@ -7,29 +7,35 @@ public class DebugRayCast : MonoBehaviour
     public float rayLength;
     public Image image;
     public GameObject mobile;
+
     private bool mobileActive = false;
+
     private RaycastHit vision;
     private Interactable currentSelection;
     public Color crosshairDefaultColor = Color.white;
     public Color crosshairSelectColor = Color.green;
 
+
+
     // Update is called once per frame
     void Update()
+
     {
         Vector3 origin = this.transform.position;
         Vector3 direction = this.transform.forward * rayLength;
 
         if (Input.GetKeyDown(KeyCode.T))
         {
+
             if (mobileActive)
             {
-                mobile.SetActive(true);
                 mobileActive = !mobileActive;
+                mobile.SetActive(false);
             }
             else{
-                mobile.SetActive(false);
                 mobileActive = !mobileActive;
-                }
+                mobile.SetActive(true);
+            }
         }
 
         Debug.DrawRay(origin, direction);
@@ -37,7 +43,6 @@ public class DebugRayCast : MonoBehaviour
         {
             if (vision.collider.tag.Equals("Interactable"))
             {
-
                 // Check if Interactable
                 bool succes = vision.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
 

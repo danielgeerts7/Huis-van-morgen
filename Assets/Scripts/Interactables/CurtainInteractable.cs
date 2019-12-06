@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CurtainInteractable : Interactable
 {
-    private bool isOpen = true;
+    public bool isOpen = true;
 
     public GameObject leftCurtain;
     public GameObject rightCurtain;
@@ -35,16 +35,17 @@ public class CurtainInteractable : Interactable
         }
     }
 
-    void CurtainOpen() {
+    public void CurtainOpen() {
         if (!isOpen)
         {
             leftCurtain.GetComponent<Animator>().Play("Open Curtain");
             rightCurtain.GetComponent<Animator>().Play("Open Curtain");
             isOpen = true;
         }
+
     }
 
-    void CurtainClose()
+    public void CurtainClose()
     {
         if (isOpen)
         {
