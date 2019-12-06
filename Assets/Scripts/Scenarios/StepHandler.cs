@@ -33,4 +33,13 @@ public class StepHandler : MonoBehaviour
         }
         steps.Add(step);
     }
+
+    public bool IsActive()
+    {
+        foreach (Step step in steps)
+            if (step.getState() == State.RUNNING)
+                return true;
+
+        return false;
+    }
 }
