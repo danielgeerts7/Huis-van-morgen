@@ -43,7 +43,6 @@ public class DebugRayCast : MonoBehaviour
         {
             if (vision.collider.tag.Equals("Interactable"))
             {
-
                 // Check if Interactable
                 bool succes = vision.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
 

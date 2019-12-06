@@ -8,6 +8,8 @@ public class DomoticaController : MonoBehaviour
     private LightController[] lightControllers;
     private CurtainController[] curtainControllers;
     private List<string> domotica;
+
+    
     void Awake()    
     {
         domotica = new List<string>();
@@ -17,14 +19,12 @@ public class DomoticaController : MonoBehaviour
         domotica.Add("Gordijnen");
     }
 
-
     public void SwitchLightOnRoom(LightController liController)
     {
         foreach (LightController lightController in lightControllers)
         {
             if (lightController == liController)
             {
-                Debug.Log("heya");
                 if (!CheckIfLightsOn(lightController))
                 {
                     lightController.TurnOn();
@@ -35,6 +35,7 @@ public class DomoticaController : MonoBehaviour
                 }
             }
         }
+
     }
     public void SwitchCurtainOnRoom(CurtainController curController)
     {
@@ -64,6 +65,7 @@ public class DomoticaController : MonoBehaviour
                 lightController.TurnOn();
             }
         }
+
     }
 
     public void TurnLightOffRoom(CurtainController curController)

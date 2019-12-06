@@ -42,6 +42,7 @@ public class CurtainInteractable : Interactable
             rightCurtain.GetComponent<Animator>().Play("Open Curtain");
             isOpen = true;
         }
+
     }
 
     public void CurtainClose()

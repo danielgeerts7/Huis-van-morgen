@@ -7,6 +7,8 @@ public class LightController : DomoticaController
 {
     public List<GameObject> lights;
     public bool ShowControllerInMobile = true;
+    
+
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -18,8 +20,6 @@ public class LightController : DomoticaController
             lights[i].GetComponentInChildren<Light>().enabled = true;
         }
     }
-
-
 
 
     public void TurnOff()

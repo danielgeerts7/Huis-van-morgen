@@ -26,11 +26,11 @@ public class MobileController : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject lightMenuPanel;
     public GameObject curtainMenuPanel;
+    public GameObject messagePanel;
 
 
     void Start()
     {
-        
         panelList = new List<GameObject>();
 
         foreach (Transform child in this.transform)
@@ -38,19 +38,18 @@ public class MobileController : MonoBehaviour
             panelList.Add(child.gameObject);
         }
 
+        domoticaController = GameObject.FindObjectOfType<DomoticaController>().gameObject;
+
         buttonListMainMenu = new List<GameObject>();
         buttonListLightsMenu = new List<GameObject>();
         buttonListCurtainsMenu = new List<GameObject>();
-
-        domoticaController = GameObject.FindObjectOfType<DomoticaController>().gameObject;
 
         createButtons(typeof(string));
         createButtons(typeof(CurtainController));
         createButtons(typeof(LightController));
 
-
-
     }
+
 
     void Update()
     {
@@ -60,6 +59,7 @@ public class MobileController : MonoBehaviour
             SetCurtainsButonsToRightState();
         }
     }
+
     private void createButtons(System.Type type)
     {
 
@@ -164,6 +164,8 @@ public class MobileController : MonoBehaviour
             }
         }
     }
+
+
     private void SetCurtainsButonsToRightState()
     {
         CurtainController[] curtainControllers = new CurtainController[domoticaController.GetComponent<DomoticaController>().GetListCurtains().Length];
@@ -193,15 +195,18 @@ public class MobileController : MonoBehaviour
             }
         }
     }
+
     private void SwitchLights(LightController lightController)
     {
         domoticaController.GetComponent<DomoticaController>().SwitchLightOnRoom(lightController);
     }
 
+
     private void SwitchCurtains(CurtainController curtainController)
     {
         domoticaController.GetComponent<DomoticaController>().SwitchCurtainOnRoom(curtainController);
     }
+
 
     void ResetPanels()
     {
@@ -210,11 +215,14 @@ public class MobileController : MonoBehaviour
             if (panelList[i].activeSelf) panelList[i].SetActive(false);
         }
     }
+
+
     public void OpenPanel(GameObject panel)
     {
         ResetPanels();
         panel.SetActive(true);
     }
+
 
     private void SwitchPanel(string s)
     {
@@ -226,5 +234,12 @@ public class MobileController : MonoBehaviour
         {
             OpenPanel(curtainMenuPanel);
         }
+    }
+
+    public void SetMessage(string s)
+    {
+        messagePanel.GetComponentInChildren<Text>().text = s;
+        OpenPanel(messagePanel);
+
     }
 }
