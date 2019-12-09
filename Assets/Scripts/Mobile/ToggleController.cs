@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,7 +47,6 @@ public class ToggleController : MonoBehaviour
 
 	void Start()
 	{
-
 		if(isOn)
 		{
 			toggleBgImage.color = onColorBg;
@@ -61,7 +61,7 @@ public class ToggleController : MonoBehaviour
 			onIcon.gameObject.SetActive(false);
 			offIcon.gameObject.SetActive(true);
 		}
-        Switching();
+
 
 	}
 		

@@ -18,8 +18,6 @@ public class StepTrigger : MonoBehaviour
         }
 
         SetOutline(handler.IsActive());
-
-        Debug.Log("handling steps");
     }
 
     private void OnTriggerEnter(Collider other)

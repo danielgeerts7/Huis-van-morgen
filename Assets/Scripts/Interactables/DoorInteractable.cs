@@ -5,7 +5,6 @@ using UnityEngine;
 public class DoorInteractable : Interactable
 {
     public bool isOpen = false;
-    private Animator _animator;
 
     public override bool isActive()
     {
@@ -14,15 +13,18 @@ public class DoorInteractable : Interactable
 
     public override void OnActivate()
     {
-        if (!isOpen)
+        if (isOpen)
         {
-            _animator.SetBool("OpenDoor", true);
+            this.gameObject.GetComponent<Animator>().Play("CloseDoor");
             isOpen = !isOpen;
             //throw new System.NotImplementedException();
+            Debug.Log("fucked up");
         }
-        else if(isOpen){
+        else
+        {
             isOpen = !isOpen;
-            _animator.SetBool("OpenDoor", false);
+            gameObject.GetComponent<Animator>().Play("OpenDoor");
+            Debug.Log("fucked up");
         }
     }   
 
@@ -39,7 +41,6 @@ public class DoorInteractable : Interactable
     
     public override void OnStart()
     {
-        _animator = GetComponentInParent<Animator>();
        // new System.NotImplementedException();
     }
 

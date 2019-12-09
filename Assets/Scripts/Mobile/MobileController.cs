@@ -53,7 +53,7 @@ public class MobileController : MonoBehaviour
 
     private void Update()
     {
-        if (this.gameObject.activeSelf == true || curtainControllers[0] != null)
+        if (this.gameObject.activeSelf == true)
         {
             SetLightButonsToRightState();
             SetCurtainsButonsToRightState();
@@ -142,7 +142,7 @@ public class MobileController : MonoBehaviour
         foreach (LightController lightController in lightControllers)
         {
         
-            if (domoticaController.GetComponent<DomoticaController>().CheckIfLightsOn(lightController))
+            if (domoticaController.GetComponent<DomoticaController>().CheckIfLightsAreOn(lightController))
             {
                 foreach (GameObject butn in buttonListLightsMenu)
                 {
@@ -174,7 +174,7 @@ public class MobileController : MonoBehaviour
         foreach (CurtainController curtainController in curtainControllers)
         {
 
-            if (domoticaController.GetComponent<DomoticaController>().CheckIfCurtainIsOpen(curtainController))
+            if (domoticaController.GetComponent<DomoticaController>().CheckIfCurtainsAreOpen(curtainController))
             {
                 foreach (GameObject butn in buttonListCurtainsMenu)
                 {
@@ -244,7 +244,6 @@ public class MobileController : MonoBehaviour
             foreach (Transform child in this.transform)
             {
                 panelList.Add(child.gameObject);
-
             }
         }
         messagePanel.GetComponentInChildren<Text>().text = s;

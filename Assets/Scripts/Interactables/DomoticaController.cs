@@ -24,7 +24,7 @@ public class DomoticaController : MonoBehaviour
         {
             if (lightController == liController)
             {
-                if (!CheckIfLightsOn(lightController))
+                if (!CheckIfLightsAreOn(lightController))
                 {
                     lightController.TurnOn();
                 }
@@ -42,7 +42,7 @@ public class DomoticaController : MonoBehaviour
         {
             if (curtainController == curController)
             {
-                if (!CheckIfCurtainIsOpen(curtainController))
+                if (!CheckIfCurtainsAreOpen(curtainController))
                 {
                     curtainController.OpenCurtain();
                 }
@@ -64,7 +64,6 @@ public class DomoticaController : MonoBehaviour
                 lightController.TurnOn();
             }
         }
-
     }
 
     public void TurnLightOffRoom(CurtainController curController)
@@ -97,7 +96,7 @@ public class DomoticaController : MonoBehaviour
         }
     }
 
-    public bool CheckIfLightsOn(LightController lightController) 
+    public bool CheckIfLightsAreOn(LightController lightController) 
     {
         float totalLights = 0;
         float totalEnabled = 0;
@@ -119,7 +118,7 @@ public class DomoticaController : MonoBehaviour
             return false;
         }
     }
-    public bool CheckIfCurtainIsOpen(CurtainController curtainController)
+    public bool CheckIfCurtainsAreOpen(CurtainController curtainController)
     {
         float totalCurtains = 0.0f;
         float totalEnabled = 0.0f;
@@ -131,12 +130,9 @@ public class DomoticaController : MonoBehaviour
                 totalEnabled += 1.0f;
             }
         }
-        Debug.Log(curtainController.controllerName + totalCurtains.ToString());
-
 
         if (totalEnabled >= Mathf.Ceil(totalCurtains / 2.0f))
         {
-            Debug.Log(curtainController.controllerName + totalCurtains.ToString());
             return true;
         }
         else
