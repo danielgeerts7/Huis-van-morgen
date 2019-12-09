@@ -6,30 +6,22 @@ public class ActivateMobileMessage : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject mobile;
-    private BoxCollider collider;
     public GameObject player;
+    public Step running;
+    private bool showedMessage = false;
 
     public string text;
-    void Start()
-    {
-        collider = gameObject.GetComponent<BoxCollider>();
-
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag.Equals("Player"))
+        if (showedMessage == false)
         {
-            mobile.transform.GetChild(0).gameObject.SetActive(true);
-            mobile.GetComponentInChildren<MobileController>().SetMessage(text);
+            if (running.getState() == State.RUNNING)
+            {
+                mobile.transform.GetChild(0).gameObject.SetActive(true);
+                mobile.GetComponentInChildren<MobileController>().SetMessage(text);
+                showedMessage = true;
+            }
         }
     }
-
 }

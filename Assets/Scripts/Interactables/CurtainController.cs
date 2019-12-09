@@ -5,9 +5,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurtainController : DomoticaController
+public class CurtainController : MonoBehaviour
 {
     public List<GameObject> curtains;
+    public string controllerName = "Placeholder";
     // Start is called before the first frame update
 
     public void OpenCurtain()

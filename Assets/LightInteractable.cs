@@ -13,7 +13,6 @@ public class LightInteractable : Interactable
     {
         return GetComponent<Light>().enabled;
 
-
     }
 
     public override void OnActivate()
@@ -39,17 +38,5 @@ public class LightInteractable : Interactable
     public override void OnUpdate()
     {
         throw new System.NotImplementedException();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

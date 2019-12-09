@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightController : DomoticaController
+public class LightController : MonoBehaviour
 {
     public List<GameObject> lights;
     public bool ShowControllerInMobile = true;
+    public string controllerName = "Placeholder";
     
 
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class LightController : DomoticaController
 
     public void Switch()
     {
-        base.SwitchLightOnRoom(this);
+        GameObject.FindObjectOfType<DomoticaController>().SwitchLightOnRoom(this);
     }
 
     public void IncreaseLightIntesity()

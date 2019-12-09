@@ -9,7 +9,6 @@ public class DomoticaController : MonoBehaviour
     private CurtainController[] curtainControllers;
     private List<string> domotica;
 
-    
     void Awake()    
     {
         domotica = new List<string>();
@@ -132,8 +131,12 @@ public class DomoticaController : MonoBehaviour
                 totalEnabled += 1.0f;
             }
         }
+        Debug.Log(curtainController.controllerName + totalCurtains.ToString());
+
+
         if (totalEnabled >= Mathf.Ceil(totalCurtains / 2.0f))
         {
+            Debug.Log(curtainController.controllerName + totalCurtains.ToString());
             return true;
         }
         else

@@ -16,8 +16,8 @@ public class MobileController : MonoBehaviour
     public GameObject buttonPrefab;
     public GameObject toggleButtonPrefab;
 
-    LightController[] lightControllers;
-    CurtainController[] curtainControllers;
+    private LightController[] lightControllers;
+    private CurtainController[] curtainControllers;
 
     private Transform on;
     private Transform off;
@@ -29,7 +29,7 @@ public class MobileController : MonoBehaviour
     public GameObject messagePanel;
 
     
-    void Start()
+    private void Start()
     {
         panelList = new List<GameObject>();
       
@@ -44,14 +44,14 @@ public class MobileController : MonoBehaviour
         buttonListLightsMenu = new List<GameObject>();
         buttonListCurtainsMenu = new List<GameObject>();
 
-        createButtons(typeof(string));
-        createButtons(typeof(CurtainController));
-        createButtons(typeof(LightController));
+        CreateButtons(typeof(string));
+        CreateButtons(typeof(CurtainController));
+        CreateButtons(typeof(LightController));
         this.gameObject.SetActive(false);
     }
 
 
-    void Update()
+    private void Update()
     {
         if (this.gameObject.activeSelf == true || curtainControllers[0] != null)
         {
@@ -60,7 +60,7 @@ public class MobileController : MonoBehaviour
         }
     }
 
-    private void createButtons(System.Type type)
+    private void CreateButtons(System.Type type)
     {
 
         float x = 47.65f;
@@ -96,7 +96,7 @@ public class MobileController : MonoBehaviour
                     butn.transform.SetParent(lightMenuPanel.transform, false);
                     butn.transform.localPosition = new Vector3(0, (x - (a * z)), 0);
                     butn.transform.parent = lightMenuPanel.transform;
-                    butn.GetComponentInChildren<Text>().text = lightControllers[i].name;
+                    butn.GetComponentInChildren<Text>().text = lightControllers[i].controllerName;
                     
                     if (butn != null)
                     {
@@ -122,7 +122,7 @@ public class MobileController : MonoBehaviour
                 GameObject butn = Instantiate(toggleButtonPrefab) as GameObject;
                 butn.transform.SetParent(curtainMenuPanel.transform, false);
                 butn.transform.localPosition = new Vector3(0, (x - (a * i)), 0);
-                butn.GetComponentInChildren<Text>().text = curtainControllers[i].name;
+                butn.GetComponentInChildren<Text>().text = curtainControllers[i].controllerName;
                 if (butn != null)
                 {
                     on = butn.transform.Find("Toggle/ON");
@@ -146,7 +146,7 @@ public class MobileController : MonoBehaviour
             {
                 foreach (GameObject butn in buttonListLightsMenu)
                 {
-                    if (butn.GetComponentInChildren<Text>().text == lightController.name)
+                    if (butn.GetComponentInChildren<Text>().text == lightController.controllerName)
                     {
                         butn.GetComponentInChildren<ToggleController>().SwitchButtonToOn();
                     }
@@ -156,7 +156,7 @@ public class MobileController : MonoBehaviour
             {
                 foreach (GameObject butn in buttonListLightsMenu)
                 {
-                    if (butn.GetComponentInChildren<Text>().text == lightController.name)
+                    if (butn.GetComponentInChildren<Text>().text == lightController.controllerName)
                     {
                         butn.GetComponentInChildren<ToggleController>().SwitchButtonToOff();
                     }
@@ -173,11 +173,12 @@ public class MobileController : MonoBehaviour
 
         foreach (CurtainController curtainController in curtainControllers)
         {
+
             if (domoticaController.GetComponent<DomoticaController>().CheckIfCurtainIsOpen(curtainController))
             {
                 foreach (GameObject butn in buttonListCurtainsMenu)
                 {
-                    if (butn.GetComponentInChildren<Text>().text == curtainController.name)
+                    if (butn.GetComponentInChildren<Text>().text == curtainController.controllerName)
                     {
                         butn.GetComponentInChildren<ToggleController>().SwitchButtonToOn();
                     }
@@ -187,7 +188,7 @@ public class MobileController : MonoBehaviour
             {
                 foreach (GameObject butn in buttonListCurtainsMenu)
                 {
-                    if (butn.GetComponentInChildren<Text>().text == curtainController.name)
+                    if (butn.GetComponentInChildren<Text>().text == curtainController.controllerName)
                     {
                         butn.GetComponentInChildren<ToggleController>().SwitchButtonToOff();
                     }
