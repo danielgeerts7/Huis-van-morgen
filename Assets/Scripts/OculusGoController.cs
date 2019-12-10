@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class OculusGoController : MonoBehaviour
 {
-    [SerializeField] private int moveSpeed = 2;
+    [SerializeField] private float forwardSpeed = 2.0f;
+    [SerializeField] private float sidewardsSpeed = 0.5f;
 
     private float deltaTime;
 
@@ -29,8 +30,8 @@ public class OculusGoController : MonoBehaviour
             Vector2 axis = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
             GameObject player = GameObject.FindObjectOfType<OVRPlayerController>().gameObject;
 
-            player.transform.Translate(-Vector3.forward * moveSpeed * axis.y * Time.deltaTime);
-            player.transform.Translate(-Vector3.right * moveSpeed * axis.x * Time.deltaTime);
+            player.transform.Translate(-Vector3.forward * forwardSpeed * axis.y * Time.deltaTime);
+            player.transform.Translate(-Vector3.right * sidewardsSpeed * axis.x * Time.deltaTime);
 
         }
     }
