@@ -12,22 +12,27 @@ public class lightsout : MonoBehaviour
     {
         foreach (Light light in FindObjectsOfType<Light>())
         {
-            light.intensity = 1.0f;
+            if (!(light == directionalMain || light == directionalSupport))
+            {
+                light.intensity = .8f;
+                light.range = 10f;
+                light.enabled = false;
+            }
         }
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            SetLights(0.25f, 0.25f, 0.1f);
+            SetLights(0.25f, 0.25f, 0.75f);
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SetLights(0.5f, 0.25f, 0.3f);
+            SetLights(0.5f, 0.25f, 0.75f);
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            SetLights(0.75f, 0.5f, 0.4f);
+            SetLights(0.75f, 0.5f, 0.75f);
         if (Input.GetKeyDown(KeyCode.Alpha4))
-            SetLights(1f, 0.75f, 0.4f);
+            SetLights(1f, 0.75f, 0.75f);
         if (Input.GetKeyDown(KeyCode.Alpha5))
-            SetLights(1f, 1f, 0.5f);
+            SetLights(1f, 1f, 0.75f);
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
@@ -51,7 +56,7 @@ public class lightsout : MonoBehaviour
 
     }
 
-    private void SetLights ( float main, float support, float rest)
+    private void SetLights(float main, float support, float rest)
     {
         foreach (Light light in FindObjectsOfType<Light>())
         {
