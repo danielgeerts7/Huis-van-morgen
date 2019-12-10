@@ -13,12 +13,11 @@ public class CurtainInteractable : Interactable
     {
         if (!isOpen)
         {
-            leftCurtain.GetComponent<Animator>().Play("Close Curtain");
-            rightCurtain.GetComponent<Animator>().Play("Close Curtain");
-            isOpen = false;
+                leftCurtain.GetComponent<Animator>().Play("Close Curtain");
+                rightCurtain.GetComponent<Animator>().Play("Close Curtain");
+                isOpen = false;
         }
     }
-
     public override void OnUpdate() { }
     public override void OnSelect() { }
     public override void OnDeselect() { }
@@ -27,11 +26,17 @@ public class CurtainInteractable : Interactable
     {
         if (isOpen)
         {
-            CurtainClose();
+            if (leftCurtain.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !leftCurtain.GetComponent<Animator>().IsInTransition(0))
+            {   
+                CurtainClose();
+            }
         }
         else
         {
-            CurtainOpen();
+            if (leftCurtain.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !leftCurtain.GetComponent<Animator>().IsInTransition(0))
+            {
+                CurtainOpen();
+            }
         }
     }
 

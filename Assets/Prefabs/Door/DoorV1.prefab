@@ -234,6 +234,7 @@ MonoBehaviour:
   highlightOnStep: 0
   highlightOnSelect: 0
   isOpen: 0
+  anime: {fileID: 0}
 --- !u!95 &6285618764196504594
 Animator:
   serializedVersion: 3
@@ -247,7 +248,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 09488fd6401b1ce499a8859ad7ab6238, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
