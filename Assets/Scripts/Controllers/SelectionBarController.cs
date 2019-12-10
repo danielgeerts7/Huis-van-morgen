@@ -10,7 +10,6 @@ public class SelectionBarController : MonoBehaviour
     public GameObject selectedScenarioView;
     public GameObject selectedPersonaView;
 
-    public GameObject startSimulation_btn;
     public GameObject resetSelectionView_Btn;
 
     private CurvedMenuController curvedController;
@@ -24,7 +23,6 @@ public class SelectionBarController : MonoBehaviour
     {
         curvedController = GameObject.FindObjectOfType<CurvedMenuController>();
 
-        startSimulation_btn.SetActive(false);
         resetSelectionView_Btn.SetActive(false);
 
         loadingscreen.SetActive(false);
@@ -78,7 +76,6 @@ public class SelectionBarController : MonoBehaviour
         currentTypeToSelect = ConfigController.CardType.HOUSE;
 
         // Set buttons to invisible
-        startSimulation_btn.SetActive(false);
         resetSelectionView_Btn.SetActive(false);
     }
 

@@ -46,12 +46,12 @@ public class OculusRayCast : MonoBehaviour
         lr.endWidth = 0.002f;
 
         standardColor = Color.white;
-//        standardLineColor.a = 0.5f;
+        //        standardLineColor.a = 0.5f;
         lineMaterial.color = standardColor;
 
         selectPointer = Instantiate(prefabSelectPointer);
         nonSelectPointer = Instantiate(prefabNonSelectPointer);
-}
+    }
 
     // Update is called once per frame
     void Update()
@@ -61,9 +61,12 @@ public class OculusRayCast : MonoBehaviour
             SceneManager.LoadScene("MenuScene");
         }
 
-        gazeAtButton = false;
-        gazeAtInteractable = false;
+        DrawLightSaber();
 
+        CheckIfRayCastHit();
+    }
+
+    private void DrawLightSaber() {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit raycastHit;
         Vector3 endPosition = transform.position + (transform.forward * lightsaberLength);
@@ -74,7 +77,9 @@ public class OculusRayCast : MonoBehaviour
 
         lr.SetPosition(0, this.transform.parent.position);
         lr.SetPosition(1, endPosition);
+    }
 
+    private void CheckIfRayCastHit() {
         Vector3 origin = transform.position;
         Vector3 direction = transform.forward * raycastLength;
         if (Physics.Raycast(origin, direction, out hit, raycastLength))
@@ -89,12 +94,18 @@ public class OculusRayCast : MonoBehaviour
                 crosshair = selectPointer;
                 selectPointer.SetActive(true);
                 nonSelectPointer.SetActive(false);
+
+                gazeAtButton = true;
+                gazeAtInteractable = true;
             }
             else
             {
                 crosshair = nonSelectPointer;
                 selectPointer.SetActive(false);
                 nonSelectPointer.SetActive(true);
+
+                gazeAtButton = false;
+                gazeAtInteractable = false;
             }
 
             crosshair.SetActive(true);
@@ -104,8 +115,8 @@ public class OculusRayCast : MonoBehaviour
 
             // Scale Crosshair
             float distance = Vector3.Distance(origin, direction);
-            crosshair.transform.localScale = new Vector3(distance / 75, distance / 75, crosshair.transform.localScale.z);
-           
+            crosshair.transform.localScale = new Vector3(distance / 80, distance / 80, crosshair.transform.localScale.z);
+
             // Rotation Crosshair
             Vector3 targetPoint = new Vector3(hit.transform.position.x, this.transform.position.y, hit.transform.position.z) - transform.position;
             Quaternion targetRotation = Quaternion.LookRotation(-targetPoint, Vector3.up);
@@ -116,50 +127,28 @@ public class OculusRayCast : MonoBehaviour
 
             if (hit.collider.tag.Equals("Interactable"))
             {
+                gazeAtInteractable = true;
+
                 // Check if isInteractable
                 bool succes = hit.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
                 if (succes)
                 {
-                    gazeAtInteractable = true;
-
-                    if (currentSelection == null)
-                    {
-                        currentSelection = newSelection;
-                        currentSelection.Select();
-                    }
-                    else if (currentSelection && OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
-                    {
-                        currentSelection.Activate();
-                    }
-                    else if (!currentSelection.Equals(newSelection))
-                    {
-                        currentSelection = newSelection;
-                    }
+                    currentSelection = newSelection;
+                    currentSelection.Select();
                 }
             }
             else if (hit.transform.GetComponent<Button>() != null)
             {
+                gazeAtButton = true;
+
                 // Check if isButton
                 bool succes = hit.collider.gameObject.TryGetComponent<Button>(out Button lookAtButton);
                 if (succes)
                 {
-                    gazeAtButton = true;
-
-                    if (currentBtn == null)
-                    {
-                        currentBtn = lookAtButton;
-                        Color newCol = currentBtn.transform.GetComponent<Image>().color;
-                        newCol.a = 0.5f;
-                        currentBtn.transform.GetComponent<Image>().color = newCol;
-                    }
-                    else if (currentBtn && OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
-                    {
-                        currentBtn.onClick.Invoke();
-                    }
-                    else if (!currentBtn.Equals(lookAtButton))
-                    {
-                        currentBtn = lookAtButton;
-                    }
+                    currentBtn = lookAtButton;
+                    Color newCol = currentBtn.transform.GetComponent<Image>().color;
+                    newCol.a = 0.5f;
+                    currentBtn.transform.GetComponent<Image>().color = newCol;
                 }
             }
             else
@@ -167,14 +156,35 @@ public class OculusRayCast : MonoBehaviour
                 lr.startColor = lineMaterial.color = crosshair.GetComponent<SpriteRenderer>().color = standardColor;
             }
         }
-        else {
+        else
+        {
             selectPointer.SetActive(false);
             nonSelectPointer.SetActive(false);
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+        {
+            // Interactiables
+            if (currentSelection)
+            {
+                currentSelection.Activate();
+                lr.startColor = Color.red;
+                lineMaterial.color = Color.red;
+            }
+
+            //UI buttons
+            if (currentBtn)
+            {
+                currentBtn.onClick.Invoke();
+                lr.startColor = Color.red;
+                lineMaterial.color = Color.red;
+            }
         }
 
         if (!gazeAtInteractable && currentSelection)
         {
             currentSelection.Deselect();
+            currentSelection = null;
             lr.startColor = standardColor;
             lineMaterial.color = standardColor;
         }
@@ -182,6 +192,7 @@ public class OculusRayCast : MonoBehaviour
         if (!gazeAtButton && currentBtn)
         {
             ButtonDeselect();
+            currentBtn = null;
             lr.startColor = standardColor;
             lineMaterial.color = standardColor;
         }
@@ -191,7 +202,10 @@ public class OculusRayCast : MonoBehaviour
     {
         if (currentBtn == null) { return; };
 
-        currentBtn.gameObject.GetComponent<Image>().color = standardColor;
+        Color temp = currentBtn.gameObject.GetComponent<Image>().color;
+        temp.a = 1.0f;
+        currentBtn.gameObject.GetComponent<Image>().color = temp;
+
         currentBtn = null;
     }
 

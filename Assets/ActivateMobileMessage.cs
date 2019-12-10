@@ -6,12 +6,17 @@ public class ActivateMobileMessage : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject mobile;
-    public GameObject player;
+
     public Step running;
     private bool showedMessage = false;
 
     public string text;
     // Update is called once per frame
+
+    private void Start()
+    {
+    }
+
     void Update()
     {
         if (showedMessage == false)

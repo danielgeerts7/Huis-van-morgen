@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 301180669}
   - component: {fileID: 301180671}
   - component: {fileID: 301180670}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 1260778605}
   - component: {fileID: 1260778607}
   - component: {fileID: 1260778606}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: loadingBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ RectTransform:
   - {fileID: 1538943869}
   - {fileID: 637663813}
   m_Father: {fileID: 5901518718627849324}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -12.941001, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 1400261902}
   - component: {fileID: 1400261904}
   - component: {fileID: 1400261903}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LoadingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,6 +712,7 @@ GameObject:
   - component: {fileID: 1682007041}
   - component: {fileID: 1682007040}
   - component: {fileID: 1682007039}
+  - component: {fileID: 8308163077674059373}
   m_Layer: 0
   m_Name: LoadingScreen
   m_TagString: Untagged
@@ -727,17 +728,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682007037}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 250}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children:
   - {fileID: 301180669}
-  m_Father: {fileID: 5901518718627849314}
-  m_RootOrder: 0
+  m_Father: {fileID: 5901518718627849324}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -1}
-  m_SizeDelta: {x: 1200, y: 1000}
+  m_AnchoredPosition: {x: 0, y: 1}
+  m_SizeDelta: {x: 2500, y: 2500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1682007041
 Canvas:
@@ -799,6 +800,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!65 &8308163077674059373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682007037}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2500, y: 2500, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5899791317401672191
 GameObject:
   m_ObjectHideFlags: 0
@@ -4224,7 +4238,7 @@ Transform:
   - {fileID: 5901518718627805448}
   - {fileID: 5901518718627801446}
   m_Father: {fileID: 5901518718627849314}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5901518718628120574
 GameObject:
@@ -4362,6 +4376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5901518718627849320}
+  - {fileID: 1682007038}
   - {fileID: 5901518718627849314}
   - {fileID: 1331092767}
   m_Father: {fileID: 0}
@@ -4674,10 +4689,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1682007038}
   - {fileID: 5901518718627787288}
   m_Father: {fileID: 5901518718627849324}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5901518718634708414
 MonoBehaviour:
