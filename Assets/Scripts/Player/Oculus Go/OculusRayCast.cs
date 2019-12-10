@@ -56,11 +56,6 @@ public class OculusRayCast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.Back))
-        {
-            SceneManager.LoadScene("MenuScene");
-        }
-
         DrawLightSaber();
 
         CheckIfRayCastHit();

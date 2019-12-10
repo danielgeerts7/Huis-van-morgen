@@ -223,6 +223,10 @@ public class OVRPlayerController : MonoBehaviour
 			buttonRotation += RotationRatchet;
 	}
 
+    public void RotateVRplayer(float degrees) {
+        buttonRotation += degrees;
+    }
+
 	protected virtual void UpdateController()
 	{
 		if (useProfileData)
