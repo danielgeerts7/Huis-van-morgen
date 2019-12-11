@@ -46,7 +46,7 @@ public class OculusRayCast : MonoBehaviour
         lr.endWidth = 0.002f;
 
         standardColor = Color.white;
-        //        standardLineColor.a = 0.5f;
+        //standardLineColor.a = 0.5f;
         lineMaterial.color = standardColor;
 
         selectPointer = Instantiate(prefabSelectPointer);
@@ -110,7 +110,8 @@ public class OculusRayCast : MonoBehaviour
 
             // Scale Crosshair
             float distance = Vector3.Distance(origin, direction);
-            crosshair.transform.localScale = new Vector3(distance / 80, distance / 80, crosshair.transform.localScale.z);
+            if (distance <= 1) { distance = 1; }
+            crosshair.transform.localScale = new Vector3(distance / 50, distance / 50, crosshair.transform.localScale.z);
 
             // Rotation Crosshair
             Vector3 targetPoint = new Vector3(hit.transform.position.x, this.transform.position.y, hit.transform.position.z) - transform.position;

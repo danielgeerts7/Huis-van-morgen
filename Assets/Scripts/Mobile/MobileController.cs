@@ -95,7 +95,6 @@ public class MobileController : MonoBehaviour
                     GameObject butn = Instantiate(toggleButtonPrefab) as GameObject;
                     butn.transform.SetParent(lightMenuPanel.transform, false);
                     butn.transform.localPosition = new Vector3(0, (x - (a * z)), 0);
-                    butn.transform.parent = lightMenuPanel.transform;
                     butn.GetComponentInChildren<Text>().text = lightControllers[i].controllerName;
                     
                     if (butn != null)
