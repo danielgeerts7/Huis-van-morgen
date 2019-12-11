@@ -52,8 +52,6 @@ public class ActivateStep : Step
 
             if (outline == null)
             {
-                Debug.Log("In if");
-                Debug.Log(activator.AddComponent<Outline>());
                 outline = activator.AddComponent<Outline>();
             }
 
