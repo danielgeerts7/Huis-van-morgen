@@ -6,7 +6,7 @@ public class MobileController : MonoBehaviour
 {
     public bool MobileIsActive = false;
     // Start is called before the first frame update
-    private List<GameObject> panelList;
+    public List<GameObject> panelList;
     private List<GameObject> buttonListMainMenu;
     private List<GameObject> buttonListLightsMenu;
     private List<GameObject> buttonListCurtainsMenu;
@@ -33,7 +33,7 @@ public class MobileController : MonoBehaviour
     {
         panelList = new List<GameObject>();
       
-        foreach (Transform child in this.transform)
+        foreach (Transform child in this.transform.GetChild(0).transform)
         {
             panelList.Add(child.gameObject);
         }
@@ -47,7 +47,7 @@ public class MobileController : MonoBehaviour
         CreateButtons(typeof(string));
         CreateButtons(typeof(CurtainController));
         CreateButtons(typeof(LightController));
-        this.gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
 
@@ -211,6 +211,7 @@ public class MobileController : MonoBehaviour
 
     void ResetPanels()
     {
+        Debug.Log("Resetting");
         for (int i = 0; i < panelList.Count; i++)
         {
             if (panelList[i].activeSelf) panelList[i].SetActive(false);
@@ -220,6 +221,7 @@ public class MobileController : MonoBehaviour
 
     public void OpenPanel(GameObject panel)
     {
+        Debug.Log("Opening panel");
         ResetPanels();
         panel.SetActive(true);
     }

@@ -390,7 +390,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4529520060111158413}
+      - m_Target: {fileID: 8492047166601689243}
         m_MethodName: OpenPanel
         m_Mode: 2
         m_Arguments:
@@ -661,7 +661,6 @@ GameObject:
   - component: {fileID: 4529520060111158416}
   - component: {fileID: 4529520060111158414}
   - component: {fileID: 4529520060111158415}
-  - component: {fileID: 4529520060111158413}
   m_Layer: 5
   m_Name: MobilePhone
   m_TagString: Untagged
@@ -728,27 +727,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4529520060111158413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4529520060111158417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b95fe4ef8d056949a1ad767e478a6d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MobileIsActive: 0
-  buttonPrefab: {fileID: 7869363650128215390, guid: 8d57c939a5c668748af863e22769bdb8,
-    type: 3}
-  toggleButtonPrefab: {fileID: 4073579754681884920, guid: b1af1e3c7d626454ebcda3282a73fa6a,
-    type: 3}
-  mainMenuPanel: {fileID: 4529520060516129201}
-  lightMenuPanel: {fileID: 4529520060542843204}
-  curtainMenuPanel: {fileID: 4529520061364789027}
-  messagePanel: {fileID: 6952190006384954841}
 --- !u!1 &4529520060168651276
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +817,7 @@ GameObject:
   - component: {fileID: 4529520060450640077}
   - component: {fileID: 4529520060450640078}
   - component: {fileID: 4529520060450640075}
+  - component: {fileID: 8492047166601689243}
   m_Layer: 0
   m_Name: MobilePrefab
   m_TagString: Untagged
@@ -942,6 +921,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &8492047166601689243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4529520060450640080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b95fe4ef8d056949a1ad767e478a6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MobileIsActive: 0
+  panelList: []
+  buttonPrefab: {fileID: 7869363650128215390, guid: 8d57c939a5c668748af863e22769bdb8,
+    type: 3}
+  toggleButtonPrefab: {fileID: 4073579754681884920, guid: b1af1e3c7d626454ebcda3282a73fa6a,
+    type: 3}
+  mainMenuPanel: {fileID: 4529520060516129201}
+  lightMenuPanel: {fileID: 4529520060542843204}
+  curtainMenuPanel: {fileID: 4529520061364789027}
+  messagePanel: {fileID: 6952190006384954841}
 --- !u!1 &4529520060516129201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1210,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4529520060111158413}
+      - m_Target: {fileID: 8492047166601689243}
         m_MethodName: OpenPanel
         m_Mode: 2
         m_Arguments:
@@ -1426,7 +1427,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4529520060111158413}
+      - m_Target: {fileID: 8492047166601689243}
         m_MethodName: OpenPanel
         m_Mode: 2
         m_Arguments:
@@ -1445,7 +1446,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6123677783969734083}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 30, y: 23, z: 1}

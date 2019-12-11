@@ -20,6 +20,8 @@ public class ScenarioController : MonoBehaviour
 
     void Start()
     {
+        UI = FindObjectOfType<UIHandler>();
+
         state = State.WAITING;
 
         // Check for scenario in ConfigController
