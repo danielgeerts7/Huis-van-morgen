@@ -5,12 +5,11 @@ using UnityEngine.UI;
 public class MobileController : MonoBehaviour
 {
     public bool MobileIsActive = false;
-    // Start is called before the first frame update
     private List<GameObject> panelList;
     private List<GameObject> buttonListMainMenu;
-    private List<GameObject> buttonListLightsMenu;
-    private List<GameObject> buttonListCurtainsMenu;
 
+    Dictionary<GameObject, LightController> buttonDictLightsMenu;
+    Dictionary<GameObject, CurtainController> buttonDictCurtainMenu;
 
     private GameObject domoticaController;
     public GameObject buttonPrefab;
@@ -40,9 +39,9 @@ public class MobileController : MonoBehaviour
 
         domoticaController = GameObject.FindObjectOfType<DomoticaController>().gameObject;
 
+        buttonDictLightsMenu = new Dictionary<GameObject, LightController>();
+        buttonDictCurtainMenu = new Dictionary<GameObject, CurtainController>();
         buttonListMainMenu = new List<GameObject>();
-        buttonListLightsMenu = new List<GameObject>();
-        buttonListCurtainsMenu = new List<GameObject>();
 
         CreateButtons(typeof(string));
         CreateButtons(typeof(CurtainController));
@@ -106,7 +105,7 @@ public class MobileController : MonoBehaviour
                     off.GetComponent<Text>().text = "Uit";   
                     ButtonOnOff = butn.transform.Find("Toggle/Button");
                     ButtonOnOff.GetComponent<Button>().onClick.AddListener(() => SwitchLights(lightControllers[p]));
-                    buttonListLightsMenu.Add(butn);
+                    buttonDictLightsMenu.Add(butn, lightControllers[p]);
                     z += 1;
                 }
             }
@@ -131,35 +130,24 @@ public class MobileController : MonoBehaviour
                 off.GetComponent<Text>().text = "Dicht";
                 ButtonOnOff = butn.transform.Find("Toggle/Button");
                 ButtonOnOff.GetComponent<Button>().onClick.AddListener(() => SwitchCurtains(curtainControllers[z]));
-                buttonListCurtainsMenu.Add(butn);
+                buttonDictCurtainMenu.Add(butn, curtainControllers[z]);
             }
         }
     }
 
     private void SetLightButonsToRightState()
     {
-        foreach (LightController lightController in lightControllers)
+        foreach (KeyValuePair<GameObject, LightController> button in buttonDictLightsMenu)
         {
-        
-            if (domoticaController.GetComponent<DomoticaController>().CheckIfLightsAreOn(lightController))
+
+            if (domoticaController.GetComponent<DomoticaController>().CheckIfLightsAreOn(button.Value))
             {
-                foreach (GameObject butn in buttonListLightsMenu)
-                {
-                    if (butn.GetComponentInChildren<Text>().text == lightController.controllerName)
-                    {
-                        butn.GetComponentInChildren<ToggleController>().SwitchButtonToOn();
-                    }
-                }
+
+                button.Key.GetComponentInChildren<ToggleController>().SwitchButtonToOn();
             }
             else
             {
-                foreach (GameObject butn in buttonListLightsMenu)
-                {
-                    if (butn.GetComponentInChildren<Text>().text == lightController.controllerName)
-                    {
-                        butn.GetComponentInChildren<ToggleController>().SwitchButtonToOff();
-                    }
-                }
+                button.Key.GetComponentInChildren<ToggleController>().SwitchButtonToOff();
             }
         }
     }
@@ -167,35 +155,20 @@ public class MobileController : MonoBehaviour
 
     private void SetCurtainsButonsToRightState()
     {
-        CurtainController[] curtainControllers = new CurtainController[domoticaController.GetComponent<DomoticaController>().GetListCurtains().Length];
-        curtainControllers = domoticaController.GetComponent<DomoticaController>().GetListCurtains();
-
-        foreach (CurtainController curtainController in curtainControllers)
+        foreach (KeyValuePair<GameObject, CurtainController> button in buttonDictCurtainMenu)
         {
 
-            if (domoticaController.GetComponent<DomoticaController>().CheckIfCurtainsAreOpen(curtainController))
+            if (domoticaController.GetComponent<DomoticaController>().CheckIfCurtainsAreOpen(button.Value))
             {
-                foreach (GameObject butn in buttonListCurtainsMenu)
-                {
-                    if (butn.GetComponentInChildren<Text>().text == curtainController.controllerName)
-                    {
-                        butn.GetComponentInChildren<ToggleController>().SwitchButtonToOn();
-                    }
-                }
+
+                button.Key.GetComponentInChildren<ToggleController>().SwitchButtonToOn();
             }
             else
             {
-                foreach (GameObject butn in buttonListCurtainsMenu)
-                {
-                    if (butn.GetComponentInChildren<Text>().text == curtainController.controllerName)
-                    {
-                        butn.GetComponentInChildren<ToggleController>().SwitchButtonToOff();
-                    }
-                }
+                button.Key.GetComponentInChildren<ToggleController>().SwitchButtonToOff();
             }
         }
     }
-
     private void SwitchLights(LightController lightController)
     {
         domoticaController.GetComponent<DomoticaController>().SwitchLightOnRoom(lightController);
@@ -247,6 +220,5 @@ public class MobileController : MonoBehaviour
         }
         messagePanel.GetComponentInChildren<Text>().text = s;
         OpenPanel(messagePanel);
-
     }
 }
