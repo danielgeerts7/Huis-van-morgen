@@ -19,6 +19,10 @@ public class UIHandler : MonoBehaviour
         scenarioInfo.GetComponentInChildren<Text>().text = info;
 
         scenarioButton.SetActive(true);
+        scenarioButton.GetComponent<Button>().onClick.AddListener(delegate
+        {
+            FindObjectOfType<ScenarioController>().Activate();
+        });
         scenarioButton.GetComponentInChildren<Text>().text = "Start Scenario";
     }
 
