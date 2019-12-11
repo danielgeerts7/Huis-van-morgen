@@ -301,6 +301,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR player
       objectReference: {fileID: 0}
+    - target: {fileID: 5901518718628149314, guid: ee562407b0f2b824f92f0ff84a43e192,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5901518718627849324, guid: ee562407b0f2b824f92f0ff84a43e192,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -356,6 +361,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1331092767, guid: ee562407b0f2b824f92f0ff84a43e192, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5901518718642261386, guid: ee562407b0f2b824f92f0ff84a43e192,
         type: 3}
       propertyPath: m_Radius
@@ -365,10 +374,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Height
       value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1331092767, guid: ee562407b0f2b824f92f0ff84a43e192, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 301180668, guid: ee562407b0f2b824f92f0ff84a43e192, type: 3}
       propertyPath: m_Layer
@@ -417,6 +422,15 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529520060823985581, guid: ee562407b0f2b824f92f0ff84a43e192,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 414026110, guid: ee562407b0f2b824f92f0ff84a43e192, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee562407b0f2b824f92f0ff84a43e192, type: 3}

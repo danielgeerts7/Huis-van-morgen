@@ -101,31 +101,24 @@ public class ToggleController : MonoBehaviour
 
 	public void Toggle(bool toggleStatus)
 	{
-        if (onIcon.active)
-        {
-            onIcon.SetActive(false);
-            offIcon.SetActive(true);
-        }
-        else if(offIcon.active)
-        {
-            onIcon.SetActive(true);
-            offIcon.SetActive(false);
-        }
 
         if (toggleStatus)
 		{
 			toggleBgImage.color = SmoothColor(onColorBg, offColorBg);
-			Transparency (onIcon, 1f, 0f);
-			Transparency (offIcon, 0f, 1f);
+
 			handleTransform.localPosition = SmoothMove(handle, onPosX, offPosX);
-		}
+
+            onIcon.SetActive(false);
+            offIcon.SetActive(true);
+        }
 		else 
 		{
 			toggleBgImage.color = SmoothColor(offColorBg, onColorBg);
-			Transparency (onIcon, 0f, 1f);
-			Transparency (offIcon, 1f, 0f);
+
 			handleTransform.localPosition = SmoothMove(handle, offPosX, onPosX);
-		}
+            onIcon.SetActive(true);
+            offIcon.SetActive(false);
+        }
 			
 	}
 

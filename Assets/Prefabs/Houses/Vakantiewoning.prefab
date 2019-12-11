@@ -48,7 +48,7 @@ MonoBehaviour:
   curtains:
   - {fileID: 2483211925340362655}
   - {fileID: 2483211925693070969}
-  controllerName: Placeholder
+  controllerName: Woonkamer
 --- !u!1 &1087139504403402762
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   curtains:
   - {fileID: 2483211925675806849}
   - {fileID: 2483211924250924915}
-  controllerName: Placeholder
+  controllerName: Slaapkamer
 --- !u!1 &1923204080792875280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,9 +1297,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497216195724947}
   - component: {fileID: 4680110520618941463}
+  - component: {fileID: 1928599629}
   m_Layer: 0
-  m_Name: Point light
-  m_TagString: Untagged
+  m_Name: Point light 7
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1325,7 +1326,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042126820276929}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1378,6 +1379,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1928599629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042126820276929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042126826990879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3238,7 +3253,7 @@ MonoBehaviour:
   - {fileID: 4724042128509696853}
   - {fileID: 4724042129419317981}
   ShowControllerInMobile: 1
-  controllerName: Placeholder
+  controllerName: Slaapkamer
 --- !u!1 &4724042127634914495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,9 +3696,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497216874894287}
   - component: {fileID: 4680110518285203101}
+  - component: {fileID: 620713045}
   m_Layer: 0
-  m_Name: Point light
-  m_TagString: Untagged
+  m_Name: Point light 1
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3709,7 +3725,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042127808502425}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3762,6 +3778,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &620713045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042127808502425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042127826780681
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,9 +4603,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497216717388115}
   - component: {fileID: 4680110520845921517}
+  - component: {fileID: 1253932368}
   m_Layer: 0
   m_Name: Point light
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4654,6 +4685,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1253932368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042127950840015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042127987263803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5692,6 +5737,7 @@ MonoBehaviour:
   - {fileID: 4724042129540229997}
   - {fileID: 4724042128718674253}
   - {fileID: 4724042130706954983}
+  - {fileID: 4724042126820276929}
   ShowControllerInMobile: 1
   controllerName: Woonkamer
 --- !u!1 &4724042128453373539
@@ -5796,9 +5842,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497217148019773}
   - component: {fileID: 4680110518816204455}
+  - component: {fileID: 1225818595}
   m_Layer: 0
   m_Name: Point light
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5878,6 +5925,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1225818595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042128509696853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042128648735109
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,9 +6330,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497218028105565}
   - component: {fileID: 4680110517789701515}
+  - component: {fileID: 415872488}
   m_Layer: 0
-  m_Name: Point light
-  m_TagString: Untagged
+  m_Name: Point light 8
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6297,7 +6359,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042128718674253}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6350,6 +6412,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &415872488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042128718674253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042128728956805
 GameObject:
   m_ObjectHideFlags: 0
@@ -7764,9 +7840,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497216246955899}
   - component: {fileID: 4680110517500174413}
+  - component: {fileID: 606280951}
   m_Layer: 0
   m_Name: Point light
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7846,6 +7923,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &606280951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042129419317981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042129495789013
 GameObject:
   m_ObjectHideFlags: 0
@@ -7973,9 +8064,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497215724416937}
   - component: {fileID: 4680110517154154805}
+  - component: {fileID: 133375000}
   m_Layer: 0
-  m_Name: Point light
-  m_TagString: Untagged
+  m_Name: Point light 6
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8001,7 +8093,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042129540229997}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8054,6 +8146,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &133375000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042129540229997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042129547870483
 GameObject:
   m_ObjectHideFlags: 0
@@ -8264,9 +8370,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497218572006161}
   - component: {fileID: 4680110519516057419}
+  - component: {fileID: 603116145}
   m_Layer: 0
   m_Name: Point light
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8345,6 +8452,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &603116145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042129581776029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042129592593439
 GameObject:
   m_ObjectHideFlags: 0
@@ -9860,9 +9981,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497217376691791}
   - component: {fileID: 4680110520237814751}
+  - component: {fileID: 1848106621}
   m_Layer: 0
-  m_Name: Point light
-  m_TagString: Untagged
+  m_Name: Point light 2
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9888,7 +10010,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042130360406177}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9941,6 +10063,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1848106621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042130360406177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042130367497455
 GameObject:
   m_ObjectHideFlags: 0
@@ -10615,9 +10751,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497216112807997}
   - component: {fileID: 4680110520294204265}
+  - component: {fileID: 797977768}
   m_Layer: 0
-  m_Name: Point light
-  m_TagString: Untagged
+  m_Name: Point light 3
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -10643,7 +10780,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042130573047345}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10696,6 +10833,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &797977768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042130573047345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042130578006177
 GameObject:
   m_ObjectHideFlags: 0
@@ -11029,9 +11180,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4720497218141346511}
   - component: {fileID: 4680110520405339559}
+  - component: {fileID: 14600951}
   m_Layer: 0
-  m_Name: Point light
-  m_TagString: Untagged
+  m_Name: Point light 9
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -11057,7 +11209,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042130706954983}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11110,6 +11262,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &14600951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042130706954983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnStep: 0
+  highlightOnSelect: 0
 --- !u!1 &4724042130725981105
 GameObject:
   m_ObjectHideFlags: 0
@@ -11923,7 +12089,7 @@ MonoBehaviour:
   - {fileID: 4724042129581776029}
   - {fileID: 4724042127950840015}
   ShowControllerInMobile: 1
-  controllerName: Placeholder
+  controllerName: Badkamer
 --- !u!1 &5208911493153718719
 GameObject:
   m_ObjectHideFlags: 0
@@ -12037,7 +12203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curtains:
   - {fileID: 2483211925440306655}
-  controllerName: Placeholder
+  controllerName: Badkamer
 --- !u!1 &8419055628710328843
 GameObject:
   m_ObjectHideFlags: 0
@@ -12220,17 +12386,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7204214447793905327, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
+        type: 3}
+      propertyPath: isOpen
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dee8fd1f0eb7574590b45afba5b22cc, type: 3}
---- !u!1 &2483211925340362655 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
-    type: 3}
-  m_PrefabInstance: {fileID: 4723333487154891058}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2483211925340362654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4723333487154891058}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2483211925340362655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
     type: 3}
   m_PrefabInstance: {fileID: 4723333487154891058}
   m_PrefabAsset: {fileID: 0}
@@ -12382,15 +12553,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
+    - target: {fileID: 7204214447793905327, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.57557875
-      objectReference: {fileID: 0}
-    - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.80000055
+      propertyPath: isOpen
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dee8fd1f0eb7574590b45afba5b22cc, type: 3}
@@ -12485,15 +12651,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dee8fd1f0eb7574590b45afba5b22cc, type: 3}
---- !u!4 &2483211925675806848 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
-    type: 3}
-  m_PrefabInstance: {fileID: 4723333487624818220}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2483211925675806849 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4723333487624818220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2483211925675806848 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
     type: 3}
   m_PrefabInstance: {fileID: 4723333487624818220}
   m_PrefabAsset: {fileID: 0}
@@ -12566,13 +12732,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
         type: 3}
-      propertyPath: m_LocalScale.z
-      value: -1.4
+      propertyPath: m_LocalScale.y
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.27
+      propertyPath: m_LocalScale.z
+      value: -1.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc9a76360a1d6d7428de514d4312a595, type: 3}
@@ -12742,13 +12908,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
         type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4
+      propertyPath: m_LocalScale.y
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 3821108334639446186, guid: dc9a76360a1d6d7428de514d4312a595,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.27
+      propertyPath: m_LocalScale.z
+      value: 1.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc9a76360a1d6d7428de514d4312a595, type: 3}
