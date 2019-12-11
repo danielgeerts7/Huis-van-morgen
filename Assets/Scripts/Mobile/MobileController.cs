@@ -27,12 +27,12 @@ public class MobileController : MonoBehaviour
     public GameObject curtainMenuPanel;
     public GameObject messagePanel;
 
-    
+
     private void Start()
     {
         panelList = new List<GameObject>();
-      
-        foreach (Transform child in this.transform)
+
+        foreach (Transform child in this.transform.GetChild(0).transform)
         {
             panelList.Add(child.gameObject);
         }
@@ -46,7 +46,7 @@ public class MobileController : MonoBehaviour
         CreateButtons(typeof(string));
         CreateButtons(typeof(CurtainController));
         CreateButtons(typeof(LightController));
-        this.gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
 
@@ -95,14 +95,14 @@ public class MobileController : MonoBehaviour
                     butn.transform.SetParent(lightMenuPanel.transform, false);
                     butn.transform.localPosition = new Vector3(0, (x - (a * z)), 0);
                     butn.GetComponentInChildren<Text>().text = lightControllers[i].controllerName;
-                    
+
                     if (butn != null)
                     {
                         on = butn.transform.Find("Toggle/ON");
                         off = butn.transform.Find("Toggle/OFF");
                     }
                     on.GetComponent<Text>().text = "Aan";
-                    off.GetComponent<Text>().text = "Uit";   
+                    off.GetComponent<Text>().text = "Uit";
                     ButtonOnOff = butn.transform.Find("Toggle/Button");
                     ButtonOnOff.GetComponent<Button>().onClick.AddListener(() => SwitchLights(lightControllers[p]));
                     buttonDictLightsMenu.Add(butn, lightControllers[p]);
@@ -183,6 +183,7 @@ public class MobileController : MonoBehaviour
 
     void ResetPanels()
     {
+        Debug.Log("Resetting");
         for (int i = 0; i < panelList.Count; i++)
         {
             if (panelList[i].activeSelf) panelList[i].SetActive(false);
@@ -192,6 +193,7 @@ public class MobileController : MonoBehaviour
 
     public void OpenPanel(GameObject panel)
     {
+        Debug.Log("Opening panel");
         ResetPanels();
         panel.SetActive(true);
     }

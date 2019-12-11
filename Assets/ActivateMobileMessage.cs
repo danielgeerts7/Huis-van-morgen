@@ -15,6 +15,7 @@ public class ActivateMobileMessage : MonoBehaviour
 
     private void Start()
     {
+        mobile = FindObjectOfType<MobileController>().gameObject;
     }
 
     void Update()

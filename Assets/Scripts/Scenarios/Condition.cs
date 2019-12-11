@@ -25,4 +25,9 @@ public class Condition
                 return false;
         }
     }
+
+    public Interactable GetInteractable()
+    {
+        return interactable;
+    }
 }
