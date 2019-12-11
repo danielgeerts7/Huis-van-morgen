@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    void Start()
+    public GameObject VR_player;
+    public GameObject EDITOR_player;
+
+    void Awake()
     {
         if (Application.isEditor)
         {
-            ActivatePlayer("Player");
+            ActivatePlayer(EDITOR_player);
         } else
         {
-            ActivatePlayer("VR Player");
+            ActivatePlayer(VR_player);
         }
     }
 
-    private void ActivatePlayer(string name)
+    private void ActivatePlayer(GameObject name)
     {
-        transform.Find(name).gameObject.SetActive(true);
+        name.SetActive(true);
     }
 }
