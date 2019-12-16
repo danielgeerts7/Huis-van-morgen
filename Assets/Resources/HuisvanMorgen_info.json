@@ -47,7 +47,8 @@
       "title": "Nachtbezoek",
       "imagePath": "Scenario/nachtbezoek",
       "houseIDs": [
-		0
+		0,
+		2
       ]
     }
   ],

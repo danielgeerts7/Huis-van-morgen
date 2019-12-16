@@ -11,8 +11,6 @@ public class ToiletInteractable : Interactable
 
     public override void OnActivate()
     {
-
-
         if (GetComponent<StepHandler>())
         {
 
@@ -21,21 +19,21 @@ public class ToiletInteractable : Interactable
 
     public override void OnDeselect()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public override void OnSelect()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public override void OnStart()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public override void OnUpdate()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }

@@ -15,14 +15,20 @@ public class CurtainController : MonoBehaviour
     {
         for (int i = 0; i < curtains.Count; i++)
         {
-            curtains[i].GetComponent<CurtainInteractable>().CurtainOpen();
+            if (!curtains[i].GetComponent<CurtainInteractable>().isOpen)
+            {
+                curtains[i].GetComponent<CurtainInteractable>().CurtainOpen();
+            }
         }
     }
     public void CloseCurtain()
     {
         for (int i = 0; i < curtains.Count; i++)
         {
-            curtains[i].GetComponent<CurtainInteractable>().CurtainClose();
+            if (curtains[i].GetComponent<CurtainInteractable>().isOpen)
+            {
+                curtains[i].GetComponent<CurtainInteractable>().CurtainClose();
+            }
         }
     }
 

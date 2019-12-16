@@ -54,45 +54,33 @@ public class DomoticaController : MonoBehaviour
         }
     }
 
-    public void TurnLightOnRoom(LightController liController)
+    public void SwitchLights(bool allOn)
     {
 
         foreach (LightController lightController in lightControllers)
         {
-            if (lightController == liController)
+            if (allOn)
             {
                 lightController.TurnOn();
             }
-        }
-    }
-
-    public void TurnLightOffRoom(CurtainController curController)
-    {
-        foreach (LightController lightController in lightControllers)
-        {
-            if (lightController == curController)
-            {
+            else {
                 lightController.TurnOff();
             }
+
         }
     }
 
-
-    public void OpenCurtainOnRoom(CurtainController curController)
+    public void SwitchCurtains(bool allOpen)
     {
         foreach (CurtainController curtainController in curtainControllers)
         {
-            if (curtainController == curController)
+            if (allOpen)
+            {
                 curtainController.OpenCurtain();
-        }
-    }
-
-    public void CloseCurtainOnRoom(CurtainController curController)
-    {
-        foreach (CurtainController curtainController in curtainControllers)
-        {
-            if (curtainController == curController)
+            }
+            else {
                 curtainController.CloseCurtain();
+            }
         }
     }
 
