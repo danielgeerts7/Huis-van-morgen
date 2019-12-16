@@ -64,7 +64,8 @@
 		",
 	  "limitations": [
 		"Slechtziend"
-	  ]
+	  ],
+	  "inGameEffect": "Blurry"
     },
     {
       "BSN": 1,
@@ -80,8 +81,10 @@
 	  "limitations": [
 		"Rugklachten",
 		"Slecht ter been"
-	  ]
-    },{
+	  ],
+	  "inGameEffect": "Slow"
+    },
+	{
       "BSN": 2,
       "firstName": "Johan",
 	  "lastName": "van Doorn",
@@ -94,7 +97,8 @@
 		",
 	  "limitations": [
 		"Slechthorend"
-	  ]
+	  ],
+	  "inGameEffect": "LowSound"
     }
   ]
 }

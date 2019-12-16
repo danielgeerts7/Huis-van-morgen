@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MobileController : MonoBehaviour
 {
-    public bool MobileIsActive = false;
     private List<GameObject> panelList;
     private List<GameObject> buttonListMainMenu;
 

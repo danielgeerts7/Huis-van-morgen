@@ -14,6 +14,7 @@ public struct PersonaInfo
 
     public string biography;
     public string[] limitations;
+    public string inGameEffect;
 
     public string getFullName() {
         return firstName + " " + lastName;
