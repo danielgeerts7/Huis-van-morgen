@@ -31,6 +31,8 @@ public class TeleportInteractable : Interactable
 
     private void TeleportTo(GameObject go)
     {
+        Debug.Log("Teleporting interactable at " + Time.time);
+
         player.transform.position = go.transform.position;
 
 
@@ -54,6 +56,8 @@ public class TeleportInteractable : Interactable
 
         if (!player)
             player = FindObjectOfType<OVRPlayerController>().gameObject;
+
+        Debug.Log("Teleporter: " + player);
     }
 
     public override void OnUpdate()
