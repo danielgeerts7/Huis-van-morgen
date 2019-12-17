@@ -7,10 +7,18 @@ public class Scenario : MonoBehaviour
 {
     public int scenarioID;
     // Strings to be displayed
+    [TextArea]
     public string introText;
+    [TextArea]
     public string introDescription;
+    [TextArea]
     public string outroText;
+    [TextArea]
     public string outroDescription;
+
+    public bool startWithCurtainsOpen = false;
+    public bool startWithLightsOn = false;
+    public bool startInNightTime = false;
 
     public List<Step> steps;
 
@@ -21,6 +29,13 @@ public class Scenario : MonoBehaviour
     void Start()
     {
         state = State.WAITING;
+    }
+
+    public void InitializeScenario()
+    {
+        DomoticaController dom = GameObject.FindObjectOfType<DomoticaController>();
+        dom.SwitchCurtains(startWithCurtainsOpen);
+        dom.SwitchLights(startWithLightsOn);
     }
 
     public void Run()
@@ -58,6 +73,4 @@ public class Scenario : MonoBehaviour
         step = steps[activeStepIndex];
         step.Run();
     }
-
-
 }

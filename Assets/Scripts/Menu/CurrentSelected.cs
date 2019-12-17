@@ -9,11 +9,13 @@ public class CurrentSelected : MonoBehaviour
     public GameObject description;
 
     private Sprite oldImg;
+    private Color oldColor;
     private string oldText;
 
     private void Start()
     {
         oldImg = image.GetComponent<Image>().sprite;
+        oldColor = image.GetComponent<Image>().color;
         oldText = description.GetComponent<Text>().text;
     }
 
@@ -27,6 +29,7 @@ public class CurrentSelected : MonoBehaviour
     public void Reset()
     {
         image.GetComponent<Image>().sprite = oldImg;
+        image.GetComponent<Image>().color = oldColor;
         description.GetComponent<Text>().text = oldText;
     }
 }

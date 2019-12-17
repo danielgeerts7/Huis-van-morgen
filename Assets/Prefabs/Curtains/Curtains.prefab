@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 7204214446173937814}
   m_Layer: 0
   m_Name: Curtain_Left
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 7204214447630493766}
   m_Layer: 0
   m_Name: Curtain_Right
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

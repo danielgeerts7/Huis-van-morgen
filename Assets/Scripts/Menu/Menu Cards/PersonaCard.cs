@@ -34,6 +34,15 @@ public class PersonaCard : SuperCard
 
         this.personaName.text = persona.getFullName();
         this.personaBiography.text = persona.biography;
+
+        Rect a = this.personaBiography.rectTransform.rect;
+        float height = persona.biography.Length * 1.25f;
+        this.personaBiography.rectTransform.sizeDelta = new Vector2(a.width, height);
+        Vector3 b = this.personaBiography.rectTransform.transform.position;
+        b.y = -(height / 2);
+        this.personaBiography.rectTransform.transform.position = b;
+
+
         this.personaAge.text = persona.age.ToString();
         this.personaImage.sprite = Resources.Load<Sprite>(persona.mugshotPath);
         this.personaImage.color = Color.white;

@@ -64,6 +64,7 @@ public class ScenarioController : MonoBehaviour
     {
         scenario = scenarios[activeScenarioIndex];
         UI.DisplayIntro(scenario.introText, scenario.introDescription);
+        scenario.InitializeScenario();
         state = State.STARTED;
     }
 

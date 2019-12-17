@@ -18,11 +18,9 @@ public class OculusRayCast : MonoBehaviour
 
     // Interactable
     private Interactable currentSelection;
-    private bool gazeAtInteractable = false;
 
     // Buttons
     private Button currentBtn;
-    private bool gazeAtButton = false;
 
     // Line
     public Material lineMaterial;
