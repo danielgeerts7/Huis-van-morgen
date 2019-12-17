@@ -8,6 +8,7 @@ public class AmbulanceInteractable : Interactable
     Rigidbody m_Rigidbody;
     float m_Speed;
     float startTime = 0;
+    bool activated;
 
     public override bool isActive()
     {
@@ -33,18 +34,38 @@ public class AmbulanceInteractable : Interactable
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Speed = 10.0f;
+
+        foreach (MeshRenderer meshRenderer in transform.GetComponentsInChildren<MeshRenderer>())
+        {
+            meshRenderer.enabled = false;
+        }
     }
 
     // Update is called once per frame
     public override void OnUpdate()
     {
-        GetComponent<Outline>().enabled = false;
+        Outline outline = GetComponent<Outline>();
+        if (outline)
+            outline.enabled = false;
+
         StepHandler stepHandler = GetComponent<StepHandler>();
         if (stepHandler == null) return;
 
         if (stepHandler.IsActive())
         {
-            if (gameObject.transform.position.x < 20)
+            if (!activated)
+            {
+                activated = true;
+                foreach (MeshRenderer meshRenderer in transform.GetComponentsInChildren<MeshRenderer>())
+                {
+                    meshRenderer.enabled = true;
+                }
+            }
+
+            MeshRenderer renderer = GetComponent<MeshRenderer>();
+            renderer.enabled = true;
+
+            if (gameObject.transform.position.x > 5)
             {
                 if (startTime == 0)
                 {

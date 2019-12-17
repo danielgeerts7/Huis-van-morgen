@@ -26,7 +26,7 @@ public class FallFromStairs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activated || !(step.getState() == State.COMPLETED))
+        if (activated || !(step.getState() == State.RUNNING))
             return;
         else
             activated = true;
@@ -36,15 +36,20 @@ public class FallFromStairs : MonoBehaviour
             RunOVRScript();
         } else
         {
+            //RunOVRScript();
             RunDebugScript();
         }
     }
 
     private void RunDebugScript()
     {
+        GameObject camera = player.GetComponentInChildren<Camera>().gameObject;
+        camera.transform.localPosition += new Vector3(0f, -1f, 0f);
+
+/*
         Debug.Log("Running debug script");
         player.transform.localScale += new Vector3(0f, -.5f, 0f);
-
+*/
         Vector3 euler = player.transform.rotation.eulerAngles;
         euler.y = 180f;
         player.transform.Rotate(euler);
@@ -52,9 +57,9 @@ public class FallFromStairs : MonoBehaviour
 
     private void RunOVRScript()
     {
-        Debug.Log("Running script on OVR");
-        player.transform.localScale += new Vector3(0f, -.9f, 0f);
-        player.transform.Find("OVRCameraRig");
+        OVRManager camera = player.GetComponentInChildren<OVRManager>();
+        camera.headPoseRelativeOffsetTranslation += new Vector3(0f, -1f, 0f);
+
     }
 
     private void TeleportTo()

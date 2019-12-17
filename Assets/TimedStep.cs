@@ -9,7 +9,6 @@ public class TimedStep : Step
 
     public override void OnActivate()
     {
-        throw new System.NotImplementedException();
     }
 
     public override void OnRun()
@@ -19,7 +18,7 @@ public class TimedStep : Step
 
     public override void OnStart()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public override void OnUpdate()
