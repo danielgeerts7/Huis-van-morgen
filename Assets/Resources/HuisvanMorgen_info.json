@@ -12,7 +12,7 @@
       "scene": "BamHouse",
       "imagePath": "House/eengezinswoning"
     }
-  ]
+  ],
   "scenarios": [
     {
       "ID": 0,
@@ -48,7 +48,8 @@
       "imagePath": "Scenario/nachtbezoek",
       "houseIDs": [
 		0,
-		2
+		2,
+		3
       ]
     }
   ],

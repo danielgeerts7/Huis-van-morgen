@@ -6,13 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class SnapshotMode : MonoBehaviour
 {
-    [SerializeField]
-    private bool useCanvas = true;
-
-    [SerializeField]
-
-    private SnapshotCanvas snapshotCanvas;
-
     //private Shader gaussianShader;
     private Shader edgeBlurShader;
 
@@ -24,18 +17,15 @@ public class SnapshotMode : MonoBehaviour
     private void Awake()
     {
         // Find all shader files.
-        //gaussianShader = Shader.Find("Snapshot/GaussianBlur");
         edgeBlurShader = Shader.Find("Snapshot/EdgeBlur");
   
-
         // Create all filters.
-
-        //filters.Add(new BlurFilter("Blur (Full)", Color.white, gaussianShader));
         filters.Add(new BlurFilter("Blur (Edge)", Color.white, edgeBlurShader));
     }
+
     private void Update()
     {
-        int lastIndex = filterIndex;
+        /*int lastIndex = filterIndex;
 
         // Logic to swap between filters.
         if(Input.GetMouseButtonDown(0))
@@ -57,7 +47,7 @@ public class SnapshotMode : MonoBehaviour
         if(useCanvas && lastIndex != filterIndex)
         {
             snapshotCanvas.SetFilterProperties(filters[filterIndex]);
-        }
+        }*/
     }
 
     // Delegate OnRenderImage() to a SnapshotFilter object.

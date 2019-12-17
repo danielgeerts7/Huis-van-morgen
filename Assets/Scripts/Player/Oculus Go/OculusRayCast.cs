@@ -125,6 +125,8 @@ public class OculusRayCast : MonoBehaviour
                 crosshair = nonSelectPointer;
                 selectPointer.SetActive(false);
                 nonSelectPointer.SetActive(true);
+                currentSelection = null;
+                currentBtn = null;
             }
 
             crosshair.SetActive(true);
