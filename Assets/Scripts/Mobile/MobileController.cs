@@ -219,6 +219,7 @@ public class MobileController : MonoBehaviour
                 panelList.Add(child.gameObject);
             }
         }
+        FindObjectOfType<AudioManager>().Play("Message");
         messagePanel.GetComponentInChildren<Text>().text = s;
         OpenPanel(messagePanel);
     }

@@ -7,6 +7,18 @@
 		{
 			"name": "Activate",
 			"path": "Audio/Easy Going Medieval Tavern - Loop"
+		},
+		{
+			"name": "OpenDoor",
+			"path": "Audio/OpenDoor"
+		},
+		{
+			"name": "CloseDoor",
+			"path": "Audio/CloseDoor"
+		},
+		{
+			"name": "Message",
+			"path": "Audio/Message"
 		}
 	]
 }

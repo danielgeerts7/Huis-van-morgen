@@ -18,6 +18,7 @@ public class DoorInteractable : Interactable
         {
             if (this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !this.GetComponent<Animator>().IsInTransition(0))
             {
+                FindObjectOfType<AudioManager>().Play("CloseDoor");
                 this.gameObject.GetComponent<Animator>().Play("CloseDoor");
                 isOpen = !isOpen;
                 //throw new System.NotImplementedException();
@@ -27,6 +28,7 @@ public class DoorInteractable : Interactable
         {
             if (this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !this.GetComponent<Animator>().IsInTransition(0))
             {
+                FindObjectOfType<AudioManager>().Play("OpenDoor");
                 gameObject.GetComponent<Animator>().Play("OpenDoor");
                 isOpen = !isOpen;
             }
