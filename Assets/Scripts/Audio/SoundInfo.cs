@@ -7,4 +7,5 @@ public class SoundInfo
 {
     public string name;
     public string path;
+    public float volume;
 }
