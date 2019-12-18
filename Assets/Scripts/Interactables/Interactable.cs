@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using cakeslice;
+using System.Collections.Generic;
 
 public abstract class Interactable : MonoBehaviour
 {
-    private Outline outline;
+    private List<Outline> outlines;
     private StepHandler stepHandler;
 
     public abstract void OnActivate();
@@ -15,13 +16,23 @@ public abstract class Interactable : MonoBehaviour
 
     private void Awake()
     {
-        outline = gameObject.AddComponent<Outline>();
+        outlines = new List<Outline>();
+
+        if (this.GetComponent<MeshRenderer>() != null) {
+            outlines.Add(gameObject.AddComponent<Outline>());
+        }
+        else if (this.GetComponentInChildren<MeshRenderer>() != null)
+        {
+            foreach (MeshRenderer renderer in this.GetComponentsInChildren<MeshRenderer>()) {
+                outlines.Add(renderer.gameObject.AddComponent<Outline>());
+            }
+        }
         stepHandler = gameObject.AddComponent<StepHandler>();
     }
 
     private void Start()
     {
-        outline.enabled = false;
+        SetOutline(false);
         OnStart();
     }
 
@@ -32,8 +43,8 @@ public abstract class Interactable : MonoBehaviour
 
     public void Select()
     {
-        outline.color = 0;
-        outline.enabled = true;
+        SetOutlineColor(0);
+        SetOutline(true);
 
         OnSelect();
     }
@@ -42,11 +53,11 @@ public abstract class Interactable : MonoBehaviour
     {
         if (stepHandler.IsActive())
         {
-            outline.color = 1;
+            SetOutlineColor(1);
         }
         else
         {
-            outline.enabled = false;
+            SetOutline(false);
         }
 
         OnDeselect();
@@ -56,5 +67,20 @@ public abstract class Interactable : MonoBehaviour
     {
         stepHandler.Activate();
         OnActivate();
+    }
+
+    private void SetOutline(bool enabled) {
+        foreach (Outline outline in outlines)
+        {
+            outline.enabled = enabled;
+        }
+    }
+
+    private void SetOutlineColor(int alpha)
+    {
+        foreach (Outline outline in outlines)
+        {
+            outline.color = alpha;
+        }
     }
 }
