@@ -31,10 +31,7 @@ public class TeleportInteractable : Interactable
 
     private void TeleportTo(GameObject go)
     {
-        Debug.Log("Teleporting interactable at " + Time.time);
-
         player.transform.position = go.transform.position;
-
 
         //TODO: Fix rotation
         player.transform.rotation = Quaternion.Euler(go.transform.rotation.eulerAngles);
@@ -42,29 +39,21 @@ public class TeleportInteractable : Interactable
 
     public override void OnDeselect()
     {
-        
+
     }
 
     public override void OnSelect()
     {
-        
+
     }
 
     public override void OnStart()
     {
-        player = FindObjectOfType<DebugPlayerController>().gameObject;
-
-        if (!player)
-            player = FindObjectOfType<OVRPlayerController>().gameObject;
-
-        Debug.Log("Teleporter: " + player);
+        player = FindObjectOfType<PlayerController>().GetPlayer();
     }
 
     public override void OnUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            OnActivate();
-        }
+
     }
 }

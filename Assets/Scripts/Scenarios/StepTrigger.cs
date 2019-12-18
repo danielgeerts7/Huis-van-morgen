@@ -5,42 +5,27 @@ using UnityEngine;
 
 public class StepTrigger : MonoBehaviour
 {
-    private StepHandler handler;
-    private bool outlineIsOn;
+    private Outline outline;
+    private StepHandler stepHandler;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        if (!handler)
-        {
-            handler = GetComponent<StepHandler>();
-            return;
-        }
+        outline = gameObject.AddComponent<Outline>();
+        stepHandler = gameObject.AddComponent<StepHandler>();
+    }
 
-        SetOutline(handler.IsActive());
+    private void Start()
+    {
+        outline.color = 1;
+    }
+
+    private void Update()
+    {
+        outline.enabled = stepHandler.IsActive();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        handler = GetComponent<StepHandler>();
-
-        if (handler == null)
-            return;
-
-        handler.Activate();
-    }
-
-    private void SetOutline(bool on)
-    {
-        if (on == outlineIsOn)
-            return;
-
-        Outline outline = GetComponent<Outline>();
-
-        if (outline)
-        {
-            outline.enabled = on;
-            outlineIsOn = on;
-        }
+        stepHandler.Activate();
     }
 }

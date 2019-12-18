@@ -9,28 +9,35 @@ public class CurtainController : MonoBehaviour
 {
     public List<GameObject> curtains;
     public string controllerName = "Placeholder";
-    // Start is called before the first frame update
 
-    public void OpenCurtain()
+    public void OpenCurtains(bool skipAnimation)
     {
         for (int i = 0; i < curtains.Count; i++)
         {
             if (!curtains[i].GetComponent<CurtainInteractable>().isOpen)
             {
-                curtains[i].GetComponent<CurtainInteractable>().CurtainOpen();
+                if (skipAnimation)
+                    curtains[i].GetComponent<CurtainInteractable>().CurtainOpenInstant();
+                else
+                    curtains[i].GetComponent<CurtainInteractable>().CurtainOpen();
+                }
             }
-        }
     }
-    public void CloseCurtain()
+
+    public void CloseCurtains(bool skipAnimation)
     {
         for (int i = 0; i < curtains.Count; i++)
         {
             if (curtains[i].GetComponent<CurtainInteractable>().isOpen)
             {
-                curtains[i].GetComponent<CurtainInteractable>().CurtainClose();
+                if (skipAnimation)
+                    curtains[i].GetComponent<CurtainInteractable>().CurtainCloseInstant();
+                else
+                    curtains[i].GetComponent<CurtainInteractable>().CurtainClose();
             }
         }
     }
+
 
     public void Switch()
     {

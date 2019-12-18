@@ -1,17 +1,11 @@
-﻿using cakeslice;
-using System.Collections;
+﻿using UnityEngine;
+using cakeslice;
 using System.Collections.Generic;
-using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    //Step variables
-    public bool highlightOnStep;
-    public bool highlightOnSelect;
-
-    // Highlight, outline variables
-    private bool hasOutline;
-    private Outline outline;
+    private List<Outline> outlines;
+    private StepHandler stepHandler;
 
     public abstract void OnActivate();
     public abstract void OnSelect();
@@ -20,109 +14,85 @@ public abstract class Interactable : MonoBehaviour
     public abstract void OnUpdate();
     public abstract bool isActive();
 
-    public void Start()
+    private void Awake()
     {
-        InitOutline();
+        outlines = new List<Outline>();
+
+        if (this.gameObject.GetComponent<Renderer>() != null)
+        {
+            outlines.Add(this.gameObject.AddComponent<Outline>());
+        }
+        else if (this.gameObject.GetComponentInChildren<Renderer>() != null)
+        {
+            // for example: Curtains use multiple childern gameobjects
+            foreach (Renderer renderer in this.gameObject.GetComponentsInChildren<Renderer>())
+            {
+                if (renderer != null)
+                {
+                    outlines.Add(renderer.gameObject.AddComponent<Outline>());
+                }
+            }
+        }
+        stepHandler = gameObject.AddComponent<StepHandler>();
+    }
+
+    private void Start()
+    {
+        SetOutline(false);
         OnStart();
     }
 
-    public void Update()
+    private void Update()
     {
-        //if (hasStep && !stepActivated)
-        //{
-        //    if (step.IsRunning())
-        //    {
-        //        Debug.Log("check");
-        //        stepActivated = true;
-        //        if (hasOutline)
-        //        {
-        //            if (!outline.enabled && highlightOnStep)
-        //            {
-        //                outline.color = 0;
-        //                outline.enabled = true;
-        //            }
-        //        }
-        //    }
-        //}
-
         OnUpdate();
-    }
-    public void Activate()
-    {
-        StepHandler stepHandler = GetComponent<StepHandler>();
-        if (stepHandler != null)
-            stepHandler.Activate();
-
-
-        //if (hasStep)
-        //{
-        //    step.Activate();
-
-        //    if (stepActivated && !step.IsRunning())
-        //    {
-        //        stepActivated = false;
-        //        if (hasOutline && !highlightOnSelect)
-        //        {
-        //            outline.enabled = false;
-        //        }
-        //    }
-        //}
-
-        Debug.Log("Activating object");
-        OnActivate();
     }
 
     public void Select()
     {
-        if (hasOutline && highlightOnSelect)
-        {
-            SetOutline(true);
-        }
+        SetOutlineColor(0);
+        SetOutline(true);
+
         OnSelect();
     }
 
     public void Deselect()
     {
-        if (hasOutline && highlightOnSelect)
+        if (stepHandler.IsActive())
+        {
+            SetOutlineColor(1);
+        }
+        else
+        {
             SetOutline(false);
+        }
 
         OnDeselect();
     }
 
-    private void InitStep()
+    public void Activate()
     {
-        //// If there is a step object, get the step component from it.
-        //hasStep = false;
-
-        //step = GetComponent<StepComponent>();
-        //if (step != null)
-        //{
-        //    hasStep = true;
-        //}
+        stepHandler.Activate();
+        OnActivate();
     }
 
-    private void InitOutline()
-    {
-        hasOutline = false;
-
-        if (GetComponent<Outline>())
+    private void SetOutline(bool enabled) {
+        if (outlines.Count > 0)
         {
-            outline = GetComponent<Outline>();
-            SetOutline(false);
-            hasOutline = true;
+            foreach (Outline outline in outlines)
+            {
+                outline.enabled = enabled;
+            }
         }
     }
 
-    private void SetOutline(bool state)
+    private void SetOutlineColor(int alpha)
     {
-        outline.color = 1; // Set color in OutlineEffect Component of camera
-        outline.enabled = state;
-
-        //// If object is not selected, but step is active: give highlight of different color;
-        //if (highlightOnStep && stepActivated && !state)
-        //{
-        //    outline.color = 0;
-        //    outline.enabled = true;
-        //}
+        if (outlines.Count > 0)
+        {
+            foreach (Outline outline in outlines)
+            {
+                outline.color = alpha;
+            }
+        }
     }
 }

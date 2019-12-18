@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1759943175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1759943176}
+  m_Layer: 0
+  m_Name: Toilet sit position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1759943176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759943175}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: -0, y: 0.605, z: 0.208}
+  m_LocalScale: {x: 1.5, y: 0.0267, z: 1.5}
+  m_Children: []
+  m_Father: {fileID: 4720497216009716709}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &280261171252764931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1221,6 @@ GameObject:
   - component: {fileID: 4720497218884408365}
   - component: {fileID: 4754001982757452195}
   - component: {fileID: 4745967915081668519}
-  - component: {fileID: 4715261542844098987}
   - component: {fileID: 6224101956289046967}
   m_Layer: 0
   m_Name: PFB_Basket
@@ -1260,20 +1289,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4715261542844098987
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4724042126818658215}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300002, guid: b2faaff453e184e16b2caab0bf62ec2d, type: 3}
 --- !u!65 &6224101956289046967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1330,13 +1345,13 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 5.5
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: 1
     m_CustomResolution: -1
     m_Strength: 0.898
@@ -1391,8 +1406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042126826990879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,8 +1481,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2, y: 3, z: 0.3}
-  m_Center: {x: 0, y: 1, z: 0.55}
+  m_Size: {x: 2.1, y: 1.7120552, z: 0.30000007}
+  m_Center: {x: 0, y: 0.3560276, z: 0.55}
 --- !u!1 &4724042126837943303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,8 +1575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a3e1c44143fdd4fbd5d366d0d17ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
   lightControllerObject: {fileID: 4724042128427636833}
 --- !u!65 &7681252210125258815
 BoxCollider:
@@ -1871,8 +1882,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 4.5, y: 1.2, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &4724042127040975077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,8 +2083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a3e1c44143fdd4fbd5d366d0d17ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
   lightControllerObject: {fileID: 5009726892332769857}
 --- !u!65 &4624974293743328989
 BoxCollider:
@@ -2826,6 +2835,7 @@ GameObject:
   - component: {fileID: 4720497215305831251}
   - component: {fileID: 4754001983396717881}
   - component: {fileID: 4745967912801682269}
+  - component: {fileID: 1385456184}
   m_Layer: 0
   m_Name: PFB_DiningChair (1)
   m_TagString: Untagged
@@ -2893,6 +2903,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1385456184
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042127382411431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47506827, y: 1.2209088, z: 0.1}
+  m_Center: {x: -0.00000011920929, y: 0.6128685, z: -0.25}
 --- !u!1 &4724042127400840361
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,6 +3319,7 @@ GameObject:
   - component: {fileID: 4720497218769537493}
   - component: {fileID: 4754001986336801937}
   - component: {fileID: 4745967912354291507}
+  - component: {fileID: 1699542591}
   m_Layer: 0
   m_Name: PFB_DiningChair (2)
   m_TagString: Untagged
@@ -3363,6 +3387,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1699542591
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042127677221813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47506845, y: 1.2209088, z: 0.1}
+  m_Center: {x: -0.000000059604645, y: 0.6128685, z: -0.25}
 --- !u!1 &4724042127690338213
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,13 +3766,13 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 6.5
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3790,8 +3827,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042127826780681
 GameObject:
   m_ObjectHideFlags: 0
@@ -4378,8 +4413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a3e1c44143fdd4fbd5d366d0d17ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
   lightControllerObject: {fileID: 4724042127520126133}
 --- !u!65 &4310409342612046660
 BoxCollider:
@@ -4636,13 +4669,13 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 6
-  m_Range: 5
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: 1
     m_CustomResolution: -1
     m_Strength: 0.898
@@ -4697,8 +4730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042127987263803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5871,17 +5902,17 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042128509696853}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 8
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5937,8 +5968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042128648735109
 GameObject:
   m_ObjectHideFlags: 0
@@ -6363,13 +6392,13 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 4
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: 1
     m_CustomResolution: -1
     m_Strength: 0.898
@@ -6424,8 +6453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042128728956805
 GameObject:
   m_ObjectHideFlags: 0
@@ -6637,6 +6664,7 @@ GameObject:
   - component: {fileID: 4754001983109513909}
   - component: {fileID: 4745967912409318925}
   - component: {fileID: 960652036182509520}
+  - component: {fileID: 2115788798}
   m_Layer: 0
   m_Name: PFB_Sofa
   m_TagString: Untagged
@@ -6715,8 +6743,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.6750007, y: 0.93466395, z: 0.85698444}
-  m_Center: {x: 0, y: 0.46732852, z: 0}
+  m_Size: {x: 2.6750007, y: 0.5802456, z: 0.8569873}
+  m_Center: {x: 0, y: 0.29011935, z: 0}
+--- !u!65 &2115788798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042128757900143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6749997, y: 0.93466395, z: 0.27463266}
+  m_Center: {x: 0.00000000767, y: 0.46732852, z: -0.29117584}
 --- !u!1 &4724042128759912225
 GameObject:
   m_ObjectHideFlags: 0
@@ -6888,7 +6929,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 3, z: 0.6}
+  m_Size: {x: 2.5, y: 3, z: 0.4}
   m_Center: {x: 0, y: 1, z: 0.4}
 --- !u!1 &4724042128770399705
 GameObject:
@@ -6964,9 +7005,10 @@ GameObject:
   - component: {fileID: 4754001985639362287}
   - component: {fileID: 4745967912387302011}
   - component: {fileID: 3064415743332855820}
+  - component: {fileID: 1010049037}
   m_Layer: 0
   m_Name: PFB_Toilet
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6981,7 +7023,8 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.70710677}
   m_LocalPosition: {x: -4.5590024, y: 0.112, z: -6.847005}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1759943176}
   m_Father: {fileID: 8608857015726824286}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -7044,6 +7087,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9191002, y: 0.98136425, z: 0.72689205}
   m_Center: {x: 0.25931194, y: 0.48385805, z: 0.008628057}
+--- !u!114 &1010049037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042128875581163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 723f9e21c3898d0429e6f330208dacda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4724042128892645363
 GameObject:
   m_ObjectHideFlags: 0
@@ -7513,7 +7568,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 0.8}
+  m_Size: {x: 2, y: 2.2, z: 0.8}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &4724042129080561683
 GameObject:
@@ -7561,8 +7616,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9, y: 1, z: 2.6}
-  m_Center: {x: 0, y: 0.59, z: 0}
+  m_Size: {x: 1.9, y: 0.8, z: 2.6}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &4724042129092960241
 GameObject:
   m_ObjectHideFlags: 0
@@ -7869,17 +7924,17 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042129419317981}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 6
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: 1
     m_CustomResolution: -1
     m_Strength: 0.898
@@ -7935,8 +7990,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042129495789013
 GameObject:
   m_ObjectHideFlags: 0
@@ -7989,8 +8042,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 2, z: 0.8}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1.6, y: 0.9, z: 0.8}
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!95 &4673932439815160983
 Animator:
   serializedVersion: 3
@@ -8097,13 +8150,13 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 4
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -8158,8 +8211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042129547870483
 GameObject:
   m_ObjectHideFlags: 0
@@ -8399,17 +8450,17 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4724042129581776029}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 6
-  m_Range: 5
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -8464,8 +8515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042129592593439
 GameObject:
   m_ObjectHideFlags: 0
@@ -8650,6 +8699,7 @@ GameObject:
   - component: {fileID: 4754001982699714637}
   - component: {fileID: 4745967912053206319}
   - component: {fileID: 3883166415077350901}
+  - component: {fileID: 1814190229}
   m_Layer: 0
   m_Name: PFB_SofaSmall
   m_TagString: Untagged
@@ -8728,8 +8778,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9282749, y: 0.93466395, z: 0.8569847}
-  m_Center: {x: 0.0000019073486, y: 0.46732852, z: 0}
+  m_Size: {x: 1.9282749, y: 0.5736135, z: 0.8569847}
+  m_Center: {x: 0.0000019073486, y: 0.28680217, z: -2.253332e-15}
+--- !u!65 &1814190229
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042129728978165}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9282744, y: 0.93466395, z: 0.35062185}
+  m_Center: {x: -5.377276e-10, y: 0.46732464, z: -0.25318027}
 --- !u!1 &4724042129782067221
 GameObject:
   m_ObjectHideFlags: 0
@@ -9675,8 +9738,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 0.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1.8, y: 0.6, z: 0.5}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &4724042130248206343
 GameObject:
   m_ObjectHideFlags: 0
@@ -9889,7 +9952,6 @@ GameObject:
   - component: {fileID: 4720497216841445579}
   - component: {fileID: 4754001985618516293}
   - component: {fileID: 4745967911535711331}
-  - component: {fileID: 4715261542539934799}
   m_Layer: 0
   m_Name: KitchenBench_base
   m_TagString: Untagged
@@ -9957,20 +10019,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4715261542539934799
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4724042130283486995}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300042, guid: 14cf328cd0a9046e5a177954438c6a56, type: 3}
 --- !u!1 &4724042130360406177
 GameObject:
   m_ObjectHideFlags: 0
@@ -10014,13 +10062,13 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 3
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -10075,8 +10123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042130367497455
 GameObject:
   m_ObjectHideFlags: 0
@@ -10088,7 +10134,7 @@ GameObject:
   - component: {fileID: 4720497215648681409}
   - component: {fileID: 4754001982647517315}
   - component: {fileID: 4745967909989846239}
-  - component: {fileID: 4617548772556618439}
+  - component: {fileID: 1638613350}
   m_Layer: 0
   m_Name: PFB_DiningTable
   m_TagString: Untagged
@@ -10160,7 +10206,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4617548772556618439
+--- !u!65 &1638613350
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10171,8 +10217,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2554007, y: 1.63, z: 1.6}
-  m_Center: {x: 0.0000019073486, y: 0.83, z: -0.0000019073486}
+  m_Size: {x: 2.2554, y: 0.82778174, z: 1.1250796}
+  m_Center: {x: 0, y: 0.41389087, z: 0}
 --- !u!1 &4724042130410803159
 GameObject:
   m_ObjectHideFlags: 0
@@ -10784,13 +10830,13 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 5
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -10845,8 +10891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042130578006177
 GameObject:
   m_ObjectHideFlags: 0
@@ -11057,7 +11101,6 @@ GameObject:
   - component: {fileID: 4720497215965937411}
   - component: {fileID: 4754001986341453647}
   - component: {fileID: 4745967915075716851}
-  - component: {fileID: 4715261544839024153}
   m_Layer: 0
   m_Name: tvStandBase
   m_TagString: Untagged
@@ -11125,20 +11168,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4715261544839024153
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4724042130682745461}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 49a6824fe442d4dbbbf83484cbb57db1, type: 3}
 --- !u!1 &4724042130701690949
 GameObject:
   m_ObjectHideFlags: 0
@@ -11213,13 +11242,13 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 5
+  m_Intensity: 1.2
+  m_Range: 12
   m_SpotAngle: 120
   m_InnerSpotAngle: 102.45226
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: 1
     m_CustomResolution: -1
     m_Strength: 0.898
@@ -11274,8 +11303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042130725981105
 GameObject:
   m_ObjectHideFlags: 0
@@ -11817,6 +11844,7 @@ GameObject:
   - component: {fileID: 4720497217258076601}
   - component: {fileID: 4754001985936206735}
   - component: {fileID: 4745967913096977457}
+  - component: {fileID: 885387556}
   m_Layer: 0
   m_Name: PFB_DiningChair
   m_TagString: Untagged
@@ -11884,6 +11912,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &885387556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042130816033107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4750682, y: 1.2209088, z: 0.1}
+  m_Center: {x: 0.000000059604645, y: 0.6128685, z: -0.25}
 --- !u!1 &4724042130868429105
 GameObject:
   m_ObjectHideFlags: 0
@@ -11973,6 +12014,7 @@ GameObject:
   - component: {fileID: 4720497216749159075}
   - component: {fileID: 4754001982537887883}
   - component: {fileID: 4745967909681293553}
+  - component: {fileID: 94064806}
   m_Layer: 0
   m_Name: PFB_DiningChair (3)
   m_TagString: Untagged
@@ -12040,6 +12082,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &94064806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4724042130877423753}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4750684, y: 1.2209088, z: 0.1}
+  m_Center: {x: 0, y: 0.6128685, z: -0.25}
 --- !u!1 &5009726892332769857
 GameObject:
   m_ObjectHideFlags: 0
@@ -12560,15 +12615,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dee8fd1f0eb7574590b45afba5b22cc, type: 3}
---- !u!1 &2483211925693070969 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
-    type: 3}
-  m_PrefabInstance: {fileID: 4723333487573917908}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2483211925693070968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4723333487573917908}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2483211925693070969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
     type: 3}
   m_PrefabInstance: {fileID: 4723333487573917908}
   m_PrefabAsset: {fileID: 0}
@@ -12991,7 +13046,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6938705398908221668, guid: dc9a76360a1d6d7428de514d4312a595,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7791467290186450049, guid: dc9a76360a1d6d7428de514d4312a595, type: 3}
+    - {fileID: 6285618764196504594, guid: dc9a76360a1d6d7428de514d4312a595, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dc9a76360a1d6d7428de514d4312a595, type: 3}
 --- !u!4 &8398064321143015171 stripped
 Transform:

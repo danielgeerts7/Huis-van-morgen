@@ -44,11 +44,11 @@ public class DomoticaController : MonoBehaviour
             {
                 if (!CheckIfCurtainsAreOpen(curtainController))
                 {
-                    curtainController.OpenCurtain();
+                    curtainController.OpenCurtains(false);
                 }
                 else
                 {
-                    curtainController.CloseCurtain();
+                    curtainController.CloseCurtains(false);
                 }
             }
         }
@@ -76,10 +76,10 @@ public class DomoticaController : MonoBehaviour
         {
             if (allOpen)
             {
-                curtainController.OpenCurtain();
+                curtainController.OpenCurtains(true);
             }
             else {
-                curtainController.CloseCurtain();
+                curtainController.CloseCurtains(true);
             }
         }
     }
