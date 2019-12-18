@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Scenario : MonoBehaviour
 {
+    public GameObject startingPoint;
+
     public int scenarioID;
     // Strings to be displayed
     [TextArea]
@@ -28,6 +30,8 @@ public class Scenario : MonoBehaviour
 
     void Start()
     {
+        GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
+        player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
         state = State.WAITING;
     }
 

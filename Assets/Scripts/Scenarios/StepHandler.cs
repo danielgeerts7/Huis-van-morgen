@@ -1,25 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class StepHandler : MonoBehaviour
 {
-    public List<Step> steps;
+    private List<Step> steps;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        steps = new List<Step>();
     }
 
     public void Activate()
     {
-        foreach(Step step in steps)
+        foreach (Step step in steps)
         {
             step.Activate();
         }
@@ -27,10 +20,6 @@ public class StepHandler : MonoBehaviour
 
     public void AddStep(Step step)
     {
-        if (steps == null)
-        {
-            steps = new List<Step>();
-        }
         steps.Add(step);
     }
 
