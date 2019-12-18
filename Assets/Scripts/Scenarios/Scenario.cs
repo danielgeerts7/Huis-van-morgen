@@ -38,7 +38,7 @@ public class Scenario : MonoBehaviour
     public void InitializeScenario()
     {
         DomoticaController dom = GameObject.FindObjectOfType<DomoticaController>();
-        dom.SwitchCurtains(startWithCurtainsOpen);
+        dom.SwitchCurtainsWithoutAnimation(startWithCurtainsOpen);
         dom.SwitchLights(startWithLightsOn);
     }
 

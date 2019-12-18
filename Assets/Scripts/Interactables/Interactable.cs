@@ -18,13 +18,19 @@ public abstract class Interactable : MonoBehaviour
     {
         outlines = new List<Outline>();
 
-        if (this.GetComponent<MeshRenderer>() != null) {
-            outlines.Add(gameObject.AddComponent<Outline>());
-        }
-        else if (this.GetComponentInChildren<MeshRenderer>() != null)
+        if (this.gameObject.GetComponent<Renderer>() != null)
         {
-            foreach (MeshRenderer renderer in this.GetComponentsInChildren<MeshRenderer>()) {
-                outlines.Add(renderer.gameObject.AddComponent<Outline>());
+            outlines.Add(this.gameObject.AddComponent<Outline>());
+        }
+        else if (this.gameObject.GetComponentInChildren<Renderer>() != null)
+        {
+            // for example: Curtains use multiple childern gameobjects
+            foreach (Renderer renderer in this.gameObject.GetComponentsInChildren<Renderer>())
+            {
+                if (renderer != null)
+                {
+                    outlines.Add(renderer.gameObject.AddComponent<Outline>());
+                }
             }
         }
         stepHandler = gameObject.AddComponent<StepHandler>();
@@ -70,17 +76,23 @@ public abstract class Interactable : MonoBehaviour
     }
 
     private void SetOutline(bool enabled) {
-        foreach (Outline outline in outlines)
+        if (outlines.Count > 0)
         {
-            outline.enabled = enabled;
+            foreach (Outline outline in outlines)
+            {
+                outline.enabled = enabled;
+            }
         }
     }
 
     private void SetOutlineColor(int alpha)
     {
-        foreach (Outline outline in outlines)
+        if (outlines.Count > 0)
         {
-            outline.color = alpha;
+            foreach (Outline outline in outlines)
+            {
+                outline.color = alpha;
+            }
         }
     }
 }

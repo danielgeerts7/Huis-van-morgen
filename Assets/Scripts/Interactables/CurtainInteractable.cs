@@ -63,6 +63,22 @@ public class CurtainInteractable : Interactable
         }
     }
 
+    public void CurtainOpenInstant()
+    {
+        leftCurtain.GetComponent<Animator>().Play("Instantly Open Curtain");
+        rightCurtain.GetComponent<Animator>().Play("Instantly Open Curtain");
+
+        isOpen = true;
+    }
+
+    public void CurtainCloseInstant()
+    {
+        leftCurtain.GetComponent<Animator>().Play("Instantly Close Curtain");
+        rightCurtain.GetComponent<Animator>().Play("Instantly Close Curtain");
+
+        isOpen = false;
+    }
+
     public override bool isActive()
     {
         return isOpen;

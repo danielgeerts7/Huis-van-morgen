@@ -1406,8 +1406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042126826990879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,8 +1481,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2, y: 3, z: 0.3}
-  m_Center: {x: 0, y: 1, z: 0.55}
+  m_Size: {x: 2.1, y: 1.7120552, z: 0.30000007}
+  m_Center: {x: 0, y: 0.3560276, z: 0.55}
 --- !u!1 &4724042126837943303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,8 +1575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a3e1c44143fdd4fbd5d366d0d17ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
   lightControllerObject: {fileID: 4724042128427636833}
 --- !u!65 &7681252210125258815
 BoxCollider:
@@ -2087,8 +2083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a3e1c44143fdd4fbd5d366d0d17ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
   lightControllerObject: {fileID: 5009726892332769857}
 --- !u!65 &4624974293743328989
 BoxCollider:
@@ -3833,8 +3827,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042127826780681
 GameObject:
   m_ObjectHideFlags: 0
@@ -4421,8 +4413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a3e1c44143fdd4fbd5d366d0d17ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
   lightControllerObject: {fileID: 4724042127520126133}
 --- !u!65 &4310409342612046660
 BoxCollider:
@@ -4740,8 +4730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042127987263803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5980,8 +5968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042128648735109
 GameObject:
   m_ObjectHideFlags: 0
@@ -6467,8 +6453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042128728956805
 GameObject:
   m_ObjectHideFlags: 0
@@ -7115,8 +7099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723f9e21c3898d0429e6f330208dacda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042128892645363
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,8 +7990,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042129495789013
 GameObject:
   m_ObjectHideFlags: 0
@@ -8231,8 +8211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042129547870483
 GameObject:
   m_ObjectHideFlags: 0
@@ -8537,8 +8515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042129592593439
 GameObject:
   m_ObjectHideFlags: 0
@@ -10147,8 +10123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042130367497455
 GameObject:
   m_ObjectHideFlags: 0
@@ -10917,8 +10891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042130578006177
 GameObject:
   m_ObjectHideFlags: 0
@@ -11331,8 +11303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ac148c30e21394183832da1abaf9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightOnStep: 0
-  highlightOnSelect: 0
 --- !u!1 &4724042130725981105
 GameObject:
   m_ObjectHideFlags: 0
@@ -13076,7 +13046,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6938705398908221668, guid: dc9a76360a1d6d7428de514d4312a595,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7791467290186450049, guid: dc9a76360a1d6d7428de514d4312a595, type: 3}
+    - {fileID: 6285618764196504594, guid: dc9a76360a1d6d7428de514d4312a595, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dc9a76360a1d6d7428de514d4312a595, type: 3}
 --- !u!4 &8398064321143015171 stripped
 Transform:
