@@ -70,7 +70,7 @@ public class DomoticaController : MonoBehaviour
         }
     }
 
-    public void SwitchCurtains(bool allOpen)
+    public void SwitchCurtainsWithoutAnimation(bool allOpen)
     {
         foreach (CurtainController curtainController in curtainControllers)
         {
