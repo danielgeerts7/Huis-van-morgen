@@ -1,24 +1,29 @@
 {
 	"files": [
 		{
-			"name": "Select",
-			"path": "Audio/Bloody punch"
-		},
-		{
-			"name": "Activate",
-			"path": "Audio/Easy Going Medieval Tavern - Loop"
-		},
-		{
 			"name": "OpenDoor",
-			"path": "Audio/OpenDoor"
+			"path": "Audio/OpenDoor",
+			"volume": 1.0f
 		},
 		{
 			"name": "CloseDoor",
-			"path": "Audio/CloseDoor"
+			"path": "Audio/CloseDoor",
+			"volume": 1.0f
 		},
 		{
 			"name": "Message",
-			"path": "Audio/Message"
+			"path": "Audio/Message",
+			"volume": 0.1f
+		},
+		{
+			"name": "Alarm",
+			"path": "Audio/AlarmClock",
+			"volume": 0.5f
+		},
+		{
+			"name": "ButtonClick",
+			"path": "Audio/ButtonClick",
+			"volume": 0.5f
 		}
 	]
 }
