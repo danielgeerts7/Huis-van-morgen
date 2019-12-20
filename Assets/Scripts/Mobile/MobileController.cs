@@ -223,4 +223,15 @@ public class MobileController : MonoBehaviour
         messagePanel.GetComponentInChildren<Text>().text = s;
         OpenPanel(messagePanel);
     }
+
+
+    public void OpenSmartphone() {
+        if (this.gameObject.transform.GetChild(0).gameObject.activeSelf)
+        {
+            this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else {
+            this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
+    }
 }

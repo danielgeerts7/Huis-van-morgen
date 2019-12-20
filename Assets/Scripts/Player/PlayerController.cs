@@ -28,6 +28,18 @@ public class PlayerController : MonoBehaviour
         return player;
     }
 
+    public void DisablePlayerControls()
+    {
+        if (player.Equals(VR_player)) {
+            OVRManager camera = player.GetComponentInChildren<OVRManager>();
+            player.GetComponentInChildren<OculusGoController>().AllowedToWalk(false);
+        }
+        if (player.Equals(EDITOR_player)) {
+            GameObject camera = player.GetComponentInChildren<Camera>().gameObject;
+            player.GetComponentInChildren<DebugPlayerController>().enabled = false;
+        }
+    }
+
     private void ActivatePlayer(GameObject name)
     {
         name.SetActive(true);

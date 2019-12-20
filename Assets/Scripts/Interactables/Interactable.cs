@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public abstract class Interactable : MonoBehaviour
 {
     private List<Outline> outlines;
-    private StepHandler stepHandler;
+    protected StepHandler stepHandler;
 
     public abstract void OnActivate();
     public abstract void OnSelect();

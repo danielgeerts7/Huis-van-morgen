@@ -55,15 +55,15 @@
   ],
   "personas": [{
 	  "BSN": 0,
-      "firstName": "Daniel",
-      "lastName": "Geerts",
-      "age": 72,
-	  "mugshotPath" : "Persona/Daniel",
-	  "biography": "Daniel is een man uit Groningen.\nHij houdt wel van broccoli met een sausje.\nDaniel vind het leuk om te programmeren in zijn vrijetijd en als zijn werk.\nDaniel is verder helemaal gezond door de hoeveelheid broccoli dat hij eet.",
+      "firstName": "Jonge",
+      "lastName": "Kerel",
+      "age": 21,
+	  "mugshotPath" : "",
+	  "biography": "",
 	  "limitations": [
-		"Eet te veel broccoli"
+		"Kern gezond ! "
 	  ],
-	  "inGameEffect": "High"
+	  "inGameEffect": ""
 	},
 	{
       "BSN": 1,
@@ -71,8 +71,7 @@
       "lastName": "Appelboer",
       "age": 72,
 	  "mugshotPath" : "Persona/gerrit",
-	  "biography": "Gerrit is een 72-jarige man uit Groningen.\nSinds drie jaar woont hij alleen, na het overlijden van zijn vrouw.\nZijn twee kinderen wonen in Amsterdam.\nZij kunnen dus niet altijd langskomen, maar komen vaak op visite.\n
-		Zijn zicht is sinds de laatste jaren flink achteruit gegaan.",
+	  "biography": "Gerrit is een 72-jarige man uit Groningen.\nSinds drie jaar woont hij alleen, na het overlijden van zijn vrouw.\nZijn twee kinderen wonen in Amsterdam.\nZij kunnen dus niet altijd langskomen, maar komen vaak op visite.\nZijn zicht is sinds de laatste jaren flink achteruit gegaan.",
 	  "limitations": [
 		"Slechtziend"
 	  ],

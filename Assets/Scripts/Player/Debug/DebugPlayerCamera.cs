@@ -28,4 +28,9 @@ public class DebugPlayerCamera : MonoBehaviour
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, player.transform.up);
     }
+
+    public void UpdateRotation(Quaternion newRot) {
+        transform.localRotation = newRot;
+        player.transform.localRotation = newRot;
+    }
 }

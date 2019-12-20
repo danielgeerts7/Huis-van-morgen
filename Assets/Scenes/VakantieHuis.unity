@@ -365,6 +365,55 @@ PrefabInstance:
       propertyPath: isOpen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4720497215820410569, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720497215820410569, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720497215820410569, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720497215820410569, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720497215820410569, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720497215820410569, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.806
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720497215820410569, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720497215820410569, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720497215820410569, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1010049037, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a, type: 3}
+      propertyPath: teleportSpot
+      value: 
+      objectReference: {fileID: 1625964264}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a, type: 3}
 --- !u!1 &133374997 stripped
@@ -635,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioIsActive: 1
-  debugMode: 1
+  debugMode: 0
   activeScenarioIndex: 0
   UI: {fileID: 0}
   scenarios:
@@ -746,7 +795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381190056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: 0.5, z: -8}
+  m_LocalPosition: {x: 4.4, y: 0.75, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 294114914}
@@ -1350,6 +1399,41 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670246301}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &677240007
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1013
+  m_Height: 570
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 1
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &714700342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1564,8 +1648,11 @@ MonoBehaviour:
   introDescription: U bent wakker geworden rond 4 uur in de nacht, en het is nog donker
     buiten. U merkt dat u uw behoefte moet doen en besluit naar de badkamer te gaan.
   outroText: Gehaald!
-  outroDescription: Doordat s'nachts uw lampen automatisch aan en uit gaan door uw
-    beweging bespaart u energie. Er blijven geen lampen aan na uw bezoek aan de badkamer.
+  outroDescription: 'Doordat s''nachts de lampen automatisch aan en uit gaan door
+    de bewegingsmelders bespaart u energie en is dit ook makkelijk voor een ouder.
+
+
+'
   startWithCurtainsOpen: 0
   startWithLightsOn: 0
   startInNightTime: 1
@@ -1573,101 +1660,7 @@ MonoBehaviour:
   - {fileID: 412010097}
   - {fileID: 1460903445}
   - {fileID: 1310613061}
-  - {fileID: 1663395869}
---- !u!1001 &849898473
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 642393760075649809, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.240914
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.89777595
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.3732638
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649811, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649808, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649808, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e0082d2a140bc344e855a87cf54b0b24, type: 3}
-    - target: {fileID: 642393760075649808, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649808, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: sounds.Array.data[0].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 642393760075649808, guid: 3239c716d1be1974f829baa0da39c55a,
-        type: 3}
-      propertyPath: sounds.Array.data[0].name
-      value: ButtonClick
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3239c716d1be1974f829baa0da39c55a, type: 3}
+  - {fileID: 1663395870}
 --- !u!1 &965999917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,9 +1696,8 @@ MonoBehaviour:
   introDescription: U bevindt zich in een vakantiehuis met verschillende domotica.
     Speel de scene om meer inzicht te krijgen in de voordelen van domotica.
   outroText: Gehaald!
-  outroDescription: Door de gordijnen open te doen en de lampen uit bespaart u niet
-    alleen energie, maar is het ook gezond voor uw gezondheid. U krijgt namelijk natuurlijk
-    licht binnen.
+  outroDescription: Door de gordijnen open en de lampen uit te doen bespaart u niet
+    alleen energie, maar dit is ook goed voor uw gezondheid.
   startWithCurtainsOpen: 0
   startWithLightsOn: 1
   startInNightTime: 0
@@ -2188,33 +2180,78 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 216459322975481348, guid: 2378004b874f686419787a84e478fb5b,
+    - target: {fileID: 5973862843102154407, guid: 2378004b874f686419787a84e478fb5b,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1660248717}
-    - target: {fileID: 8941212054623395604, guid: 2378004b874f686419787a84e478fb5b,
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919285793780378383, guid: 2378004b874f686419787a84e478fb5b,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1660248717}
-    - target: {fileID: 2253957543038849288, guid: 2378004b874f686419787a84e478fb5b,
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941212054290022180, guid: 2378004b874f686419787a84e478fb5b,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: outlineShaderMaterial
       value: 
-      objectReference: {fileID: 1660248717}
-    - target: {fileID: 4812525574015764251, guid: 2378004b874f686419787a84e478fb5b,
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941212054290022180, guid: 2378004b874f686419787a84e478fb5b,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: renderTexture
       value: 
-      objectReference: {fileID: 1660248717}
-    - target: {fileID: 4848103122121373972, guid: 2378004b874f686419787a84e478fb5b,
+      objectReference: {fileID: 1185241094}
+    - target: {fileID: 8941212054290022180, guid: 2378004b874f686419787a84e478fb5b,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: extraRenderTexture
       value: 
-      objectReference: {fileID: 1660248717}
+      objectReference: {fileID: 677240007}
+    - target: {fileID: 5973862843113421645, guid: 2378004b874f686419787a84e478fb5b,
+        type: 3}
+      propertyPath: queueAhead
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941212054530441579, guid: 2378004b874f686419787a84e478fb5b,
+        type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 2040495653}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2378004b874f686419787a84e478fb5b, type: 3}
+--- !u!84 &1185241094
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1013
+  m_Height: 570
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 1
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1209283149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2845,18 +2882,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1556022203}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1660248717 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 642393760075649808, guid: 3239c716d1be1974f829baa0da39c55a,
+--- !u!1 &1625964264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1759943175, guid: 9cbfd28b8c93fd542a2d4bb6c055a45a,
     type: 3}
-  m_PrefabInstance: {fileID: 849898473}
+  m_PrefabInstance: {fileID: 60488562}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66ae27c284e7a4843971842d4ab6de52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1663395867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,7 +2897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1663395868}
-  - component: {fileID: 1663395869}
+  - component: {fileID: 1663395870}
   m_Layer: 0
   m_Name: Step 4
   m_TagString: Untagged
@@ -2888,7 +2919,7 @@ Transform:
   m_Father: {fileID: 842953234}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1663395869
+--- !u!114 &1663395870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2897,13 +2928,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1663395867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepName: U zit vast op de WC. Loop naar de deur
+  stepName: U wordt onwel op de WC. Er wordt een bericht naar de mantelzorger verstuurd.
   skipKey: 112
-  activators:
-  - {fileID: 7707572}
+  timeLength: 10
 --- !u!1001 &1703361238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3158,7 +3188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806311820}
   m_LocalRotation: {x: -0, y: 0.98850596, z: -0, w: -0.15118249}
-  m_LocalPosition: {x: 0.33, y: 0.5, z: -5.232}
+  m_LocalPosition: {x: 0.33, y: 0.75, z: -5.232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 294114914}
@@ -3600,6 +3630,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2033776828}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &2040495653
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1013
+  m_Height: 570
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 1
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &2040836255
 GameObject:
   m_ObjectHideFlags: 0
