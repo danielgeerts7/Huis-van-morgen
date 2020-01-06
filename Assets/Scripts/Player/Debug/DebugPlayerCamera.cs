@@ -8,6 +8,9 @@ public class DebugPlayerCamera : MonoBehaviour
     Vector2 mouseLook;
     public float sensitivity = 2;
     GameObject player;
+
+    private bool islocked = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,20 +20,22 @@ public class DebugPlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Mouse X");
-        float vertical = Input.GetAxis("Mouse Y");
+        if (!islocked)
+        {
+            float horizontal = Input.GetAxis("Mouse X");
+            float vertical = Input.GetAxis("Mouse Y");
 
-        Vector2 look = new Vector2(horizontal, vertical);
-        mouseLook += look * sensitivity;
+            Vector2 look = new Vector2(horizontal, vertical);
+            mouseLook += look * sensitivity;
 
-        mouseLook.y = Mathf.Clamp(mouseLook.y, -80f, 80);
-
-        transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-        player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, player.transform.up);
+            mouseLook.y = Mathf.Clamp(mouseLook.y, -80f, 80);
+        
+            transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+            player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, player.transform.up);
+        }
     }
 
     public void UpdateRotation(Quaternion newRot) {
-        transform.localRotation = newRot;
-        player.transform.localRotation = newRot;
+        transform.rotation = newRot;
     }
 }

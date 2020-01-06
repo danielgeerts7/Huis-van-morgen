@@ -29,23 +29,8 @@ public class OculusGoController : MonoBehaviour
         // If controller button is touched
         GameObject player = GameObject.FindObjectOfType<OVRPlayerController>().gameObject;
 
-        Vector2 axis;
-
-        if (OVRInput.Get(OVRInput.Touch.Any))
-        {
-            axis = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
-        }
-        else if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick) != null)
-        {
-            axis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-        }
-        else if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick) != null)
-        {
-            axis = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
-        }
-        else {
-            axis = OVRInput.Get(OVRInput.Axis2D.Any);
-        }
+        Vector2 axis = OVRInput.Get(OVRInput.Axis2D.Any);
+        
 
         if (canWalk)
         {

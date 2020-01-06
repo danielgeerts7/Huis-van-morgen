@@ -28,11 +28,18 @@ public class Scenario : MonoBehaviour
     private int activeStepIndex;
     private Step step;
 
-    void Start()
+    private void Awake()
     {
         GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
         player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
+    }
+
+    void Start()
+    {
         state = State.WAITING;
+
+        GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
+        player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
     }
 
     public void InitializeScenario()
@@ -40,10 +47,12 @@ public class Scenario : MonoBehaviour
         DomoticaController dom = GameObject.FindObjectOfType<DomoticaController>();
         dom.SwitchCurtainsWithoutAnimation(startWithCurtainsOpen);
         dom.SwitchLights(startWithLightsOn);
+
+        GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
+        player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
     }
 
-    public void Run()
-    {
+    public void Run() {
         if (!(state == State.WAITING))
             return;
 

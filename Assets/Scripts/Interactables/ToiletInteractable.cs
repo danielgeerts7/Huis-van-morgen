@@ -33,25 +33,7 @@ public class ToiletInteractable : Interactable
     private void TeleportTo()
     {
         GameObject player = playercontroller.GetPlayer();
-        player.transform.position = teleportSpot.transform.position;
-
-        /*Vector3 euler = player.transform.rotation.eulerAngles;
-        euler.y = go.transform.rotation.y;
-        player.transform.rotation = Quaternion.Euler(euler);*/
-
-        if (Application.isEditor)
-        {
-            //GameObject cam = player.GetComponentInChildren<DebugPlayerCamera>().gameObject;
-
-            player.GetComponentInChildren<DebugPlayerCamera>().UpdateRotation(teleportSpot.transform.rotation);
-            /*           
-             *   
-            Vector3 cameuler = cam.transform.rotation.eulerAngles;
-            cameuler.x = teleportSpot.transform.rotation.x;
-            cameuler.y = teleportSpot.transform.rotation.y;
-            cameuler.z = teleportSpot.transform.rotation.z;
-            cam.transform.rotation = Quaternion.Euler(cameuler);*/
-        }
+        player.transform.SetPositionAndRotation(teleportSpot.transform.position, teleportSpot.transform.rotation);
 
         playercontroller.DisablePlayerControls();
 
