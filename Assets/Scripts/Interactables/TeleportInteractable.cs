@@ -32,8 +32,7 @@ public class TeleportInteractable : Interactable
     private void TeleportTo(GameObject go)
     {
         player.transform.position = go.transform.position;
-
-        //TODO: Fix rotation
+        FindObjectOfType<PlayerController>().DisablePlayerControls();
         player.transform.rotation = Quaternion.Euler(go.transform.rotation.eulerAngles);
     }
 
