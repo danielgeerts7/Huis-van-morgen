@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class OculusGoController : MonoBehaviour
 {
-    public float forwardSpeed = 0.8f;
-    private float rotationSpeed = 60.0f;
+    public float forwardSpeed = 0.25f;
+    private float rotationSpeed = 45.0f;
 
     private bool canWalk = true;
 
@@ -28,36 +28,38 @@ public class OculusGoController : MonoBehaviour
 
         // If controller button is touched
         GameObject player = GameObject.FindObjectOfType<OVRPlayerController>().gameObject;
-
+        
         Vector2 axis;
 
-        if (OVRInput.Get(OVRInput.Touch.Any))
+        /*if (OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad) != null)
         {
             axis = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
         }
-        else if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick) != null)
+        else {*/
+            axis = OVRInput.Get(OVRInput.RawAxis2D.Any);
+        //}
+
+        if (axis.y >= 0.5f || axis.y <= -0.5f)
         {
-            axis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-        }
-        else if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick) != null)
-        {
-            axis = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
-        }
-        else {
-            axis = OVRInput.Get(OVRInput.Axis2D.Any);
+            if (canWalk)
+            {
+                // Walking forward or backwards
+                var yaxis = Mathf.Round(axis.y);
+                if (yaxis >= 1) yaxis = 1;
+                if (yaxis <= -1) yaxis = -1;
+                player.transform.Translate(-Vector3.forward * forwardSpeed * yaxis * Time.deltaTime);
+            }
         }
 
-        if (canWalk)
-        {
-            // Walking forward or backwards
-            player.transform.Translate(-Vector3.forward * forwardSpeed * Mathf.Round(axis.y) * Time.deltaTime);
-        }
-
-        // Rotating left and right
-        GameObject.FindObjectOfType<OVRPlayerController>().RotateVRplayer(Mathf.Round(axis.x) * rotationSpeed * Time.deltaTime);
+        //if (axis.x >= 0.5f || axis.x <= -0.5f)
+        //{
+            // Rotating left and right
+            GameObject.FindObjectOfType<OVRPlayerController>().RotateVRplayer(Mathf.Round(axis.x) * rotationSpeed * Time.deltaTime);
+        //}
 
         // Back Buttons returns to MenuScene
-        if (OVRInput.Get(OVRInput.Button.Back))
+        if (OVRInput.Get(OVRInput.RawButton.Back) ||
+            OVRInput.Get(OVRInput.RawButton.B))
         {
             SceneManager.LoadScene("MenuScene");
         }

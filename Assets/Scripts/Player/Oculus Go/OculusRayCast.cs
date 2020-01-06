@@ -40,7 +40,7 @@ public class OculusRayCast : MonoBehaviour
         lr.useWorldSpace = false;
         lr.generateLightingData = true;
         lr.material = new Material(lineMaterial);
-        lr.startWidth = 0.008f;
+        lr.startWidth = 0.006f;
         lr.endWidth = 0.002f;
 
         standardColor = Color.white;
@@ -61,7 +61,8 @@ public class OculusRayCast : MonoBehaviour
 
         CheckIfRayCastHit();
 
-        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) ||
+            OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
         {
             pressed = true;
         }

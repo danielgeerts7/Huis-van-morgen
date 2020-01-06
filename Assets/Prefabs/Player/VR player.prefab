@@ -609,7 +609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2500, y: 2500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1682007041
@@ -805,14 +805,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: Activate
-        m_Mode: 1
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ButtonClick
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!65 &1768036581
@@ -4270,7 +4270,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5901518717905035043}
   - component: {fileID: 5901518717914973325}
-  - component: {fileID: 5901518718077441609}
   - component: {fileID: 562276382}
   m_Layer: 0
   m_Name: OVRControllerPrefab
@@ -4318,18 +4317,6 @@ MonoBehaviour:
   m_modelOculusTouchRiftLeftController: {fileID: 5900122489519090073}
   m_modelOculusTouchRiftRightController: {fileID: 5900460456431725313}
   m_controller: 33554432
---- !u!114 &5901518718077441609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5901518717904919383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3aec21d37e25f84ca8a75e18f1065d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &562276382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4566,6 +4553,7 @@ GameObject:
   - component: {fileID: 5901518718634708384}
   - component: {fileID: 5901518718634645986}
   - component: {fileID: 5901518718634613948}
+  - component: {fileID: 983222312}
   m_Layer: 0
   m_Name: VR player
   m_TagString: Player
@@ -4641,12 +4629,12 @@ MonoBehaviour:
   BackAndSideDampen: 0.5
   JumpForce: 0.3
   RotationAmount: 1.5
-  RotationRatchet: 45
+  RotationRatchet: 0
   SnapRotation: 1
   FixedSpeedSteps: 0
   HmdResetsY: 1
   HmdRotatesY: 1
-  GravityModifier: 0
+  GravityModifier: 1
   useProfileData: 1
   EnableLinearMovement: 1
   EnableRotation: 1
@@ -4679,6 +4667,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71d1996d67004241a3b69960856ffcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &983222312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5901518718628149314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3aec21d37e25f84ca8a75e18f1065d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 0.8
 --- !u!1 &5901518718628149316
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,7 +4911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5901518718628149326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5901518718627787288}
@@ -4985,7 +4986,7 @@ MonoBehaviour:
   usePositionTracking: 1
   useRotationTracking: 1
   useIPDInPositionTracking: 1
-  resetTrackerOnLoad: 0
+  resetTrackerOnLoad: 1
   AllowRecenter: 1
   _reorientHMDOnControllerRecenter: 1
   LateControllerUpdate: 1
@@ -5133,46 +5134,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.002
       objectReference: {fileID: 0}
-    - target: {fileID: 4529520060111158416, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529520060111158416, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529520060516129200, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529520060542843203, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529520061364789026, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7135624567357090865, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529520060516129201, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529520060542843204, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4529520060906687404, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5203,68 +5164,22 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.5019608
       objectReference: {fileID: 0}
-    - target: {fileID: 6952190006384954841, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3907466916080615847, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529520060516129199, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529520060542843202, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529520061364789025, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
     - target: {fileID: 1015877947121172277, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
         type: 3}
       propertyPath: m_Size.z
       value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1015877947121172277, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4208542397745362170, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
         type: 3}
       propertyPath: m_Size.z
       value: 0.01
       objectReference: {fileID: 0}
-    - target: {fileID: 4208542397745362170, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4459377976197915787, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
         type: 3}
       propertyPath: m_Size.z
       value: 0.01
       objectReference: {fileID: 0}
-    - target: {fileID: 4459377976197915787, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842495574440657067, guid: 8d225ab3aee02dd41a48efe4bf5d42d4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4529520060450640075, guid: 8d225ab3aee02dd41a48efe4bf5d42d4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d225ab3aee02dd41a48efe4bf5d42d4, type: 3}
 --- !u!1 &4529520060543250924 stripped
 GameObject:
