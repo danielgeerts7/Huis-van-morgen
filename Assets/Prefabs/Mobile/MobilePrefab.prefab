@@ -76,7 +76,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Go to the bathroom MotherFuckers. '
+  m_Text: Text
 --- !u!1 &195243264192347168
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,8 +933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b95fe4ef8d056949a1ad767e478a6d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MobileIsActive: 0
-  panelList: []
   buttonPrefab: {fileID: 7869363650128215390, guid: 8d57c939a5c668748af863e22769bdb8,
     type: 3}
   toggleButtonPrefab: {fileID: 4073579754681884920, guid: b1af1e3c7d626454ebcda3282a73fa6a,
@@ -960,7 +958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4529520060516129200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1002,7 +1000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 0.882353, g: 0.882353, b: 0.882353, a: 0.39215687}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1545,7 +1543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7135624567357090865
 RectTransform:
   m_ObjectHideFlags: 0

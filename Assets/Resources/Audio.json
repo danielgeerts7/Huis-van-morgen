@@ -24,6 +24,11 @@
 			"name": "ButtonClick",
 			"path": "Audio/ButtonClick",
 			"volume": 0.5f
+		},
+		{
+			"name": "Switch",
+			"path": "Audio/Switch",
+			"volume": 0.7f
 		}
 	]
 }

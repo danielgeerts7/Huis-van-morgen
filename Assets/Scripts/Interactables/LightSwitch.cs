@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ public class LightSwitch : Interactable
     public override void OnActivate()
     {
         lightcontroller.Switch();
+        GameObject.FindObjectOfType<AudioManager>().Play("Switch");
     }
 
     public override bool isActive()

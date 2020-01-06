@@ -9,6 +9,8 @@ public class PersonaController : MonoBehaviour
     private ConfigController configController;
     private OculusGoController oculusController;
     private SnapshotMode filter;
+    AudioSource[] sources;
+
 
     void Start()
     {
@@ -23,12 +25,6 @@ public class PersonaController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void SetIngameEffect(PersonaInfo persona)
     {
         if (persona.inGameEffect.Equals("Slow"))
@@ -41,7 +37,11 @@ public class PersonaController : MonoBehaviour
         }
         if (persona.inGameEffect.Equals("LowSound"))
         {
-
+            sources = GameObject.FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+            for (int i = 0; i < sources.Length; i++)
+            {
+                sources[i].volume = 0.1f;
+            }
         }
     }
 }
