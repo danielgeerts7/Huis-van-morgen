@@ -16,7 +16,7 @@ public class audioinput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("hallo");
-            FindObjectOfType<AudioManager>().Play("OpenDoor");
+            FindObjectOfType<AudioManager>().Play("Activate");
         }
 
         if (Input.GetKeyDown(KeyCode.D))
