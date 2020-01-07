@@ -46,8 +46,6 @@ public class ActivateStep : Step
     {
         foreach (GameObject activator in activators)
         {
-            Debug.Log(activator.name);
-
             Outline outline = activator.GetComponent<Outline>();
 
             if (outline == null)

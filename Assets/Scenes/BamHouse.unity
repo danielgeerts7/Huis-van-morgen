@@ -3512,6 +3512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cff33341199ec4ebe95dfec2f8d274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steps:
+  - {fileID: 838625783}
+  - {fileID: 0}
   step: {fileID: 838625783}
   teleportTo: {fileID: 0}
 --- !u!114 &838625785
@@ -7273,6 +7276,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: -1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
+        type: 3}
+      propertyPath: eraseRenderer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
+        type: 3}
+      propertyPath: color
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2608703836732192540, guid: 31d4a78d117fac64d87b839b9083d606,
         type: 3}
       propertyPath: m_TagString
@@ -7292,21 +7310,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
-        type: 3}
-      propertyPath: eraseRenderer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
-        type: 3}
-      propertyPath: color
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1180790823478048779, guid: 31d4a78d117fac64d87b839b9083d606, type: 3}
@@ -7620,7 +7623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioIsActive: 1
-  debugMode: 0
+  debugMode: 1
   activeScenarioIndex: 0
   UI: {fileID: 0}
   scenarios:

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public GameObject EDITOR_player;
 
     private GameObject player;
+    private bool playerControlsEnabled;
 
     void Awake()
     {
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
             DeActivatePlayer(EDITOR_player);
             ActivatePlayer(VR_player);
         }
+
+        playerControlsEnabled = true;
     }
 
     public GameObject GetPlayer()
@@ -30,13 +33,17 @@ public class PlayerController : MonoBehaviour
 
     public void DisablePlayerControls()
     {
-        if (player.Equals(VR_player)) {
+        if (player.Equals(VR_player))
+        {
             player.GetComponentInChildren<OculusGoController>().AllowedToWalk(false);
             player.GetComponent<OVRPlayerController>().enabled = false;
         }
-        if (player.Equals(EDITOR_player)) {
+        if (player.Equals(EDITOR_player))
+        {
             player.GetComponentInChildren<DebugPlayerController>().enabled = false;
         }
+
+        playerControlsEnabled = false;
     }
 
     public void EnablePlayerControls()
@@ -50,6 +57,13 @@ public class PlayerController : MonoBehaviour
         {
             player.GetComponentInChildren<DebugPlayerController>().enabled = true;
         }
+
+        playerControlsEnabled = true;
+    }
+
+    public bool PlayerControlsEnabled()
+    {
+        return playerControlsEnabled;
     }
 
     private void ActivatePlayer(GameObject name)

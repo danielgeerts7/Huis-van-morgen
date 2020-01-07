@@ -83,6 +83,7 @@ public class ScenarioController : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<PlayerController>().DisablePlayerControls();
             UI.DisplayOutro(scenario.outroText, scenario.outroDescription);
             state = State.COMPLETED;
         }
@@ -96,6 +97,7 @@ public class ScenarioController : MonoBehaviour
                 scenario = scenarios[activeScenarioIndex];
                 scenario.Run();
                 state = State.RUNNING;
+                FindObjectOfType<PlayerController>().EnablePlayerControls();
 
                 UI.DisplayStep(scenario.GetStepDescription());
                 break;
