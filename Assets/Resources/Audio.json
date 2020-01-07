@@ -29,6 +29,11 @@
 			"name": "Switch",
 			"path": "Audio/Switch",
 			"volume": 0.7f
+		},
+		{
+			"name": "Ambulance",
+			"path": "Audio/Ambulance",
+			"volume": 0.7f
 		}
 	]
 }
