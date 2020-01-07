@@ -100,6 +100,7 @@ public class ScenarioController : MonoBehaviour
                 UI.DisplayStep(scenario.GetStepDescription());
                 break;
             case State.COMPLETED:
+                FindObjectOfType<AudioManager>().StopAll();
                 SceneManager.LoadScene("MenuScene");
                 break;
             default:

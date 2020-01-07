@@ -369,6 +369,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1756505797}
     m_Modifications:
+    - target: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_Name
+      value: PFB_LightCover (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.44
@@ -420,10 +424,6 @@ PrefabInstance:
     - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.90909094
-      objectReference: {fileID: 0}
-    - target: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
-      propertyPath: m_Name
-      value: PFB_LightCover (20)
       objectReference: {fileID: 0}
     - target: {fileID: 10877656, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
       propertyPath: m_Enabled
@@ -1773,6 +1773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1756505797}
     m_Modifications:
+    - target: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_Name
+      value: PFB_LightCover (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.445
@@ -1824,10 +1828,6 @@ PrefabInstance:
     - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.90909094
-      objectReference: {fileID: 0}
-    - target: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
-      propertyPath: m_Name
-      value: PFB_LightCover (15)
       objectReference: {fileID: 0}
     - target: {fileID: 10877656, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
       propertyPath: m_Intensity
@@ -4008,6 +4008,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1756505797}
     m_Modifications:
+    - target: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
+      propertyPath: m_Name
+      value: PFB_LightCover (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.445
@@ -4059,10 +4063,6 @@ PrefabInstance:
     - target: {fileID: 492314, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.90909094
-      objectReference: {fileID: 0}
-    - target: {fileID: 167256, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
-      propertyPath: m_Name
-      value: PFB_LightCover (16)
       objectReference: {fileID: 0}
     - target: {fileID: 10877656, guid: 540dc2ae93c244ca2abe6650ce07e4a0, type: 3}
       propertyPath: m_Intensity
@@ -4442,7 +4442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180930900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.427, y: 3.25, z: 16.683}
+  m_LocalPosition: {x: 12.685, y: 3.457, z: 16.478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424279683}
@@ -7273,21 +7273,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: -1.9
       objectReference: {fileID: 0}
-    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
-        type: 3}
-      propertyPath: eraseRenderer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
-        type: 3}
-      propertyPath: color
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2608703836732192540, guid: 31d4a78d117fac64d87b839b9083d606,
         type: 3}
       propertyPath: m_TagString
@@ -7307,6 +7292,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
+        type: 3}
+      propertyPath: eraseRenderer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310882372686057236, guid: 31d4a78d117fac64d87b839b9083d606,
+        type: 3}
+      propertyPath: color
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1180790823478048779, guid: 31d4a78d117fac64d87b839b9083d606, type: 3}
