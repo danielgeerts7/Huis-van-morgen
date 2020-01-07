@@ -19,6 +19,8 @@ public class HouseCard : SuperCard
 
     public override void SelectCard()
     {
+        GameObject.FindObjectOfType<AudioManager>().Play("ButtonClick");
+
         GameObject.FindObjectOfType<ConfigController>().SetSelectedHouse(house);
 
         SelectionBarController selectionBar = GameObject.FindObjectOfType<SelectionBarController>();

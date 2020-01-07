@@ -19,9 +19,12 @@ public class PersonaController : MonoBehaviour
         {
             persona = configController.GetSelectedPersona();
             oculusController = GameObject.FindObjectOfType<OculusGoController>();
-            filter = GameObject.FindObjectOfType<SnapshotMode>();
             SetIngameEffect(persona);
-            filter.enabled = false;
+            filter = GameObject.FindObjectOfType<SnapshotMode>();
+            if (filter != null)
+            {
+                filter.enabled = false;
+            }
         }
     }
 

@@ -19,6 +19,8 @@ public class ScenarioCard : SuperCard
 
     public override void SelectCard()
     {
+        GameObject.FindObjectOfType<AudioManager>().Play("ButtonClick");
+
         GameObject.FindObjectOfType<ConfigController>().SetSelectedScenario(scenario);
 
         SelectionBarController selectionBar = GameObject.FindObjectOfType<SelectionBarController>();

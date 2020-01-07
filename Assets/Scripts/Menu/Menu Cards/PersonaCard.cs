@@ -22,6 +22,8 @@ public class PersonaCard : SuperCard
 
     public override void SelectCard()
     {
+        GameObject.FindObjectOfType<AudioManager>().Play("ButtonClick");
+
         GameObject.FindObjectOfType<ConfigController>().SetSelectedPersona(persona);
 
         SelectionBarController selectionBar = GameObject.FindObjectOfType<SelectionBarController>();

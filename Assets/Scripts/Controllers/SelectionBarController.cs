@@ -66,6 +66,8 @@ public class SelectionBarController : MonoBehaviour
     }
 
     public void ResetSelectionCache() {
+        GameObject.FindObjectOfType<AudioManager>().Play("ButtonClick");
+
         // Clear views of selected House/Scenario/Persona
         selectedHouseView.GetComponent<CurrentSelected>().Reset();
         selectedScenarioView.GetComponent<CurrentSelected>().Reset();
