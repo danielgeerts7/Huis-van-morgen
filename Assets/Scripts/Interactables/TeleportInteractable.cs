@@ -9,6 +9,8 @@ public class TeleportInteractable : Interactable
 
     private GameObject player;
 
+    private bool isTeleported = false;
+
     public override bool isActive()
     {
         return false;
@@ -34,6 +36,7 @@ public class TeleportInteractable : Interactable
         player.transform.position = go.transform.position;
         FindObjectOfType<PlayerController>().DisablePlayerControls();
         player.transform.rotation = Quaternion.Euler(go.transform.rotation.eulerAngles);
+        isTeleported = true;
     }
 
     public override void OnDeselect()
@@ -53,6 +56,9 @@ public class TeleportInteractable : Interactable
 
     public override void OnUpdate()
     {
-
+        if (isTeleported) {
+            FindObjectOfType<PlayerController>().EnablePlayerControls();
+            isTeleported = false;
+        }
     }
 }

@@ -48,10 +48,8 @@ public class OculusGoController : MonoBehaviour
         }
 
 
-        /*// Make mobile visible or hide
-        if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad) ||
-            OVRInput.Get(OVRInput.Button.PrimaryThumbstick) ||
-            OVRInput.Get(OVRInput.Button.SecondaryThumbstick))
+        // Make mobile visible or hide
+        if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad))
         {
             pressedTouch = true;
         }
@@ -67,7 +65,7 @@ public class OculusGoController : MonoBehaviour
                 GameObject.FindObjectOfType<MobileController>().OpenSmartphone();
                 canTakeMobile = false;
             }
-        }*/
+        }
     }
 
     public void AllowedToWalk(bool mayWalk)
