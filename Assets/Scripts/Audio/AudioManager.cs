@@ -35,7 +35,6 @@ public class AudioManager : MonoBehaviour
             sr.Close();
         }
 
-
         sounds = new Sound[soundInfos.Length];
         for (int i = 0; i < soundInfos.Length; i++)
         {
@@ -43,11 +42,10 @@ public class AudioManager : MonoBehaviour
             sounds[i] = sound;
         }
 
-
-        foreach(Sound sound in sounds)
+        foreach (Sound sound in sounds)
         {
             sound.source = gameObject.AddComponent<AudioSource>();
-            sound.source.clip = sound.clip;    
+            sound.source.clip = sound.clip;
 
             sound.source.volume = sound.volume;
             sound.source.pitch = sound.pitch;
@@ -55,20 +53,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Play("Theme");
-    }
-
     public void Play(string name)
     {
-        Debug.Log("Play called");
-
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
-            Debug.Log($"Sound: {name} not found!");
+            Debug.LogWarning($"Sound: {name} not found in JSON file");
             return;
         }
         s.source.Play();

@@ -22,7 +22,6 @@ public class Sound
     {
         this.name = soundInfo.name;
         this.volume = soundInfo.volume;
-        Debug.Log(Resources.Load<AudioClip>(soundInfo.path));
         this.clip = Resources.Load<AudioClip>(soundInfo.path);
     }
 }

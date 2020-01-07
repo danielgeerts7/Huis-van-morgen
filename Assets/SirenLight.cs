@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SirenLight : MonoBehaviour
 {
-    public Light light;
+    new public Light light;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,6 @@ public class SirenLight : MonoBehaviour
     void Update()
     {
         light.enabled = true;
-        light.intensity = (Mathf.Sin(Time.time) + 1) * 6;
+        light.intensity = Mathf.Sin(Time.time * 5) * 5;
     }
 }
