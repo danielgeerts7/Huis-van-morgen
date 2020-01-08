@@ -71,8 +71,9 @@ public abstract class Interactable : MonoBehaviour
 
     public void Activate()
     {
-        stepHandler.Activate();
         OnActivate();
+        stepHandler.Activate();
+
     }
 
     private void SetOutline(bool enabled) {

@@ -8,6 +8,7 @@ public class ToiletInteractable : Interactable
     public GameObject teleportSpot;
     private PlayerController playercontroller;
 
+
     private bool sitOnToilet = false;
 
     public override void OnStart()
@@ -28,14 +29,18 @@ public class ToiletInteractable : Interactable
         }
     }
 
+
     private bool rotateToPoint = false;
 
     private void TeleportTo()
     {
         GameObject player = playercontroller.GetPlayer();
-        player.transform.SetPositionAndRotation(teleportSpot.transform.position, teleportSpot.transform.rotation);
 
-        playercontroller.DisablePlayerControls();
+        player.transform.SetPositionAndRotation(teleportSpot.transform.position, teleportSpot.transform.rotation);
+        if (stepHandler.IsActive())
+        {
+            playercontroller.DisablePlayerControls();
+        }
 
         this.GetComponent<BoxCollider>().isTrigger = true;
         rotateToPoint = true;
