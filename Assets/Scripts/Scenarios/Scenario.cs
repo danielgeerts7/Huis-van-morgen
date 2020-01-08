@@ -50,6 +50,7 @@ public class Scenario : MonoBehaviour
 
         GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
         player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
+
     }
 
     public void Run() {
@@ -86,4 +87,9 @@ public class Scenario : MonoBehaviour
         step = steps[activeStepIndex];
         step.Run();
     }
+    public State getState()
+    {
+        return state;
+    }
+
 }
