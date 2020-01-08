@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mobile: {fileID: 0}
   running: {fileID: 1209283151}
-  text: Het is licht buiten. U kunt de gordijnen open doen en de lampen uit.
+  text: Doe de gordijnen open en de lampen uit
 --- !u!23 &7707577
 MeshRenderer:
   m_ObjectHideFlags: 0

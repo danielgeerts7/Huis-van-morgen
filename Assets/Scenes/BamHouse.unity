@@ -361,7 +361,7 @@ MonoBehaviour:
   lights:
   - {fileID: 1208888766}
   ShowControllerInMobile: 1
-  controllerName: Placeholder
+  controllerName: Badkamer
 --- !u!1001 &45247284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -913,7 +913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lights:
   - {fileID: 496726239}
-  ShowControllerInMobile: 1
+  ShowControllerInMobile: 0
   controllerName: Placeholder
 --- !u!1 &218461999
 GameObject:
@@ -962,7 +962,7 @@ MonoBehaviour:
   - {fileID: 2076973546}
   - {fileID: 1047756640}
   ShowControllerInMobile: 1
-  controllerName: Placeholder
+  controllerName: Slaapkamer
 --- !u!1001 &218767627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1631,7 +1631,7 @@ MonoBehaviour:
   lights:
   - {fileID: 402637423}
   - {fileID: 20833595}
-  ShowControllerInMobile: 1
+  ShowControllerInMobile: 0
   controllerName: Placeholder
 --- !u!1 &334076074
 GameObject:
@@ -2135,8 +2135,8 @@ MonoBehaviour:
   lights:
   - {fileID: 607652292}
   - {fileID: 1097004012}
-  ShowControllerInMobile: 1
-  controllerName: Placeholder
+  ShowControllerInMobile: 0
+  controllerName: Hall
 --- !u!1 &573867543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,7 +2188,7 @@ MonoBehaviour:
   - {fileID: 1734149144}
   - {fileID: 976984306}
   ShowControllerInMobile: 1
-  controllerName: Placeholder
+  controllerName: Woonkamer
 --- !u!1 &582895852 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2819323857491219294, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -2793,7 +2793,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 819605438}
+    m_TransformParent: {fileID: 1646321067}
     m_Modifications:
     - target: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
@@ -2818,17 +2818,17 @@ PrefabInstance:
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
@@ -2838,7 +2838,7 @@ PrefabInstance:
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
@@ -2865,6 +2865,12 @@ PrefabInstance:
 --- !u!4 &708706675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 708706674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &708706676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
     type: 3}
   m_PrefabInstance: {fileID: 708706674}
   m_PrefabAsset: {fileID: 0}
@@ -3335,7 +3341,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 819605438}
+    m_TransformParent: {fileID: 1646321067}
     m_Modifications:
     - target: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
@@ -3380,7 +3386,7 @@ PrefabInstance:
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
@@ -3407,6 +3413,12 @@ PrefabInstance:
 --- !u!4 &785332038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 785332037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &785332039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
     type: 3}
   m_PrefabInstance: {fileID: 785332037}
   m_PrefabAsset: {fileID: 0}
@@ -3469,9 +3481,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 785332038}
-  - {fileID: 708706675}
-  - {fileID: 2081875825}
+  - {fileID: 1691966129}
+  - {fileID: 1646321067}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4884,7 +4895,7 @@ MonoBehaviour:
   lights:
   - {fileID: 502075462}
   - {fileID: 1790107580}
-  ShowControllerInMobile: 1
+  ShowControllerInMobile: 0
   controllerName: Placeholder
 --- !u!1 &1380040607
 GameObject:
@@ -5173,7 +5184,7 @@ MonoBehaviour:
   - {fileID: 2102376793}
   - {fileID: 432261504}
   ShowControllerInMobile: 1
-  controllerName: Placeholder
+  controllerName: Keuken
 --- !u!1 &1522998280
 GameObject:
   m_ObjectHideFlags: 0
@@ -5497,6 +5508,55 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 218767627}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1646321066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646321067}
+  - component: {fileID: 1646321068}
+  m_Layer: 0
+  m_Name: Curtain Woonkamer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1646321067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646321066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 708706675}
+  - {fileID: 785332038}
+  m_Father: {fileID: 819605438}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1646321068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646321066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c458ec5eca2ade459a055e3431370ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curtains:
+  - {fileID: 708706676}
+  - {fileID: 785332039}
+  controllerName: Woonkamer
 --- !u!1 &1648926115
 GameObject:
   m_ObjectHideFlags: 0
@@ -5570,6 +5630,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648926115}
   m_CullTransparentMesh: 0
+--- !u!1 &1691966128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691966129}
+  - component: {fileID: 1691966130}
+  m_Layer: 0
+  m_Name: Curtain Slaapkamer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1691966129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691966128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2081875825}
+  m_Father: {fileID: 819605438}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1691966130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691966128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c458ec5eca2ade459a055e3431370ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curtains:
+  - {fileID: 2081875826}
+  controllerName: Slaapkamer
 --- !u!1 &1734149144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2819323857746707773, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -5841,7 +5948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lights:
   - {fileID: 582895852}
-  ShowControllerInMobile: 1
+  ShowControllerInMobile: 0
   controllerName: Placeholder
 --- !u!1 &1775531241
 GameObject:
@@ -5995,7 +6102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lights:
   - {fileID: 1522998280}
-  ShowControllerInMobile: 1
+  ShowControllerInMobile: 0
   controllerName: Placeholder
 --- !u!1 &1790107580 stripped
 GameObject:
@@ -6934,6 +7041,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.144
       objectReference: {fileID: 0}
+    - target: {fileID: 4812525573567534337, guid: 2378004b874f686419787a84e478fb5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048771711258624361, guid: 2378004b874f686419787a84e478fb5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2378004b874f686419787a84e478fb5b, type: 3}
 --- !u!1 &2063334655 stripped
@@ -7072,7 +7189,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 819605438}
+    m_TransformParent: {fileID: 1691966129}
     m_Modifications:
     - target: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
@@ -7117,7 +7234,7 @@ PrefabInstance:
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
         type: 3}
@@ -7149,6 +7266,12 @@ PrefabInstance:
 --- !u!4 &2081875825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7204214447793905324, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2081875824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2081875826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7204214447793905325, guid: 7dee8fd1f0eb7574590b45afba5b22cc,
     type: 3}
   m_PrefabInstance: {fileID: 2081875824}
   m_PrefabAsset: {fileID: 0}
