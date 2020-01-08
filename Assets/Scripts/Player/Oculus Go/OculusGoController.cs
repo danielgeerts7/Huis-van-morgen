@@ -38,8 +38,11 @@ public class OculusGoController : MonoBehaviour
             player.transform.Translate(-Vector3.forward * forwardSpeed * Mathf.Round(axis.y) * Time.deltaTime);
         }
 
-        // Rotating left and right
-        GameObject.FindObjectOfType<OVRPlayerController>().RotateVRplayer(Mathf.Round(axis.x) * rotationSpeed * Time.deltaTime);
+        if (axis.y > 0.75 || axis.y < -0.75)
+        {
+            // Rotating left and right
+            GameObject.FindObjectOfType<OVRPlayerController>().RotateVRplayer(Mathf.Round(axis.x) * rotationSpeed * Time.deltaTime);
+        }
 
         // Back Buttons returns to MenuScene
         if (OVRInput.Get(OVRInput.Button.Back))
