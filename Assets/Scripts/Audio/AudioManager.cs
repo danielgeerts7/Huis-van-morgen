@@ -53,15 +53,16 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void Play(string name)
+    public bool Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
             Debug.LogWarning($"Sound: {name} not found in JSON file");
-            return;
+            return false;
         }
         s.source.Play();
+        return true;
     }
 
     public void StopAll()

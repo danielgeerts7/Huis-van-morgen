@@ -5,9 +5,9 @@ using UnityEngine;
 public class AddSoundSteps : MonoBehaviour
 {
     // Start is called before the first frame update
-    Scenario scenario;
     public string nameSong;
     private Step step;
+    
 
     void Start()
     {
@@ -17,7 +17,10 @@ public class AddSoundSteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (step.getState() == State.RUNNING)
-            GameObject.FindObjectOfType<AudioManager>().Play(nameSong);
+        if (step != null)
+        {
+            if (step.getState() == State.RUNNING)
+                GameObject.FindObjectOfType<AudioManager>().Play(nameSong);
+        }
     }
 }
