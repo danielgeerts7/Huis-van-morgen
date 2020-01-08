@@ -23,11 +23,26 @@ public class CurvedMenuController : MonoBehaviour
     // Config controller
     private ConfigController configController;
 
+    private float counter = 0.0f;
+    private float delay = 5.0f;
+    private bool doOnce = true;
+
     // Start is called before the first frame update
     void Start()
     {
         configController = GameObject.FindObjectOfType<ConfigController>();
-        LoadHouseView();
+
+        FindObjectOfType<AudioManager>().Play("menu-welkom");
+    }
+
+    private void Update()
+    {
+        counter += 1 * Time.deltaTime;
+        if (counter >= delay && doOnce)
+        {
+            LoadHouseView();
+            doOnce = false;
+        }
     }
 
     void ClearView() {
@@ -56,6 +71,8 @@ public class CurvedMenuController : MonoBehaviour
 
             }
         }
+
+        FindObjectOfType<AudioManager>().Play("menu-huis");
     }
 
     public void LoadScenarioView() {
@@ -80,6 +97,9 @@ public class CurvedMenuController : MonoBehaviour
                 }
             }
         }
+
+        FindObjectOfType<AudioManager>().Play("menu-scenario");
+
     }
 
     public void LoadPersonaView() {
@@ -93,5 +113,8 @@ public class CurvedMenuController : MonoBehaviour
                 count++;
             }
         }
+
+        FindObjectOfType<AudioManager>().Play("menu-persona");
+
     }
 }

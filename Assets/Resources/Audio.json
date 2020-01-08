@@ -34,6 +34,26 @@
 			"name": "Ambulance",
 			"path": "Audio/Ambulance",
 			"volume": 0.7f
+		},
+		{
+			"name": "menu-welkom",
+			"path": "Audio/Menu/1-welkom-in-simulatie",
+			"volume": 0.7f
+		},
+		{
+			"name": "menu-huis",
+			"path": "Audio/Menu/2-selecteer-huis",
+			"volume": 0.7f
+		},
+		{
+			"name": "menu-scenario",
+			"path": "Audio/Menu/3-selecteer-scenario",
+			"volume": 0.7f
+		},
+		{
+			"name": "menu-persona",
+			"path": "Audio/Menu/4-selecteer-personage",
+			"volume": 0.7f
 		}
 	]
 }
