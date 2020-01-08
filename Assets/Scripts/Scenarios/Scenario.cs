@@ -28,18 +28,9 @@ public class Scenario : MonoBehaviour
     private int activeStepIndex;
     private Step step;
 
-    private void Awake()
-    {
-        GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
-        player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
-    }
-
     void Start()
     {
         state = State.WAITING;
-
-        GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
-        player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
     }
 
     public void InitializeScenario()
