@@ -2189,6 +2189,12 @@ MonoBehaviour:
   - {fileID: 976984306}
   ShowControllerInMobile: 1
   controllerName: Placeholder
+--- !u!1 &582895852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2819323857491219294, guid: 45146a051aab58b45a2a97e6bb01e3b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 218767627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583609373
 GameObject:
   m_ObjectHideFlags: 0
@@ -5834,7 +5840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lights:
-  - {fileID: 0}
+  - {fileID: 582895852}
   ShowControllerInMobile: 1
   controllerName: Placeholder
 --- !u!1 &1775531241
@@ -6876,7 +6882,7 @@ PrefabInstance:
     - target: {fileID: 216459322803171969, guid: 2378004b874f686419787a84e478fb5b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.651
+      value: 6.06
       objectReference: {fileID: 0}
     - target: {fileID: 216459322803171969, guid: 2378004b874f686419787a84e478fb5b,
         type: 3}
@@ -6922,6 +6928,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919285793780378377, guid: 2378004b874f686419787a84e478fb5b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.144
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2378004b874f686419787a84e478fb5b, type: 3}
@@ -7565,7 +7576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307fc7305f4d7474bba465edeec23415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenarioIsActive: 1
+  scenarioIsActive: 0
   debugMode: 1
   activeScenarioIndex: 0
   UI: {fileID: 0}

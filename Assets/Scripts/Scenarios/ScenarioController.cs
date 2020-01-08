@@ -63,6 +63,7 @@ public class ScenarioController : MonoBehaviour
     private void StartScenario()
     {
         scenario = scenarios[activeScenarioIndex];
+        FindObjectOfType<PlayerController>().DisablePlayerControls();
         UI.DisplayIntro(scenario.introText, scenario.introDescription);
         scenario.InitializeScenario();
         state = State.STARTED;

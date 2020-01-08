@@ -40,7 +40,6 @@ public class Scenario : MonoBehaviour
 
         GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
         player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
-        FindObjectOfType<PlayerController>().DisablePlayerControls();
     }
 
     public void InitializeScenario()
