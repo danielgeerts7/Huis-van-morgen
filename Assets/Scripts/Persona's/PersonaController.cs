@@ -19,10 +19,10 @@ public class PersonaController : MonoBehaviour
         {
             persona = configController.GetSelectedPersona();
             oculusController = GameObject.FindObjectOfType<OculusGoController>();
+            filter.SetActive(false);
             SetIngameEffect(persona);
         }
         filter = GameObject.Find("BadSight");
-        filter.SetActive(false);
     }
 
     void SetIngameEffect(PersonaInfo persona)
