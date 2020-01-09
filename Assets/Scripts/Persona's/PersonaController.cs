@@ -8,8 +8,8 @@ public class PersonaController : MonoBehaviour
     private PersonaInfo persona;
     private ConfigController configController;
     private OculusGoController oculusController;
-    private SnapshotMode filter;
     AudioSource[] sources;
+    private GameObject filter;
 
 
     void Start()
@@ -20,12 +20,9 @@ public class PersonaController : MonoBehaviour
             persona = configController.GetSelectedPersona();
             oculusController = GameObject.FindObjectOfType<OculusGoController>();
             SetIngameEffect(persona);
-            filter = GameObject.FindObjectOfType<SnapshotMode>();
-            if (filter != null)
-            {
-                filter.enabled = false;
-            }
         }
+        filter = GameObject.Find("BadSight");
+        filter.SetActive(false);
     }
 
     void SetIngameEffect(PersonaInfo persona)
@@ -36,7 +33,7 @@ public class PersonaController : MonoBehaviour
         }
         if (persona.inGameEffect.Equals("Blurry"))
         {
-            filter.enabled = true;
+            filter.SetActive(true);
         }
         if (persona.inGameEffect.Equals("LowSound"))
         {
