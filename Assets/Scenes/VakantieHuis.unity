@@ -2428,6 +2428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1209283150}
   - component: {fileID: 1209283151}
+  - component: {fileID: 1209283152}
   m_Layer: 0
   m_Name: Step 2
   m_TagString: Untagged
@@ -2482,6 +2483,19 @@ MonoBehaviour:
     type: 0
   - gameObject: {fileID: 1709118676}
     type: 0
+--- !u!114 &1209283152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209283149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-3-scenario-3
 --- !u!1001 &1228732041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3680,6 +3694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2022109455}
   - component: {fileID: 2022109456}
+  - component: {fileID: 2022109457}
   m_Layer: 0
   m_Name: Step 1
   m_TagString: Untagged
@@ -3717,6 +3732,19 @@ MonoBehaviour:
   skipKey: 112
   activators:
   - {fileID: 670246301}
+--- !u!114 &2022109457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022109454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-1-scenario-3
 --- !u!1001 &2033776828
 PrefabInstance:
   m_ObjectHideFlags: 0

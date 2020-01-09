@@ -20,7 +20,10 @@ public class PersonaController : MonoBehaviour
         {
             persona = configController.GetSelectedPersona();
             oculusController = GameObject.FindObjectOfType<OculusGoController>();
-            filter.SetActive(false);
+            if(filter != null)
+            {
+                filter.SetActive(false);
+            }
             SetIngameEffect(persona);
         }
     }
