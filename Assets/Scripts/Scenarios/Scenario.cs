@@ -20,7 +20,7 @@ public class Scenario : MonoBehaviour
 
     public bool startWithCurtainsOpen = false;
     public bool startWithLightsOn = false;
-    public bool startInNightTime = false;
+    public DayNightManager.DayPart scenarioDayPart;
 
     public List<Step> steps;
 
@@ -38,10 +38,11 @@ public class Scenario : MonoBehaviour
         DomoticaController dom = GameObject.FindObjectOfType<DomoticaController>();
         dom.SwitchCurtainsWithoutAnimation(startWithCurtainsOpen);
         dom.SwitchLights(startWithLightsOn);
+        GameObject.FindObjectOfType<DayNightManager>().SetDayPart(scenarioDayPart);
+
 
         GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
         player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
-
     }
 
     public void Run() {
