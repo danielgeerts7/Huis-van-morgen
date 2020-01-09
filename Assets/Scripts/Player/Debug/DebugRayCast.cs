@@ -40,7 +40,7 @@ public class DebugRayCast : MonoBehaviour
         Debug.DrawRay(origin, direction);
         if (Physics.Raycast(origin, direction, out vision, rayLength))
         {
-            if (vision.collider.tag.Equals("Interactable"))
+            if (vision.collider.tag.Equals("Interactable") && FindObjectOfType<PlayerController>().PlayerControlsEnabled())
             {
                 // Check if Interactable
                 bool succes = vision.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
