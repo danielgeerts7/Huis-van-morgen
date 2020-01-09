@@ -712,8 +712,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarioIsActive: 1
-  debugMode: 0
-  activeScenarioIndex: 1
+  debugMode: 1
+  activeScenarioIndex: 3
   UI: {fileID: 0}
   scenarios:
   - {fileID: 965999918}
@@ -799,6 +799,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 313283805}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &348090520
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4094301904103741994, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_Name
+      value: DayNight-System
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741995, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094301904103741996, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: directionalMain
+      value: 
+      objectReference: {fileID: 1911794040}
+    - target: {fileID: 4094301904103741996, guid: 89f639131a7cf2d4580a950e12843077,
+        type: 3}
+      propertyPath: directionalSupport
+      value: 
+      objectReference: {fileID: 1502826744}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89f639131a7cf2d4580a950e12843077, type: 3}
 --- !u!1 &381190056
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +1000,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 842953234}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &412010097
 MonoBehaviour:
@@ -1633,6 +1712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 842953234}
   - component: {fileID: 842953235}
+  - component: {fileID: 842953236}
   m_Layer: 0
   m_Name: Scenario 3 - nachtelijk toiletbezoek
   m_TagString: Untagged
@@ -1651,6 +1731,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1982110697}
   - {fileID: 412010096}
   - {fileID: 1460903444}
   - {fileID: 1310613060}
@@ -1683,12 +1764,26 @@ MonoBehaviour:
 '
   startWithCurtainsOpen: 0
   startWithLightsOn: 0
-  startInNightTime: 1
+  scenarioDayPart: 0
   steps:
   - {fileID: 412010097}
   - {fileID: 1460903445}
   - {fileID: 1310613061}
   - {fileID: 1663395870}
+--- !u!114 &842953236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842953233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Intro-scenario-3
+  playSong: 1
 --- !u!1 &965999917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,7 +1824,7 @@ MonoBehaviour:
     uw leven niet alleen makkelijker, maar zorgt er ook voor dat u energie kunt besparen.
   startWithCurtainsOpen: 0
   startWithLightsOn: 1
-  startInNightTime: 0
+  scenarioDayPart: 0
   steps:
   - {fileID: 2022109456}
   - {fileID: 1209283151}
@@ -2480,7 +2575,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 842953234}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1310613061
 MonoBehaviour:
@@ -2691,7 +2786,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 842953234}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1460903445
 MonoBehaviour:
@@ -2961,7 +3056,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 842953234}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1663395870
 MonoBehaviour:
@@ -3404,6 +3499,66 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 60488562}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1982110696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982110697}
+  - component: {fileID: 1982110699}
+  - component: {fileID: 1982110698}
+  m_Layer: 0
+  m_Name: Stap 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1982110697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982110696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 842953234}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1982110698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982110696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Step-1-scenario-3
+--- !u!114 &1982110699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982110696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: 
+  skipKey: 112
+  timeLength: 1
 --- !u!1001 &1987264533
 PrefabInstance:
   m_ObjectHideFlags: 0

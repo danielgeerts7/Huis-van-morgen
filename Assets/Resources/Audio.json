@@ -94,6 +94,26 @@
 			"name": "Outro-scenario-1",
 			"path": "Audio/Scenario-1/8-outro",
 			"volume": 0.7f
+		},
+		{
+			"name": "Intro-scenario-3",
+			"path": "Audio/Scenario-3/1-goedemiddag-spreekt-slimme-huis",
+			"volume": 0.7f
+		},
+		{
+			"name": "Stap-1-scenario-3",
+			"path": "Audio/Senario-3/2-warme-zonnige-dag",
+			"volume": 0.7f
+		},
+		{
+			"name": "Stap-2-scenario-3",
+			"path": "Audio/Scenario-3/3-verwarming-uit-bespaart-energie",
+			"volume": 0.7f
+		},
+		{
+			"name": "Stap-3-scenario-3",
+			"path": "Audio/Scenario-3/4-licht-aan-gordijnen-open-mobiel-bericht",
+			"volume": 0.7f
 		}
 	]
 }
