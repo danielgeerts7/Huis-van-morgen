@@ -2461,6 +2461,66 @@ Transform:
   m_Father: {fileID: 1401751838}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60.383003}
+--- !u!1 &624890550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624890551}
+  - component: {fileID: 624890553}
+  - component: {fileID: 624890552}
+  m_Layer: 0
+  m_Name: Stap 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &624890551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624890550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 720388024665598146}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &624890552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624890550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-5-scenario-1
+--- !u!114 &624890553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624890550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: U bent gevallen. Uw valdetectie slaat alarm.
+  skipKey: 112
+  timeLength: 1
 --- !u!1 &633858973
 GameObject:
   m_ObjectHideFlags: 0
@@ -3568,7 +3628,7 @@ GameObject:
   - component: {fileID: 838625784}
   - component: {fileID: 838625785}
   m_Layer: 0
-  m_Name: Step 3
+  m_Name: Step 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3586,7 +3646,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 720388024665598146}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &838625783
 MonoBehaviour:
@@ -3600,9 +3660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepName: U bent gevallen. Uw valdetectie slaat alarm.
+  stepName: 
   skipKey: 112
-  timeLength: 6
+  timeLength: 8
 --- !u!114 &838625784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5241,6 +5301,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: 150, z: 180}
+--- !u!1 &1386532509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1386532510}
+  - component: {fileID: 1386532512}
+  - component: {fileID: 1386532511}
+  m_Layer: 0
+  m_Name: Stap 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1386532510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386532509}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 720388024665598146}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1386532511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386532509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-4-scenario-1
+--- !u!114 &1386532512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386532509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: 
+  skipKey: 112
+  timeLength: 1
 --- !u!1 &1401751837
 GameObject:
   m_ObjectHideFlags: 0
@@ -6433,7 +6553,7 @@ GameObject:
   - component: {fileID: 1868200694}
   - component: {fileID: 1868200695}
   m_Layer: 0
-  m_Name: Step 4
+  m_Name: Step 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6451,7 +6571,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 720388024665598146}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1868200695
 MonoBehaviour:
@@ -7773,7 +7893,9 @@ Transform:
   m_Children:
   - {fileID: 1616249203}
   - {fileID: 2234619889450984378}
+  - {fileID: 1386532510}
   - {fileID: 8958722097086400778}
+  - {fileID: 624890551}
   - {fileID: 838625782}
   - {fileID: 1868200694}
   m_Father: {fileID: 4336806433153041253}
@@ -7790,6 +7912,7 @@ GameObject:
   - component: {fileID: 720388024665598146}
   - component: {fileID: 6941360737183771788}
   - component: {fileID: 1579820872423060461}
+  - component: {fileID: 1579820872423060462}
   m_Layer: 0
   m_Name: Scenario 1
   m_TagString: Untagged
@@ -7811,6 +7934,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameSong: Alarm
   playSong: 1
+--- !u!114 &1579820872423060462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579820872423060460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Intro-scenario-1
+  playSong: 0
 --- !u!4 &2234619889450984378
 Transform:
   m_ObjectHideFlags: 0
@@ -7836,7 +7973,7 @@ GameObject:
   - component: {fileID: 8958722097086400778}
   - component: {fileID: 3828846533740350503}
   m_Layer: 0
-  m_Name: Step 2
+  m_Name: Step 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7917,6 +8054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2234619889450984378}
   - component: {fileID: 4082699549083240481}
+  - component: {fileID: 5824312815759641325}
   m_Layer: 0
   m_Name: Step 1
   m_TagString: Untagged
@@ -7924,6 +8062,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5824312815759641325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824312815759641324}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-4-scenario-1
 --- !u!114 &6941360737183771788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7944,10 +8095,12 @@ MonoBehaviour:
   outroDescription: De ambulance is gearriveerd, u wordt meteen geholpen.
   startWithCurtainsOpen: 0
   startWithLightsOn: 0
-  startInNightTime: 0
+  startInNightTime: 1
   steps:
   - {fileID: 4082699549083240481}
+  - {fileID: 1386532512}
   - {fileID: 3828846533740350503}
+  - {fileID: 624890553}
   - {fileID: 838625783}
   - {fileID: 1868200695}
 --- !u!4 &8958722097086400778
@@ -7962,5 +8115,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 720388024665598146}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

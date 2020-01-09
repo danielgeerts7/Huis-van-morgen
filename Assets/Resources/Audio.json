@@ -54,6 +54,46 @@
 			"name": "menu-persona",
 			"path": "Audio/Menu/4-selecteer-personage",
 			"volume": 0.7f
+		},
+		{
+			"name": "Intro-scenario-1",
+			"path": "Audio/Scenario-1/1-goedemorgen-tijd-om-op-te-staan",
+			"volume": 0.7f
+		},
+		{
+			"name": "Stap-1-scenario-1",
+			"path": "Audio/Scenario-1/2-naar-beneden-koffie-staat-klaar",
+			"volume": 0.7f
+		},
+		{
+			"name": "Stap-2-scenario-1",
+			"path": "Audio/Scenario-1/3-gorijden-open-zon-voor-zonnepanelen",
+			"volume": 0.7f
+		},
+		{
+			"name": "Stap-3-scenario-1",
+			"path": "Audio/Scenario-1/4-open-deur-verlaat-slaapkamer",
+			"volume": 0.7f
+		},
+		{
+			"name": "Stap-4-scenario-1",
+			"path": "Audio/Scenario-1/5-selecteer-trap-naar-beneden",
+			"volume": 0.7f
+		},
+		{
+			"name": "Stap-5-scenario-1",
+			"path": "Audio/Scenario-1/6-spullen-op-trap-hulp-direct-ingeschakeld",
+			"volume": 0.7f
+		},
+		{
+			"name": "Stap-6-scenario-1",
+			"path": "Audio/Scenario-1/7-ambulance-is-onderweg",
+			"volume": 0.7f
+		},
+		{
+			"name": "Outro-scenario-1",
+			"path": "Audio/Scenario-1/8-outro",
+			"volume": 0.7f
 		}
 	]
 }
