@@ -147,7 +147,7 @@ public class OculusRayCast : MonoBehaviour
             // Crosshair color
             lr.startColor = lr.material.color = crosshair.GetComponent<SpriteRenderer>().color = selectionColor;
 
-            if (hit.collider.tag.Equals("Interactable"))
+            if (hit.collider.tag.Equals("Interactable") && FindObjectOfType<PlayerController>().PlayerControlsEnabled())
             {
                 // Check if isInteractable
                 bool succes = hit.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
