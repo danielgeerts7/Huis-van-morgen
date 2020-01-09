@@ -22,16 +22,12 @@ public class AddSoundSteps : MonoBehaviour
         
         if (step != null)
         {
-            Debug.Log("1");
             if(!played)
             {
-                Debug.Log("2");
                 if (step.getState() == State.RUNNING)
                 {
-                    Debug.Log("3");
                     if (audioManager != null)
                     {
-                        Debug.Log("4");
                         audioManager.Play(nameSong);
                     }
                     played = true;
