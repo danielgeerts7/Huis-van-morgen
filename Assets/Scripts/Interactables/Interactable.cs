@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public abstract class Interactable : MonoBehaviour
 {
     private List<Renderer> renderers;
+    private bool outlineIsActive;
     protected StepHandler stepHandler;
 
     public abstract void OnActivate();
@@ -17,18 +18,30 @@ public abstract class Interactable : MonoBehaviour
     private void Awake()
     {
         renderers = new List<Renderer>();
-        renderers.Add(this.gameObject.GetComponent<Renderer>());
+
+        Renderer goRenderer = this.gameObject.GetComponent<Renderer>();
+        Debug.Log($"{gameObject.name} ---> {goRenderer}");
+
+        if (goRenderer)
+        {
+            renderers.Add(goRenderer);
+            Debug.Log($"{gameObject.name} ---> {goRenderer}");
+        }
+        renderers.Add(goRenderer);
+
         foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
         {
-            renderers.Add(renderer);
+            if (renderer) renderers.Add(renderer);
         }
-        
+
+        Debug.Log(renderers);
+
         stepHandler = gameObject.AddComponent<StepHandler>();
     }
 
     private void Start()
     {
-        //SetOutline(false);
+        SetOutline(false);
         OnStart();
     }
 
@@ -69,22 +82,27 @@ public abstract class Interactable : MonoBehaviour
     private void SetOutline(bool enabled) {
         if (enabled)
         {
+            if (outlineIsActive) return;
+            
             Material outlineMat = new Material(Shader.Find("Specular"));
             outlineMat.color = Color.green;
 
-            Renderer renderer = GetComponent<Renderer>();
-            Material[] materials = new Material[renderer.materials.Length + 1];
-
-            for (int i = 0; i < renderer.materials.Length; i++)
+            foreach (Renderer renderer in renderers)
             {
-                materials[i] = renderer.materials[i];
+                Debug.Log(renderer);
+                Material[] materials = new Material[renderer.materials.Length + 1];
+
+                for (int i = 0; i < renderer.materials.Length; i++)
+                {
+                    materials[i] = renderer.materials[i];
+                }
+
+                materials[materials.Length - 1] = outlineMat;
+
+                renderer.materials = materials;
             }
 
-            materials[materials.Length - 1] = outlineMat;
-
-            renderer.materials = materials;
-
-            Debug.Log(renderer.materials.Length);
+            outlineIsActive = true;
 
             /*
             Renderer[] renderers = GetComponents<Renderer>();
@@ -99,18 +117,21 @@ public abstract class Interactable : MonoBehaviour
             */
         } else
         {
-            Renderer renderer = GetComponent<Renderer>();
-            Material[] materials = new Material[renderer.materials.Length - 1];
+            if (!outlineIsActive) return;
 
-            for (int i = 0; i < materials.Length; i++)
+            foreach (Renderer renderer in renderers)
             {
-                materials[i] = renderer.materials[i];
+                Material[] materials = new Material[renderer.materials.Length - 1];
+
+                for (int i = 0; i < materials.Length; i++)
+                {
+                    materials[i] = renderer.materials[i];
+                }
+
+                renderer.materials = materials;
             }
 
-            renderer.materials = materials;
-
-
-            Debug.Log(renderer.materials.Length);
+            outlineIsActive = false;
         }
     }
 
