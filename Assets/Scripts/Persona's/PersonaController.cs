@@ -16,6 +16,7 @@ public class PersonaController : MonoBehaviour
     {
         configController = GameObject.FindObjectOfType<ConfigController>();
         filter = GameObject.Find("BadSight");
+        Debug.Log(filter);
         if (configController != null)
         {
             persona = configController.GetSelectedPersona();
