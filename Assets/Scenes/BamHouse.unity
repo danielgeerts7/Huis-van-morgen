@@ -2679,6 +2679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Stap-5-scenario-1
+  delay: 0
 --- !u!114 &624890553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3940,6 +3941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Ambulance
+  delay: 3
 --- !u!1 &868936455
 GameObject:
   m_ObjectHideFlags: 0
@@ -5731,6 +5733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Stap-4-scenario-1
+  delay: 0
 --- !u!114 &1386532512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8543,7 +8546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307fc7305f4d7474bba465edeec23415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenarioIsActive: 0
+  scenarioIsActive: 1
   debugMode: 1
   activeScenarioIndex: 0
   UI: {fileID: 0}
@@ -8590,7 +8593,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2234619889450984378}
   - component: {fileID: 4082699549083240481}
-  - component: {fileID: 5824312815759641325}
   m_Layer: 0
   m_Name: Step 1
   m_TagString: Untagged
@@ -8598,19 +8600,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5824312815759641325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5824312815759641324}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameSong: Stap-4-scenario-1
 --- !u!114 &6941360737183771788
 MonoBehaviour:
   m_ObjectHideFlags: 0

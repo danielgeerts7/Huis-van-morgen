@@ -12,7 +12,7 @@ public class AmbulanceInteractable : Interactable
 
     public override bool isActive()
     {
-        throw new System.NotImplementedException();
+        return activated;
     }
 
     public override void OnActivate()
@@ -44,10 +44,6 @@ public class AmbulanceInteractable : Interactable
     // Update is called once per frame
     public override void OnUpdate()
     {
-        Outline outline = GetComponent<Outline>();
-        if (outline)
-            outline.enabled = false;
-
         StepHandler stepHandler = GetComponent<StepHandler>();
         if (stepHandler == null) return;
 

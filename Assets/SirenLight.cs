@@ -15,7 +15,14 @@ public class SirenLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        light.enabled = true;
-        light.intensity = Mathf.Sin(Time.time * 5) * 5;
+        if (FindObjectOfType<AmbulanceInteractable>().isActive())
+        {
+            light.enabled = true;
+            light.intensity = Mathf.Sin(Time.time * 5) * 5;
+        }
+        else
+        {
+            light.enabled = false;
+        }
     }
 }

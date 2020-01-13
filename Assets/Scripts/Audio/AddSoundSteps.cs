@@ -9,6 +9,9 @@ public class AddSoundSteps : MonoBehaviour
     private Step step;
     AudioManager audioManager;
     private bool played = false;
+    public float delay = 0.0f;
+    private bool activated = false;
+    private float startTime = 0.0f;
 
     void Start()
     {
@@ -19,20 +22,25 @@ public class AddSoundSteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (step != null)
+        if (!step) return;
+
+        if (!activated)
         {
-            if(!played)
+            if (step.getState() == State.RUNNING)
             {
-                if (step.getState() == State.RUNNING)
-                {
-                    if (audioManager != null)
-                    {
-                        audioManager.Play(nameSong);
-                    }
-                    played = true;
-                }
+                activated = true;
+                startTime = Time.time;
             }
+        }
+
+        if (!played && activated && startTime + delay <= Time.time)
+        {
+            Debug.Log("lskjdflksfdjflkj");
+            if (audioManager)
+            {
+                audioManager.Play(nameSong);
+            }
+            played = true;
         }
     }
 }

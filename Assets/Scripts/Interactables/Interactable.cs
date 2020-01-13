@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public abstract class Interactable : MonoBehaviour
 {
-    private List<Outline> outlines;
+    private List<Renderer> renderers;
     protected StepHandler stepHandler;
 
     public abstract void OnActivate();
@@ -16,29 +16,19 @@ public abstract class Interactable : MonoBehaviour
 
     private void Awake()
     {
-        outlines = new List<Outline>();
-
-        if (this.gameObject.GetComponent<Renderer>() != null)
+        renderers = new List<Renderer>();
+        renderers.Add(this.gameObject.GetComponent<Renderer>());
+        foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
         {
-            outlines.Add(this.gameObject.AddComponent<Outline>());
+            renderers.Add(renderer);
         }
-        else if (this.gameObject.GetComponentInChildren<Renderer>() != null)
-        {
-            // for example: Curtains use multiple childern gameobjects
-            foreach (Renderer renderer in this.gameObject.GetComponentsInChildren<Renderer>())
-            {
-                if (renderer != null)
-                {
-                    outlines.Add(renderer.gameObject.AddComponent<Outline>());
-                }
-            }
-        }
+        
         stepHandler = gameObject.AddComponent<StepHandler>();
     }
 
     private void Start()
     {
-        SetOutline(false);
+        //SetOutline(false);
         OnStart();
     }
 
@@ -77,23 +67,61 @@ public abstract class Interactable : MonoBehaviour
     }
 
     private void SetOutline(bool enabled) {
-        if (outlines.Count > 0)
+        if (enabled)
         {
-            foreach (Outline outline in outlines)
+            Material outlineMat = new Material(Shader.Find("Specular"));
+            outlineMat.color = Color.green;
+
+            Renderer renderer = GetComponent<Renderer>();
+            Material[] materials = new Material[renderer.materials.Length + 1];
+
+            for (int i = 0; i < renderer.materials.Length; i++)
             {
-                outline.enabled = enabled;
+                materials[i] = renderer.materials[i];
             }
+
+            materials[materials.Length - 1] = outlineMat;
+
+            renderer.materials = materials;
+
+            Debug.Log(renderer.materials.Length);
+
+            /*
+            Renderer[] renderers = GetComponents<Renderer>();
+            renderers.add(GetComponentsInChildren<Renderer>())
+            string renderString = "";
+            foreach (Renderer renderer in renderers)
+            {
+                renderString += "d";
+            }
+            
+            Debug.Log(renderString);
+            */
+        } else
+        {
+            Renderer renderer = GetComponent<Renderer>();
+            Material[] materials = new Material[renderer.materials.Length - 1];
+
+            for (int i = 0; i < materials.Length; i++)
+            {
+                materials[i] = renderer.materials[i];
+            }
+
+            renderer.materials = materials;
+
+
+            Debug.Log(renderer.materials.Length);
         }
     }
 
     private void SetOutlineColor(int alpha)
     {
-        if (outlines.Count > 0)
+        /*if (outlines.Count > 0)
         {
             foreach (Outline outline in outlines)
             {
                 outline.color = alpha;
             }
-        }
+        }*/
     }
 }
