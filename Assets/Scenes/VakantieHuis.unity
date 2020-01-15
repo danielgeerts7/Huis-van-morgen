@@ -1586,6 +1586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Stap-1-scenario-3
+  delay: 0
 --- !u!114 &705304651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2381,6 +2382,11 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 1311377248}
+    - target: {fileID: 6425049380358534556, guid: 2378004b874f686419787a84e478fb5b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2378004b874f686419787a84e478fb5b, type: 3}
 --- !u!84 &1185241094
@@ -2496,6 +2502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Stap-3-scenario-3
+  delay: 0
 --- !u!1001 &1228732041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3745,6 +3752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Stap-1-scenario-3
+  delay: 0
 --- !u!1001 &2033776828
 PrefabInstance:
   m_ObjectHideFlags: 0
