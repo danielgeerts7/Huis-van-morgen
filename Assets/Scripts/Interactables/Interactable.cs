@@ -54,15 +54,16 @@ public abstract class Interactable : MonoBehaviour
 
     public void Deselect()
     {
-        if (stepHandler && stepHandler.IsActive())
+        /*if (stepHandler && stepHandler.IsActive())
         {
             SetOutlineColor(1);
         }
         else
         {
             SetOutline(false);
-        }
+        }*/
 
+        SetOutline(false);
         OnDeselect();
     }
 
