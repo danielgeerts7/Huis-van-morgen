@@ -46,10 +46,10 @@ MonoBehaviour:
   directionalMain: {fileID: 0}
   directionalSupport: {fileID: 0}
   skyboxNight: {fileID: 2100000, guid: 493bfb50af5d9424da505ba945c86600, type: 2}
-  lightIntensityNight: 0.25
+  lightIntensityNight: 0.4
   skyboxMorning: {fileID: 2100000, guid: 9991b6265f7f87d43b7e3c676739f203, type: 2}
-  lightIntensityMorning: 0.75
+  lightIntensityMorning: 0.8
   skyboxAfternoon: {fileID: 2100000, guid: 3e56423e1fe71f94ea97f5bb2004a7e6, type: 2}
   lightIntensityAfternoon: 1
   skyboxEvening: {fileID: 2100000, guid: e523c896238589445ae28370258d26c6, type: 2}
-  lightIntensityEvening: 0.5
+  lightIntensityEvening: 0.6

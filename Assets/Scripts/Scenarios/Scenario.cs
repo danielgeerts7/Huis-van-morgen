@@ -28,9 +28,11 @@ public class Scenario : MonoBehaviour
     private int activeStepIndex;
     private Step step;
 
+    private bool isBeingUsed = false;
+
     void Start()
     {
-        state = State.WAITING;
+        state = State.WAITING; 
     }
 
     public void InitializeScenario()
@@ -43,6 +45,11 @@ public class Scenario : MonoBehaviour
 
         GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
         player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
+
+        isBeingUsed = true;
+
+        state = State.STARTED;
+
     }
 
     public void Run() {
@@ -69,8 +76,18 @@ public class Scenario : MonoBehaviour
     }
 
     public bool HasNextStep()
-    { 
-        return !(activeStepIndex + 1 >= steps.Count);
+    {
+        Debug.Log(activeStepIndex + " van de " + steps.Count + " is actief");
+        Debug.Log(state + " is processing");
+
+        if (activeStepIndex + 1 <= steps.Count - 1) {
+            return true;
+        }
+        state = State.COMPLETED;
+
+        Debug.Log(state + " is done");
+
+        return false;
     }
 
     public void NextStep()
@@ -79,9 +96,17 @@ public class Scenario : MonoBehaviour
         step = steps[activeStepIndex];
         step.Run();
     }
-    public State getState()
+    public State GetState()
     {
         return state;
     }
+    public void SetState(State newstate)
+    {
+        state = newstate;
+    }
 
+
+    public bool UsedAsPlayableScenario() {
+        return isBeingUsed;
+    }
 }

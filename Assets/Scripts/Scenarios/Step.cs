@@ -52,8 +52,4 @@ public abstract class Step : MonoBehaviour
     {
         return stepName;
     }
-
-    
-
-
 }

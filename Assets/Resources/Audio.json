@@ -96,6 +96,36 @@
 			"volume": 1.0f
 		},
 		{
+			"name": "Intro-scenario-2",
+			"path": "Audio/Scenario-2/scenario2_1_intro",
+			"volume": 1.0f
+		},
+		{
+			"name": "scenario-2-step-1",
+			"path": "Audio/Scenario-2/scenario2_2_verlaat_slaapkamer",
+			"volume": 1.0f
+		},
+		{
+			"name": "scenario-2-step-2",
+			"path": "Audio/Scenario-2/scenario2_3_naar_badkamer",
+			"volume": 1.0f
+		},
+		{
+			"name": "scenario-2-step-3",
+			"path": "Audio/Scenario-2/scenario2_4_lang_op_wc",
+			"volume": 1.0f
+		},
+		{
+			"name": "scenario-2-step-4",
+			"path": "Audio/Scenario-2/scenario2_5_vast_wc_hulp_ingeschakeld",
+			"volume": 1.0f
+		},
+		{
+			"name": "Outro-scenario-2",
+			"path": "Audio/Scenario-2/scenario2_6_outro",
+			"volume": 1.0f
+		},
+		{
 			"name": "Intro-scenario-3",
 			"path": "Audio/Scenario-3/1-goedemiddag-spreekt-slimme-huis",
 			"volume": 1.0f
@@ -113,6 +143,11 @@
 		{
 			"name": "Stap-3-scenario-3",
 			"path": "Audio/Scenario-3/4-licht-aan-gordijnen-open-mobiel-bericht",
+			"volume": 1.0f
+		},
+		{
+			"name": "Outro-scenario-3",
+			"path": "Audio/Scenario-3/5-scenario-3-outro",
 			"volume": 1.0f
 		}
 	]

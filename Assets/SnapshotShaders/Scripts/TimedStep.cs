@@ -14,6 +14,8 @@ public class TimedStep : Step
     public override void OnRun()
     {
         startTime = Time.time;
+        state = State.RUNNING;
+
     }
 
     public override void OnStart()

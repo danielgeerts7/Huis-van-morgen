@@ -16,13 +16,11 @@ public class ScenarioController : MonoBehaviour
     public List<Scenario> scenarios;
     private Scenario scenario;
 
-    private State state;
+    private State scenarioStateController;
 
     void Start()
     {
         UI = FindObjectOfType<UIHandler>();
-
-        state = State.WAITING;
 
         // Check for scenario in ConfigController
         ConfigController configController = FindObjectOfType<ConfigController>();
@@ -66,14 +64,13 @@ public class ScenarioController : MonoBehaviour
         FindObjectOfType<PlayerController>().DisablePlayerControls();
         UI.DisplayIntro(scenario.introText, scenario.introDescription);
         scenario.InitializeScenario();
-        state = State.STARTED;
+        Debug.Log(scenario.GetState());
+
+        scenarioStateController = State.STARTED;
     }
 
     void Update()
     {
-        if (!(state == State.RUNNING))
-            return;
-
         if (!scenario.StepCompleted())
             return;
 
@@ -86,21 +83,21 @@ public class ScenarioController : MonoBehaviour
         {
             FindObjectOfType<PlayerController>().DisablePlayerControls();
             UI.DisplayOutro(scenario.outroText, scenario.outroDescription);
-            state = State.COMPLETED;
+            scenario.SetState(State.COMPLETED);
+            scenarioStateController = State.COMPLETED;
         }
     }
 
     public void Activate()
     {
-        switch (state)
+        switch (scenarioStateController)
         {
             case State.STARTED:
                 scenario = scenarios[activeScenarioIndex];
                 scenario.Run();
-                state = State.RUNNING;
                 FindObjectOfType<PlayerController>().EnablePlayerControls();
-
                 UI.DisplayStep(scenario.GetStepDescription());
+                scenarioStateController = State.RUNNING;
                 break;
             case State.COMPLETED:
                 FindObjectOfType<AudioManager>().StopAll();

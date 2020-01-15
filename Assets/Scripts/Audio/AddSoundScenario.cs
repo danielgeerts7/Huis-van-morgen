@@ -6,10 +6,13 @@ public class AddSoundScenario : MonoBehaviour
 {
     // Start is called before the first frame update
     public string nameSong;
-    public bool playSong;
+    public bool playAtIntro = false;
+    public bool playAtOutro = false;
+
     private Scenario scenario;
     private bool played = false;
     private AudioManager audioManager;
+
     void Start()
     {
         scenario = GetComponent<Scenario>();
@@ -21,14 +24,20 @@ public class AddSoundScenario : MonoBehaviour
     {
         if (!played)
         {
-            if (scenario.getState() == State.WAITING && audioManager != null)
+            if (playAtIntro && scenario.UsedAsPlayableScenario() && scenario.GetState() == State.WAITING && audioManager != null)
             {
                 if (audioManager.Play(nameSong))
                 {
-                        played = true;
+                    played = true;
                 }
             }
-            
+
+            if (playAtOutro && scenario.UsedAsPlayableScenario() && scenario.GetState() == State.COMPLETED && audioManager != null) {
+                if (audioManager.Play(nameSong))
+                {
+                    played = true;
+                }
+            }
         }
     }
 }
