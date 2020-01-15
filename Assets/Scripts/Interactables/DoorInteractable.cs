@@ -6,7 +6,7 @@ public class DoorInteractable : Interactable
 {
     public bool isOpen = false;
     private AudioManager audioManager;
-    private void Start()
+    public override void OnStart()
     {
         audioManager = FindObjectOfType<AudioManager>();
     }
@@ -54,11 +54,6 @@ public class DoorInteractable : Interactable
         //throw new System.NotImplementedException();
     }
     
-    public override void OnStart()
-    {
-       // new System.NotImplementedException();
-    }
-
     public override void OnUpdate()
     {
         //throw new System.NotImplementedException();

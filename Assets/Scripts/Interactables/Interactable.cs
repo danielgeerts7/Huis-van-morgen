@@ -18,29 +18,23 @@ public abstract class Interactable : MonoBehaviour
     private void Awake()
     {
         renderers = new List<Renderer>();
+        stepHandler = gameObject.AddComponent<StepHandler>();
+    }
 
+    private void Start()
+    {
         Renderer goRenderer = this.gameObject.GetComponent<Renderer>();
-        Debug.Log($"{gameObject.name} ---> {goRenderer}");
 
         if (goRenderer)
         {
             renderers.Add(goRenderer);
-            Debug.Log($"{gameObject.name} ---> {goRenderer}");
         }
-        renderers.Add(goRenderer);
 
         foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
         {
             if (renderer) renderers.Add(renderer);
         }
 
-        Debug.Log(renderers);
-
-        stepHandler = gameObject.AddComponent<StepHandler>();
-    }
-
-    private void Start()
-    {
         SetOutline(false);
         OnStart();
     }
@@ -60,7 +54,7 @@ public abstract class Interactable : MonoBehaviour
 
     public void Deselect()
     {
-        if (stepHandler.IsActive())
+        if (stepHandler && stepHandler.IsActive())
         {
             SetOutlineColor(1);
         }
@@ -75,21 +69,20 @@ public abstract class Interactable : MonoBehaviour
     public void Activate()
     {
         OnActivate();
-        stepHandler.Activate();
+        if (stepHandler) stepHandler.Activate();
 
     }
 
-    private void SetOutline(bool enabled) {
+    private void SetOutline(bool enabled)
+    {
         if (enabled)
         {
             if (outlineIsActive) return;
-            
-            Material outlineMat = new Material(Shader.Find("Specular"));
-            outlineMat.color = Color.green;
+
+            Material outlineMat = Resources.Load("Materials/OutlineMaterial", typeof(Material)) as Material;
 
             foreach (Renderer renderer in renderers)
             {
-                Debug.Log(renderer);
                 Material[] materials = new Material[renderer.materials.Length + 1];
 
                 for (int i = 0; i < renderer.materials.Length; i++)
@@ -115,7 +108,8 @@ public abstract class Interactable : MonoBehaviour
             
             Debug.Log(renderString);
             */
-        } else
+        }
+        else
         {
             if (!outlineIsActive) return;
 

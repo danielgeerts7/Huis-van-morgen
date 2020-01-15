@@ -57,7 +57,6 @@ public class DebugRayCast : MonoBehaviour
                     }
                     else if (!newSelection.Equals(currentSelection))
                     {
-                        Debug.Log("deselecting...");
                         currentSelection.Deselect();
                         currentSelection = newSelection;
                         currentSelection.Select();

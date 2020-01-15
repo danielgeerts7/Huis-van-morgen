@@ -1532,6 +1532,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 64000012448285253, guid: 45146a051aab58b45a2a97e6bb01e3b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2865168630256279103, guid: 45146a051aab58b45a2a97e6bb01e3b3, type: 3}
     - {fileID: 2865168629359520130, guid: 45146a051aab58b45a2a97e6bb01e3b3, type: 3}
@@ -8589,7 +8594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307fc7305f4d7474bba465edeec23415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenarioIsActive: 1
+  scenarioIsActive: 0
   debugMode: 1
   activeScenarioIndex: 0
   UI: {fileID: 0}
