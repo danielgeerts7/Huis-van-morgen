@@ -61,30 +61,7 @@
 	  ]
     }
   ],
-  "personas": [{
-	  "BSN": 0,
-      "firstName": "Jonge",
-      "lastName": "Kerel",
-      "age": 21,
-	  "mugshotPath" : "",
-	  "biography": "",
-	  "limitations": [
-		"Kern gezond ! "
-	  ],
-	  "inGameEffect": ""
-	},
-	{
-      "BSN": 1,
-      "firstName": "Gerrit",
-      "lastName": "Appelboer",
-      "age": 72,
-	  "mugshotPath" : "Persona/gerrit",
-	  "biography": "Gerrit is een 72-jarige man uit Groningen.\nSinds drie jaar woont hij alleen, na het overlijden van zijn vrouw.\nZijn twee kinderen wonen in Amsterdam.\nZij kunnen dus niet altijd langskomen, maar komen vaak op visite.\nZijn zicht is sinds de laatste jaren flink achteruit gegaan.",
-	  "limitations": [
-		"Slechtziend"
-	  ],
-	  "inGameEffect": "Blurry"
-    },
+  "personas": [
     {
       "BSN": 2,
       "firstName": "Karin",
@@ -109,6 +86,18 @@
 		"Slechthorend"
 	  ],
 	  "inGameEffect": "LowSound"
-    }
+    },
+	{
+      "BSN": 1,
+      "firstName": "Gerrit",
+      "lastName": "Appelboer",
+      "age": 72,
+	  "mugshotPath" : "Persona/gerrit",
+	  "biography": "Gerrit is een 72-jarige man uit Groningen.\nSinds drie jaar woont hij alleen, na het overlijden van zijn vrouw.\nZijn twee kinderen wonen in Amsterdam.\nZij kunnen dus niet altijd langskomen, maar komen vaak op visite.\nZijn zicht is sinds de laatste jaren flink achteruit gegaan.",
+	  "limitations": [
+		"Slechtziend"
+	  ],
+	  "inGameEffect": "Blurry"
+    },
   ]
 }

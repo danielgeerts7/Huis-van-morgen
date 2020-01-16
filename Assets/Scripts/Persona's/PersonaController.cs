@@ -45,7 +45,7 @@ public class PersonaController : MonoBehaviour
             sources = GameObject.FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
             for (int i = 0; i < sources.Length; i++)
             {
-                sources[i].volume = 0.1f;
+                sources[i].volume = 0.5f;
             }
         }
     }
