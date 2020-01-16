@@ -46,7 +46,6 @@ public abstract class Interactable : MonoBehaviour
 
     public void Select()
     {
-        SetOutlineColor(0);
         SetOutline(true);
 
         OnSelect();
@@ -54,15 +53,6 @@ public abstract class Interactable : MonoBehaviour
 
     public void Deselect()
     {
-        /*if (stepHandler && stepHandler.IsActive())
-        {
-            SetOutlineColor(1);
-        }
-        else
-        {
-            SetOutline(false);
-        }*/
-
         SetOutline(false);
         OnDeselect();
     }
@@ -97,18 +87,6 @@ public abstract class Interactable : MonoBehaviour
             }
 
             outlineIsActive = true;
-
-            /*
-            Renderer[] renderers = GetComponents<Renderer>();
-            renderers.add(GetComponentsInChildren<Renderer>())
-            string renderString = "";
-            foreach (Renderer renderer in renderers)
-            {
-                renderString += "d";
-            }
-            
-            Debug.Log(renderString);
-            */
         }
         else
         {
@@ -128,16 +106,5 @@ public abstract class Interactable : MonoBehaviour
 
             outlineIsActive = false;
         }
-    }
-
-    private void SetOutlineColor(int alpha)
-    {
-        /*if (outlines.Count > 0)
-        {
-            foreach (Outline outline in outlines)
-            {
-                outline.color = alpha;
-            }
-        }*/
     }
 }

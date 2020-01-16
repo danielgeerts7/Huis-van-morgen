@@ -38,6 +38,15 @@
       "title": "Gezond licht",
       "imagePath": "Scenario/gezond_licht",
       "houseIDs": [
+        0,
+		2
+      ]
+    },
+    {
+      "ID": 2,
+      "title": "Gezond licht",
+      "imagePath": "Scenario/gezond_licht",
+      "houseIDs": [
 		0,
 		1
       ]

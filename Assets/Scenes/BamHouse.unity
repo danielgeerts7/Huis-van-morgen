@@ -733,6 +733,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3323996e9e5f8c04ebd7c9a92742e897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &57171948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4812525573362588768, guid: 2378004b874f686419787a84e478fb5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2059833943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &61258233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1102,7 @@ PrefabInstance:
     - target: {fileID: 7243841589946255520, guid: 45146a051aab58b45a2a97e6bb01e3b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7243841589946255520, guid: 45146a051aab58b45a2a97e6bb01e3b3,
         type: 3}
@@ -1605,7 +1611,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &246911232
 GameObject:
@@ -2021,7 +2027,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.90909135
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 65000011909244176, guid: 9c7f97eb257571446a2c55ad625cac36,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 65000011909244176, guid: 9c7f97eb257571446a2c55ad625cac36, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9c7f97eb257571446a2c55ad625cac36, type: 3}
 --- !u!1001 &402637422
 PrefabInstance:
@@ -2138,7 +2150,7 @@ Transform:
   - {fileID: 1911327197}
   - {fileID: 719836451}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &432261504 stripped
 GameObject:
@@ -2211,6 +2223,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d218f58f8d994088bdbda6c916f467f, type: 3}
+--- !u!1 &480796604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 480796605}
+  m_Layer: 0
+  m_Name: Starting Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &480796605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480796604}
+  m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 9.617, y: 4.274, z: 12.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1868897797}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &496726239 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2819323857007411853, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -2322,6 +2364,68 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &517692955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 517692956}
+  - component: {fileID: 517692958}
+  - component: {fileID: 517692957}
+  m_Layer: 0
+  m_Name: Step 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &517692956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517692955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1868897797}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &517692957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517692955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-1-scenario-3
+  delay: 0
+--- !u!114 &517692958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517692955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: Ga naar de woonkamer!
+  skipKey: 112
+  activators:
+  - {fileID: 1342970228}
 --- !u!1 &561990378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,6 +2804,97 @@ MonoBehaviour:
   stepName: U bent gevallen. Uw valdetectie slaat alarm.
   skipKey: 112
   timeLength: 1
+--- !u!1 &633010917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 633010918}
+  - component: {fileID: 633010920}
+  - component: {fileID: 633010919}
+  m_Layer: 0
+  m_Name: Stap 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &633010918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633010917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1868897797}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &633010919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633010917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-1-scenario-3
+  delay: 0
+--- !u!114 &633010920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633010917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: 
+  skipKey: 112
+  timeLength: 1
+--- !u!1 &633269720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 633269721}
+  m_Layer: 0
+  m_Name: Starting Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &633269721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633269720}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 14.75, y: 5.162, z: 9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1730056709}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &633858973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,6 +3013,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4399999, y: 2.1, z: 0.7}
   m_Center: {x: 0, y: 1.0500174, z: -0.031728506}
+--- !u!1 &649636515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649636516}
+  - component: {fileID: 649636519}
+  - component: {fileID: 649636518}
+  - component: {fileID: 649636517}
+  m_Layer: 0
+  m_Name: Step 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &649636516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649636515}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1730056709}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649636517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649636515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Ambulance
+  delay: 3
+--- !u!114 &649636518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649636515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7cff33341199ec4ebe95dfec2f8d274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: {fileID: 649636519}
+--- !u!114 &649636519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649636515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: 
+  skipKey: 112
+  timeLength: 8
 --- !u!1 &677661468
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,7 +3488,7 @@ PrefabInstance:
     - target: {fileID: 1132022550193295568, guid: af1c3e5a3edbe1d4193759238a03cab0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1132022550193295568, guid: af1c3e5a3edbe1d4193759238a03cab0,
         type: 3}
@@ -3870,7 +4140,7 @@ Transform:
   - {fileID: 1691966129}
   - {fileID: 1646321067}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &838625781
 GameObject:
@@ -4074,7 +4344,7 @@ Transform:
   - {fileID: 2003122360}
   - {fileID: 890702747}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &890702746
 GameObject:
@@ -4343,7 +4613,7 @@ Transform:
   m_LocalScale: {x: 0.04295451, y: 1, z: 1.3406}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &968572746
 GameObject:
@@ -5064,6 +5334,53 @@ Transform:
   m_Father: {fileID: 1401751838}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1132226062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1132226063}
+  - component: {fileID: 1132226064}
+  m_Layer: 0
+  m_Name: Step 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1132226063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132226062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1730056709}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1132226064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132226062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: Loop naar beneden
+  skipKey: 112
+  activators:
+  - {fileID: 719836450}
 --- !u!1 &1180930900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5141,7 +5458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1263395950 stripped
 Transform:
@@ -5277,7 +5594,7 @@ Transform:
   m_LocalScale: {x: 0.04295451, y: 1, z: 1.3406}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1318815374
 GameObject:
@@ -5478,6 +5795,142 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319759931}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1342970228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342970234}
+  - component: {fileID: 1342970233}
+  - component: {fileID: 1342970232}
+  - component: {fileID: 1342970231}
+  - component: {fileID: 1342970230}
+  - component: {fileID: 1342970229}
+  - component: {fileID: 1342970235}
+  m_Layer: 0
+  m_Name: Scen trigger woonkamer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1342970229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342970228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3323996e9e5f8c04ebd7c9a92742e897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1342970230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342970228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5ef05363d26174599248cbef69fa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightController: {fileID: 573867545}
+  waitTime: 2
+--- !u!65 &1342970231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342970228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1342970232
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342970228}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 758a61fba56ed0e4a9889921f7c786a9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1342970233
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342970228}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1342970234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342970228}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.98, y: 3.73, z: 16.013}
+  m_LocalScale: {x: 0.64748, y: 0.099999994, z: 0.81994575}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1342970235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342970228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0daf0ad788d4ea47a44a6f9362281cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobile: {fileID: 57171948}
+  running: {fileID: 517692958}
+  text: Bolsjfkjasd
 --- !u!1 &1343825074 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2820323867416117571, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -5595,7 +6048,7 @@ Transform:
   - {fileID: 29147883}
   - {fileID: 2122593998}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378231950
 GameObject:
@@ -6085,6 +6538,53 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1538358743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538358744}
+  - component: {fileID: 1538358745}
+  m_Layer: 0
+  m_Name: Step 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1538358744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538358743}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1730056709}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1538358745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538358743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: De ambulance is er bijna!
+  skipKey: 112
+  activators:
+  - {fileID: 712873984}
 --- !u!4 &1540863182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7243841589946255520, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -6486,6 +6986,104 @@ MonoBehaviour:
   curtains:
   - {fileID: 2081875826}
   controllerName: Slaapkamer
+--- !u!1 &1730056708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1730056709}
+  - component: {fileID: 1730056712}
+  - component: {fileID: 1730056711}
+  - component: {fileID: 1730056710}
+  m_Layer: 0
+  m_Name: Scenario 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1730056709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730056708}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 633269721}
+  - {fileID: 2121500877}
+  - {fileID: 1865739222}
+  - {fileID: 1132226063}
+  - {fileID: 1811688849}
+  - {fileID: 649636516}
+  - {fileID: 1538358744}
+  m_Father: {fileID: 4336806433153041253}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1730056710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730056708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Intro-scenario-1
+  playAtIntro: 0
+  playAtOutro: 0
+--- !u!114 &1730056711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730056708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Alarm
+  playAtIntro: 0
+  playAtOutro: 0
+--- !u!114 &1730056712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730056708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fecbc76094e2d4a9b556ad034ffb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingPoint: {fileID: 633269720}
+  scenarioID: 1
+  introText: Lampen
+  introDescription: U bent zojuist wakker geworden van uw wekker en u heeft honger.
+  outroText: Scenario voltooid!
+  outroDescription: De ambulance is gearriveerd, u wordt meteen geholpen.
+  startWithCurtainsOpen: 0
+  startWithLightsOn: 0
+  scenarioDayPart: 0
+  steps:
+  - {fileID: 2121500878}
+  - {fileID: 1865739224}
+  - {fileID: 1132226064}
+  - {fileID: 1811688851}
+  - {fileID: 649636519}
+  - {fileID: 1538358745}
 --- !u!1 &1734149144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2819323857746707773, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -6759,6 +7357,71 @@ MonoBehaviour:
   - {fileID: 582895852}
   ShowControllerInMobile: 0
   controllerName: Placeholder
+--- !u!1 &1768324922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1768324925}
+  - component: {fileID: 1768324923}
+  - component: {fileID: 1768324924}
+  m_Layer: 0
+  m_Name: Step 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1768324923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768324922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01da07c5ca65869478ba460ca442596c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: U hebt bericht! Voer het de opdracht uit
+  skipKey: 112
+  conditions:
+  - gameObject: {fileID: 708706676}
+    type: 0
+  - gameObject: {fileID: 785332039}
+    type: 0
+--- !u!114 &1768324924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768324922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-3-scenario-3
+  delay: 0
+--- !u!4 &1768324925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768324922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1868897797}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775531241
 GameObject:
   m_ObjectHideFlags: 0
@@ -6959,6 +7622,67 @@ Transform:
   m_Father: {fileID: 2000127695}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1811688848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1811688849}
+  - component: {fileID: 1811688851}
+  - component: {fileID: 1811688850}
+  m_Layer: 0
+  m_Name: Stap 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1811688849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811688848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1730056709}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1811688850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811688848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-5-scenario-1
+  delay: 0
+--- !u!114 &1811688851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811688848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: U bent gevallen. Uw valdetectie slaat alarm.
+  skipKey: 112
+  timeLength: 1
 --- !u!1 &1829365579
 GameObject:
   m_ObjectHideFlags: 0
@@ -7051,6 +7775,67 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.65999997, y: 1.7291696, z: 0.6035415}
   m_Center: {x: 0.0000009536743, y: 0.8646101, z: 0}
+--- !u!1 &1865739221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865739222}
+  - component: {fileID: 1865739224}
+  - component: {fileID: 1865739223}
+  m_Layer: 0
+  m_Name: Stap 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865739222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865739221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1730056709}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1865739223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865739221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Stap-4-scenario-1
+  delay: 0
+--- !u!114 &1865739224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865739221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: 
+  skipKey: 112
+  timeLength: 1
 --- !u!1 &1868200693
 GameObject:
   m_ObjectHideFlags: 0
@@ -7098,6 +7883,85 @@ MonoBehaviour:
   skipKey: 112
   activators:
   - {fileID: 712873984}
+--- !u!1 &1868897795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1868897797}
+  - component: {fileID: 1868897796}
+  - component: {fileID: 1868897798}
+  m_Layer: 0
+  m_Name: Scenario 3 - gezond licht
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1868897796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868897795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fecbc76094e2d4a9b556ad034ffb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingPoint: {fileID: 480796604}
+  scenarioID: 2
+  introText: Gezond licht
+  introDescription: U bevindt zich in een vakantiehuis met verschillende domotica.
+    Speel de scene om meer inzicht te krijgen in de voordelen van domotica.
+  outroText: Gehaald!
+  outroDescription: Door de gordijnen open en de lampen uit te doen bespaart u niet
+    alleen energie, maar dit is ook goed voor uw gezondheid. Domotica middelen maken
+    uw leven niet alleen makkelijker, maar zorgt er ook voor dat u energie kunt besparen.
+  startWithCurtainsOpen: 0
+  startWithLightsOn: 0
+  scenarioDayPart: 0
+  steps:
+  - {fileID: 633010920}
+  - {fileID: 517692958}
+  - {fileID: 1768324923}
+--- !u!4 &1868897797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868897795}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.3101892, y: -1.7230492, z: -3.555111}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 480796605}
+  - {fileID: 633010918}
+  - {fileID: 517692956}
+  - {fileID: 1768324925}
+  m_Father: {fileID: 4336806433153041253}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1868897798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868897795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Intro-scenario-3
+  playAtIntro: 0
+  playAtOutro: 0
 --- !u!1 &1884527717
 GameObject:
   m_ObjectHideFlags: 0
@@ -7979,7 +8843,7 @@ PrefabInstance:
     - target: {fileID: 216459322803171969, guid: 2378004b874f686419787a84e478fb5b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 216459322803171969, guid: 2378004b874f686419787a84e478fb5b,
         type: 3}
@@ -8136,7 +9000,7 @@ Transform:
   m_LocalScale: {x: 1.1, y: 0.05, z: 1.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2076973546 stripped
 GameObject:
@@ -8241,6 +9105,53 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 218767627}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2121500876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2121500877}
+  - component: {fileID: 2121500878}
+  m_Layer: 0
+  m_Name: Step 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2121500877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121500876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1730056709}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2121500878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121500876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: Ga naar de overloop
+  skipKey: 112
+  activators:
+  - {fileID: 2067748340}
 --- !u!1001 &2122593997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8520,7 +9431,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Alarm
-  playSong: 1
+  playAtIntro: 0
+  playAtOutro: 0
 --- !u!114 &1579820872423060462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8534,7 +9446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Intro-scenario-1
-  playSong: 0
+  playAtIntro: 0
+  playAtOutro: 0
 --- !u!4 &2234619889450984378
 Transform:
   m_ObjectHideFlags: 0
@@ -8594,12 +9507,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307fc7305f4d7474bba465edeec23415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenarioIsActive: 0
+  scenarioIsActive: 1
   debugMode: 1
-  activeScenarioIndex: 0
+  activeScenarioIndex: 1
   UI: {fileID: 0}
   scenarios:
   - {fileID: 6941360737183771788}
+  - {fileID: 1868897796}
 --- !u!114 &4082699549083240481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8628,6 +9542,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 720388024665598146}
+  - {fileID: 1730056709}
+  - {fileID: 1868897797}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

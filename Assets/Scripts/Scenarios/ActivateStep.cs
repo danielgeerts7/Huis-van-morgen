@@ -10,13 +10,11 @@ public class ActivateStep : Step
 
     public override void OnActivate()
     {
-        SetOutlines(false);
         state = State.COMPLETED;
     }
 
     public override void OnRun()
     {
-        SetOutlines(true);
     }
 
     public override void OnStart()
@@ -40,24 +38,5 @@ public class ActivateStep : Step
 
             stepHandler.AddStep(GetComponent<Step>());
         }
-    }
-
-    private void SetOutlines(bool state)
-    {
-        foreach (GameObject activator in activators)
-        {
-            Outline outline = activator.GetComponent<Outline>();
-
-            if (outline == null)
-            {
-                outline = activator.AddComponent<Outline>();
-            }
-
-
-            //Debug.Log(state);
-            //Debug.Log(outline);
-            outline.enabled = state;
-        }
-
     }
 }
