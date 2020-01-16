@@ -52,18 +52,7 @@
 	  ]
     }
   ],
-  "personas": [/*{
-	  "BSN": 0,
-      "firstName": "Jonge",
-      "lastName": "Kerel",
-      "age": 21,
-	  "mugshotPath" : "",
-	  "biography": "",
-	  "limitations": [
-		"Kern gezond ! "
-	  ],
-	  "inGameEffect": ""
-	},*/
+  "personas": [
     {
       "BSN": 2,
       "firstName": "Karin",
