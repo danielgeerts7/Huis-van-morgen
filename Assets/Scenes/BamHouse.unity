@@ -2246,13 +2246,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480796604}
-  m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 9.617, y: 4.274, z: 12.51}
+  m_LocalRotation: {x: -0, y: 0.13105765, z: -0, w: 0.9913748}
+  m_LocalPosition: {x: 9.617, y: 4.07, z: 12.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1868897797}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 15.061001, z: 0}
 --- !u!1 &496726239 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2819323857007411853, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -5778,7 +5778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mobile: {fileID: 57171948}
   running: {fileID: 517692958}
-  text: Bolsjfkjasd
+  text: Het is licht buiten. U kunt de gordijnen open doen en de lampen uitschakelen.
 --- !u!1 &1343825074 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2820323867416117571, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -6514,7 +6514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616249202}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 14.75, y: 5.162, z: 9}
+  m_LocalPosition: {x: 14.75, y: 5.099, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 720388024665598146}
@@ -7505,7 +7505,7 @@ MonoBehaviour:
     uw leven niet alleen makkelijker, maar zorgt er ook voor dat u energie kunt besparen.
   startWithCurtainsOpen: 0
   startWithLightsOn: 1
-  scenarioDayPart: 2
+  scenarioDayPart: 1
   steps:
   - {fileID: 633010920}
   - {fileID: 517692958}

@@ -47,9 +47,6 @@ public class Scenario : MonoBehaviour
         player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
 
         isBeingUsed = true;
-
-        state = State.STARTED;
-
     }
 
     public void Run() {

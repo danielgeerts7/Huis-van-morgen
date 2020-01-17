@@ -71,6 +71,9 @@ public class ScenarioController : MonoBehaviour
 
     void Update()
     {
+        if (!(scenarioStateController == State.RUNNING))
+            return;
+
         if (!scenario.StepCompleted())
             return;
 
