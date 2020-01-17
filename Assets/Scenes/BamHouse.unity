@@ -2865,36 +2865,6 @@ MonoBehaviour:
   stepName: 
   skipKey: 112
   timeLength: 1
---- !u!1 &633269720
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 633269721}
-  m_Layer: 0
-  m_Name: Starting Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &633269721
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633269720}
-  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 14.75, y: 5.162, z: 9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1730056709}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &633858973
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,81 +2983,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4399999, y: 2.1, z: 0.7}
   m_Center: {x: 0, y: 1.0500174, z: -0.031728506}
---- !u!1 &649636515
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 649636516}
-  - component: {fileID: 649636519}
-  - component: {fileID: 649636518}
-  - component: {fileID: 649636517}
-  m_Layer: 0
-  m_Name: Step 5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &649636516
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649636515}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1730056709}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &649636517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649636515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameSong: Ambulance
-  delay: 3
---- !u!114 &649636518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649636515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7cff33341199ec4ebe95dfec2f8d274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  step: {fileID: 649636519}
---- !u!114 &649636519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649636515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepName: 
-  skipKey: 112
-  timeLength: 8
 --- !u!1 &677661468
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,53 +5229,6 @@ Transform:
   m_Father: {fileID: 1401751838}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1132226062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1132226063}
-  - component: {fileID: 1132226064}
-  m_Layer: 0
-  m_Name: Step 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1132226063
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132226062}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1730056709}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1132226064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132226062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepName: Loop naar beneden
-  skipKey: 112
-  activators:
-  - {fileID: 719836450}
 --- !u!1 &1180930900
 GameObject:
   m_ObjectHideFlags: 0
@@ -6538,53 +6386,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1538358743
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1538358744}
-  - component: {fileID: 1538358745}
-  m_Layer: 0
-  m_Name: Step 6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1538358744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538358743}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1730056709}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1538358745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538358743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepName: De ambulance is er bijna!
-  skipKey: 112
-  activators:
-  - {fileID: 712873984}
 --- !u!4 &1540863182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7243841589946255520, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -6986,104 +6787,6 @@ MonoBehaviour:
   curtains:
   - {fileID: 2081875826}
   controllerName: Slaapkamer
---- !u!1 &1730056708
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1730056709}
-  - component: {fileID: 1730056712}
-  - component: {fileID: 1730056711}
-  - component: {fileID: 1730056710}
-  m_Layer: 0
-  m_Name: Scenario 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1730056709
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730056708}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 633269721}
-  - {fileID: 2121500877}
-  - {fileID: 1865739222}
-  - {fileID: 1132226063}
-  - {fileID: 1811688849}
-  - {fileID: 649636516}
-  - {fileID: 1538358744}
-  m_Father: {fileID: 4336806433153041253}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1730056710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730056708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameSong: Intro-scenario-1
-  playAtIntro: 0
-  playAtOutro: 0
---- !u!114 &1730056711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730056708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameSong: Alarm
-  playAtIntro: 0
-  playAtOutro: 0
---- !u!114 &1730056712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730056708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fecbc76094e2d4a9b556ad034ffb88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingPoint: {fileID: 633269720}
-  scenarioID: 1
-  introText: Lampen
-  introDescription: U bent zojuist wakker geworden van uw wekker en u heeft honger.
-  outroText: Scenario voltooid!
-  outroDescription: De ambulance is gearriveerd, u wordt meteen geholpen.
-  startWithCurtainsOpen: 0
-  startWithLightsOn: 0
-  scenarioDayPart: 0
-  steps:
-  - {fileID: 2121500878}
-  - {fileID: 1865739224}
-  - {fileID: 1132226064}
-  - {fileID: 1811688851}
-  - {fileID: 649636519}
-  - {fileID: 1538358745}
 --- !u!1 &1734149144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2819323857746707773, guid: 45146a051aab58b45a2a97e6bb01e3b3,
@@ -7622,67 +7325,6 @@ Transform:
   m_Father: {fileID: 2000127695}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1811688848
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1811688849}
-  - component: {fileID: 1811688851}
-  - component: {fileID: 1811688850}
-  m_Layer: 0
-  m_Name: Stap 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1811688849
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811688848}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1730056709}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1811688850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811688848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameSong: Stap-5-scenario-1
-  delay: 0
---- !u!114 &1811688851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811688848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepName: U bent gevallen. Uw valdetectie slaat alarm.
-  skipKey: 112
-  timeLength: 1
 --- !u!1 &1829365579
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,67 +7417,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.65999997, y: 1.7291696, z: 0.6035415}
   m_Center: {x: 0.0000009536743, y: 0.8646101, z: 0}
---- !u!1 &1865739221
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1865739222}
-  - component: {fileID: 1865739224}
-  - component: {fileID: 1865739223}
-  m_Layer: 0
-  m_Name: Stap 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1865739222
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865739221}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1730056709}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1865739223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865739221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameSong: Stap-4-scenario-1
-  delay: 0
---- !u!114 &1865739224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865739221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepName: 
-  skipKey: 112
-  timeLength: 1
 --- !u!1 &1868200693
 GameObject:
   m_ObjectHideFlags: 0
@@ -7916,15 +7497,15 @@ MonoBehaviour:
   startingPoint: {fileID: 480796604}
   scenarioID: 2
   introText: Gezond licht
-  introDescription: U bevindt zich in een vakantiehuis met verschillende domotica.
+  introDescription: U bevindt zich in een eengezinswoning met verschillende domotica.
     Speel de scene om meer inzicht te krijgen in de voordelen van domotica.
   outroText: Gehaald!
   outroDescription: Door de gordijnen open en de lampen uit te doen bespaart u niet
     alleen energie, maar dit is ook goed voor uw gezondheid. Domotica middelen maken
     uw leven niet alleen makkelijker, maar zorgt er ook voor dat u energie kunt besparen.
   startWithCurtainsOpen: 0
-  startWithLightsOn: 0
-  scenarioDayPart: 0
+  startWithLightsOn: 1
+  scenarioDayPart: 2
   steps:
   - {fileID: 633010920}
   - {fileID: 517692958}
@@ -7945,7 +7526,7 @@ Transform:
   - {fileID: 517692956}
   - {fileID: 1768324925}
   m_Father: {fileID: 4336806433153041253}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1868897798
 MonoBehaviour:
@@ -7960,7 +7541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Intro-scenario-3
-  playAtIntro: 0
+  playAtIntro: 1
   playAtOutro: 0
 --- !u!1 &1884527717
 GameObject:
@@ -9105,53 +8686,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 218767627}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2121500876
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2121500877}
-  - component: {fileID: 2121500878}
-  m_Layer: 0
-  m_Name: Step 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2121500877
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121500876}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1730056709}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2121500878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121500876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aa758b1c2fc78240b8830f412689fd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepName: Ga naar de overloop
-  skipKey: 112
-  activators:
-  - {fileID: 2067748340}
 --- !u!1001 &2122593997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9431,7 +8965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Alarm
-  playAtIntro: 0
+  playAtIntro: 1
   playAtOutro: 0
 --- !u!114 &1579820872423060462
 MonoBehaviour:
@@ -9446,7 +8980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameSong: Intro-scenario-1
-  playAtIntro: 0
+  playAtIntro: 1
   playAtOutro: 0
 --- !u!4 &2234619889450984378
 Transform:
@@ -9542,7 +9076,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 720388024665598146}
-  - {fileID: 1730056709}
   - {fileID: 1868897797}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -9582,9 +9115,9 @@ MonoBehaviour:
   introDescription: U bent zojuist wakker geworden van uw wekker en u heeft honger.
   outroText: Scenario voltooid!
   outroDescription: De ambulance is gearriveerd, u wordt meteen geholpen.
-  startWithCurtainsOpen: 0
+  startWithCurtainsOpen: 1
   startWithLightsOn: 0
-  scenarioDayPart: 0
+  scenarioDayPart: 1
   steps:
   - {fileID: 4082699549083240481}
   - {fileID: 1386532512}
