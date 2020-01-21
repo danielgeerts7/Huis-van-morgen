@@ -24,7 +24,7 @@ public class PersonaController : MonoBehaviour
             oculusController = GameObject.FindObjectOfType<OculusGoController>();
             if(filter != null)
             {
-                filter.GetComponent<Image>().enabled = false;
+                filter.GetComponentInChildren<Image>().enabled = false;
             }
             SetIngameEffect(persona);
         }
@@ -38,7 +38,10 @@ public class PersonaController : MonoBehaviour
         }
         if (persona.inGameEffect.Equals("Blurry"))
         {
-            filter.GetComponent<Image>().enabled = true;
+            if (filter != null)
+            {
+                filter.GetComponentInChildren<Image>().enabled = true;
+            }
         }
         if (persona.inGameEffect.Equals("LowSound"))
         {

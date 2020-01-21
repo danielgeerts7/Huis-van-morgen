@@ -2213,7 +2213,6 @@ GameObject:
   m_Component:
   - component: {fileID: 517692956}
   - component: {fileID: 517692958}
-  - component: {fileID: 517692957}
   m_Layer: 0
   m_Name: Step 1
   m_TagString: Untagged
@@ -2233,22 +2232,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1868897797}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &517692957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517692955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameSong: Stap-1-scenario-3
-  delay: 0
 --- !u!114 &517692958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2641,67 +2626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepName: U bent gevallen. Uw valdetectie slaat alarm.
-  skipKey: 112
-  timeLength: 1
---- !u!1 &633010917
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 633010918}
-  - component: {fileID: 633010920}
-  - component: {fileID: 633010919}
-  m_Layer: 0
-  m_Name: Stap 0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &633010918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633010917}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1868897797}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &633010919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633010917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2afe60a090275674ea59cf1f1a18fc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameSong: Stap-1-scenario-3
-  delay: 0
---- !u!114 &633010920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633010917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1c82f45cf446f428535f8b51373f27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepName: 
   skipKey: 112
   timeLength: 1
 --- !u!1 &646986369 stripped
@@ -6705,7 +6629,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1868897797}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775531241
 GameObject:
@@ -7057,6 +6981,7 @@ GameObject:
   - component: {fileID: 1868897797}
   - component: {fileID: 1868897796}
   - component: {fileID: 1868897798}
+  - component: {fileID: 1868897799}
   m_Layer: 0
   m_Name: Scenario 3 - gezond licht
   m_TagString: Untagged
@@ -7089,7 +7014,6 @@ MonoBehaviour:
   startWithLightsOn: 1
   scenarioDayPart: 1
   steps:
-  - {fileID: 633010920}
   - {fileID: 517692958}
   - {fileID: 1768324923}
 --- !u!4 &1868897797
@@ -7104,7 +7028,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480796605}
-  - {fileID: 633010918}
   - {fileID: 517692956}
   - {fileID: 1768324925}
   m_Father: {fileID: 4336806433153041253}
@@ -7125,6 +7048,21 @@ MonoBehaviour:
   nameSong: Intro-scenario-3
   playAtIntro: 1
   playAtOutro: 0
+--- !u!114 &1868897799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868897795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63effb604995590449560d3b824a82b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSong: Outro-scenario-3
+  playAtIntro: 0
+  playAtOutro: 1
 --- !u!1 &1884527717
 GameObject:
   m_ObjectHideFlags: 0
