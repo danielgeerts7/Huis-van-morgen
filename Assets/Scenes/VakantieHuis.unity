@@ -1672,9 +1672,9 @@ MonoBehaviour:
   introText: Nachtelijk Toiletbezoek
   introDescription: U bent wakker geworden rond 4 uur in de nacht, en het is nog donker
     buiten. U merkt dat u uw behoefte moet doen en besluit naar de badkamer te gaan.
-  outroText: Game over !
-  outroDescription: Het komt vaak voor dat u snachts naar het toilet gaat. Wanneer
-    er iets mis gaat kan het slimme huis snel hulp inschakelen.
+  outroText: Scenario voltooid!
+  outroDescription: "Het komt vaak voor dat u s\u2019 nachts naar het toilet gaat.
+    Wanneer er iets mis gaat kan het slimme huis snel hulp inschakelen."
   startWithCurtainsOpen: 0
   startWithLightsOn: 0
   scenarioDayPart: 2
@@ -1751,10 +1751,11 @@ MonoBehaviour:
   introText: Gezond licht
   introDescription: U bevindt zich in een vakantiehuis met verschillende domotica.
     Speel de scene om meer inzicht te krijgen in de voordelen van domotica.
-  outroText: Gehaald!
-  outroDescription: Door de gordijnen open en de lampen uit te doen bespaart u niet
-    alleen energie, maar dit is ook goed voor uw gezondheid. Domotica middelen maken
-    uw leven niet alleen makkelijker, maar zorgt er ook voor dat u energie kunt besparen.
+  outroText: Scenario voltooid!
+  outroDescription: Door de gordijnen te openen en de lampen uit te doen bespaart
+    u niet alleen energie, maar dit is ook goed voor uw gezondheid. Domotica middelen
+    maken uw leven niet alleen makkelijker of veiliger, maar zorgt er ook voor dat
+    u energie kunt besparen.
   startWithCurtainsOpen: 0
   startWithLightsOn: 1
   scenarioDayPart: 2
