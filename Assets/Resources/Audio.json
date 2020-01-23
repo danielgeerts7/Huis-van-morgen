@@ -61,6 +61,26 @@
 			"volume": "1.0f"
 		},
 		{
+			"name": "info-ramen",
+			"path": "Audio/info/info_ramen",
+			"volume": "1.0f"
+		},
+		{
+			"name": "info-fornuis",
+			"path": "Audio/info/info_fornuis",
+			"volume": "1.0f"
+		},
+		{
+			"name": "info-lampen",
+			"path": "Audio/info/info_lampen",
+			"volume": "1.0f"
+		},
+		{
+			"name": "info-gordijnen",
+			"path": "Audio/info/info_gordijnen",
+			"volume": "1.0f"
+		},
+		{
 			"name": "Intro-scenario-1",
 			"path": "Audio/Scenario-1/1-goedemorgen-tijd-om-op-te-staan",
 			"volume": "1.0f"
