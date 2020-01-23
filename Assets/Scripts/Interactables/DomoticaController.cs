@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// This class is controlling all the domotica. It can switch all curtains/lights at the same time.
+/// It can also check if lights/curtains are on or off
+/// @Version: 1.0
+/// @Authors: Florian Molenaars
+/// </summary>
 public class DomoticaController : MonoBehaviour
 {
     // Start is called before the first frame update
     private LightController[] lightControllers;
     private CurtainController[] curtainControllers;
+
+    //to add domotica in mobile, add to this list
     private List<string> domotica;
 
     void Awake()    
@@ -20,6 +27,7 @@ public class DomoticaController : MonoBehaviour
 
     public void SwitchLightOnRoom(LightController liController)
     {
+        // switch all the lights connected to the light controller
         foreach (LightController lightController in lightControllers)
         {
             if (lightController == liController)
@@ -34,10 +42,10 @@ public class DomoticaController : MonoBehaviour
                 }
             }
         }
-
     }
     public void SwitchCurtainOnRoom(CurtainController curController)
     {
+        // switch all the curtains connected to the curtain controller
         foreach (CurtainController curtainController in curtainControllers)
         {
             if (curtainController == curController)
@@ -56,7 +64,6 @@ public class DomoticaController : MonoBehaviour
 
     public void SwitchLights(bool allOn)
     {
-
         foreach (LightController lightController in lightControllers)
         {
             if (allOn)
@@ -72,6 +79,7 @@ public class DomoticaController : MonoBehaviour
 
     public void SwitchCurtainsWithoutAnimation(bool allOpen)
     {
+        //this is for when you need to switch the curtains at the start of the game to skip the animation
         foreach (CurtainController curtainController in curtainControllers)
         {
             if (allOpen)
@@ -86,6 +94,7 @@ public class DomoticaController : MonoBehaviour
 
     public bool CheckIfLightsAreOn(LightController lightController) 
     {
+        //if more than 50 % of the lights are on this will return true
         float totalLights = 0;
         float totalEnabled = 0;
         foreach (GameObject light in lightController.lights)
@@ -108,6 +117,7 @@ public class DomoticaController : MonoBehaviour
     }
     public bool CheckIfCurtainsAreOpen(CurtainController curtainController)
     {
+        //if more than 50 % of the curtains are open this will return true
         float totalCurtains = 0.0f;
         float totalEnabled = 0.0f;
         foreach (GameObject curtain in curtainController.curtains)

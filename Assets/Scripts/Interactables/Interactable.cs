@@ -1,7 +1,13 @@
 ﻿using UnityEngine;
 using cakeslice;
 using System.Collections.Generic;
-
+/// <summary>
+/// This is the abstract class of all interactables.
+/// It adds an outline on the object that is interactable.
+/// To create an interactable dont forget to give it a interactable tag.
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public abstract class Interactable : MonoBehaviour
 {
     private List<Renderer> renderers;
@@ -66,6 +72,7 @@ public abstract class Interactable : MonoBehaviour
 
     private void SetOutline(bool enabled)
     {
+        // adds an outline on the selected interactable.
         if (enabled)
         {
             if (outlineIsActive) return;
