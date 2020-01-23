@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This is a doorinteractable class. This class opens and closes doors with animation and sound
+/// @Version: 1.0
+/// @Authors: Florian Molenaars
+/// </summary>
 public class DoorInteractable : Interactable
 {
     public bool isOpen = false;
@@ -17,6 +22,8 @@ public class DoorInteractable : Interactable
 
     public override void OnActivate()
     {
+        // opens/closes the door
+        // also adds animation and soundto the door 
         if (isOpen)
         {
             if (this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !this.GetComponent<Animator>().IsInTransition(0))

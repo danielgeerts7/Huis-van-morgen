@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// This class is is acting on the persona chosen in the main menu.
+/// It adds a "disability" to the character like blurry when the persona has bad sight
+/// @Version: 1.0
+/// @Authors: Florian Molenaars
+/// </summary>
 public class PersonaController : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -15,9 +20,10 @@ public class PersonaController : MonoBehaviour
 
     void Start()
     {
+        // get the persona chosen from the main menu through the configcontroller
+        // and the filter object
         configController = GameObject.FindObjectOfType<ConfigController>();
         filter = GameObject.Find("BadSight");
-        Debug.Log(filter);
         if (configController != null)
         {
             persona = configController.GetSelectedPersona();
@@ -32,6 +38,7 @@ public class PersonaController : MonoBehaviour
 
     void SetIngameEffect(PersonaInfo persona)
     {
+        // set an effect ingame for the chosen persona
         if (persona.inGameEffect.Equals("Slow"))
         {
             oculusController.forwardSpeed = 0.5f;  

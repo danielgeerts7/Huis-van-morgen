@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This is for the info object. This class is making sure a sound is played when the info object is selected.
+/// @Version: 1.0
+/// @Authors: Florian Molenaars, Leon Smit
+/// </summary>
+
 public class InfoInteractable : Interactable
 {
     public string soundName;
@@ -40,6 +46,7 @@ public class InfoInteractable : Interactable
 
     public override void OnUpdate()
     {
+        // makes the object rotate
         transform.Rotate(0.0f, turnspeed * Time.deltaTime, 0.0f);
         if (activated){
             timeSpent += Time.deltaTime;

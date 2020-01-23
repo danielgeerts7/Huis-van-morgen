@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// after making an scenario put this script to the scenario to start/end the scenario with a sound
+/// @Version: 1.0
+/// @Authors: Florian Molenaars, Daniël Geerts
+/// </summary>
 public class AddSoundScenario : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -24,6 +29,7 @@ public class AddSoundScenario : MonoBehaviour
     {
         if (!played)
         {
+            // play song at start
             if (playAtIntro && scenario.UsedAsPlayableScenario() && scenario.GetState() == State.WAITING && audioManager != null)
             {
                 if (audioManager.Play(nameSong))
@@ -31,7 +37,7 @@ public class AddSoundScenario : MonoBehaviour
                     played = true;
                 }
             }
-
+            // play song at outro
             if (playAtOutro && scenario.UsedAsPlayableScenario() && scenario.GetState() == State.COMPLETED && audioManager != null) {
                 if (audioManager.Play(nameSong))
                 {

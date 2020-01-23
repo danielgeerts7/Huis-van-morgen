@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// After making an scenario put this class on an stepobject to add sound.
+/// 
+/// @Version: 1.0
+/// @Authors: Florian Molenaars
+/// </summary>
 public class AddSoundSteps : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -22,6 +27,7 @@ public class AddSoundSteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check if the step is active
         if (!step) return;
 
         if (!activated)
@@ -32,10 +38,9 @@ public class AddSoundSteps : MonoBehaviour
                 startTime = Time.time;
             }
         }
-
+        // add delay in sec after the step started
         if (!played && activated && startTime + delay <= Time.time)
         {
-            Debug.Log("lskjdflksfdjflkj");
             if (audioManager)
             {
                 audioManager.Play(nameSong);

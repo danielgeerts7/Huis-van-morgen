@@ -2,7 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// This class is for the lightswitch object. The object takes lightcontroller as object so it knows which lights to turn off/on
+/// @Version: 1.0
+/// @Authors: Florian Molenaars
+/// </summary>
 public class LightSwitch : Interactable
 {
     public GameObject lightControllerObject;
