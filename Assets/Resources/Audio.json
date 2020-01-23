@@ -154,6 +154,11 @@
 			"name": "Outro-scenario-3",
 			"path": "Audio/Scenario-3/5-scenario-3-outro",
 			"volume": "1.0f"
+		},
+		{
+			"name": "Water",
+			"path": "Audio/Energie_Info_Water",
+			"volume": "1.0f"
 		}
 	]
 }
