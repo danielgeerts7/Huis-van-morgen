@@ -148,11 +148,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR player
       objectReference: {fileID: 0}
-    - target: {fileID: 5901518718628149314, guid: ee562407b0f2b824f92f0ff84a43e192,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5901518718627849324, guid: ee562407b0f2b824f92f0ff84a43e192,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -417,7 +412,8 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6497384493424919417, guid: ee562407b0f2b824f92f0ff84a43e192, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ee562407b0f2b824f92f0ff84a43e192, type: 3}
 --- !u!1 &5973862843102154407 stripped
 GameObject:
