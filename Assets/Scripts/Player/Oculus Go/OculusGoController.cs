@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class OculusGoController : MonoBehaviour
 {
-    public float forwardSpeed = 0.8f;
+    public float forwardSpeed = 0.7f;
     private float rotationSpeed = 60.0f;
 
     private bool canWalk = true;
