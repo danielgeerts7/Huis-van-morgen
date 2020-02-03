@@ -81,6 +81,11 @@
 			"volume": "1.0f"
 		},
 		{
+			"name": "info-douche",
+			"path": "Audio/info/info_douche",
+			"volume": "1.0f"
+		},
+		{
 			"name": "Intro-scenario-1",
 			"path": "Audio/Scenario-1/1-goedemorgen-tijd-om-op-te-staan",
 			"volume": "1.0f"
