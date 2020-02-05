@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Author: Daniël Geerts
+/// After selecting a Card in de Curved (VR) Menu
+/// Then this class can save the info into the Current Selection Bar
+/// </summary>
 public class CurrentSelected : MonoBehaviour
 {
     public GameObject image;
@@ -19,6 +24,7 @@ public class CurrentSelected : MonoBehaviour
         oldText = description.GetComponent<Text>().text;
     }
 
+    // Fill Current Selected INFO in the Selection Bar
     public void FillCurrentSelected(Sprite newImage, string newText, Color color)
     {
         image.GetComponent<Image>().sprite = newImage;
@@ -26,6 +32,8 @@ public class CurrentSelected : MonoBehaviour
         description.GetComponent<Text>().text = newText;
 
     }
+
+    // Reset Current Selected INFO
     public void Reset()
     {
         image.GetComponent<Image>().sprite = oldImg;

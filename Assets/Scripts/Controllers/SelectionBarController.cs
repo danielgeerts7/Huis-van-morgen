@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Author: Daniël Geerts
+/// The SelectionBarController controls the Menu
+/// When a House, Persona or Scenario is selected, then fill it into current seleciton bar and Load a new View from Curved Menu
+/// </summary>
 public class SelectionBarController : MonoBehaviour
 {
     public GameObject selectedHouseView;
@@ -28,6 +34,7 @@ public class SelectionBarController : MonoBehaviour
         loadingscreen.SetActive(false);
     }
 
+    // Which Cards need to be loaded into the Current Selection Bar
     public void SetCardIntoBar(ConfigController.CardType cardtype, Sprite featuredimg, string description)
     {
         GameObject tempSelected = null;
@@ -48,6 +55,7 @@ public class SelectionBarController : MonoBehaviour
         GoToNextSection();
     }
 
+    // Start Simulation and get Loading screen while waiting
     public IEnumerator StartSimulation()
     {
         loadingscreen.SetActive(true);
@@ -65,6 +73,7 @@ public class SelectionBarController : MonoBehaviour
         loadingscreen.SetActive(false);
     }
 
+    // Reset Current Selection Bar
     public void ResetSelectionCache() {
         GameObject.FindObjectOfType<AudioManager>().Play("ButtonClick");
 
@@ -81,7 +90,9 @@ public class SelectionBarController : MonoBehaviour
         resetSelectionView_Btn.SetActive(false);
     }
 
-
+    // Move to next Section
+    // From house to scenario
+    // From scenario to persona
     public void GoToNextSection() {
         resetSelectionView_Btn.SetActive(true);
 
@@ -97,7 +108,7 @@ public class SelectionBarController : MonoBehaviour
                 break;
             case (ConfigController.CardType.PERSONA):
                 // Do nothing
-                // Debug.Log("Selecting other PERSONA");
+                // Not needed
                 break;
         }
     }

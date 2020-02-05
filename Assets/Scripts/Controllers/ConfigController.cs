@@ -5,6 +5,13 @@ using UnityEngine;
 using OVRSimpleJSON;
 using UnityEngine.UI;
 
+/// <summary>
+/// Author: Daniël Geerts
+/// Singleton class. Loaded in MenuScene and used thoughout the whole project
+/// Contains all information from the JSON
+/// Contains selected houseInfo, scenarioInfo and personaInfo from MenuScene
+/// Scenes can use the information inside this class, for example: to get the selected Scenario or Persona
+/// </summary>
 public class ConfigController : MonoBehaviour
 {
     // Get configs of House, Scenario, Persona
@@ -22,11 +29,11 @@ public class ConfigController : MonoBehaviour
 
     public enum CardType { HOUSE, SCENARIO, PERSONA };
 
-    /*
- * Make this class a singleton
- * Dont Destroy the first loaded object of this type
- * then, Do Destroy the rest
- */
+    /**
+     * Awake & Instance makes this class a singleton
+     * Dont Destroy the first loaded object of this type
+     * then, Do Destroy the rest
+     */
     void Awake()
     {
         // If the instance reference has not been set, yet, 

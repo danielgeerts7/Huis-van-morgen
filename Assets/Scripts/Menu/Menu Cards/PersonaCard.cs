@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Author: Daniël Geerts
+/// subclasse: PersonaCard is created for Huis-van-Morgen persona
+/// </summary>
 public class PersonaCard : SuperCard
 {
     private PersonaInfo persona;
@@ -30,6 +34,7 @@ public class PersonaCard : SuperCard
         selectionBar.SetCardIntoBar(ConfigController.CardType.PERSONA, Resources.Load<Sprite>(persona.mugshotPath), persona.getFullName());
     }
 
+    // Fill the PersonaCard with personaINFO, located in the huis-van-morgen.json
     public void FillPersonaCard(PersonaInfo persona)
     {
         this.persona = persona;

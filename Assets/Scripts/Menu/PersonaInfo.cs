@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Author: Daniël Geerts
+/// Persona INFO -> from huis-van-morgen_info.json
+/// </summary>
 [Serializable]
 public struct PersonaInfo
 {

@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Author: Daniël Geerts
+/// Custom classe for the Oculus (Go) Contoller
+/// Contains the controls for the movement of the VR player
+/// </summary>
 public class OculusGoController : MonoBehaviour
 {
     public float forwardSpeed = 0.7f;
@@ -48,7 +54,7 @@ public class OculusGoController : MonoBehaviour
         }
 
 
-        // Make mobile visible or hide
+        // Check is button is pressed
         if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad))
         {
             pressedTouch = true;
@@ -57,7 +63,7 @@ public class OculusGoController : MonoBehaviour
             pressedTouch = false;
             canTakeMobile = true;
         }
-
+        // Then, make mobile visible or hidden
         if (pressedTouch)
         {
             if (canTakeMobile)

@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Author: Daniël Geerts
+/// subclasse: ScenarioCard is created for Huis-van-Morgen sceanarios
+/// </summary>
 public class ScenarioCard : SuperCard
 {
     private ScenarioInfo scenario;
@@ -27,6 +31,7 @@ public class ScenarioCard : SuperCard
         selectionBar.SetCardIntoBar(ConfigController.CardType.SCENARIO, Resources.Load<Sprite>(scenario.imagePath), scenario.title);
     }
 
+    // Fill card ScenarioCard with ScenarioINFO, located in the huis-van-morgen.json
     public void FillScenarioCard(ScenarioInfo scenario)
     {
         this.scenario = scenario;

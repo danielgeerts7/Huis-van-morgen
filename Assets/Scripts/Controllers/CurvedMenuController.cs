@@ -3,18 +3,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-/** 
- * Generates curved VR menu
- * Spawns the vr cards on right position
- *
- */
+
+/// <summary>
+/// Author: Daniël Geerts
+/// Generates curved VR menu
+/// And, spawns the Houses, Scenario, Persona cards on a position
+/// </summary>
 public class CurvedMenuController : MonoBehaviour
 {
     // Cards
     public GameObject houseCardPrefab;
     public GameObject scenarioCardPrefab;
     public GameObject personaCardPrefab;
-
 
     public List<Transform> CardSpawnpoints;
 
@@ -45,6 +45,7 @@ public class CurvedMenuController : MonoBehaviour
         }
     }
 
+    // Clear view of all cards
     void ClearView() {
         foreach (GameObject obj in cardCopies) {
             Destroy(obj);
@@ -52,6 +53,7 @@ public class CurvedMenuController : MonoBehaviour
         cardCopies.Clear();
     }
 
+    // Load every house (from the JSON) into the Curved Menu
     public void LoadHouseView() {
         ClearView();
         int count = 0;
@@ -75,6 +77,7 @@ public class CurvedMenuController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("menu-huis");
     }
 
+    // Load every Scenario (from the JSON) into the Curved Menu
     public void LoadScenarioView() {
         ClearView();
         int count = 0;
@@ -99,9 +102,9 @@ public class CurvedMenuController : MonoBehaviour
         }
 
         FindObjectOfType<AudioManager>().Play("menu-scenario");
-
     }
 
+    // Load every persona (from the JSON) into the Curved Menu
     public void LoadPersonaView() {
         ClearView();
         int count = 0;
@@ -115,6 +118,5 @@ public class CurvedMenuController : MonoBehaviour
         }
 
         FindObjectOfType<AudioManager>().Play("menu-persona");
-
     }
 }

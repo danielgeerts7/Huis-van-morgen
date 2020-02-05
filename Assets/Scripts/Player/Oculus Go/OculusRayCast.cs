@@ -2,14 +2,24 @@
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+
+/// <summary>
+/// Author: Daniël Geerts
+/// RayCast for interaction with interactable objects
+/// Creats a pointing laser
+/// Also show crosshair at 3D objects and Interactable object or button
+/// </summary>
 public class OculusRayCast : MonoBehaviour
 {
     public float raycastLength = 2000;
     public float lightsaberLength = 5;
 
+    // Prefab of crosshair
     public GameObject prefabSelectPointer;
     public GameObject prefabNonSelectPointer;
 
+    // Instantiate for crosshair
     private GameObject selectPointer;
     private GameObject nonSelectPointer;
 
@@ -91,6 +101,7 @@ public class OculusRayCast : MonoBehaviour
         }
     }
 
+    // Draw Line of Lightsaber as long as: lightsaberLength
     private void DrawLightSaber() {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit raycastHit;
@@ -104,6 +115,7 @@ public class OculusRayCast : MonoBehaviour
         lr.SetPosition(1, endPosition);
     }
 
+    // Checks if RayCast hits a Interactable object or Button component
     private void CheckIfRayCastHit() {
         Vector3 origin = transform.position;
         Vector3 direction = transform.forward * raycastLength;

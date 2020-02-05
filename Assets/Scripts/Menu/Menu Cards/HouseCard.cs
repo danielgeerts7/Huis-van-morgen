@@ -5,6 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Author: Daniël Geerts
+/// subclasse: HouseCard is created for Huis-van-Morgen houses
+/// </summary>
 public class HouseCard : SuperCard
 {
     private HouseInfo house;
@@ -27,6 +32,7 @@ public class HouseCard : SuperCard
         selectionBar.SetCardIntoBar(ConfigController.CardType.HOUSE, Resources.Load<Sprite>(house.imagePath), house.houseName);
     }
 
+    // Fill HouseCard with houseINFO, located in the huis-van-morgen.json
     public void FillHouseCard(HouseInfo house)
     {
         this.house = house;

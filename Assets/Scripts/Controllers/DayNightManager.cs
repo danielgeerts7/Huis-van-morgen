@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* 
- * Author: Daniël Geerts
- * Day and Night system that controls the skybox and lights in the scene
- */
+/// <summary>
+/// Author: Daniël Geerts
+/// Day and Night system that controls the skybox and lights in the scene
+/// </summary>
 public class DayNightManager : MonoBehaviour
 {
     public enum DayPart { NIGHT, MORNING, AFTERNOON, EVENING }
