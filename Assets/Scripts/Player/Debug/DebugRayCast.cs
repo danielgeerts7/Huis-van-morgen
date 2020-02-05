@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+/// <summary>
+/// Performs a raycast which returns a colliding object. Used to determine if the player is looking at an object.
+/// If the player is looking at an object it is selected. 
+/// When player presses 'E' key, the selected object is activated if it's an interactable.
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class DebugRayCast : MonoBehaviour
 {
     public float rayLength;
@@ -37,19 +45,22 @@ public class DebugRayCast : MonoBehaviour
             }
         }
 
+        // Draw the Raycast and puts colliding object in vision variable
         Debug.DrawRay(origin, direction);
         if (Physics.Raycast(origin, direction, out vision, rayLength))
         {
+            // If object has Interactable tag continue
             if (vision.collider.tag.Equals("Interactable") && FindObjectOfType<PlayerController>().PlayerControlsEnabled())
             {
-                // Check if Interactable
+                // Check if object is Interactable
                 bool succes = vision.collider.gameObject.TryGetComponent<Interactable>(out Interactable newSelection);
 
-                //set 
                 image.color = crosshairSelectColor;
-                //Debug.Log("Succes!");
+                // If object has Interactable component, continue,
+                // else Log in error
                 if (succes)
                 {
+                    // If object is newly selected, perform select function
                     if (!currentSelection)
                     {
                         currentSelection = newSelection;
@@ -71,6 +82,8 @@ public class DebugRayCast : MonoBehaviour
             }
             else
             {
+                // If no interactable object is collided with, but there is an object selected,
+                // deselect the object.
                 if (currentSelection)
                 {
                     currentSelection.Deselect();
@@ -79,6 +92,7 @@ public class DebugRayCast : MonoBehaviour
                 }
             }
         }
+        // if no object is collided with, deselect the current selection if it exists
         else if (currentSelection)
         {
             currentSelection.Deselect();
@@ -86,6 +100,7 @@ public class DebugRayCast : MonoBehaviour
             image.color = crosshairDefaultColor;
         }
 
+        // If 'E' key is pressed, activate current selection
         if (currentSelection && Input.GetKeyDown(KeyCode.E)) {
             currentSelection.Activate();
         }

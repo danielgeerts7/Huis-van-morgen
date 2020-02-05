@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Teleports player to the target
+/// Used for stairs
+/// 
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class TeleportInteractable : Interactable
 {
     public GameObject target;
@@ -21,10 +28,10 @@ public class TeleportInteractable : Interactable
 
     private void TeleportTo(GameObject go)
     {
-        player.transform.position = go.transform.position; 
+        player.transform.position = go.transform.position;
         player.transform.rotation = Quaternion.Euler(go.transform.rotation.eulerAngles);
         FindObjectOfType<PlayerController>().DisablePlayerControls();
-       
+
         isTeleported = true;
     }
 
@@ -45,7 +52,8 @@ public class TeleportInteractable : Interactable
 
     public override void OnUpdate()
     {
-        if (isTeleported) {
+        if (isTeleported)
+        {
             FindObjectOfType<PlayerController>().EnablePlayerControls();
             isTeleported = false;
         }

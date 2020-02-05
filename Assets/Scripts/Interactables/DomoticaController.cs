@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
 /// This class is controlling all the domotica. It can switch all curtains/lights at the same time.
 /// It can also check if lights/curtains are on or off
+/// 
 /// @Version: 1.0
 /// @Authors: Florian Molenaars
 /// </summary>
@@ -16,7 +18,7 @@ public class DomoticaController : MonoBehaviour
     //to add domotica in mobile, add to this list
     private List<string> domotica;
 
-    void Awake()    
+    void Awake()
     {
         domotica = new List<string>();
         lightControllers = GameObject.FindObjectsOfType<LightController>();
@@ -70,7 +72,8 @@ public class DomoticaController : MonoBehaviour
             {
                 lightController.TurnOn();
             }
-            else {
+            else
+            {
                 lightController.TurnOff();
             }
 
@@ -86,13 +89,14 @@ public class DomoticaController : MonoBehaviour
             {
                 curtainController.OpenCurtains(true);
             }
-            else {
+            else
+            {
                 curtainController.CloseCurtains(true);
             }
         }
     }
 
-    public bool CheckIfLightsAreOn(LightController lightController) 
+    public bool CheckIfLightsAreOn(LightController lightController)
     {
         //if more than 50 % of the lights are on this will return true
         float totalLights = 0;

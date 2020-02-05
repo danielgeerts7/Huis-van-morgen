@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
 /// after making an scenario put this script to the scenario to start/end the scenario with a sound
 /// @Version: 1.0
 /// @Authors: Florian Molenaars, Daniël Geerts

@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Enables the correct player, based on platform used (VR or Unity Editor)
+/// and executes functions based on current active player
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     public GameObject VR_player;
@@ -8,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private GameObject player;
     private bool playerControlsEnabled;
 
+    // Activate correct player
     void Awake()
     {
         if (Application.isEditor)

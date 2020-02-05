@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
 /// After making an scenario put this class on an stepobject to add sound.
 /// 
 /// @Version: 1.0

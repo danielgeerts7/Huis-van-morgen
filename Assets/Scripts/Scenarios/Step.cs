@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Superclass of all steps, manages the state and skipping a step (only in editor)
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public abstract class Step : MonoBehaviour
 {
     public string stepName;

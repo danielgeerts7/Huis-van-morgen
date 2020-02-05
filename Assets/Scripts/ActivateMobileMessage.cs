@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Shows message on phone when a step is running.
+/// @Version: 1.0
+/// @Authors: Florian Molenaars
+/// </summary>
 public class ActivateMobileMessage : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject mobile;
 
     public Step running;
     private bool showedMessage = false;
 
     public string text;
-    // Update is called once per frame
 
     private void Start()
     {

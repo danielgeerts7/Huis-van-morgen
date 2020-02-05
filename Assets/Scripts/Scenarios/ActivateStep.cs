@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A step that is completed by activating one interactable in the list of activators
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class ActivateStep : Step
 {
 

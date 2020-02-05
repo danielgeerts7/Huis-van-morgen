@@ -2,7 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Ambulance that drives to a certain spot and activates step when arrived.
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class AmbulanceInteractable : Interactable
 {
     Rigidbody m_Rigidbody;
@@ -61,6 +65,7 @@ public class AmbulanceInteractable : Interactable
             MeshRenderer renderer = GetComponent<MeshRenderer>();
             renderer.enabled = true;
 
+            // Hard coded, change here to make it so it drives to a specific spot.
             if (gameObject.transform.position.x > 5)
             {
                 if (startTime == 0)

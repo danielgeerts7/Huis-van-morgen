@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles the UI elements in the scene, created for scenarios.
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class UIHandler : MonoBehaviour
 {
     public GameObject scenarioTitle;
     public GameObject scenarioInfo;
     public GameObject scenarioButton;
 
-    // TODO: let UI class handle this
+    // Displays title and info provided in the correct components
+    // Adds listener for button to activate the scene
     public void DisplayIntro(string title, string info)
     {
         scenarioTitle.SetActive(true);
@@ -26,7 +32,7 @@ public class UIHandler : MonoBehaviour
         scenarioButton.GetComponentInChildren<Text>().text = "Start Scenario";
     }
 
-    // TODO: let UI class handle this
+    // Displays title and info provided in the correct components
     public void DisplayOutro(string title, string info)
     {
         scenarioTitle.SetActive(true);
@@ -39,7 +45,7 @@ public class UIHandler : MonoBehaviour
         scenarioButton.GetComponentInChildren<Text>().text = "Naar Menu";
     }
 
-    // TODO: let UI class handle this
+    // Displays text in StepComponent on top of screen.
     public void DisplayStep(string title)
     {
         scenarioTitle.SetActive(true);

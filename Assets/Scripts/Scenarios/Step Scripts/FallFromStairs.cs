@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script used in "falling from stairs" scenario. Teleports player to specific spot.
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class FallFromStairs : MonoBehaviour
 {
     public Step step;
