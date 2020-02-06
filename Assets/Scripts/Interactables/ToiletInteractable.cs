@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Let's the player sit on the toilet and disables movement if a step is active (To make player stuck on toilet)
+/// @Version: 1.0
+/// @Authors: Leon Smit, Daniël Geerts
+/// </summary>
 public class ToiletInteractable : Interactable
 {
 
@@ -57,32 +62,5 @@ public class ToiletInteractable : Interactable
 
     public override void OnUpdate()
     {
-        /*if (rotateToPoint)
-        {
-            GameObject player = playercontroller.GetPlayer();
-
-            // Rotate the cube by converting the angles into a quaternion.
-            var rot = teleportSpot.transform.rotation.eulerAngles * tiltAngle;
-            Quaternion target = Quaternion.Euler(rot.x, rot.y, rot.z);
-
-            // Dampen towards the target rotation
-            player.transform.rotation = Quaternion.Slerp(player.transform.rotation, target, Time.deltaTime * smooth);
-
-            if (OVRInput.Get(OVRInput.Touch.Any))
-            {
-                rotateToPoint = false;
-            }
-
-            if (Application.isEditor)
-            {
-
-                GameObject cam = player.GetComponentInChildren<DebugPlayerCamera>().gameObject;
-                Vector3 cameuler = cam.transform.rotation.eulerAngles;
-                cameuler.x = teleportSpot.transform.rotation.x;
-                cameuler.y = teleportSpot.transform.rotation.y;
-                cameuler.z = teleportSpot.transform.rotation.z;
-                cam.transform.rotation = Quaternion.Euler(cameuler);
-            }
-        }*/
     }
 }

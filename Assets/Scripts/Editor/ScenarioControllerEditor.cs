@@ -4,6 +4,14 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(ScenarioController))]
+
+/// <summary>
+/// Used to customize ScenarioController component in Editor. 
+/// Adds debug mode in Editor as a toggle group (makes group only available if debug mode is active)
+/// 
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class ScenarioControllerEditor : Editor
 {
     public bool test;

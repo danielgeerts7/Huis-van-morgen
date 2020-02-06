@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Moves the camera based on mouse movement.
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class DebugPlayerCamera : MonoBehaviour
 {
 

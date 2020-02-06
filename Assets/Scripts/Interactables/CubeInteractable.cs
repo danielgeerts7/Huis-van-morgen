@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Interactable used in DemoScene to show functions of Interactable class
+/// 
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class CubeInteractable : Interactable
 {
     private bool active;

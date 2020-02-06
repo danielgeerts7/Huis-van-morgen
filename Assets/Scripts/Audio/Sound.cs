@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Sound object created from SoundInfo object
+/// Used to be played by AudioManager
+/// 
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 [System.Serializable]
 public class Sound
 {

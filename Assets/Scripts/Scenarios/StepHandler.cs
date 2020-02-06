@@ -1,6 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Gets added by interactables to link the object to a step. 
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class StepHandler : MonoBehaviour
 {
     private List<Step> steps;

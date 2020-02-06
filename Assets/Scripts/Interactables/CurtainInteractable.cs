@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
 /// This is a curtainInteractable class. This class can open and close curtains.
 /// There is also a instant open and close method, this is for when the simulation starts,
 /// so that you dont see them opening/closing at the start.

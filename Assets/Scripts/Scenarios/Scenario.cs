@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Contains information about the scenario and initializes the scene based on parameters
+/// Keeps track of the current step and provides information for ScenarioController
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class Scenario : MonoBehaviour
 {
     public GameObject startingPoint;
@@ -37,12 +43,13 @@ public class Scenario : MonoBehaviour
 
     public void InitializeScenario()
     {
+        // Initialize scene based on bool parameters
         DomoticaController dom = GameObject.FindObjectOfType<DomoticaController>();
         dom.SwitchCurtainsWithoutAnimation(startWithCurtainsOpen);
         dom.SwitchLights(startWithLightsOn);
         GameObject.FindObjectOfType<DayNightManager>().SetDayPart(scenarioDayPart);
 
-
+        // Teleports the player to the starting position of the scenario
         GameObject player = FindObjectOfType<PlayerController>().GetPlayer();
         player.transform.SetPositionAndRotation(startingPoint.transform.position, startingPoint.transform.rotation);
 
@@ -74,9 +81,6 @@ public class Scenario : MonoBehaviour
 
     public bool HasNextStep()
     {
-        Debug.Log(activeStepIndex + " van de " + steps.Count + " is actief");
-        Debug.Log(state + " is processing");
-
         if (activeStepIndex + 1 <= steps.Count - 1) {
             return true;
         }
@@ -87,6 +91,7 @@ public class Scenario : MonoBehaviour
         return false;
     }
 
+    // Set activestep to next index
     public void NextStep()
     {
         activeStepIndex++;
@@ -101,7 +106,6 @@ public class Scenario : MonoBehaviour
     {
         state = newstate;
     }
-
 
     public bool UsedAsPlayableScenario() {
         return isBeingUsed;

@@ -3,6 +3,13 @@ using System;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// AudioManager loads sound files based on Audio.json
+/// Can be used to play sounds and stop all sounds.
+/// 
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
@@ -53,6 +60,8 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // Plays a sound based on the string parameter
+    // If no sound is found it sends a warning
     public bool Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -65,6 +74,7 @@ public class AudioManager : MonoBehaviour
         return true;
     }
 
+    // Stops all sounds playing
     public void StopAll()
     {
         foreach (Sound sound in sounds)

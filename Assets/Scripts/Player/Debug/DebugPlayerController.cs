@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Moves player based on keyboard input. Only used while playing in Editor
+/// @Version: 1.0
+/// @Authors: Leon Smit
+/// </summary>
 public class DebugPlayerController : MonoBehaviour
 {
     Rigidbody playerBody;
