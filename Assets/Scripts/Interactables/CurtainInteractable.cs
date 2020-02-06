@@ -10,19 +10,13 @@ using UnityEngine;
 /// </summary>
 public class CurtainInteractable : Interactable
 {
-    public bool isOpen = true;
+    private bool isOpen = true;
 
     public GameObject leftCurtain;
     public GameObject rightCurtain;
 
     public override void OnStart()
     {
-        /*if (!isOpen)
-        {
-            leftCurtain.GetComponent<Animator>().Play("Close Curtain");
-            rightCurtain.GetComponent<Animator>().Play("Close Curtain");
-            isOpen = false;
-        }*/
     }
 
     public override void OnUpdate() { }
@@ -53,6 +47,10 @@ public class CurtainInteractable : Interactable
             leftCurtain.GetComponent<Animator>().Play("Open Curtain");
             rightCurtain.GetComponent<Animator>().Play("Open Curtain");
 
+            if (FindObjectOfType<AudioManager>() != null)
+            {
+                FindObjectOfType<AudioManager>().Play("MoveCurtain");
+            }
             isOpen = true;
         }
 
@@ -64,6 +62,11 @@ public class CurtainInteractable : Interactable
         {
             leftCurtain.GetComponent<Animator>().Play("Close Curtain");
             rightCurtain.GetComponent<Animator>().Play("Close Curtain");
+
+            if (FindObjectOfType<AudioManager>() != null)
+            {
+                FindObjectOfType<AudioManager>().Play("MoveCurtain");
+            }
 
             isOpen = false;
         }

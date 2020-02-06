@@ -11,6 +11,11 @@
 			"volume": "1.0f"
 		},
 		{
+			"name": "MoveCurtain",
+			"path": "Audio/MoveCurtain",
+			"volume": "0.75f"
+		},
+		{
 			"name": "Message",
 			"path": "Audio/Message",
 			"volume": "0.1f"

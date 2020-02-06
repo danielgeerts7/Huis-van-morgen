@@ -21,7 +21,7 @@ public class CurtainController : MonoBehaviour
         //also adds the animation of the curtains
         for (int i = 0; i < curtains.Count; i++)
         {
-            if (!curtains[i].GetComponent<CurtainInteractable>().isOpen)
+            if (!curtains[i].GetComponent<CurtainInteractable>().isActive())
             {
                 if (skipAnimation)
                     curtains[i].GetComponent<CurtainInteractable>().CurtainOpenInstant();
@@ -36,7 +36,7 @@ public class CurtainController : MonoBehaviour
         //also adds the animation of the curtains
         for (int i = 0; i < curtains.Count; i++)
         {
-            if (curtains[i].GetComponent<CurtainInteractable>().isOpen)
+            if (curtains[i].GetComponent<CurtainInteractable>().isActive())
             {
                 if (skipAnimation)
                     curtains[i].GetComponent<CurtainInteractable>().CurtainCloseInstant();

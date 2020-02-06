@@ -123,7 +123,7 @@ public class DomoticaController : MonoBehaviour
         foreach (GameObject curtain in curtainController.curtains)
         {
             totalCurtains += 1.0f;
-            if (curtain.GetComponent<CurtainInteractable>().isOpen == true)
+            if (curtain.GetComponent<CurtainInteractable>().isActive())
             {
                 totalEnabled += 1.0f;
             }
